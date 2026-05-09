@@ -301,6 +301,81 @@ Banques disposant d'une plateforme SCF digitale avancée documentée :
 
 ---
 
+## PARTIE 5 — BANQUES P3 : SURVEILLANCE ACTIVE (18+ mois)
+
+*Zone de risque élevé (B3/C3/D4) : le TF documentaire est la norme, le SCF est embryonnaire. Surveiller les déclencheurs réglementaires, EBRD, recrutements TF.*
+
+### 5.1 Pays Baltes
+
+| Banque | Pays | Allianz | TF Confirmé (source) | SCF Actuel | Signal de surveillance |
+|--------|------|---------|---------------------|------------|----------------------|
+| **Luminor** | EE/LV/LT | A1-A2 | Oui. Corporate banking actif, trade finance. *(Rapports annuels)* | **SCF_ABSENT** — Aucun produit SCF documenté. | Banque pan-baltique née du rachat de DNB+Nordea (2017). [INFÉRENCE] Structure régionale propice à une plateforme unifiée. |
+| **Citadele** | LV | A2 | Oui. Corporate banking, export. *(Rapports annuels)* | **SCF_ABSENT** — Aucun signal. | Privatisée 2012, actionnaire EBRD. Concurrent direct Luminor. |
+| **LHV Pank** | EE | A1 | Oui. Factoring avec credit insurance documenté. *(Site LHV)* | **SCF_BASIQUE** — Factoring classique, SCF absent. | Banque digitale-native, appétence tech forte. Factoring comme porte d'entrée SCF. |
+| **Šiaulių Bankas** | LT | A2 | Oui. Leader factoring lituanien. *(Rapports annuels)* | **SCF_BASIQUE** — Factoring fort, SCF non structuré. | Croissance rapide du factoring. Candidate à l'upgrade SCF. |
+| **SEB Lietuva** | LT | A2 | Oui. Groupe SEB, corporate finance. | **SCF_INTERMÉDIAIRE** — Offre groupe SEB probablement déployée. [INFÉRENCE] | Décision depuis Stockholm. Approche locale peu pertinente. |
+
+---
+
+### 5.2 Balkans Occidentaux (Serbie, Bosnie, Albanie, Macédoine du Nord)
+
+| Banque | Pays | Allianz | TF Confirmé (source) | SCF Actuel | Signal de surveillance |
+|--------|------|---------|---------------------|------------|----------------------|
+| **NLB Komercijalna** | RS | B3 | Oui. Filiale NLB. Corporate banking. *(Rapports annuels)* | **SCF_ABSENT** — SCF non visible. | Levier groupe NLB (qui a reverse factoring documenté). Décision depuis Ljubljana. |
+| **UniCredit Bank BiH** | BA | C3 | Oui. Via réseau groupe UniCredit. *(Rapports annuels)* | **SCF_ABSENT** — SCF non visible localement. | 1ère banque BiH. Décision depuis Milan. Bilan < €5 Mds. |
+| **Raiffeisen Bank BiH** | BA | C3 | Oui. Via réseau RBI. *(Rapports annuels)* | **SCF_ABSENT** — SCF non visible localement. | 2ème banque BiH. RBI déploie SCF dans 12 pays CEE. |
+| **BKT** | AL | C3 | Oui. Trade finance présent. *(Rapports annuels)* | **SCF_ABSENT** — SCF absent documenté. | Leader albanais. First mover potentiel en Albanie. Filiale BKT Kosova. |
+| **Komercijalna Banka** | MK | C3 | Oui. Trade finance présent. *(Rapports annuels)* | **SCF_ABSENT** — SCF non documenté. | 1ère banque Macédoine du Nord. Bilan < €3 Mds. |
+| **Stopanska Banka** | MK | C3 | Oui. Via réseau OTP/NLB. *(Rapports annuels)* | **SCF_ABSENT** — SCF non documenté. | 2ème banque. Levier groupe OTP. |
+
+---
+
+### 5.3 Caucase (Géorgie, Arménie, Azerbaïdjan)
+
+| Banque | Pays | Allianz | TF Confirmé (source) | SCF Actuel | Signal de surveillance |
+|--------|------|---------|---------------------|------------|----------------------|
+| **Liberty Bank** | GE | B3 | Oui. **Nouveau membre FCI (mars 2025)**. *(FCI, source Aequitas 2)* | **SCF_ABSENT** — SCF non visible malgré l'adhésion FCI. | 3ème banque géorgienne. Adhésion FCI = signal de montée en gamme. [INFÉRENCE] Cherche à développer le factoring après TBC Bank. |
+| **PASHA Bank** | AZ | C3-C4 | Oui. "Export factoring" sur page d'accueil du site. *(Site PASHA Bank)* | **SCF_BASIQUE** — Export factoring documenté, SCF non visible. | Leader corporate azerbaïdjanais. SCF = suite logique naturelle du factoring export. |
+| **Ameriabank** | AM | C3 | Oui. Factoring/trade finance déclaré. *(Site Ameriabank)* | **SCF_BASIQUE** — Factoring présent, SCF embryonnaire. | Top banque arménienne. Gap technologique SCF confirmé. |
+| **Ardshinbank** | AM | C3 | Oui. Factoring/trade finance déclaré. *(Site Ardshinbank)* | **SCF_BASIQUE** — Factoring présent, SCF embryonnaire. | Concurrent direct Ameriabank. |
+| **ACBA Bank** | AM | C3 | Oui. Factoring/trade finance déclaré. *(Site ACBA)* | **SCF_BASIQUE** — SCF embryonnaire. | Acteur agricole dominant. Gap digital fort. |
+| **Inecobank** | AM | C3 | Oui. Factoring/trade finance déclaré. *(Site Inecobank)* | **SCF_BASIQUE** — SCF embryonnaire. | Banque digitale, forte appétence technologique. |
+
+---
+
+### 5.4 Moldavie et Ukraine
+
+| Banque | Pays | Allianz | TF Confirmé (source) | SCF Actuel | Signal de surveillance |
+|--------|------|---------|---------------------|------------|----------------------|
+| **MAIB** | MD | C3 | Oui. Factoring digital documenté sur site : recours, sans recours, **reverse factoring**. *(Site MAIB, source Aequitas 2)* | **SCF_INTERMÉDIAIRE** — Reverse factoring décrit sur site officiel. [INFÉRENCE] Plateforme peu scalable et non digitale. | **Pionnier SCF en Moldavie.** Première banque du pays. Dès que le contexte pays C3 s'améliore, cible prioritaire pour un upgrade technologique. |
+| **OTP Ukraine** | UA | D4 | Oui. Factoring with recourse. *(Site OTP Ukraine)* | **SCF_BASIQUE** — SCF absent. | Surveillance post-conflit. Reconstruction Ukraine = besoin TF massif futur. |
+| **Privatbank** | UA | D4 | Oui. Franchise TF avec EBRD documentée. *(EBRD)* | **SCF_BASIQUE** — SCF absent. | Banque systémique (nationalisée). Programme EBRD TF actif. |
+
+---
+
+### 5.5 Synthèse P3 — Déclencheurs de reclassification
+
+Un déclencheur confirmé reclasse automatiquement une banque P3 en P2 :
+- **Adhésion FCI** d'une nouvelle banque (signal de structuration factoring)
+- **Programme SCF avec EBRD ou IFC** (validation institutionnelle)
+- **Recrutement d'un responsable TF/SCF** avec profil spécialisé (GTR "On the Move")
+- **Publication d'un appel d'offres RFP** pour une plateforme SCF
+- **Fin d'un partenariat existant** avec une fintech SCF (cf. KB/Roger modèle)
+- **Upgrade de la notation Allianz** d'un pays de C3 à B3 ou mieux
+
+---
+
+## PARTIE 6 — MATRICE RÉSUMÉE DE PROSPECTION
+
+| Priorité | Nb banques | Horizon | Critère d'entrée | Exemples |
+|----------|-----------|---------|-----------------|---------|
+| **P1** | 5 | 0-6 mois | Déclencheur documenté + SCF_ABSENT ou SCF_INTERMÉDIAIRE + TF confirmé | BCGE, KB, Bankinter, BPER, Banca Transilvania |
+| **P2** | 12 | 6-18 mois | TF fort + SCF_BASIQUE ou INTERMÉDIAIRE + momentum identifié | BayernLB, Citi Handlowy, Bank Millennium, NLB, BRD, Helaba, Belfius, KBC, LBP, Banco BPM, OTP Slovenija, BRD |
+| **P3** | 22 | 18+ mois | TF confirmé + SCF_ABSENT + risque pays B3/C3 | MAIB, Liberty Bank, PASHA, Ameriabank, BKT, Luminor, LHV, NLB Komercijalna, UniCredit BiH |
+| **Exclus** | 11 | — | SCF_AVANCÉ documenté | LBBW, Erste/BCR, OTP, Sabadell, Banca Ifis, ABN AMRO, Raiffeisen, TBC, Intesa Beograd, CS, SlovSp |
+
+---
+
 ## ANNEXE — DONNÉES BRUTES UN COMTRADE
 
 | Pays | Exports totaux | Corridors clés | Année | Code M49 |
