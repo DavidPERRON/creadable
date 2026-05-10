@@ -1,0 +1,1296 @@
+{
+  "_meta": {
+    "description": "European corporates with revenue >EUR 5bn — annual reports for SCF analysis",
+    "scope": "EU + UK + CH + NO",
+    "criteria": "Revenue >= EUR 5bn (last filed FY)",
+    "last_updated": "2026-05-10",
+    "_note": "URLs may break — auto-discovery fallback in downloader.js. Some corporates use 10-K/Universal Registration Document instead of Annual Report."
+  },
+  "corporates": [
+    {
+      "id": "nestle",
+      "name": "Nestlé S.A.",
+      "country": "CH",
+      "sector": "FMCG",
+      "revenue_eur_bn": 91,
+      "ir_url": "https://www.nestle.com/investors/annual-report",
+      "report_pattern": "annual report"
+    },
+    {
+      "id": "volkswagen",
+      "name": "Volkswagen Group",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 322,
+      "ir_url": "https://www.volkswagen-group.com/en/publications/more/group-annual-report-2024-2697",
+      "report_pattern": "annual report",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/v/OTC_VWAGY_2023.pdf",
+      "direct_pdf_source": "annualreports.com"
+    },
+    {
+      "id": "stellantis",
+      "name": "Stellantis",
+      "country": "NL",
+      "sector": "Automotive",
+      "revenue_eur_bn": 157,
+      "ir_url": "https://www.stellantis.com/en/investors/financial-information/annual-reports",
+      "report_pattern": "annual report",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_STLA_2023.pdf",
+      "direct_pdf_source": "annualreports.com"
+    },
+    {
+      "id": "shell",
+      "name": "Shell plc",
+      "country": "UK",
+      "sector": "Energy",
+      "revenue_eur_bn": 280,
+      "ir_url": "https://www.shell.com/investors/financial-reporting/annual-reports-and-publications.html",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_SHEL_2025.pdf",
+      "direct_pdf_source": "annualreports.com"
+    },
+    {
+      "id": "totalenergies",
+      "name": "TotalEnergies SE",
+      "country": "FR",
+      "sector": "Energy",
+      "revenue_eur_bn": 195,
+      "ir_url": "https://totalenergies.com/investors/publications-and-regulated-information/annual-and-quarterly-reports"
+    },
+    {
+      "id": "bp",
+      "name": "BP p.l.c.",
+      "country": "UK",
+      "sector": "Energy",
+      "revenue_eur_bn": 195,
+      "ir_url": "https://www.bp.com/en/global/corporate/investors/results-reporting-and-presentations/annual-reporting.html",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/b/LSE_BP_2023.pdf",
+      "direct_pdf_source": "annualreports.com"
+    },
+    {
+      "id": "siemens",
+      "name": "Siemens AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 75,
+      "ir_url": "https://www.siemens.com/global/en/company/investor-relations/financial-publications.html",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_SI_2023.pdf",
+      "direct_pdf_source": "annualreports.com"
+    },
+    {
+      "id": "siemens-energy",
+      "name": "Siemens Energy",
+      "country": "DE",
+      "sector": "Energy",
+      "revenue_eur_bn": 30,
+      "ir_url": "https://www.siemens-energy.com/global/en/home/investor-relations/financial-publications.html"
+    },
+    {
+      "id": "bmw",
+      "name": "BMW Group",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 142,
+      "ir_url": "https://www.bmwgroup.com/en/investor-relations/financial-reports.html"
+    },
+    {
+      "id": "mercedes-benz",
+      "name": "Mercedes-Benz Group",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 153,
+      "ir_url": "https://group.mercedes-benz.com/investors/reports-news/annual-reports/"
+    },
+    {
+      "id": "bosch",
+      "name": "Robert Bosch GmbH",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 90,
+      "ir_url": "https://www.bosch.com/company/annual-report/"
+    },
+    {
+      "id": "basf",
+      "name": "BASF SE",
+      "country": "DE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 69,
+      "ir_url": "https://www.basf.com/global/en/investors/calendar-and-publications/financial-publications.html"
+    },
+    {
+      "id": "bayer",
+      "name": "Bayer AG",
+      "country": "DE",
+      "sector": "Pharma",
+      "revenue_eur_bn": 47,
+      "ir_url": "https://www.bayer.com/en/investors/financial-publications"
+    },
+    {
+      "id": "boehringer",
+      "name": "Boehringer Ingelheim",
+      "country": "DE",
+      "sector": "Pharma",
+      "revenue_eur_bn": 26,
+      "ir_url": "https://www.boehringer-ingelheim.com/about-us/sustainable-development/annual-report"
+    },
+    {
+      "id": "merck-kgaa",
+      "name": "Merck KGaA",
+      "country": "DE",
+      "sector": "Pharma",
+      "revenue_eur_bn": 21,
+      "ir_url": "https://www.merckgroup.com/en/investors/reports-and-financials/annual-report.html"
+    },
+    {
+      "id": "thyssenkrupp",
+      "name": "thyssenkrupp",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 35,
+      "ir_url": "https://www.thyssenkrupp.com/en/investors/financial-publications"
+    },
+    {
+      "id": "eon",
+      "name": "E.ON SE",
+      "country": "DE",
+      "sector": "Utilities",
+      "revenue_eur_bn": 94,
+      "ir_url": "https://www.eon.com/en/investor-relations/financial-publications.html"
+    },
+    {
+      "id": "rwe",
+      "name": "RWE AG",
+      "country": "DE",
+      "sector": "Utilities",
+      "revenue_eur_bn": 30,
+      "ir_url": "https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/"
+    },
+    {
+      "id": "deutsche-telekom",
+      "name": "Deutsche Telekom",
+      "country": "DE",
+      "sector": "Telecom",
+      "revenue_eur_bn": 115,
+      "ir_url": "https://www.telekom.com/en/investor-relations/publications/financial-reports"
+    },
+    {
+      "id": "deutsche-post",
+      "name": "Deutsche Post DHL",
+      "country": "DE",
+      "sector": "Logistics",
+      "revenue_eur_bn": 84,
+      "ir_url": "https://group.dhl.com/en/investors/financial-reports.html"
+    },
+    {
+      "id": "henkel",
+      "name": "Henkel AG",
+      "country": "DE",
+      "sector": "FMCG",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.henkel.com/investors-and-analysts/financial-reports"
+    },
+    {
+      "id": "sap",
+      "name": "SAP SE",
+      "country": "DE",
+      "sector": "Tech",
+      "revenue_eur_bn": 34,
+      "ir_url": "https://www.sap.com/investors/en/reports.html"
+    },
+    {
+      "id": "lufthansa",
+      "name": "Deutsche Lufthansa",
+      "country": "DE",
+      "sector": "Aviation",
+      "revenue_eur_bn": 36,
+      "ir_url": "https://investor-relations.lufthansagroup.com/en/publications.html"
+    },
+    {
+      "id": "continental",
+      "name": "Continental AG",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 41,
+      "ir_url": "https://www.continental.com/en/investors/financial-publications/"
+    },
+    {
+      "id": "zf-friedrichshafen",
+      "name": "ZF Friedrichshafen",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 47,
+      "ir_url": "https://www.zf.com/site/investor-relations/en/financial-reports.html"
+    },
+    {
+      "id": "fresenius",
+      "name": "Fresenius SE",
+      "country": "DE",
+      "sector": "Healthcare",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.fresenius.com/financial-reports"
+    },
+    {
+      "id": "lvmh",
+      "name": "LVMH",
+      "country": "FR",
+      "sector": "Luxury",
+      "revenue_eur_bn": 86,
+      "ir_url": "https://www.lvmh.com/investors/publications/"
+    },
+    {
+      "id": "loreal",
+      "name": "L'Oréal",
+      "country": "FR",
+      "sector": "FMCG",
+      "revenue_eur_bn": 41,
+      "ir_url": "https://www.loreal-finance.com/en/annual-report-2024"
+    },
+    {
+      "id": "danone",
+      "name": "Danone",
+      "country": "FR",
+      "sector": "FMCG",
+      "revenue_eur_bn": 27,
+      "ir_url": "https://www.danone.com/investor-relations/publications.html"
+    },
+    {
+      "id": "carrefour",
+      "name": "Carrefour",
+      "country": "FR",
+      "sector": "Retail",
+      "revenue_eur_bn": 95,
+      "ir_url": "https://www.carrefour.com/en/finance/regulated-information/annual-reports"
+    },
+    {
+      "id": "michelin",
+      "name": "Michelin",
+      "country": "FR",
+      "sector": "Industrial",
+      "revenue_eur_bn": 28,
+      "ir_url": "https://www.michelin.com/en/finance/financial-publications/"
+    },
+    {
+      "id": "stellantis-fr",
+      "name": "Renault Group",
+      "country": "FR",
+      "sector": "Automotive",
+      "revenue_eur_bn": 53,
+      "ir_url": "https://www.renaultgroup.com/en/finance/regulated-information/annual-reports/"
+    },
+    {
+      "id": "engie",
+      "name": "Engie SA",
+      "country": "FR",
+      "sector": "Utilities",
+      "revenue_eur_bn": 82,
+      "ir_url": "https://www.engie.com/en/finance/results/annual-results"
+    },
+    {
+      "id": "edf",
+      "name": "EDF",
+      "country": "FR",
+      "sector": "Utilities",
+      "revenue_eur_bn": 110,
+      "ir_url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/finance/financial-information/financial-publications"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "country": "FR",
+      "sector": "Industrial",
+      "revenue_eur_bn": 38,
+      "ir_url": "https://www.se.com/ww/en/about-us/investor-relations/financial-publications/annual-reports.jsp"
+    },
+    {
+      "id": "saint-gobain",
+      "name": "Saint-Gobain",
+      "country": "FR",
+      "sector": "Construction",
+      "revenue_eur_bn": 47,
+      "ir_url": "https://www.saint-gobain.com/en/finance/regulated-information/annual-reports"
+    },
+    {
+      "id": "vinci",
+      "name": "Vinci SA",
+      "country": "FR",
+      "sector": "Construction",
+      "revenue_eur_bn": 69,
+      "ir_url": "https://www.vinci.com/vinci.nsf/en/finance/pages/index.htm"
+    },
+    {
+      "id": "bouygues",
+      "name": "Bouygues SA",
+      "country": "FR",
+      "sector": "Construction",
+      "revenue_eur_bn": 56,
+      "ir_url": "https://www.bouygues.com/en/financial-information/financial-reports/"
+    },
+    {
+      "id": "airbus",
+      "name": "Airbus SE",
+      "country": "FR",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 65,
+      "ir_url": "https://www.airbus.com/en/investors/financial-results-and-annual-reports"
+    },
+    {
+      "id": "thales",
+      "name": "Thales Group",
+      "country": "FR",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 19,
+      "ir_url": "https://www.thalesgroup.com/en/investors/financial-reports"
+    },
+    {
+      "id": "safran",
+      "name": "Safran",
+      "country": "FR",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 27,
+      "ir_url": "https://www.safran-group.com/finance/financial-publications"
+    },
+    {
+      "id": "publicis",
+      "name": "Publicis Groupe",
+      "country": "FR",
+      "sector": "Advertising",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://www.publicisgroupe.com/en/investors/financial-publications"
+    },
+    {
+      "id": "sanofi",
+      "name": "Sanofi",
+      "country": "FR",
+      "sector": "Pharma",
+      "revenue_eur_bn": 43,
+      "ir_url": "https://www.sanofi.com/en/investors/financial-results-and-events/financial-results"
+    },
+    {
+      "id": "kering",
+      "name": "Kering",
+      "country": "FR",
+      "sector": "Luxury",
+      "revenue_eur_bn": 18,
+      "ir_url": "https://www.kering.com/en/finance/publications/"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermès International",
+      "country": "FR",
+      "sector": "Luxury",
+      "revenue_eur_bn": 13,
+      "ir_url": "https://finance.hermes.com/en/regulated-information/annual-reports/"
+    },
+    {
+      "id": "orange",
+      "name": "Orange S.A.",
+      "country": "FR",
+      "sector": "Telecom",
+      "revenue_eur_bn": 41,
+      "ir_url": "https://www.orange.com/en/results-and-publications"
+    },
+    {
+      "id": "vivendi",
+      "name": "Vivendi",
+      "country": "FR",
+      "sector": "Media",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.vivendi.com/en/regulated-information/"
+    },
+    {
+      "id": "veolia",
+      "name": "Veolia",
+      "country": "FR",
+      "sector": "Utilities",
+      "revenue_eur_bn": 45,
+      "ir_url": "https://www.veolia.com/en/finance/financial-information/financial-publications"
+    },
+    {
+      "id": "pernod-ricard",
+      "name": "Pernod Ricard",
+      "country": "FR",
+      "sector": "FMCG",
+      "revenue_eur_bn": 12,
+      "ir_url": "https://www.pernod-ricard.com/en/investors/financial-results/"
+    },
+    {
+      "id": "lafarge",
+      "name": "Holcim",
+      "country": "CH",
+      "sector": "Construction",
+      "revenue_eur_bn": 26,
+      "ir_url": "https://www.holcim.com/investors/results-reports-presentations"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari N.V.",
+      "country": "IT",
+      "sector": "Automotive",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://corporate.ferrari.com/en/investors/financial-documents"
+    },
+    {
+      "id": "eni",
+      "name": "Eni S.p.A.",
+      "country": "IT",
+      "sector": "Energy",
+      "revenue_eur_bn": 95,
+      "ir_url": "https://www.eni.com/en-IT/investors/reports.html"
+    },
+    {
+      "id": "enel",
+      "name": "Enel",
+      "country": "IT",
+      "sector": "Utilities",
+      "revenue_eur_bn": 95,
+      "ir_url": "https://www.enel.com/investors/financials"
+    },
+    {
+      "id": "snam",
+      "name": "Snam S.p.A.",
+      "country": "IT",
+      "sector": "Utilities",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.snam.it/en/investor_relations/"
+    },
+    {
+      "id": "leonardo",
+      "name": "Leonardo S.p.A.",
+      "country": "IT",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.leonardo.com/en/investors/financial-reports"
+    },
+    {
+      "id": "pirelli",
+      "name": "Pirelli",
+      "country": "IT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://corporate.pirelli.com/corporate/en-ww/investors/financial-publications"
+    },
+    {
+      "id": "ferrero",
+      "name": "Ferrero International",
+      "country": "IT",
+      "sector": "FMCG",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.ferrero.com/about-ferrero/business/annual-reports"
+    },
+    {
+      "id": "campari",
+      "name": "Campari Group",
+      "country": "IT",
+      "sector": "FMCG",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.camparigroup.com/en/investors/results-and-presentations/annual-report"
+    },
+    {
+      "id": "stm",
+      "name": "STMicroelectronics",
+      "country": "CH",
+      "sector": "Tech",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://investors.st.com/financial-information/financial-and-strategic-reports"
+    },
+    {
+      "id": "luxottica",
+      "name": "EssilorLuxottica",
+      "country": "FR",
+      "sector": "Consumer",
+      "revenue_eur_bn": 27,
+      "ir_url": "https://www.essilorluxottica.com/en/investors/financial-information/annual-financial-reports"
+    },
+    {
+      "id": "fiat",
+      "name": "Iveco Group",
+      "country": "IT",
+      "sector": "Automotive",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.ivecogroup.com/investors/financial-documents/"
+    },
+    {
+      "id": "prysmian",
+      "name": "Prysmian Group",
+      "country": "IT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.prysmiangroup.com/en/investors/financial-publications"
+    },
+    {
+      "id": "cnh",
+      "name": "CNH Industrial",
+      "country": "IT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 19,
+      "ir_url": "https://www.cnhindustrial.com/en/investors/financial_information/Pages/annual_reports.aspx"
+    },
+    {
+      "id": "inditex",
+      "name": "Inditex (Zara)",
+      "country": "ES",
+      "sector": "Retail",
+      "revenue_eur_bn": 36,
+      "ir_url": "https://www.inditex.com/itxcomweb/en/investors/financial-information/annual-reports"
+    },
+    {
+      "id": "telefonica",
+      "name": "Telefónica",
+      "country": "ES",
+      "sector": "Telecom",
+      "revenue_eur_bn": 41,
+      "ir_url": "https://www.telefonica.com/en/shareholders-investors/financial-information/quarterly-results/"
+    },
+    {
+      "id": "iberdrola",
+      "name": "Iberdrola",
+      "country": "ES",
+      "sector": "Utilities",
+      "revenue_eur_bn": 49,
+      "ir_url": "https://www.iberdrola.com/shareholders-investors/annual-reports"
+    },
+    {
+      "id": "repsol",
+      "name": "Repsol",
+      "country": "ES",
+      "sector": "Energy",
+      "revenue_eur_bn": 65,
+      "ir_url": "https://www.repsol.com/en/shareholders-and-investors/financial-information/annual-reports/"
+    },
+    {
+      "id": "naturgy",
+      "name": "Naturgy Energy",
+      "country": "ES",
+      "sector": "Utilities",
+      "revenue_eur_bn": 26,
+      "ir_url": "https://www.naturgy.com/en/shareholders+and+investors/economic+and+financial+information/economic+and+financial+publications"
+    },
+    {
+      "id": "acs",
+      "name": "ACS Group",
+      "country": "ES",
+      "sector": "Construction",
+      "revenue_eur_bn": 40,
+      "ir_url": "https://www.grupoacs.com/shareholders-and-investors/economic-and-financial-information/annual-report/"
+    },
+    {
+      "id": "ferrovial",
+      "name": "Ferrovial S.A.",
+      "country": "ES",
+      "sector": "Construction",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.ferrovial.com/en/shareholders-and-investors/financial-and-business-information/annual-report/"
+    },
+    {
+      "id": "amadeus-it",
+      "name": "Amadeus IT Group",
+      "country": "ES",
+      "sector": "Tech",
+      "revenue_eur_bn": 6,
+      "ir_url": "https://corporate.amadeus.com/en/investors/financial-information/annual-reports"
+    },
+    {
+      "id": "mapfre",
+      "name": "MAPFRE",
+      "country": "ES",
+      "sector": "Insurance",
+      "revenue_eur_bn": 28,
+      "ir_url": "https://www.mapfre.com/en/shareholders-investors/financial-information/"
+    },
+    {
+      "id": "unilever",
+      "name": "Unilever plc",
+      "country": "UK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 60,
+      "ir_url": "https://www.unilever.com/investors/annual-report-and-accounts/"
+    },
+    {
+      "id": "diageo",
+      "name": "Diageo plc",
+      "country": "UK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 20,
+      "ir_url": "https://www.diageo.com/en/investors/financial-reports"
+    },
+    {
+      "id": "british-american-tobacco",
+      "name": "British American Tobacco",
+      "country": "UK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 33,
+      "ir_url": "https://www.bat.com/group/sites/UK__9D9KCY.nsf/vwPagesWebLive/DOATBVLT"
+    },
+    {
+      "id": "tesco",
+      "name": "Tesco PLC",
+      "country": "UK",
+      "sector": "Retail",
+      "revenue_eur_bn": 80,
+      "ir_url": "https://www.tescoplc.com/investors/reports-results-and-presentations/"
+    },
+    {
+      "id": "sainsbury",
+      "name": "Sainsbury's",
+      "country": "UK",
+      "sector": "Retail",
+      "revenue_eur_bn": 38,
+      "ir_url": "https://www.about.sainsburys.co.uk/investors/results-reports-and-presentations"
+    },
+    {
+      "id": "marks-spencer",
+      "name": "Marks & Spencer",
+      "country": "UK",
+      "sector": "Retail",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://corporate.marksandspencer.com/investors/financial-reports"
+    },
+    {
+      "id": "next-plc",
+      "name": "Next plc",
+      "country": "UK",
+      "sector": "Retail",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.nextplc.co.uk/investors/reports-and-presentations"
+    },
+    {
+      "id": "rolls-royce",
+      "name": "Rolls-Royce Holdings",
+      "country": "UK",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 19,
+      "ir_url": "https://www.rolls-royce.com/investors/financial-results.aspx"
+    },
+    {
+      "id": "bae-systems",
+      "name": "BAE Systems",
+      "country": "UK",
+      "sector": "Aerospace",
+      "revenue_eur_bn": 31,
+      "ir_url": "https://www.baesystems.com/en/investors/annual-report"
+    },
+    {
+      "id": "glaxosmithkline",
+      "name": "GlaxoSmithKline (GSK)",
+      "country": "UK",
+      "sector": "Pharma",
+      "revenue_eur_bn": 36,
+      "ir_url": "https://www.gsk.com/en-gb/investors/"
+    },
+    {
+      "id": "astrazeneca",
+      "name": "AstraZeneca",
+      "country": "UK",
+      "sector": "Pharma",
+      "revenue_eur_bn": 50,
+      "ir_url": "https://www.astrazeneca.com/investor-relations/annual-reports.html"
+    },
+    {
+      "id": "vodafone",
+      "name": "Vodafone Group",
+      "country": "UK",
+      "sector": "Telecom",
+      "revenue_eur_bn": 37,
+      "ir_url": "https://investors.vodafone.com/reports-information/results-reports-presentations"
+    },
+    {
+      "id": "bt-group",
+      "name": "BT Group",
+      "country": "UK",
+      "sector": "Telecom",
+      "revenue_eur_bn": 23,
+      "ir_url": "https://www.bt.com/about/investors/financial-reporting-and-news/annual-reports"
+    },
+    {
+      "id": "national-grid",
+      "name": "National Grid",
+      "country": "UK",
+      "sector": "Utilities",
+      "revenue_eur_bn": 23,
+      "ir_url": "https://www.nationalgrid.com/about-us/investors-and-performance/annual-reports"
+    },
+    {
+      "id": "centrica",
+      "name": "Centrica",
+      "country": "UK",
+      "sector": "Utilities",
+      "revenue_eur_bn": 30,
+      "ir_url": "https://www.centrica.com/investors/results-and-presentations/"
+    },
+    {
+      "id": "wpp",
+      "name": "WPP plc",
+      "country": "UK",
+      "sector": "Advertising",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.wpp.com/investors/financial-reports-and-presentations"
+    },
+    {
+      "id": "reckitt",
+      "name": "Reckitt Benckiser",
+      "country": "UK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.reckitt.com/investors/financial-reports/annual-reports/"
+    },
+    {
+      "id": "associated-british-foods",
+      "name": "Associated British Foods",
+      "country": "UK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 23,
+      "ir_url": "https://www.abf.co.uk/investorrelations/results_centre"
+    },
+    {
+      "id": "anglo-american",
+      "name": "Anglo American",
+      "country": "UK",
+      "sector": "Mining",
+      "revenue_eur_bn": 27,
+      "ir_url": "https://www.angloamerican.com/investors/annual-reporting"
+    },
+    {
+      "id": "rio-tinto",
+      "name": "Rio Tinto",
+      "country": "UK",
+      "sector": "Mining",
+      "revenue_eur_bn": 49,
+      "ir_url": "https://www.riotinto.com/invest/financial-news-performance/annual-report"
+    },
+    {
+      "id": "glencore",
+      "name": "Glencore plc",
+      "country": "CH",
+      "sector": "Mining",
+      "revenue_eur_bn": 195,
+      "ir_url": "https://www.glencore.com/investors/reports-results"
+    },
+    {
+      "id": "bunge",
+      "name": "Bunge Limited",
+      "country": "CH",
+      "sector": "Agribusiness",
+      "revenue_eur_bn": 50,
+      "ir_url": "https://www.bunge.com/investors/financial-information"
+    },
+    {
+      "id": "ahold-delhaize",
+      "name": "Ahold Delhaize",
+      "country": "NL",
+      "sector": "Retail",
+      "revenue_eur_bn": 89,
+      "ir_url": "https://www.aholddelhaize.com/investors/annual-reports/"
+    },
+    {
+      "id": "heineken",
+      "name": "Heineken N.V.",
+      "country": "NL",
+      "sector": "FMCG",
+      "revenue_eur_bn": 30,
+      "ir_url": "https://www.theheinekencompany.com/investors/reports-and-presentations"
+    },
+    {
+      "id": "philips",
+      "name": "Philips",
+      "country": "NL",
+      "sector": "Healthcare",
+      "revenue_eur_bn": 18,
+      "ir_url": "https://www.philips.com/a-w/about/investor.html"
+    },
+    {
+      "id": "asml",
+      "name": "ASML Holding",
+      "country": "NL",
+      "sector": "Tech",
+      "revenue_eur_bn": 28,
+      "ir_url": "https://www.asml.com/en/investors/annual-report"
+    },
+    {
+      "id": "akzo-nobel",
+      "name": "AkzoNobel",
+      "country": "NL",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.akzonobel.com/en/investor-relations/financial-information/annual-reports"
+    },
+    {
+      "id": "dsm-firmenich",
+      "name": "dsm-firmenich",
+      "country": "NL",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 12,
+      "ir_url": "https://www.dsm-firmenich.com/corporate/investors/financial-publications.html"
+    },
+    {
+      "id": "kpn",
+      "name": "Royal KPN",
+      "country": "NL",
+      "sector": "Telecom",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.kpn.com/algemeen/over-kpn/investor-relations/financial-results.htm"
+    },
+    {
+      "id": "randstad",
+      "name": "Randstad",
+      "country": "NL",
+      "sector": "Services",
+      "revenue_eur_bn": 25,
+      "ir_url": "https://www.randstad.com/investors/results-and-reports/annual-reports/"
+    },
+    {
+      "id": "anheuser-busch",
+      "name": "AB InBev",
+      "country": "BE",
+      "sector": "FMCG",
+      "revenue_eur_bn": 53,
+      "ir_url": "https://www.ab-inbev.com/investors/reports-and-filings/annual-and-hy-reports/"
+    },
+    {
+      "id": "solvay",
+      "name": "Solvay S.A.",
+      "country": "BE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.solvay.com/en/investors/financial-publications"
+    },
+    {
+      "id": "umicore",
+      "name": "Umicore",
+      "country": "BE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.umicore.com/en/investors/financial-publications/"
+    },
+    {
+      "id": "kbc-corp",
+      "name": "KBC Group (corp)",
+      "country": "BE",
+      "sector": "Banking",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.kbc.com/en/investor-relations.html"
+    },
+    {
+      "id": "novartis",
+      "name": "Novartis AG",
+      "country": "CH",
+      "sector": "Pharma",
+      "revenue_eur_bn": 50,
+      "ir_url": "https://www.novartis.com/investors/financial-data/annual-results"
+    },
+    {
+      "id": "roche",
+      "name": "Roche Holding",
+      "country": "CH",
+      "sector": "Pharma",
+      "revenue_eur_bn": 65,
+      "ir_url": "https://www.roche.com/investors/annualreport24"
+    },
+    {
+      "id": "abb",
+      "name": "ABB Ltd",
+      "country": "CH",
+      "sector": "Industrial",
+      "revenue_eur_bn": 32,
+      "ir_url": "https://global.abb/group/en/investors/annual-reporting"
+    },
+    {
+      "id": "richemont",
+      "name": "Compagnie Financière Richemont",
+      "country": "CH",
+      "sector": "Luxury",
+      "revenue_eur_bn": 21,
+      "ir_url": "https://www.richemont.com/en/home/investors/results-reports-and-presentations/"
+    },
+    {
+      "id": "swatch-group",
+      "name": "Swatch Group",
+      "country": "CH",
+      "sector": "Luxury",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.swatchgroup.com/en/investors/key-figures/annual-report"
+    },
+    {
+      "id": "swisscom",
+      "name": "Swisscom",
+      "country": "CH",
+      "sector": "Telecom",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.swisscom.ch/en/about/investors/financial-information/annual-results.html"
+    },
+    {
+      "id": "lonza",
+      "name": "Lonza Group",
+      "country": "CH",
+      "sector": "Pharma",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.lonza.com/investors/financial-publications"
+    },
+    {
+      "id": "geberit",
+      "name": "Geberit",
+      "country": "CH",
+      "sector": "Industrial",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.geberit.com/investor-relations/results-and-reports/"
+    },
+    {
+      "id": "sika",
+      "name": "Sika AG",
+      "country": "CH",
+      "sector": "Construction",
+      "revenue_eur_bn": 12,
+      "ir_url": "https://www.sika.com/en/investors/results.html"
+    },
+    {
+      "id": "novo-nordisk",
+      "name": "Novo Nordisk",
+      "country": "DK",
+      "sector": "Pharma",
+      "revenue_eur_bn": 31,
+      "ir_url": "https://www.novonordisk.com/investors/financial-reports.html"
+    },
+    {
+      "id": "carlsberg",
+      "name": "Carlsberg Group",
+      "country": "DK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.carlsberggroup.com/investor-relations/financial-reports-and-presentations/"
+    },
+    {
+      "id": "maersk",
+      "name": "A.P. Moller-Maersk",
+      "country": "DK",
+      "sector": "Logistics",
+      "revenue_eur_bn": 50,
+      "ir_url": "https://investor.maersk.com/financial-results"
+    },
+    {
+      "id": "vestas",
+      "name": "Vestas Wind Systems",
+      "country": "DK",
+      "sector": "Energy",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.vestas.com/en/investor/financial-reports-and-presentations"
+    },
+    {
+      "id": "orsted",
+      "name": "Ørsted",
+      "country": "DK",
+      "sector": "Energy",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://orsted.com/en/investors/ir-material/financial-reports-and-presentations"
+    },
+    {
+      "id": "danfoss",
+      "name": "Danfoss A/S",
+      "country": "DK",
+      "sector": "Industrial",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.danfoss.com/en/about-danfoss/our-businesses/results-reports/"
+    },
+    {
+      "id": "volvo-group",
+      "name": "Volvo Group AB",
+      "country": "SE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 47,
+      "ir_url": "https://www.volvogroup.com/en/investors/reports-and-presentations/annual-and-sustainability-report.html"
+    },
+    {
+      "id": "volvo-cars",
+      "name": "Volvo Cars AB",
+      "country": "SE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 36,
+      "ir_url": "https://investors.volvocars.com/reports-and-presentations"
+    },
+    {
+      "id": "ericsson",
+      "name": "Ericsson",
+      "country": "SE",
+      "sector": "Tech",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.ericsson.com/en/investors/financial-reports"
+    },
+    {
+      "id": "h-and-m",
+      "name": "H&M Hennes & Mauritz",
+      "country": "SE",
+      "sector": "Retail",
+      "revenue_eur_bn": 21,
+      "ir_url": "https://hmgroup.com/investors/annual-and-sustainability-report/"
+    },
+    {
+      "id": "atlas-copco",
+      "name": "Atlas Copco AB",
+      "country": "SE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.atlascopcogroup.com/en/investors/financial-reports"
+    },
+    {
+      "id": "skf",
+      "name": "SKF AB",
+      "country": "SE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.skf.com/group/investors/reports-and-presentations"
+    },
+    {
+      "id": "electrolux",
+      "name": "Electrolux",
+      "country": "SE",
+      "sector": "Consumer",
+      "revenue_eur_bn": 12,
+      "ir_url": "https://www.electroluxgroup.com/en/financial-reports/"
+    },
+    {
+      "id": "essity",
+      "name": "Essity AB",
+      "country": "SE",
+      "sector": "FMCG",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://www.essity.com/investors/financial-reports/"
+    },
+    {
+      "id": "scania",
+      "name": "Scania AB",
+      "country": "SE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 18,
+      "ir_url": "https://www.scania.com/group/en/home/investors/financial-reports.html"
+    },
+    {
+      "id": "ikea",
+      "name": "Inter IKEA Holding",
+      "country": "NL",
+      "sector": "Retail",
+      "revenue_eur_bn": 47,
+      "ir_url": "https://www.inter.ikea.com/en/finance"
+    },
+    {
+      "id": "alfa-laval",
+      "name": "Alfa Laval AB",
+      "country": "SE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.alfalaval.com/about-us/investors/reports-and-presentations/"
+    },
+    {
+      "id": "equinor",
+      "name": "Equinor ASA",
+      "country": "NO",
+      "sector": "Energy",
+      "revenue_eur_bn": 95,
+      "ir_url": "https://www.equinor.com/investors/annual-reports"
+    },
+    {
+      "id": "yara",
+      "name": "Yara International",
+      "country": "NO",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://www.yara.com/investor-relations/annual-report-2024/"
+    },
+    {
+      "id": "telenor",
+      "name": "Telenor",
+      "country": "NO",
+      "sector": "Telecom",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.telenor.com/investors/reports/"
+    },
+    {
+      "id": "hydro-norsk",
+      "name": "Norsk Hydro",
+      "country": "NO",
+      "sector": "Mining",
+      "revenue_eur_bn": 17,
+      "ir_url": "https://www.hydro.com/en-NO/investors/reports-and-presentations/"
+    },
+    {
+      "id": "neste",
+      "name": "Neste Corporation",
+      "country": "FI",
+      "sector": "Energy",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.neste.com/investors/financial-information/financial-reports-and-presentations"
+    },
+    {
+      "id": "nokia",
+      "name": "Nokia Corporation",
+      "country": "FI",
+      "sector": "Tech",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.nokia.com/about-us/investors/reports-filings/"
+    },
+    {
+      "id": "kone",
+      "name": "KONE Corporation",
+      "country": "FI",
+      "sector": "Industrial",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.kone.com/en/investors/reports-and-presentations/"
+    },
+    {
+      "id": "stora-enso",
+      "name": "Stora Enso",
+      "country": "FI",
+      "sector": "Pulp/Paper",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.storaenso.com/en/investors/reports-and-presentations"
+    },
+    {
+      "id": "upm",
+      "name": "UPM-Kymmene",
+      "country": "FI",
+      "sector": "Pulp/Paper",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.upm.com/investors/reports-and-presentations/"
+    },
+    {
+      "id": "voestalpine",
+      "name": "voestalpine AG",
+      "country": "AT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.voestalpine.com/group/en/investors/financial-reports/"
+    },
+    {
+      "id": "omv",
+      "name": "OMV AG",
+      "country": "AT",
+      "sector": "Energy",
+      "revenue_eur_bn": 38,
+      "ir_url": "https://www.omv.com/en/investors/financial-publications"
+    },
+    {
+      "id": "andritz",
+      "name": "ANDRITZ AG",
+      "country": "AT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.andritz.com/group-en/investor-relations/financial-reports"
+    },
+    {
+      "id": "verbund",
+      "name": "VERBUND AG",
+      "country": "AT",
+      "sector": "Utilities",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.verbund.com/en-at/about-verbund/investor-relations/publications"
+    },
+    {
+      "id": "edp-portugal",
+      "name": "EDP - Energias de Portugal",
+      "country": "PT",
+      "sector": "Utilities",
+      "revenue_eur_bn": 19,
+      "ir_url": "https://www.edp.com/en/investors/economic-financial-information/results-and-reports"
+    },
+    {
+      "id": "galp",
+      "name": "Galp Energia",
+      "country": "PT",
+      "sector": "Energy",
+      "revenue_eur_bn": 23,
+      "ir_url": "https://www.galp.com/corp/en/investors/financial-information/annual-reports"
+    },
+    {
+      "id": "jeronimo-martins",
+      "name": "Jerónimo Martins",
+      "country": "PT",
+      "sector": "Retail",
+      "revenue_eur_bn": 31,
+      "ir_url": "https://www.jeronimomartins.com/en/investors/financial-information/annual-reports/"
+    },
+    {
+      "id": "intesa-sanpaolo-corp",
+      "name": "Intesa Sanpaolo (corp activity)",
+      "country": "IT",
+      "sector": "Banking",
+      "revenue_eur_bn": 25,
+      "ir_url": "https://group.intesasanpaolo.com/en/investor-relations/financial-statements"
+    },
+    {
+      "id": "unicredit-corp",
+      "name": "UniCredit (corp activity)",
+      "country": "IT",
+      "sector": "Banking",
+      "revenue_eur_bn": 24,
+      "ir_url": "https://www.unicreditgroup.eu/en/investors/financial-reports.html"
+    },
+    {
+      "id": "pkn-orlen",
+      "name": "PKN Orlen",
+      "country": "PL",
+      "sector": "Energy",
+      "revenue_eur_bn": 73,
+      "ir_url": "https://www.orlen.pl/en/investor-relations/financial-results/annual-reports"
+    },
+    {
+      "id": "kghm",
+      "name": "KGHM Polska Miedz",
+      "country": "PL",
+      "sector": "Mining",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://kghm.com/en/investors/financial-results/financial-reports"
+    },
+    {
+      "id": "lpp",
+      "name": "LPP S.A.",
+      "country": "PL",
+      "sector": "Retail",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.lppsa.com/en/investor-relations/reports/annual-reports"
+    },
+    {
+      "id": "cd-projekt",
+      "name": "CD PROJEKT S.A.",
+      "country": "PL",
+      "sector": "Tech",
+      "revenue_eur_bn": 1,
+      "ir_url": "https://www.cdprojekt.com/en/investors/"
+    },
+    {
+      "id": "cez",
+      "name": "CEZ Group",
+      "country": "CZ",
+      "sector": "Utilities",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://www.cez.cz/en/investors/financial-and-operating-results/annual-reports"
+    },
+    {
+      "id": "skoda-auto",
+      "name": "Škoda Auto",
+      "country": "CZ",
+      "sector": "Automotive",
+      "revenue_eur_bn": 27,
+      "ir_url": "https://www.skoda-storyboard.com/en/about-skoda-auto/annual-press-conference/"
+    },
+    {
+      "id": "agrofert",
+      "name": "Agrofert a.s.",
+      "country": "CZ",
+      "sector": "Agribusiness",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.agrofert.cz/en/about-us/annual-reports"
+    },
+    {
+      "id": "mol",
+      "name": "MOL Group",
+      "country": "HU",
+      "sector": "Energy",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://molgroup.info/en/investor-relations/results-and-publications"
+    },
+    {
+      "id": "richter",
+      "name": "Gedeon Richter",
+      "country": "HU",
+      "sector": "Pharma",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.richter.hu/en-US/investors/Financial-Reports"
+    }
+  ]
+}

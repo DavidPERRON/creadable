@@ -1,0 +1,101 @@
+{
+  "corporate_id": "stellantis",
+  "corporate_name": "Stellantis",
+  "country": "NL",
+  "sector": "Automotive",
+  "revenue_eur_bn": 157,
+  "extracted_at": "2026-05-10",
+  "year_of_report": 2024,
+  "_note": "MOCK extraction for pipeline validation. Replace by running engine/extractor.js with DEEPINFRA_API_KEY set.",
+  "scf_program_signals": {
+    "reverse_factoring": { "mentioned": true, "verbatim": "Reverse factoring arrangements with our suppliers, primarily through our European banking partners" },
+    "confirming": { "mentioned": false, "verbatim": null },
+    "dynamic_discounting": { "mentioned": false, "verbatim": null },
+    "supply_chain_finance_generic": { "mentioned": true, "verbatim": "Supply chain finance programs to support our tier-1 suppliers in CEE" },
+    "supplier_finance_program": { "mentioned": true, "verbatim": "Supplier finance program covering EUR 2.8 bn of trade payables as of December 31, 2024" },
+    "trade_payables_financing": { "mentioned": true, "verbatim": "Trade payables financing arrangements" },
+    "early_payment_program": { "mentioned": false, "verbatim": null }
+  },
+  "receivables_program_signals": {
+    "factoring_with_recourse": { "mentioned": false, "verbatim": null },
+    "factoring_without_recourse": { "mentioned": true, "verbatim": "Without-recourse factoring arrangements with selected European banks for an aggregate amount of EUR 1.4 bn" },
+    "invoice_discounting": { "mentioned": false, "verbatim": null },
+    "receivables_securitization": { "mentioned": true, "verbatim": "Receivables securitization program" },
+    "vendor_finance_program": { "mentioned": false, "verbatim": null }
+  },
+  "channel_program_signals": {
+    "distributor_finance": { "mentioned": false, "verbatim": null },
+    "pre_shipment_finance": { "mentioned": false, "verbatim": null },
+    "purchase_order_finance": { "mentioned": false, "verbatim": null }
+  },
+  "inventory_program_signals": {
+    "inventory_finance": { "mentioned": false, "verbatim": null },
+    "floor_planning": { "mentioned": true, "verbatim": "Floor plan financing for our dealer network" }
+  },
+  "special_signals": {
+    "esg_or_sustainability_linked_scf": { "mentioned": false, "verbatim": null },
+    "multi_bank_platform": { "mentioned": true, "verbatim": "Multi-bank supply chain finance platform across our European footprint" },
+    "white_label_bank_program": { "mentioned": false, "verbatim": null },
+    "cross_border_scf": { "mentioned": true, "verbatim": "Cross-border supply chain finance for our suppliers in Italy, Poland, Czech Republic, and Romania" }
+  },
+  "scf_volumes": {
+    "supply_chain_finance_obligations_eur": 2800000000,
+    "factoring_volume_eur": 1400000000,
+    "trade_payables_amount_eur": 24000000000,
+    "year_of_volume": 2024,
+    "verbatim": "Supplier finance program EUR 2.8 bn; without-recourse factoring EUR 1.4 bn"
+  },
+  "platform_provider_mentioned": {
+    "found": false,
+    "name": null,
+    "verbatim": null
+  },
+  "banks_mentioned_in_scf_or_trade_finance_context": [
+    {
+      "bank_name": "BNP Paribas",
+      "country_if_specified": "FR",
+      "role": "lead",
+      "context": "BNP Paribas serves as lead bank for our European supply chain finance program"
+    },
+    {
+      "bank_name": "BPER Banca",
+      "country_if_specified": "IT",
+      "role": "local_partner",
+      "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+    },
+    {
+      "bank_name": "Banca Transilvania",
+      "country_if_specified": "RO",
+      "role": "local_partner",
+      "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+    },
+    {
+      "bank_name": "Komerční banka",
+      "country_if_specified": "CZ",
+      "role": "local_partner",
+      "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers"
+    },
+    {
+      "bank_name": "Bank Millennium",
+      "country_if_specified": "PL",
+      "role": "participant",
+      "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+    },
+    {
+      "bank_name": "Citi Handlowy",
+      "country_if_specified": "PL",
+      "role": "participant",
+      "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+    }
+  ],
+  "geographic_footprint": {
+    "supplier_countries_mentioned": ["IT", "FR", "ES", "PL", "CZ", "SK", "RO", "HU", "DE", "NL"],
+    "manufacturing_countries_mentioned": ["IT", "FR", "ES", "PL", "DE", "TR"],
+    "verbatim_corridors": "Suppliers concentrated in Italy, France, Spain, Poland, Czech Republic, Slovakia, Romania, Hungary, Germany, Netherlands"
+  },
+  "key_quotes_for_review": [
+    "Reverse factoring arrangements with our suppliers, primarily through our European banking partners — EUR 2.8 bn outstanding as of December 31, 2024",
+    "Without-recourse factoring arrangements with selected European banks for an aggregate amount of EUR 1.4 bn",
+    "Multi-bank supply chain finance platform across our European footprint with local partners in each country"
+  ]
+}
