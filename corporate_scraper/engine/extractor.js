@@ -103,7 +103,7 @@ const SCF_KEYWORDS = [
   'venda de creditos', 'cessao de creditos',
 ];
 
-function extractRelevantChunks(fullText, maxChars = 60000) {
+function extractRelevantChunks(fullText, maxChars = 20000) {
   const lines = fullText.split('\n');
   const reLower = new RegExp(SCF_KEYWORDS.map(k => k.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'i');
 

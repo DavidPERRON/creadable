@@ -6,7 +6,7 @@
  *   1) Visit IR page with Puppeteer (handles JS-rendered pages)
  *   2) Find the most recent annual report PDF link
  *   3) Download to pdfs/<id>_<year>.pdf
- *   4) Extract text via pdftotext to text/<id>_<year>.txt
+ *   4) Extract text via pdftotext (or pdf-parse fallback) to text/<id>_<year>.txt
  *
  * Idempotent: skips already-downloaded files.
  *
@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { getBrowser } = require('./browser');
+const pdfParse = require('pdf-parse');
 
 const ROOT = path.join(__dirname, '..');
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
@@ -153,12 +154,20 @@ async function downloadPdf(url, dest) {
   }
 }
 
-function extractText(pdf, txt) {
+async function extractText(pdf, txt) {
+  // Try pdftotext first (preserves layout better), fall back to pdf-parse
   try {
     execFileSync('pdftotext', ['-layout', '-enc', 'UTF-8', pdf, txt], {
       stdio: ['ignore', 'ignore', 'ignore'],
     });
-    return fs.statSync(txt).size > 1000;
+    if (fs.existsSync(txt) && fs.statSync(txt).size > 1000) return true;
+  } catch (e) { /* pdftotext not available, use pdf-parse */ }
+
+  try {
+    const data = await pdfParse(fs.readFileSync(pdf));
+    if (!data.text || data.text.length < 1000) return false;
+    fs.writeFileSync(txt, data.text, 'utf8');
+    return true;
   } catch (e) {
     return false;
   }
@@ -227,7 +236,7 @@ async function processCorporate(corp, browser) {
       if (!ok) {
         result.reason = 'download_failed';
       } else {
-        const txtOk = extractText(pdfPath, txtPath);
+        const txtOk = await extractText(pdfPath, txtPath);
         if (!txtOk) {
           result.reason = 'pdftotext_failed';
         } else {
