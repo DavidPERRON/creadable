@@ -246,7 +246,9 @@ app.get('/api/logs/:jobId', (req, res) => {
   if (job.done) { sseWrite(res, 'done', { code: job.exitCode }); return res.end(); }
 
   job.clients.push(res);
+  const heartbeat = setInterval(() => res.write(": heartbeat\n\n"), 20000);
   req.on('close', () => {
+    clearInterval(heartbeat);
     job.clients = job.clients.filter(c => c !== res);
   });
 });
