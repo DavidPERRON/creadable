@@ -103,7 +103,7 @@ const SCF_KEYWORDS = [
   'venda de creditos', 'cessao de creditos',
 ];
 
-function extractRelevantChunks(fullText, maxChars = 20000) {
+function extractRelevantChunks(fullText, maxChars = 15000) {
   const lines = fullText.split('\n');
   const reLower = new RegExp(SCF_KEYWORDS.map(k => k.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'i');
 
@@ -134,7 +134,7 @@ function extractRelevantChunks(fullText, maxChars = 20000) {
 // ─────────────────────────────────────────────────────────────────
 // DeepInfra API call
 // ─────────────────────────────────────────────────────────────────
-async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 90000) {
+async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
   if (!API_KEY) throw new Error('DEEPINFRA_API_KEY env var required');
 
   const payload = JSON.stringify({
