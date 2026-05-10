@@ -58,11 +58,24 @@ extract-id:
 	node engine/extractor.js $(ID)
 
 # ─────────────────────────────────────────────────────────────────
-# Stage 4 — Aggregate into bank evidence + sweet-spot identification
+# Stage 4 — Aggregate + summary + methodology + dashboard
 # Uses ../prospection/data/banks.scored.json if available
 # ─────────────────────────────────────────────────────────────────
-aggregate:
+aggregate: aggregate-only summary methodology dashboard
+
+aggregate-only:
 	node engine/aggregator.js
+
+summary:
+	node engine/summary.js
+
+methodology:
+	node engine/methodology.js
+
+dashboard:
+	node engine/dashboard.js
+	@echo ""
+	@echo "Dashboard: reports/dashboard.html — double-click in Finder to open"
 
 # ─────────────────────────────────────────────────────────────────
 # Bootstrap on a fresh Mac after git clone

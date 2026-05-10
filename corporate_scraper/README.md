@@ -133,24 +133,47 @@ Banques nouvelles (à évaluer pour DB) :
 
 ---
 
-## Usage
+## Usage — la version simple
 
-### Premier run complet
+### Une seule commande, tout est fait
+
 ```bash
 cd corporate_scraper
-export DEEPINFRA_API_KEY=...
-
-make discover            # 30 min — résout ~80% des URLs
-make download            # 30 min — télécharge les PDFs (~10 GB)
-make extract             # 10 min + ~$0.80 — DeepInfra extraction
-make aggregate           # < 1 min — génère le rapport final
-
-cat reports/bank_evidence.md
+./go.sh
 ```
 
-### Run incrémental (mise à jour)
+Le script :
+1. Vérifie que tu as Node.js, pdftotext, curl
+2. Te demande ta clé DeepInfra (ou skip si pas de clé)
+3. Lance les 4 stages avec barres de progression
+4. **Ouvre le dashboard automatiquement dans ton navigateur** à la fin
+
+### Fichiers produits
+
+Après chaque run, 5 livrables apparaissent dans `reports/` :
+
+| Fichier | Pour quoi |
+|---|---|
+| **`dashboard.html`** | 🎨 Dashboard interactif — double-clic pour ouvrir, filtres, onglets |
+| `summary.md` | 📋 Résumé exécutif — 1 page avec top 10, actions |
+| `bank_evidence.md` | 📄 Rapport détaillé — fiches complètes par banque |
+| `methodology.md` | 🔬 Note de transparence sources — quoi le LLM a vu/pas vu |
+| `new_banks_proposed.json` | 🆕 Banques absentes de la DB à évaluer |
+
+### Usage avancé (si tu connais la CLI)
+
 ```bash
-make full                # rejoue tout le pipeline (idempotent)
+make discover            # 30 min — résout les URLs
+make download            # 30 min — télécharge PDFs
+make extract             # 10 min + ~$0.80 — DeepInfra
+make aggregate           # < 1 min — génère tous les rapports + dashboard
+```
+
+Ou granulairement :
+```bash
+make summary             # régénère le résumé seul
+make dashboard           # régénère le dashboard seul
+make methodology         # régénère la note transparence seule
 ```
 
 ### Ajouter une banque candidate
