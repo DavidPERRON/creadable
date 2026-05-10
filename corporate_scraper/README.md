@@ -1,14 +1,26 @@
-# Corporate Scraper — Identifier les banques sweet-spot
+# Corporate Scraper v2 — Identifier les banques sweet-spot par angle CredAble
 
-**Objectif** : Scraper les rapports annuels des grands corporates européens (>€5 Mds CA) pour identifier les **banques actives sur le SCF mais non équipées d'une plateforme sophistiquée** — cibles idéales pour un partenariat CredAble white-label.
+**Objectif** : Scraper les rapports annuels des grands corporates européens (>€5 Mds CA) pour identifier les **banques actives sur le working capital / trade / receivables / inventory mais non équipées d'une plateforme sophistiquée**, et déterminer **quel angle CredAble** (SaaS, Classic SCF, Receivables, Flash title) est le bon pour chacune.
+
+## CredAble — pas un prêteur, un fournisseur d'infrastructure de flux
+
+CredAble vend du white-label working-capital infrastructure aux banques selon **4 lignes de revenus distinctes** :
+
+| Angle | Revenu type | Risque crédit | Profil banque cible |
+|---|---|---|---|
+| **SaaS / Licence** | Annual fee + platform + APIs + onboarding + maintenance | Aucun | Banque sans plateforme propre, ERP modernisé |
+| **Classic SCF** | Programme fees + servicing + bps sur volumes flow | Reste à la banque/anchor | Banque active reverse factoring sans tech moderne |
+| **Receivables Finance** | bps plus élevés (assume dilution + dispute risks) | Partagé / structuré | Banque active factoring / cession sans plateforme |
+| **Flash Title / Inventory** | bps + marge commerciale + structuring fees | TradeCo s'insère légalement | Banque active LCs / inventory sans structuration |
+
+**Pour chaque banque sweet-spot, on identifie l'angle de vente recommandé.**
 
 ## Le concept "sweet spot"
 
 Une banque est en **sweet spot** quand :
-1. **Elle est citée par des corporates** dans leurs rapports annuels comme partenaire SCF/TF (signal de demande validé)
+1. **Elle est citée par des corporates** dans des contextes working capital / trade / receivables / inventory (signal de demande validé)
 2. **Elle n'a pas déployé de plateforme propre** sophistiquée (`scf_level` ≠ `AVANCE`)
-
-C'est la combinaison gagnante : **demande corporate prouvée + absence de concurrent installé**. Bien plus actionnable qu'une simple liste de banques scorées en aveugle.
+3. **Au moins un angle CredAble score ≥ 5/10**
 
 ---
 
@@ -57,27 +69,67 @@ Si pas de `direct_pdf_url` : tente l'URL IR + 3 tiers de fallback.
 
 ### Stage 3 — `make extract` (requires `DEEPINFRA_API_KEY`)
 Pour chaque texte extrait :
-1. Pré-filtre les chunks pertinents avec ~80 keywords SCF/TF/factoring multilingues
+1. Pré-filtre les chunks pertinents avec ~120 keywords multilingues couvrant **6 catégories** : payables / receivables / documentary / title-inventory / working-capital / tech-ERP
 2. Envoie à DeepSeek-V3 via DeepInfra avec schema JSON strict
 3. Parse + persiste à `extractions/<id>.json`
 
 **Coût** : ~$0.005 par corporate × 159 corporates = ~$0.80 pour le full run.
 
-Schema d'extraction couvre la **diversité complète CredAble** :
-- Core SCF : reverse factoring, confirming, dynamic discounting, supplier finance
-- Receivables : factoring with/without recourse, invoice discounting, securitization
-- Channel : distributor finance, pre-shipment, PO finance
-- Inventory : inventory finance, floor planning
-- Special : ESG-linked, multi-bank, white-label, cross-border
-- Volumes EUR + plateformes mentionnées + banques nommées + footprint géographique
+**Schema d'extraction v2** couvre la **diversité complète CredAble** en 6 catégories :
+
+| Catégorie | Champs extraits |
+|---|---|
+| **Payables programs** | reverse_factoring, confirming, dynamic_discounting, supplier_finance, early_payment, trade_payables_financing (avec volumes EUR) |
+| **Receivables programs** | factoring with/without recourse, invoice_discounting, securitization, sale_of_receivables, vendor_finance |
+| **Documentary trade** | LCs, bank_guarantees, SBLCs, forfaiting, structured_trade, pre_shipment, PO_finance, export_finance |
+| **Title / Inventory** | inventory_finance, floor_planning, consignment_stock, title_transfer, raw_material_financing, distributor/channel_finance, TradeCo/SPV |
+| **Working capital** | bank_facilities, revolving_credit, overdraft (génériques) |
+| **Tech signals** | ERP systems (SAP/Oracle/Coupa), multi-bank, white-label, cross-border, ESG-linked, API/digital |
+
+Plus : platform_provider mentionné, trade_credit_insurers (Coface/Allianz Trade/Atradius), banques nommées avec **product_category** (payables/receivables/documentary/inventory/wc) et rôle (lead/factor/issuing_bank/etc.), footprint géographique, volumes totaux par catégorie.
 
 ### Stage 4 — `make aggregate`
 Pour toutes les extractions :
 1. Aggrège les mentions de banques (verbatim + contexte + corporate citant)
 2. Match contre `prospection/data/banks.scored.json` (V4 score + priorité)
-3. Identifie les **sweet-spots** (banques actives + pas de plateforme avancée)
-4. Détecte les nouvelles banques à ajouter à la DB
-5. Génère `reports/bank_evidence.md`
+3. **Calcule le 4-angle scoring CredAble** : pour chaque banque, score /10 sur SaaS/Licence, Classic SCF, Receivables Finance, Flash Title/Inventory
+4. **Détermine l'angle de vente recommandé** (l'angle avec le score le plus haut)
+5. Identifie les **sweet-spots** (au moins 1 angle ≥ 5/10 + pas de plateforme avancée)
+6. Détecte les nouvelles banques à ajouter à la DB
+7. Génère `reports/bank_evidence.md` avec pour chaque sweet-spot : breakdown 4 angles + insight commercial
+
+## Le 4-angle scoring CredAble
+
+Pour chaque banque mentionnée par des corporates, l'aggregator calcule un score sur chacun des 4 angles de vente :
+
+```
+SaaS / Licence (0-10)            ← cité + ERP/multibank/API + pas de concurrent
+Classic SCF (0-10)               ← cité côté payables + cross-border / ESG
+Receivables Finance (0-10)       ← cité côté receivables / rôle factor
+Flash Title / Inventory (0-10)   ← cité côté documentary + inventory (combo fort)
+```
+
+Malus universel : **-3 à -5 points si plateforme concurrente majeure installée** (Demica, Orbian, Taulia, Kyriba, etc.).
+
+L'angle recommandé = celui avec le score le plus haut. Le **fit total CredAble** (somme) sert au tri sweet-spot.
+
+### Exemple de sortie (test 3 corporates)
+
+Sur les 3 mocks (Stellantis, Shell, Siemens) :
+
+```
+Top sweet-spots par fit total :
+  18  Komerční banka  (CZ) → SaaS/Licence (cited × Stellantis-receiv + Siemens-payables)
+  17  BPER Banca      (IT) → SaaS/Licence (cited × Stellantis-payables + receivables)
+  12  BayernLB        (DE) → SaaS/Licence (cited × Siemens-payables)
+  12  Helaba          (DE) → SaaS/Licence (cited × Siemens-payables)
+  12  Citi Handlowy   (PL) → SaaS/Licence (cited × Stellantis + Siemens)
+
+Banques nouvelles (à évaluer pour DB) :
+  BNP Paribas → Flash title 9/10 (cited Shell-LCs + Shell-inventory + Stellantis-payables)
+  HSBC, Standard Chartered, Société Générale → Flash title contexts (Shell)
+  Deutsche Bank, Commerzbank → SaaS/Licence (Siemens)
+```
 
 ---
 

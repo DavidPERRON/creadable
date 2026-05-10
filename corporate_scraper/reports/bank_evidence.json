@@ -1,160 +1,116 @@
 {
   "generated_at": "2026-05-10",
-  "bank_evidence": {
-    "bnpparibas": {
-      "canonical_name": "BNP Paribas",
-      "inferred_country": "FR",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "lead",
-          "context": "BNP Paribas serves as lead bank for our European supply chain finance program",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    },
-    "bper": {
-      "canonical_name": "BPER Banca",
-      "inferred_country": "IT",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "local_partner",
-          "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    },
-    "transilvania": {
-      "canonical_name": "Banca Transilvania",
-      "inferred_country": "RO",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "local_partner",
-          "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    },
-    "komernbanka": {
-      "canonical_name": "Komerční banka",
-      "inferred_country": "CZ",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "local_partner",
-          "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    },
-    "millennium": {
-      "canonical_name": "Bank Millennium",
-      "inferred_country": "PL",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "participant",
-          "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    },
-    "citihandlowy": {
-      "canonical_name": "Citi Handlowy",
-      "inferred_country": "PL",
-      "evidence": [
-        {
-          "corporate": "Stellantis",
-          "corporate_country": "NL",
-          "corporate_sector": "Automotive",
-          "role": "participant",
-          "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement",
-          "platform": null,
-          "scf_program_indicators": [
-            "reverse_factoring",
-            "supply_chain_finance_generic",
-            "supplier_finance_program",
-            "trade_payables_financing",
-            "factoring_without_recourse",
-            "receivables_securitization",
-            "floor_planning",
-            "multi_bank_platform",
-            "cross_border_scf"
-          ]
-        }
-      ]
-    }
+  "program_stats": {
+    "payables": 2,
+    "receivables": 3,
+    "documentary": 3,
+    "inventory": 2,
+    "working_capital": 3
   },
-  "matched_count": 5,
-  "unmatched_count": 1,
+  "matched_count": 9,
+  "unmatched_count": 8,
   "sweet_spots": [
+    {
+      "bank": {
+        "id": "komercni-banka-cz",
+        "name": "Komerční banka",
+        "country": "CZ",
+        "country_name": "Tchéquie",
+        "country_risk": {
+          "allianz_grade": "A2",
+          "allianz_level": 2,
+          "trade_implication": "MIXED"
+        },
+        "tf_signals": [
+          {
+            "source": "GTR",
+            "date": "2025-02-05",
+            "verbatim": "Orbian acquires Czech supply chain finance fintech Roger"
+          },
+          {
+            "source": "Site corporate",
+            "verbatim": "Filiale Factoring KB proposant page Supply Chain Finance"
+          }
+        ],
+        "scf_level": "INTERMEDIAIRE",
+        "scf_evidence": [
+          {
+            "source": "GTR 2025-02-05",
+            "verbatim": "KB détenait 25% dans Roger via KB SmartSolutions, Orbian a acquis Roger en février 2025"
+          }
+        ],
+        "competitor_platform": null,
+        "triggers": [
+          {
+            "type": "FINTECH_PARTNERSHIP_END",
+            "date": "2025-02-05",
+            "source": "GTR",
+            "description": "Orbian acquires Roger — KB perd son partenaire fintech SCF, vacance technologique"
+          }
+        ],
+        "interlocutors": [],
+        "financials": {
+          "balance_sheet_eur": 60000000000,
+          "year": 2024
+        },
+        "trade_flows_in": [
+          {
+            "partner": "Germany",
+            "exports_usd": 241700000000,
+            "year": 2022
+          }
+        ],
+        "notes": "Vacance technologique post-Roger. Cible idéale fenêtre 6 mois.",
+        "score": {
+          "tf_strength": 5,
+          "scf_gap": 4,
+          "trigger_freshness": 2,
+          "country_flow": 7,
+          "interlocutor_access": 0,
+          "competitive_vacuum": 5,
+          "regulatory_tailwind": 4,
+          "total": 27
+        },
+        "priority": "P2",
+        "last_updated": "2026-05-10"
+      },
+      "evidence_count": 2,
+      "corporates": [
+        "Siemens AG",
+        "Stellantis"
+      ],
+      "sectors_served": [
+        "Industrial",
+        "Automotive"
+      ],
+      "product_categories": [
+        "payables",
+        "receivables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 2× + ERP signals + multibank approach + API/digital — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 6,
+            "reasoning": "1 mention(s) côté payables + cross-border + ESG-linked "
+          },
+          "receivables_finance": {
+            "score": 6,
+            "reasoning": "1 mention(s) côté receivables + rôle factor explicit "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 18
+      }
+    },
     {
       "bank": {
         "id": "bper-banca-it",
@@ -231,13 +187,333 @@
         "priority": "P1",
         "last_updated": "2026-05-10"
       },
-      "evidence_count": 1,
+      "evidence_count": 2,
       "corporates": [
         "Stellantis"
       ],
       "sectors_served": [
         "Automotive"
-      ]
+      ],
+      "product_categories": [
+        "payables",
+        "receivables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 2× + ERP signals + multibank approach — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 5,
+            "reasoning": "1 mention(s) côté payables + cross-border "
+          },
+          "receivables_finance": {
+            "score": 6,
+            "reasoning": "1 mention(s) côté receivables + rôle factor explicit "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 17
+      }
+    },
+    {
+      "bank": {
+        "id": "bayernlb-de",
+        "name": "BayernLB",
+        "country": "DE",
+        "country_name": "Allemagne",
+        "country_risk": {
+          "allianz_grade": "AA1",
+          "allianz_level": 1,
+          "trade_implication": "OPEN_ACCOUNT"
+        },
+        "tf_signals": [
+          {
+            "source": "Annual Report",
+            "date": "2025-03-31",
+            "verbatim": "working capital, capex and trade financing, project and export financing"
+          },
+          {
+            "source": "GTR",
+            "date": "2019-09-15",
+            "verbatim": "ECA-backed financing, member Marco Polo"
+          },
+          {
+            "source": "Site corporate",
+            "verbatim": "Supply chain financing — multibank concept, without recourse"
+          }
+        ],
+        "scf_level": "INTERMEDIAIRE",
+        "scf_evidence": [
+          {
+            "source": "Site BayernLB",
+            "verbatim": "Page dédiée concept multibank, plateforme client digitale non documentée"
+          }
+        ],
+        "competitor_platform": null,
+        "triggers": [],
+        "interlocutors": [
+          {
+            "name": "Florian Seitz",
+            "role": "Head of Trade & Export Finance",
+            "source": "TradeFinanceGlobal"
+          }
+        ],
+        "financials": {
+          "balance_sheet_eur": 320000000000,
+          "year": 2024
+        },
+        "trade_flows_in": [
+          {
+            "partner": "Global",
+            "exports_usd": 1635000000000,
+            "year": 2021
+          }
+        ],
+        "notes": "Concept SCF mature mais plateforme digitale absente. Opportunité de plateforme white-label.",
+        "score": {
+          "tf_strength": 8,
+          "scf_gap": 4,
+          "trigger_freshness": 0,
+          "country_flow": 8,
+          "interlocutor_access": 2,
+          "competitive_vacuum": 5,
+          "regulatory_tailwind": 4,
+          "total": 31
+        },
+        "priority": "P2",
+        "last_updated": "2026-05-10"
+      },
+      "evidence_count": 1,
+      "corporates": [
+        "Siemens AG"
+      ],
+      "sectors_served": [
+        "Industrial"
+      ],
+      "product_categories": [
+        "payables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 1× + ERP signals + multibank approach + API/digital — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 6,
+            "reasoning": "1 mention(s) côté payables + cross-border + ESG-linked "
+          },
+          "receivables_finance": {
+            "score": 0,
+            "reasoning": "0 mention(s) côté receivables "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 12
+      }
+    },
+    {
+      "bank": {
+        "id": "helaba-de",
+        "name": "Helaba",
+        "country": "DE",
+        "country_name": "Allemagne",
+        "country_risk": {
+          "allianz_grade": "AA1",
+          "allianz_level": 1,
+          "trade_implication": "OPEN_ACCOUNT"
+        },
+        "tf_signals": [
+          {
+            "source": "Annual Report",
+            "date": "2024-12-31",
+            "verbatim": "Main partner for the international documentary business"
+          },
+          {
+            "source": "Site corporate",
+            "verbatim": "International trade finance — country risks and tailored solutions"
+          }
+        ],
+        "scf_level": "BASIQUE",
+        "scf_evidence": [
+          {
+            "source": "Annual Report",
+            "verbatim": "Expanded collaboration with supply chain finance platforms"
+          }
+        ],
+        "competitor_platform": null,
+        "triggers": [],
+        "interlocutors": [],
+        "financials": {
+          "balance_sheet_eur": 210000000000,
+          "year": 2024
+        },
+        "trade_flows_in": [
+          {
+            "partner": "Global",
+            "exports_usd": 1635000000000,
+            "year": 2021
+          }
+        ],
+        "notes": "Pas de produit SCF propre. Partenaire externe non identifié — opportunité white-label.",
+        "score": {
+          "tf_strength": 5,
+          "scf_gap": 7,
+          "trigger_freshness": 0,
+          "country_flow": 8,
+          "interlocutor_access": 0,
+          "competitive_vacuum": 5,
+          "regulatory_tailwind": 4,
+          "total": 29
+        },
+        "priority": "P2",
+        "last_updated": "2026-05-10"
+      },
+      "evidence_count": 1,
+      "corporates": [
+        "Siemens AG"
+      ],
+      "sectors_served": [
+        "Industrial"
+      ],
+      "product_categories": [
+        "payables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 1× + ERP signals + multibank approach + API/digital — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 6,
+            "reasoning": "1 mention(s) côté payables + cross-border + ESG-linked "
+          },
+          "receivables_finance": {
+            "score": 0,
+            "reasoning": "0 mention(s) côté receivables "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 12
+      }
+    },
+    {
+      "bank": {
+        "id": "citi-handlowy-pl",
+        "name": "Citi Handlowy",
+        "country": "PL",
+        "country_name": "Pologne",
+        "country_risk": {
+          "allianz_grade": "A2",
+          "allianz_level": 2,
+          "trade_implication": "MIXED"
+        },
+        "tf_signals": [
+          {
+            "source": "Bank press release",
+            "date": "2025-05-27",
+            "verbatim": "Nous avons une position forte dans le SCF — pilier stratégique post-cession retail"
+          },
+          {
+            "source": "TFG",
+            "verbatim": "Receivables finance + trade finance + factoring confirmés"
+          }
+        ],
+        "scf_level": "INTERMEDIAIRE",
+        "scf_evidence": [
+          {
+            "source": "PR 2025-05-27",
+            "verbatim": "SCF identifié comme l'un des 4 piliers de croissance"
+          }
+        ],
+        "competitor_platform": null,
+        "triggers": [
+          {
+            "type": "CEO_STATEMENT",
+            "date": "2025-05-27",
+            "source": "Bank press release",
+            "description": "Pivot stratégique — recentrage corporate avec SCF comme pilier 2025"
+          }
+        ],
+        "interlocutors": [],
+        "financials": {
+          "balance_sheet_eur": 18000000000,
+          "year": 2024
+        },
+        "trade_flows_in": [
+          {
+            "partner": "Germany + EU",
+            "exports_usd": 381900000000,
+            "year": 2023
+          }
+        ],
+        "notes": "Pivot stratégique récent. Capital backing Citi global réseau. Décision potentiellement Varsovie ou New York.",
+        "score": {
+          "tf_strength": 4,
+          "scf_gap": 4,
+          "trigger_freshness": 4,
+          "country_flow": 7,
+          "interlocutor_access": 0,
+          "competitive_vacuum": 5,
+          "regulatory_tailwind": 4,
+          "total": 28
+        },
+        "priority": "P2",
+        "last_updated": "2026-05-10"
+      },
+      "evidence_count": 2,
+      "corporates": [
+        "Siemens AG",
+        "Stellantis"
+      ],
+      "sectors_served": [
+        "Industrial",
+        "Automotive"
+      ],
+      "product_categories": [
+        "payables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 2× + ERP signals + multibank approach + API/digital — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 6,
+            "reasoning": "2 mention(s) côté payables + cross-border + ESG-linked "
+          },
+          "receivables_finance": {
+            "score": 0,
+            "reasoning": "0 mention(s) côté receivables "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 12
+      }
     },
     {
       "bank": {
@@ -320,79 +596,33 @@
       ],
       "sectors_served": [
         "Automotive"
-      ]
-    },
-    {
-      "bank": {
-        "id": "komercni-banka-cz",
-        "name": "Komerční banka",
-        "country": "CZ",
-        "country_name": "Tchéquie",
-        "country_risk": {
-          "allianz_grade": "A2",
-          "allianz_level": 2,
-          "trade_implication": "MIXED"
-        },
-        "tf_signals": [
-          {
-            "source": "GTR",
-            "date": "2025-02-05",
-            "verbatim": "Orbian acquires Czech supply chain finance fintech Roger"
-          },
-          {
-            "source": "Site corporate",
-            "verbatim": "Filiale Factoring KB proposant page Supply Chain Finance"
-          }
-        ],
-        "scf_level": "INTERMEDIAIRE",
-        "scf_evidence": [
-          {
-            "source": "GTR 2025-02-05",
-            "verbatim": "KB détenait 25% dans Roger via KB SmartSolutions, Orbian a acquis Roger en février 2025"
-          }
-        ],
-        "competitor_platform": null,
-        "triggers": [
-          {
-            "type": "FINTECH_PARTNERSHIP_END",
-            "date": "2025-02-05",
-            "source": "GTR",
-            "description": "Orbian acquires Roger — KB perd son partenaire fintech SCF, vacance technologique"
-          }
-        ],
-        "interlocutors": [],
-        "financials": {
-          "balance_sheet_eur": 60000000000,
-          "year": 2024
-        },
-        "trade_flows_in": [
-          {
-            "partner": "Germany",
-            "exports_usd": 241700000000,
-            "year": 2022
-          }
-        ],
-        "notes": "Vacance technologique post-Roger. Cible idéale fenêtre 6 mois.",
-        "score": {
-          "tf_strength": 5,
-          "scf_gap": 4,
-          "trigger_freshness": 2,
-          "country_flow": 7,
-          "interlocutor_access": 0,
-          "competitive_vacuum": 5,
-          "regulatory_tailwind": 4,
-          "total": 27
-        },
-        "priority": "P2",
-        "last_updated": "2026-05-10"
-      },
-      "evidence_count": 1,
-      "corporates": [
-        "Stellantis"
       ],
-      "sectors_served": [
-        "Automotive"
-      ]
+      "product_categories": [
+        "payables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 1× + ERP signals + multibank approach — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 5,
+            "reasoning": "1 mention(s) côté payables + cross-border "
+          },
+          "receivables_finance": {
+            "score": 0,
+            "reasoning": "0 mention(s) côté receivables "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 11
+      }
     },
     {
       "bank": {
@@ -465,79 +695,541 @@
       ],
       "sectors_served": [
         "Automotive"
+      ],
+      "product_categories": [
+        "payables"
+      ],
+      "credable": {
+        "angles": {
+          "saas_licence": {
+            "score": 6,
+            "reasoning": "Banque citée 1× + ERP signals + multibank approach — pas de concurrent"
+          },
+          "classic_scf": {
+            "score": 5,
+            "reasoning": "1 mention(s) côté payables + cross-border "
+          },
+          "receivables_finance": {
+            "score": 0,
+            "reasoning": "0 mention(s) côté receivables "
+          },
+          "flash_title_inventory": {
+            "score": 0,
+            "reasoning": "0 mention(s) documentary + 0 mention(s) inventory "
+          }
+        },
+        "recommended_primary_angle": "saas_licence",
+        "recommended_primary_score": 6,
+        "total_credable_fit": 11
+      }
+    }
+  ],
+  "full_bank_map": {
+    "hsbc": {
+      "canonical_name": "HSBC",
+      "inferred_country": "UK",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "lead",
+          "product_category": "documentary",
+          "context": "HSBC acts as lead bank for our trade finance facilities including letters of credit",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
+        }
       ]
     },
-    {
-      "bank": {
-        "id": "citi-handlowy-pl",
-        "name": "Citi Handlowy",
-        "country": "PL",
-        "country_name": "Pologne",
-        "country_risk": {
-          "allianz_grade": "A2",
-          "allianz_level": 2,
-          "trade_implication": "MIXED"
+    "standardchartered": {
+      "canonical_name": "Standard Chartered",
+      "inferred_country": "UK",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "issuing_bank",
+          "product_category": "documentary",
+          "context": "Standard Chartered issues letters of credit and bank guarantees for our Asian trading operations",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
+        }
+      ]
+    },
+    "ing": {
+      "canonical_name": "ING",
+      "inferred_country": "NL",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "participant",
+          "product_category": "documentary",
+          "context": "ING participates in our European structured trade finance arrangements",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
+        }
+      ]
+    },
+    "socitgnrale": {
+      "canonical_name": "Société Générale",
+      "inferred_country": "FR",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "lead",
+          "product_category": "inventory",
+          "context": "Société Générale leads our raw material and crude inventory financing arrangements",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
+        }
+      ]
+    },
+    "bnpparibas": {
+      "canonical_name": "BNP Paribas",
+      "inferred_country": "FR",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "participant",
+          "product_category": "inventory",
+          "context": "BNP Paribas participates in inventory financing for refined products",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
         },
-        "tf_signals": [
-          {
-            "source": "Bank press release",
-            "date": "2025-05-27",
-            "verbatim": "Nous avons une position forte dans le SCF — pilier stratégique post-cession retail"
-          },
-          {
-            "source": "TFG",
-            "verbatim": "Receivables finance + trade finance + factoring confirmés"
-          }
-        ],
-        "scf_level": "INTERMEDIAIRE",
-        "scf_evidence": [
-          {
-            "source": "PR 2025-05-27",
-            "verbatim": "SCF identifié comme l'un des 4 piliers de croissance"
-          }
-        ],
-        "competitor_platform": null,
-        "triggers": [
-          {
-            "type": "CEO_STATEMENT",
-            "date": "2025-05-27",
-            "source": "Bank press release",
-            "description": "Pivot stratégique — recentrage corporate avec SCF comme pilier 2025"
-          }
-        ],
-        "interlocutors": [],
-        "financials": {
-          "balance_sheet_eur": 18000000000,
-          "year": 2024
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "lead",
+          "product_category": "payables",
+          "context": "BNP Paribas serves as lead bank for our European supply chain finance program",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
         },
-        "trade_flows_in": [
-          {
-            "partner": "Germany + EU",
-            "exports_usd": 381900000000,
-            "year": 2023
-          }
-        ],
-        "notes": "Pivot stratégique récent. Capital backing Citi global réseau. Décision potentiellement Varsovie ou New York.",
-        "score": {
-          "tf_strength": 4,
-          "scf_gap": 4,
-          "trigger_freshness": 4,
-          "country_flow": 7,
-          "interlocutor_access": 0,
-          "competitive_vacuum": 5,
-          "regulatory_tailwind": 4,
-          "total": 28
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "issuing_bank",
+          "product_category": "documentary",
+          "context": "Letters of credit issued by BNP Paribas for our raw material imports",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
+      ]
+    },
+    "crditagricole": {
+      "canonical_name": "Crédit Agricole",
+      "inferred_country": "FR",
+      "evidence": [
+        {
+          "corporate": "Shell plc",
+          "corporate_country": "UK",
+          "corporate_sector": "Energy",
+          "role": "issuing_bank",
+          "product_category": "documentary",
+          "context": "Crédit Agricole issues bank guarantees and SBLCs for our African and Middle East trading",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": false,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": false
+        }
+      ]
+    },
+    "deutsche": {
+      "canonical_name": "Deutsche Bank",
+      "inferred_country": "DE",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "lead",
+          "product_category": "payables",
+          "context": "Deutsche Bank serves as lead bank for our German supplier finance program",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "commerzbank": {
+      "canonical_name": "Commerzbank",
+      "inferred_country": "DE",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "participant",
+          "product_category": "payables",
+          "context": "Commerzbank participates in our German and CEE supplier finance program",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "bayernlb": {
+      "canonical_name": "BayernLB",
+      "inferred_country": "DE",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "participant",
+          "product_category": "payables",
+          "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "helaba": {
+      "canonical_name": "Helaba",
+      "inferred_country": "DE",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "participant",
+          "product_category": "payables",
+          "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "komernbanka": {
+      "canonical_name": "Komerční banka",
+      "inferred_country": "CZ",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
         },
-        "priority": "P2",
-        "last_updated": "2026-05-10"
-      },
-      "evidence_count": 1,
-      "corporates": [
-        "Stellantis"
-      ],
-      "sectors_served": [
-        "Automotive"
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "factor",
+          "product_category": "receivables",
+          "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
+      ]
+    },
+    "citihandlowy": {
+      "canonical_name": "Citi Handlowy",
+      "inferred_country": "PL",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "Citi Handlowy serves as local partner for our Polish suppliers",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        },
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "participant",
+          "product_category": "payables",
+          "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
+      ]
+    },
+    "otp": {
+      "canonical_name": "OTP Bank",
+      "inferred_country": "HU",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "OTP Bank participates in our Hungarian supplier finance arrangement",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "erste": {
+      "canonical_name": "Erste Group",
+      "inferred_country": "AT",
+      "evidence": [
+        {
+          "corporate": "Siemens AG",
+          "corporate_country": "DE",
+          "corporate_sector": "Industrial",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "Erste Group covers our Austrian and CEE supplier finance footprint",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP",
+            "SAP Ariba"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": true,
+          "flag_api": true
+        }
+      ]
+    },
+    "bper": {
+      "canonical_name": "BPER Banca",
+      "inferred_country": "IT",
+      "evidence": [
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        },
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "factor",
+          "product_category": "receivables",
+          "context": "BPER Banca acts as factor for selected Italian receivables under our without-recourse factoring program",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
+      ]
+    },
+    "transilvania": {
+      "canonical_name": "Banca Transilvania",
+      "inferred_country": "RO",
+      "evidence": [
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "local_partner",
+          "product_category": "payables",
+          "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
+      ]
+    },
+    "millennium": {
+      "canonical_name": "Bank Millennium",
+      "inferred_country": "PL",
+      "evidence": [
+        {
+          "corporate": "Stellantis",
+          "corporate_country": "NL",
+          "corporate_sector": "Automotive",
+          "role": "participant",
+          "product_category": "payables",
+          "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement",
+          "platform": null,
+          "platform_is_major_competitor": false,
+          "erp_systems": [
+            "SAP"
+          ],
+          "flag_multibank": true,
+          "flag_white_label": false,
+          "flag_cross_border": true,
+          "flag_esg": false,
+          "flag_api": false
+        }
       ]
     }
-  ]
+  }
 }

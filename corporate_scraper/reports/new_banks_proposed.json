@@ -1,8 +1,66 @@
 [
   {
-    "canonical_name": "BNP Paribas",
+    "canonical_name": "HSBC",
+    "inferred_country": "UK",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 4,
+    "example_context": "HSBC acts as lead bank for our trade finance facilities including letters of credit"
+  },
+  {
+    "canonical_name": "Standard Chartered",
+    "inferred_country": "UK",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 4,
+    "example_context": "Standard Chartered issues letters of credit and bank guarantees for our Asian trading operations"
+  },
+  {
+    "canonical_name": "ING",
+    "inferred_country": "NL",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 4,
+    "example_context": "ING participates in our European structured trade finance arrangements"
+  },
+  {
+    "canonical_name": "Société Générale",
     "inferred_country": "FR",
     "evidence_count": 1,
-    "example_context": "BNP Paribas serves as lead bank for our European supply chain finance program"
+    "recommended_angle": "saas_licence",
+    "angle_score": 4,
+    "example_context": "Société Générale leads our raw material and crude inventory financing arrangements"
+  },
+  {
+    "canonical_name": "BNP Paribas",
+    "inferred_country": "FR",
+    "evidence_count": 3,
+    "recommended_angle": "flash_title_inventory",
+    "angle_score": 9,
+    "example_context": "BNP Paribas participates in inventory financing for refined products"
+  },
+  {
+    "canonical_name": "Crédit Agricole",
+    "inferred_country": "FR",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 4,
+    "example_context": "Crédit Agricole issues bank guarantees and SBLCs for our African and Middle East trading"
+  },
+  {
+    "canonical_name": "Deutsche Bank",
+    "inferred_country": "DE",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 6,
+    "example_context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+  },
+  {
+    "canonical_name": "Commerzbank",
+    "inferred_country": "DE",
+    "evidence_count": 1,
+    "recommended_angle": "saas_licence",
+    "angle_score": 6,
+    "example_context": "Commerzbank participates in our German and CEE supplier finance program"
   }
 ]

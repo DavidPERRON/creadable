@@ -37,36 +37,70 @@ const MODEL = process.env.DEEPINFRA_MODEL || 'deepseek-ai/DeepSeek-V3';
 const API_KEY = process.env.DEEPINFRA_API_KEY;
 
 // ─────────────────────────────────────────────────────────────────
-// Pre-filter: extract only SCF-relevant pages from the txt
+// Pre-filter: extract working-capital / trade / inventory / receivables
+// chunks from the txt. Broad multilingual coverage.
 // ─────────────────────────────────────────────────────────────────
 const SCF_KEYWORDS = [
-  // Core SCF
+  // PAYABLES SIDE
   'reverse factoring', 'reverse-factoring', 'confirming', 'dynamic discounting',
   'supply chain finance', 'supply-chain finance', 'supplier finance',
   'supplier financing', 'trade payables', 'early payment program',
-  'payable financing', 'payables finance',
-  // Receivables
+  'payable financing', 'payables finance', 'payables financing',
+
+  // RECEIVABLES SIDE
   'factoring', 'invoice discounting', 'receivables finance', 'receivables securit',
-  'vendor finance', 'vendor financing', 'sale of receivables',
-  // Channel
-  'distributor finance', 'distributor financing', 'pre-shipment',
-  'purchase order finance', 'channel finance',
-  // Inventory
-  'inventory finance', 'inventory financing', 'floor plan',
-  // ESG
+  'vendor finance', 'vendor financing', 'sale of receivables', 'sold receivables',
+  'transferred receivables', 'derecognition of receivables',
+  'cession of receivables', 'cession de créances', 'cession de creances',
+
+  // DOCUMENTARY TRADE
+  'letter of credit', 'letters of credit', 'documentary credit', 'documentary collection',
+  'trade finance', 'export finance', 'forfaiting', 'forfeiting',
+  'bank guarantee', 'standby letter of credit', 'sblc',
+  'structured trade', 'commodity trade finance',
+
+  // CHANNEL / PRE-SHIPMENT
+  'distributor finance', 'distributor financing', 'pre-shipment', 'preshipment',
+  'purchase order finance', 'channel finance', 'channel financing',
+
+  // INVENTORY / TITLE
+  'inventory finance', 'inventory financing', 'floor plan', 'consignment',
+  'title transfer', 'tradeco', 'spv', 'special purpose vehicle',
+  'raw material financing', 'stock financing',
+
+  // GENERIC WORKING CAPITAL
+  'working capital facilit', 'working capital line', 'revolving credit',
+  'committed credit facilit', 'syndicated facilit', 'overdraft',
+
+  // ERP / TECH (signals readiness)
+  'sap ariba', 'oracle ', 'coupa', 'kyriba', 'erp integration',
+  'treasury management system',
+
+  // PLATFORM / VENDOR (signals competitor presence)
+  'demica', 'orbian', 'taulia', 'primerevenue', 'tradeshift', 'c2fo',
+  'liquidx', 'greensill', 'komgo', 'we.trade', 'marco polo', 'contour',
+  'plusadvance', 'qualco', 'fintra',
+
+  // ESG-LINKED
   'sustainability-linked supplier', 'sustainable supply chain finance',
-  'esg-linked', 'green supplier',
-  // Trade finance
-  'letter of credit', 'documentary credit', 'trade finance',
-  'export finance', 'forfaiting', 'forfeiting',
-  // Bank relationships
+  'esg-linked', 'green supplier', 'green trade',
+
+  // TRADE CREDIT INSURANCE (proxy for active TF)
+  'coface', 'allianz trade', 'atradius', 'euler hermes', 'credendo',
+  'trade credit insur',
+
+  // BANK RELATIONSHIPS
   'syndicat', 'lead bank', 'relationship bank', 'core banks',
-  // German / French / Italian / Spanish / Dutch terms
-  'lieferantenfinanzierung', 'forderungsverkauf',
-  'affacturage', 'cession de créances', 'reverse factoring',
-  'cessione dei crediti', 'cessione del credito', 'reverse factoring',
-  'cesión de créditos', 'cesión de cuentas',
+  'agent bank', 'security agent', 'mandated lead arranger',
+
+  // MULTI-LANGUAGE (DE, FR, IT, ES, NL, PT, PL, CZ)
+  'lieferantenfinanzierung', 'forderungsverkauf', 'forderungen verkauft',
+  'akkreditiv', 'avalkredit', 'lieferkettenfinanzierung',
+  'affacturage', 'créances cédées', 'creances cedees', 'crédits documentaires',
+  'cessione dei crediti', 'cessione del credito', 'finanziamento dei crediti',
+  'cesión de créditos', 'cesión de cuentas', 'descuento de facturas',
   'leverancierskrediet', 'verkoop van vorderingen',
+  'venda de creditos', 'cessao de creditos',
 ];
 
 function extractRelevantChunks(fullText, maxChars = 60000) {

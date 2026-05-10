@@ -1,0 +1,108 @@
+{
+  "corporate_id": "siemens",
+  "corporate_name": "Siemens AG",
+  "country": "DE",
+  "sector": "Industrial",
+  "revenue_eur_bn": 75,
+  "extracted_at": "2026-05-10",
+  "year_of_report": 2024,
+  "_note": "MOCK — schema v2. Demonstrates SaaS-friendly profile with ERP modernization.",
+
+  "payables_programs": {
+    "reverse_factoring": { "mentioned": true, "verbatim": "Reverse factoring program covering EUR 1.2 bn of trade payables, operated through Siemens Financial Services in cooperation with relationship banks", "volume_eur": 1200000000 },
+    "confirming": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "dynamic_discounting": { "mentioned": true, "verbatim": "Dynamic discounting program offered to selected suppliers via our digital procurement platform", "volume_eur": null },
+    "supplier_finance_program": { "mentioned": true, "verbatim": "Supplier finance program integrated with our SAP Ariba procurement platform", "volume_eur": null },
+    "early_payment_program": { "mentioned": true, "verbatim": "Early payment program available to all qualified suppliers globally", "volume_eur": null },
+    "trade_payables_financing": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "receivables_programs": {
+    "factoring_with_recourse": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "factoring_without_recourse": { "mentioned": true, "verbatim": "Without-recourse factoring of trade receivables in select countries", "volume_eur": null },
+    "invoice_discounting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "receivables_securitization": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "sale_of_receivables": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "vendor_finance_program": { "mentioned": true, "verbatim": "Vendor financing program through Siemens Financial Services", "volume_eur": null }
+  },
+
+  "documentary_trade": {
+    "letters_of_credit": { "mentioned": true, "verbatim": "Letters of credit issued by relationship banks for export deliveries", "volume_eur": null },
+    "bank_guarantees": { "mentioned": true, "verbatim": "Bank guarantees for performance and advance payments on long-cycle business", "volume_eur": null },
+    "standby_letters_of_credit": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "forfaiting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "structured_trade_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "pre_shipment_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "purchase_order_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "export_finance": { "mentioned": true, "verbatim": "Export finance arrangements with Euler Hermes-backed coverage", "volume_eur": null }
+  },
+
+  "title_inventory_arrangements": {
+    "inventory_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "floor_planning": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "consignment_stock": { "mentioned": false, "verbatim": null },
+    "title_transfer_arrangement": { "mentioned": false, "verbatim": null },
+    "raw_material_financing": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "distributor_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "channel_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "tradeco_or_spv_structure": { "mentioned": false, "verbatim": null, "name": null }
+  },
+
+  "working_capital_facilities": {
+    "bank_facilities_for_wc": { "mentioned": true, "verbatim": "Committed credit lines with international banking partners", "volume_eur": null },
+    "revolving_credit_facility": { "mentioned": true, "verbatim": "EUR 4.0 billion syndicated revolving credit facility", "volume_eur": 4000000000 },
+    "overdraft_facility": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "tech_signals": {
+    "erp_systems_mentioned": ["SAP", "SAP Ariba"],
+    "multi_bank_platform": { "mentioned": true, "verbatim": "Multi-bank approach for our supplier finance and working capital programs" },
+    "white_label_program": { "mentioned": false, "verbatim": null },
+    "cross_border_program": { "mentioned": true, "verbatim": "Global supplier finance program covering 90,000 tier-1 suppliers across 60+ countries" },
+    "esg_or_sustainability_linked": { "mentioned": true, "verbatim": "Sustainability-linked supplier finance pilot launched in 2024" },
+    "api_or_digital_integration": { "mentioned": true, "verbatim": "API-based integration between our procurement systems and bank financing partners" }
+  },
+
+  "platform_provider_mentioned": {
+    "found": false,
+    "name": null,
+    "verbatim": null
+  },
+
+  "trade_credit_insurance_providers": [
+    { "name": "Euler Hermes", "verbatim": "Export finance arrangements with Euler Hermes-backed coverage" }
+  ],
+
+  "banks_in_working_capital_context": [
+    { "bank_name": "Deutsche Bank", "country_if_specified": "DE", "role": "lead", "product_category": "payables", "context": "Deutsche Bank serves as lead bank for our German supplier finance program" },
+    { "bank_name": "Commerzbank", "country_if_specified": "DE", "role": "participant", "product_category": "payables", "context": "Commerzbank participates in our German and CEE supplier finance program" },
+    { "bank_name": "BayernLB", "country_if_specified": "DE", "role": "participant", "product_category": "payables", "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers" },
+    { "bank_name": "Helaba", "country_if_specified": "DE", "role": "participant", "product_category": "payables", "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers" },
+    { "bank_name": "Komerční banka", "country_if_specified": "CZ", "role": "local_partner", "product_category": "payables", "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program" },
+    { "bank_name": "Citi Handlowy", "country_if_specified": "PL", "role": "local_partner", "product_category": "payables", "context": "Citi Handlowy serves as local partner for our Polish suppliers" },
+    { "bank_name": "OTP Bank", "country_if_specified": "HU", "role": "local_partner", "product_category": "payables", "context": "OTP Bank participates in our Hungarian supplier finance arrangement" },
+    { "bank_name": "Erste Group", "country_if_specified": "AT", "role": "local_partner", "product_category": "payables", "context": "Erste Group covers our Austrian and CEE supplier finance footprint" }
+  ],
+
+  "geographic_footprint": {
+    "supplier_countries_mentioned": ["DE", "AT", "CZ", "PL", "HU", "IT", "FR", "ES", "RO", "SK"],
+    "manufacturing_countries_mentioned": ["DE", "CZ", "AT", "FR", "ES"],
+    "verbatim_corridors": "Tier-1 suppliers concentrated in Germany, Austria, Czech Republic, Poland, Hungary, Italy, France, Spain, Romania, Slovakia"
+  },
+
+  "total_volumes": {
+    "total_payables_finance_eur": 1200000000,
+    "total_receivables_finance_eur": null,
+    "total_documentary_trade_eur": null,
+    "total_inventory_finance_eur": null,
+    "year_of_volume": 2024
+  },
+
+  "key_quotes_for_review": [
+    "Reverse factoring program covering EUR 1.2 bn of trade payables",
+    "Supplier finance program integrated with our SAP Ariba procurement platform",
+    "Multi-bank approach for our supplier finance and working capital programs",
+    "Sustainability-linked supplier finance pilot launched in 2024",
+    "API-based integration between our procurement systems and bank financing partners"
+  ]
+}

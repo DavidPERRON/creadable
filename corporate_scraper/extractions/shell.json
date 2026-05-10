@@ -1,0 +1,104 @@
+{
+  "corporate_id": "shell",
+  "corporate_name": "Shell plc",
+  "country": "UK",
+  "sector": "Energy",
+  "revenue_eur_bn": 280,
+  "extracted_at": "2026-05-10",
+  "year_of_report": 2024,
+  "_note": "MOCK — schema v2. Demonstrates Flash-title / documentary-heavy profile.",
+
+  "payables_programs": {
+    "reverse_factoring": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "confirming": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "dynamic_discounting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "supplier_finance_program": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "early_payment_program": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "trade_payables_financing": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "receivables_programs": {
+    "factoring_with_recourse": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "factoring_without_recourse": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "invoice_discounting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "receivables_securitization": { "mentioned": true, "verbatim": "Trade receivables securitization programs in select markets", "volume_eur": null },
+    "sale_of_receivables": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "vendor_finance_program": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "documentary_trade": {
+    "letters_of_credit": { "mentioned": true, "verbatim": "Letters of credit form a significant part of our trade activity, particularly in our trading and downstream operations", "volume_eur": null },
+    "bank_guarantees": { "mentioned": true, "verbatim": "Bank guarantees from international banks supporting our trading activities", "volume_eur": null },
+    "standby_letters_of_credit": { "mentioned": true, "verbatim": "Standby letters of credit issued by relationship banks", "volume_eur": null },
+    "forfaiting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "structured_trade_finance": { "mentioned": true, "verbatim": "Structured trade finance arrangements supporting commodity trading", "volume_eur": null },
+    "pre_shipment_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "purchase_order_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "export_finance": { "mentioned": true, "verbatim": "Export finance arrangements with ECAs", "volume_eur": null }
+  },
+
+  "title_inventory_arrangements": {
+    "inventory_finance": { "mentioned": true, "verbatim": "Inventory financing arrangements for crude and refined products in transit", "volume_eur": null },
+    "floor_planning": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "consignment_stock": { "mentioned": true, "verbatim": "Consignment arrangements with selected distributors and aviation customers" },
+    "title_transfer_arrangement": { "mentioned": true, "verbatim": "Title transfer arrangements in our crude trading book including pre-paid forward sales" },
+    "raw_material_financing": { "mentioned": true, "verbatim": "Raw material financing for refining feedstock", "volume_eur": null },
+    "distributor_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "channel_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "tradeco_or_spv_structure": { "mentioned": true, "verbatim": "Trading subsidiaries and structured entities for cross-border crude movements", "name": null }
+  },
+
+  "working_capital_facilities": {
+    "bank_facilities_for_wc": { "mentioned": true, "verbatim": "Committed credit facilities providing back-up liquidity", "volume_eur": null },
+    "revolving_credit_facility": { "mentioned": true, "verbatim": "USD 8 billion revolving credit facility", "volume_eur": 7000000000 },
+    "overdraft_facility": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "tech_signals": {
+    "erp_systems_mentioned": ["SAP"],
+    "multi_bank_platform": { "mentioned": false, "verbatim": null },
+    "white_label_program": { "mentioned": false, "verbatim": null },
+    "cross_border_program": { "mentioned": true, "verbatim": "Cross-border trade documentation across multiple jurisdictions" },
+    "esg_or_sustainability_linked": { "mentioned": true, "verbatim": "Sustainability-linked credit facility tied to greenhouse gas emissions targets" },
+    "api_or_digital_integration": { "mentioned": false, "verbatim": null }
+  },
+
+  "platform_provider_mentioned": {
+    "found": false,
+    "name": null,
+    "verbatim": null
+  },
+
+  "trade_credit_insurance_providers": [],
+
+  "banks_in_working_capital_context": [
+    { "bank_name": "HSBC", "country_if_specified": "UK", "role": "lead", "product_category": "documentary", "context": "HSBC acts as lead bank for our trade finance facilities including letters of credit" },
+    { "bank_name": "Standard Chartered", "country_if_specified": "UK", "role": "issuing_bank", "product_category": "documentary", "context": "Standard Chartered issues letters of credit and bank guarantees for our Asian trading operations" },
+    { "bank_name": "ING", "country_if_specified": "NL", "role": "participant", "product_category": "documentary", "context": "ING participates in our European structured trade finance arrangements" },
+    { "bank_name": "Société Générale", "country_if_specified": "FR", "role": "lead", "product_category": "inventory", "context": "Société Générale leads our raw material and crude inventory financing arrangements" },
+    { "bank_name": "BNP Paribas", "country_if_specified": "FR", "role": "participant", "product_category": "inventory", "context": "BNP Paribas participates in inventory financing for refined products" },
+    { "bank_name": "Crédit Agricole", "country_if_specified": "FR", "role": "issuing_bank", "product_category": "documentary", "context": "Crédit Agricole issues bank guarantees and SBLCs for our African and Middle East trading" }
+  ],
+
+  "geographic_footprint": {
+    "supplier_countries_mentioned": ["NG", "SA", "QA", "AE", "OM", "RU", "KZ"],
+    "manufacturing_countries_mentioned": ["NL", "DE", "UK", "SG", "US"],
+    "verbatim_corridors": "Cross-border crude flows from West Africa, Middle East, Russia/CIS to refining hubs in Europe and Asia"
+  },
+
+  "total_volumes": {
+    "total_payables_finance_eur": null,
+    "total_receivables_finance_eur": null,
+    "total_documentary_trade_eur": null,
+    "total_inventory_finance_eur": null,
+    "year_of_volume": 2024
+  },
+
+  "key_quotes_for_review": [
+    "Letters of credit form a significant part of our trade activity",
+    "Inventory financing arrangements for crude and refined products in transit",
+    "Title transfer arrangements in our crude trading book including pre-paid forward sales",
+    "Structured trade finance arrangements supporting commodity trading",
+    "Trading subsidiaries and structured entities for cross-border crude movements"
+  ]
+}
