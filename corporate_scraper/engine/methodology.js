@@ -69,7 +69,7 @@ const md = `# Méthodologie & Sources — ${TODAY}
 
 ## TL;DR
 
-- **Modèle** : DeepSeek-V3 via DeepInfra (open-source LLM, hébergement neutre)
+- **Modèle** : Llama-3.3-70B via DeepInfra (open-source LLM, hébergement neutre)
 - **Sources fournies au modèle** : **uniquement des extraits de rapports annuels** téléchargés depuis les sites Investor Relations des corporates européens listés
 - **Sources NON fournies au modèle** : web, presse, training data — le prompt **interdit** au modèle d'utiliser sa connaissance générale
 - **Garde-fou** : chaque "fait" extrait doit être accompagné d'un \`verbatim\` (citation exacte du PDF)
@@ -184,7 +184,7 @@ L'écosystème complet utilise plusieurs sources, mais **aucune** n'est fournie 
 Tout est reproductible à 100% :
 - Catalogue figé : \`catalog.json\` (commit Git)
 - Prompt figé : \`engine/extraction_schema.js\` (commit Git)
-- Modèle figé : version par défaut DeepSeek-V3 sur DeepInfra (peut être pinned via \`DEEPINFRA_MODEL\`)
+- Modèle figé : version par défaut Llama-3.3-70B sur DeepInfra (peut être pinned via \`DEEPINFRA_MODEL\`)
 - Température : 0.0 (déterministe)
 - Sortie figée : \`extractions/<corp>.json\` (commit Git)
 

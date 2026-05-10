@@ -4,7 +4,7 @@
  *
  * For each corporate with an extracted text file:
  *   1) Locate SCF-relevant chunks (regex pre-filter to save tokens)
- *   2) Send to DeepInfra (DeepSeek-V3) with strict JSON schema prompt
+ *   2) Send to DeepInfra (Llama-3.3-70B) with strict JSON schema prompt
  *   3) Validate + persist to extractions/<id>.json
  *
  * Idempotent: skips corporates already extracted.
@@ -18,7 +18,7 @@
  *
  * Cost estimate:
  *   ~25k tokens per corporate (filtered chunks ~15k tokens + ~10k output)
- *   DeepSeek-V3 via DeepInfra: ~$0.0001/1k tokens input, ~$0.0002/1k output
+ *   Llama-3.3-70B via DeepInfra: ~$0.0001/1k tokens input, ~$0.0002/1k output
  *   159 corporates × $0.005 ≈ $0.80 for the full run
  */
 
