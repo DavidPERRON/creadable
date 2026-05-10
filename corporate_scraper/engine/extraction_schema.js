@@ -202,24 +202,28 @@ const EMPTY_EXTRACTION = {
 // Major established platform competitors. If one of these is mentioned, the
 // bank using it is NOT a sweet-spot for CredAble white-label.
 //
-// CRITICAL: JPMorgan and Taulia (SAP) became dominant post-Greensill
-// replacements 2024-2025. CredAble must win orphans BEFORE these incumbents
-// enter. Detection of "JPM SCF" / "Taulia" / "SAP Ariba" in a bank's setup
-// signals a closing window or already-lost prospect.
+// VERIFIED from actual vendor websites (May 2026):
+// - Taulia (SAP): direct-to-corporate SaaS — bank loses program ownership. STILL competitor.
+// - FIS/Demica: white-label platform for banks — direct CredAble competitor.
+// - Kyriba: white-label for banks (working capital module) — confirmed on website.
+// - JPMorgan: NOT a SCF platform/white-label vendor (corrected per David Perron, 2026-05-10).
 const MAJOR_COMPETITOR_PLATFORMS = [
-  // Top tier — post-Greensill dominants (2024-2025)
-  'jpmorgan scf', 'jp morgan scf', 'jpm scf', 'taulia',
-  // Established
-  'demica', 'orbian', 'kyriba', 'primerevenue', 'c2fo', 'tradeshift',
-  'liquidx', 'greensill', 'cflox', 'kratos', 'fundthrough',
-  // Trade docs (mostly defunct but capture mentions)
+  // Direct-to-corporate platforms (bank loses program ownership)
+  'taulia', 'sap ariba pay', 'ariba supplier finance',
+  // White-label SCF platforms for banks (direct CredAble competitors)
+  'demica', 'fis supply chain', 'kyriba', 'trade ledger',
+  // Marketplace models (bank is funder, not program owner)
+  'orbian', 'primerevenue', 'c2fo', 'liquidx',
+  // AP/invoicing platforms with embedded finance
+  'tradeshift', 'semfi',
+  // Trade docs / blockchain (mostly defunct but capture historical mentions)
   'komgo', 'we.trade', 'wetrade', 'marco polo', 'contour',
-  // Regional incumbents (already entrenched)
-  'plusadvance', 'qualco', 'roger global', 'fintra',
-  // Captives / bank-owned
+  // Historical (collapsed — trigger pitch if mentioned)
+  'greensill', 'fundthrough',
+  // Regional incumbents
+  'plusadvance', 'qualco', 'roger global', 'fintra', 'cflox', 'kratos',
+  // Captives / bank-owned factoring
   'banca ifis', 'ifis4business', 'sudfactoring', 'südfactoring',
-  // SAP-integrated (Taulia parent post-2022)
-  'sap ariba pay', 'ariba supplier finance',
 ];
 
 module.exports = {

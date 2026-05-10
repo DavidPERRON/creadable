@@ -13,17 +13,17 @@
       "severity": "critical",
       "gap_closure_timeline_months": 42,
       "replaced_by": [
-        { "replacer": "JPMorgan", "replacement_year": 2024, "approach": "Direct SCF program rollout to Greensill orphans" },
-        { "replacer": "Taulia (SAP)", "replacement_year": 2024, "approach": "Aggressive expansion post-SAP acquisition (Mar 2022) into post-Greensill space" }
+        { "replacer": "Taulia (SAP)", "replacement_year": 2024, "approach": "Aggressive expansion post-SAP acquisition (Mar 2022) into post-Greensill corporate SCF space — sold DIRECTLY to corporates, banks relegated to funder role" }
       ],
+      "_replaced_by_correction": "JPMorgan removed: per David Perron (2026-05-10), JPMorgan is not currently active in the SCF platform/white-label business. They may provide bespoke WC solutions to own corporate clients but are NOT a platform vendor replacing Greensill.",
       "affected_banks": [
         { "bank_name": "Credit Suisse", "country": "CH", "exposure": "USD 10bn supply chain finance funds", "status": "exited SCF, then UBS-acquired 2023 — not addressable" },
         { "bank_name": "GAM Holding", "country": "CH", "exposure": "Greensill-related funds frozen", "status": "still recovering, off-target" }
       ],
-      "verbatim_evidence": "Greensill Capital filed for insolvency on 8 March 2021, leaving Credit Suisse with USD 10bn frozen in supply chain finance funds. Most orphaned corporate accounts were eventually re-served by JPMorgan and Taulia (post-SAP acquisition) over 2024-2025 — a 3-4 year gap closure timeline.",
-      "source": "FT (8/3/2021), Bloomberg, multiple press; Taulia/SAP acquisition (3/2022); JPM expansion 2024-2025",
-      "credable_implication": "★★★ POWERFUL PITCH ARGUMENT: 'When a fintech fails, banks live with the gap for 3-4 years (2021 Greensill → 2024-2025 JPM/Taulia replacement). Don't let your bank wait 3 years for a vague successor. CredAble deploys in 3-6 months.' Use this as the urgency lever for any orphan / fintech-failure-adjacent prospect (notably Roger orphans, we.trade orphans).",
-      "pitch_argument": "Le gap d'attente après faillite fintech est historiquement de 3-4 ans (Greensill 2021 → JPM/Taulia 2024-25). CredAble offre une réponse en 3-6 mois — éviter à la banque ce gap qui aurait coûté jusqu'à 4 années de programmes SCF perdus."
+      "verbatim_evidence": "Greensill Capital filed for insolvency on 8 March 2021, leaving Credit Suisse with USD 10bn frozen in supply chain finance funds. The post-Greensill market consolidated over 2022-2025 primarily via Taulia (post-SAP acquisition March 2022) expanding aggressively into corporate SCF — but as DIRECT provider (banks are funders, not program owners) — a 3-4 year gap closure timeline for affected corporate programs.",
+      "source": "FT (8/3/2021), Bloomberg, multiple press; Taulia/SAP acquisition (3/2022)",
+      "credable_implication": "★★★ POWERFUL PITCH ARGUMENT: 'When a fintech fails, banks live with the gap for 3-4 years (Greensill 2021 → Taulia expansion 2024-2025). Don't let your bank wait 3 years for a vague successor — and when Taulia steps in, the BANK loses program ownership. CredAble deploys in 3-6 months, bank keeps control.' Use this as the urgency lever for any orphan / fintech-failure-adjacent prospect (notably Roger orphans, we.trade orphans).",
+      "pitch_argument": "Le gap d'attente après faillite fintech est historiquement de 3-4 ans (Greensill 2021 → Taulia/SAP expansion 2024-25). Quand Taulia intervient, la banque perd la propriété du programme — Taulia est le front commercial, la banque devient simple bailleur de fonds. CredAble offre une réponse en 3-6 mois — la banque garde le programme, le P&L et la relation client."
     },
     {
       "event_id": "roger-orbian-acquisition-2025-02",
@@ -115,6 +115,6 @@
       "Commerzbank (Marco Polo orphan) — past window but indirect signal",
       "Any future fintech failure detected via trigger_engine"
     ],
-    "competitor_dynamic": "JPMorgan and Taulia (SAP) became dominant post-Greensill replacements 2024-2025. CredAble must win orphans BEFORE these incumbents enter. Speed of pitch matters more than depth of features."
+    "competitor_dynamic": "Taulia (SAP) became the dominant post-Greensill fill 2024-2025 — but as DIRECT provider, not white-label: banks lose program ownership to Taulia. JPMorgan is NOT currently an SCF platform vendor. CredAble pitch: deploy in 3-6 months AND keep program ownership vs Taulia's 3-4 years AND loss of control."
   }
 }
