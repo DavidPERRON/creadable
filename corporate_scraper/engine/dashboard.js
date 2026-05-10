@@ -225,13 +225,13 @@ const html = `<!DOCTYPE html>
     <h2>🔬 Sources utilisées par le modèle DeepInfra</h2>
 
     <div class="source-card included">
-      <h3>✅ Sources fournies au modèle (DeepSeek-V3)</h3>
+      <h3>✅ Sources fournies au modèle (Llama-3.3-70B)</h3>
       <p><strong>Uniquement</strong> des extraits filtrés de rapports annuels corporates (PDF → texte → chunks par mots-clés).</p>
       <ul>
         <li>Source : sites Investor Relations officiels des corporates listés dans <code>catalog.json</code></li>
         <li>Format : texte filtré par ~120 mots-clés multilingues (working capital, factoring, supplier finance, letter of credit, inventory, cession de créances, Akkreditiv, etc.)</li>
         <li>Volume : ~25K tokens par corporate (vs ~500K tokens dans le PDF complet)</li>
-        <li>Modèle : DeepSeek-V3 via DeepInfra, température 0.0 (déterministe)</li>
+        <li>Modèle : Llama-3.3-70B via DeepInfra, température 0.0 (déterministe)</li>
       </ul>
     </div>
 

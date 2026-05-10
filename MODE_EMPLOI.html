@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; margin: 2.5cm; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 22pt; color: #1a3a6e; border-bottom: 3px solid #1a3a6e; padding-bottom: 8px; margin-top: 0; }
+  h2 { font-size: 15pt; color: #1a3a6e; border-bottom: 1px solid #c0cce0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { font-size: 12pt; color: #2a5298; margin-top: 20px; }
+  .cover { text-align: center; margin-bottom: 60px; }
+  .cover h1 { border: none; font-size: 28pt; margin-bottom: 8px; }
+  .cover .sub { font-size: 14pt; color: #555; }
+  .cover .date { font-size: 10pt; color: #888; margin-top: 40px; }
+  .tip { background: #eef4ff; border-left: 4px solid #2a5298; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  .warn { background: #fff8e6; border-left: 4px solid #e6a817; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  .ok { background: #efffef; border-left: 4px solid #28a745; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  code { font-family: Courier New, monospace; background: #f4f4f4; padding: 1px 5px; border-radius: 3px; font-size: 10pt; }
+  pre { font-family: Courier New, monospace; background: #f4f4f4; padding: 12px 16px; border-radius: 5px; font-size: 10pt; border: 1px solid #ddd; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th { background: #1a3a6e; color: white; padding: 8px 12px; text-align: left; font-size: 10pt; }
+  td { padding: 7px 12px; border-bottom: 1px solid #e0e0e0; font-size: 10pt; }
+  tr:nth-child(even) td { background: #f8f9fb; }
+  .step-num { display: inline-block; background: #1a3a6e; color: white; border-radius: 50%; width: 22px; height: 22px; text-align: center; line-height: 22px; font-size: 11pt; font-weight: bold; margin-right: 6px; }
+  ul li, ol li { margin-bottom: 4px; }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>CredAble Intelligence</h1>
+  <div class="sub">Control Panel — Mode d'emploi complet</div>
+  <br><br>
+  <table style="width:60%;margin:auto;font-size:10pt">
+    <tr><td style="color:#888">Version</td><td>1.0</td></tr>
+    <tr><td style="color:#888">Date</td><td>Mai 2026</td></tr>
+    <tr><td style="color:#888">Auteur</td><td>CredAble Europe</td></tr>
+    <tr><td style="color:#888">Accès</td><td>http://localhost:3333</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>1. Vue d'ensemble</h1>
+
+<p>CredAble Intelligence est une plateforme d'analyse automatisée qui :</p>
+<ul>
+  <li><strong>Télécharge</strong> les rapports annuels des 159 plus grandes entreprises européennes (>5 Md€ CA)</li>
+  <li><strong>Extrait</strong> via LLM les signaux trade finance / supply chain finance (factoring, confirming, lettres de crédit, plateformes SCF…)</li>
+  <li><strong>Score</strong> 51 banques européennes sur 8 signaux (BIS — Buying Intent Score)</li>
+  <li><strong>Génère</strong> des dashboards interactifs pour cibler les prospects prioritaires</li>
+</ul>
+
+<div class="tip">
+  <strong>Principe :</strong> Le rapport annuel est <em>une source parmi d'autres</em>. Les données tech stack banques, les signaux fintech failures, l'intelligence concurrentielle et le scoring BIS restent inchangés — le LLM enrichit la couche corporate.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>2. Démarrage de l'application</h1>
+
+<h2>2.1 Démarrage normal (double-clic)</h2>
+<p><strong>Finder → Bureau → dossier <code>creadable</code> → double-clic sur <code>Start CredAble.command</code></strong></p>
+<p>Le script fait automatiquement :</p>
+<ol>
+  <li>Mise à jour du code depuis Git</li>
+  <li>Installation / vérification des dépendances npm</li>
+  <li>Ouverture du navigateur sur <code>http://localhost:3333</code></li>
+  <li>Démarrage du serveur</li>
+</ol>
+
+<div class="warn">
+  <strong>Premier lancement :</strong> macOS peut bloquer le fichier. Si un message "impossible d'ouvrir" s'affiche → clic droit → <strong>Ouvrir</strong> → confirmer.
+</div>
+
+<h2>2.2 Démarrage depuis le terminal (alternative)</h2>
+<pre>cd ~/Desktop/creadable
+npm run ui</pre>
+<p>Laisser cette fenêtre ouverte. Le serveur tourne tant qu'elle est ouverte.</p>
+
+<h2>2.3 Accès dans le navigateur</h2>
+<div class="warn">
+  <strong>Toujours utiliser Safari</strong> et taper manuellement <code>http://localhost:3333</code> (pas https). Si Safari force HTTPS : <strong>Safari → Réglages → Avancé</strong> → décocher "Utiliser automatiquement HTTPS".
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1>3. Configuration initiale</h1>
+
+<h2>3.1 Clé API DeepInfra</h2>
+<p>L'étape d'extraction LLM nécessite une clé API DeepInfra.</p>
+<ol>
+  <li>Dans la sidebar → <strong>Configuration</strong></li>
+  <li>Coller la clé dans le champ <em>DEEPINFRA_API_KEY</em></li>
+  <li>Cliquer <strong>Enregistrer</strong></li>
+  <li>Le témoin en bas à gauche passe au <span style="color:green">●</span> vert</li>
+</ol>
+<div class="ok">La clé est stockée en mémoire serveur uniquement (non persistée sur disque). Elle doit être re-saisie à chaque redémarrage du serveur.</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>4. Pipeline Corporate Scraper</h1>
+<p>Le pipeline comporte 4 étapes séquentielles. On peut les lancer individuellement ou d'un seul clic.</p>
+
+<table>
+  <tr><th>Étape</th><th>Bouton UI</th><th>Durée estimée</th><th>Description</th></tr>
+  <tr><td>1 — Discover</td><td>Discover URLs</td><td>5–10 min</td><td>Remplit les URLs directes des rapports PDF dans le catalogue</td></tr>
+  <tr><td>2 — Download</td><td>Download PDFs</td><td>30–60 min</td><td>Télécharge les PDFs + extrait le texte brut</td></tr>
+  <tr><td>3 — Extract</td><td>Extract (LLM)</td><td>60–120 min</td><td>Envoie les passages SCF au LLM pour extraction structurée</td></tr>
+  <tr><td>4 — Aggregate</td><td>Aggregate</td><td>2–5 min</td><td>Compile les résultats, génère summary + dashboard</td></tr>
+</table>
+
+<h2>4.1 Pipeline complet (recommandé)</h2>
+<p>Sidebar → <strong>Pipeline</strong> → bouton <strong>"Lancer pipeline complet"</strong> — enchaîne les 4 étapes automatiquement.</p>
+
+<h2>4.2 Étapes individuelles</h2>
+<p>Les boutons individuels sont utiles pour relancer une étape sans repartir de zéro. Chaque étape est idempotente : elle saute les fichiers déjà traités.</p>
+
+<h2>4.3 Extraction par corporate</h2>
+<p>Pour analyser un seul corporate :</p>
+<ol>
+  <li>Saisir l'ID dans le champ (ex: <code>volkswagen</code>, <code>nestle</code>, <code>total-energies</code>)</li>
+  <li>Cliquer <strong>"Extraire ce corporate"</strong></li>
+  <li>Les logs s'affichent en temps réel</li>
+</ol>
+
+<h2>4.4 Logs en temps réel</h2>
+<p>La fenêtre "Logs en temps réel" affiche la sortie du processus en direct :</p>
+<ul>
+  <li><span style="color:#94a3b8">Texte gris</span> = stdout normal</li>
+  <li><span style="color:#f59e0b">Texte orange</span> = stderr / avertissements</li>
+  <li><span style="color:#22c55e">✓ Terminé avec succès</span> = exit 0</li>
+  <li><span style="color:#ef4444">✗ Terminé avec erreur</span> = problème à investiguer</li>
+</ul>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1>5. Résultats d'extraction LLM</h1>
+
+<h2>5.1 Consulter les extractions</h2>
+<p>Sidebar → <strong>Corporate Scraper → Extractions</strong></p>
+<ul>
+  <li>Liste de tous les fichiers extraits, triés par date</li>
+  <li><strong>Voir</strong> → affiche le JSON structuré complet</li>
+  <li><strong>Re-extraire</strong> → relance l'analyse LLM pour ce corporate</li>
+</ul>
+
+<h2>5.2 Structure d'une extraction</h2>
+<p>Chaque extraction JSON contient :</p>
+<table>
+  <tr><th>Champ</th><th>Description</th></tr>
+  <tr><td><code>scf_program_confirmed</code></td><td>Présence confirmée d'un programme SCF (boolean)</td></tr>
+  <tr><td><code>scf_program_details</code></td><td>Détails textuels du programme détecté</td></tr>
+  <tr><td><code>factoring_or_receivables</code></td><td>Signaux côté receivables (cession, affacturage…)</td></tr>
+  <tr><td><code>trade_finance_instruments</code></td><td>L/C, garanties, documentary trade</td></tr>
+  <tr><td><code>platform_provider_mentioned</code></td><td>Présence d'un concurrent (Taulia, C2FO, Orbian…)</td></tr>
+  <tr><td><code>banks_mentioned_in_scf_or_trade_finance_context</code></td><td>Banques citées dans le contexte SCF</td></tr>
+  <tr><td><code>working_capital_kpis</code></td><td>DPO, DSO, DIO si mentionnés</td></tr>
+  <tr><td><code>sweet_spot_score</code></td><td>Score 0–10 indiquant l'attractivité pour CredAble</td></tr>
+  <tr><td><code>sweet_spot_rationale</code></td><td>Justification du score</td></tr>
+</table>
+
+<h2>5.3 Dashboard Corporate</h2>
+<p>Sidebar → <strong>Corporate Scraper → Dashboard</strong> — rapport HTML interactif après l'étape Aggregate. Inclut le classement sweet-spot, les signaux détectés, la méthodologie.</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>6. Bank Intelligence — Scores BIS</h1>
+
+<h2>6.1 Qu'est-ce que le BIS ?</h2>
+<p>Le <strong>Buying Intent Score</strong> agrège 8 signaux pondérés pour estimer la probabilité qu'une banque achète une solution CredAble dans les 12 mois :</p>
+<table>
+  <tr><th>Signal</th><th>Poids</th><th>Source</th></tr>
+  <tr><td>Capability gap SCF</td><td>25%</td><td>Rapport annuel banque (LLM)</td></tr>
+  <tr><td>Strategic intent</td><td>20%</td><td>Rapport annuel banque (LLM)</td></tr>
+  <tr><td>Tech stack legacy</td><td>15%</td><td>Données curées bank_techstack.json</td></tr>
+  <tr><td>Fintech failure orpheline</td><td>15%</td><td>fintech_failures.json</td></tr>
+  <tr><td>Concurrent absent</td><td>10%</td><td>competitor_intelligence.json</td></tr>
+  <tr><td>Fenêtre budgétaire</td><td>8%</td><td>bank_techstack.json</td></tr>
+  <tr><td>Friction CredAble</td><td>4%</td><td>bank_techstack.json</td></tr>
+  <tr><td>Signaux corporate</td><td>3%</td><td>Extractions corporate (LLM)</td></tr>
+</table>
+
+<h2>6.2 Buckets BIS</h2>
+<table>
+  <tr><th>Bucket</th><th>Score</th><th>Priorité</th></tr>
+  <tr><td>HIGH</td><td>≥ 70</td><td>Prospection immédiate</td></tr>
+  <tr><td>MEDIUM-HIGH</td><td>50–69</td><td>Pipeline Q2/Q3</td></tr>
+  <tr><td>MEDIUM</td><td>30–49</td><td>Nurturing</td></tr>
+  <tr><td>LOW / VERY LOW</td><td>&lt; 30</td><td>Déprioritiser</td></tr>
+</table>
+
+<h2>6.3 Recalculer les scores</h2>
+<p>Sidebar → <strong>Bank Intelligence → BIS Scores</strong> → bouton <strong>"Recalculer BIS + rapport"</strong></p>
+<ul>
+  <li>Lit les extractions banques + données curées</li>
+  <li>Recalcule tous les scores</li>
+  <li>Génère le BIS Dashboard HTML</li>
+</ul>
+
+<h2>6.4 Extraire les rapports banques</h2>
+<p>Même principe que pour les corporates — bouton <strong>"Extraire rapports banques (LLM)"</strong> ou extraction par ID banque (ex: <code>kb-cz</code>, <code>bnp-fr</code>).</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1>7. Données et configuration avancée</h1>
+
+<h2>7.1 Édition des fichiers JSON</h2>
+<p>Sidebar → <strong>Données → Fichiers JSON</strong> — éditeur direct des 4 fichiers de configuration :</p>
+<table>
+  <tr><th>Fichier</th><th>Contenu</th></tr>
+  <tr><td>Tech Stack Banques</td><td>Core banking, plateforme SCF, fenêtre budgétaire, friction CredAble pour 51 banques</td></tr>
+  <tr><td>Fintech Failures</td><td>Faillites fintech et banques orphelines (Signal 3 BIS)</td></tr>
+  <tr><td>Concurrents</td><td>Intelligence concurrentielle vérifiée (Demica, Orbian, Taulia…)</td></tr>
+  <tr><td>Catalogue Corporates</td><td>159 corporates EU avec URLs des rapports annuels</td></tr>
+</table>
+<div class="warn">Cliquer <strong>Sauvegarder</strong> après chaque modification. Le JSON est validé avant sauvegarde.</div>
+
+<h2>7.2 Changer le modèle LLM</h2>
+<p>Par défaut : <code>meta-llama/Llama-3.3-70B-Instruct</code> via DeepInfra. Pour utiliser un autre modèle, définir la variable d'environnement avant de lancer le serveur :</p>
+<pre>DEEPINFRA_MODEL=deepseek-ai/DeepSeek-V3 npm run ui</pre>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>8. Dépannage</h1>
+
+<table>
+  <tr><th>Problème</th><th>Solution</th></tr>
+  <tr>
+    <td>Safari force HTTPS sur localhost</td>
+    <td>Safari → Réglages → Avancé → décocher "Utiliser automatiquement HTTPS". Ou taper <code>http://localhost:3333</code> manuellement.</td>
+  </tr>
+  <tr>
+    <td><code>Start CredAble.command</code> ne s'ouvre pas</td>
+    <td>Clic droit → Ouvrir → Confirmer. Ou dans Terminal : <code>chmod +x ~/Desktop/creadable/Start\ CredAble.command</code></td>
+  </tr>
+  <tr>
+    <td>Extraction FAIL — timeout</td>
+    <td>Réseau lent ou modèle surchargé. Relancer l'extraction pour ce corporate depuis la page Extractions → Re-extraire.</td>
+  </tr>
+  <tr>
+    <td>SKIP — no txt available</td>
+    <td>Le PDF n'a pas été téléchargé. Lancer d'abord <strong>Download PDFs</strong>, puis <strong>Extract</strong>.</td>
+  </tr>
+  <tr>
+    <td>DEEPINFRA_API_KEY non configurée</td>
+    <td>Aller dans <strong>Configuration</strong> → saisir la clé → Enregistrer. Le témoin doit passer au vert.</td>
+  </tr>
+  <tr>
+    <td>Le serveur ne répond plus</td>
+    <td>Fermer la fenêtre <code>Start CredAble.command</code> et la rouvrir, ou <code>npm run ui</code> dans Terminal.</td>
+  </tr>
+  <tr>
+    <td>Dashboard non généré</td>
+    <td>Lancer l'étape <strong>Aggregate</strong> après les extractions. Le dashboard apparaît alors dans la sidebar.</td>
+  </tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1>9. Flux de travail recommandé</h1>
+
+<ol>
+  <li><strong>Double-clic</strong> sur <code>Start CredAble.command</code> → ouvre http://localhost:3333</li>
+  <li><strong>Configuration</strong> → saisir la clé DeepInfra → vérifier le témoin vert</li>
+  <li><strong>Pipeline → Download PDFs</strong> → attendre la fin (logs "OK" ou "CACHED")</li>
+  <li><strong>Pipeline → Extract (LLM)</strong> → attendre (1–2h pour 159 corporates)</li>
+  <li><strong>Pipeline → Aggregate</strong> → génère le dashboard</li>
+  <li><strong>Corporate Scraper → Dashboard</strong> → consulter le classement sweet-spot</li>
+  <li><strong>Bank Intelligence → Recalculer BIS + rapport</strong> → scores mis à jour avec les nouveaux signaux</li>
+  <li><strong>Bank Intelligence → BIS Dashboard</strong> → rapport interactif pour la prospection</li>
+</ol>
+
+<div class="ok">
+  <strong>Idempotence :</strong> Toutes les étapes peuvent être relancées sans risque — les fichiers déjà traités sont automatiquement sautés. Pour forcer le re-traitement d'un corporate, utiliser "Re-extraire" dans la page Extractions.
+</div>
+
+<br><br>
+<hr>
+<p style="text-align:center;color:#888;font-size:9pt">CredAble Intelligence Control Panel — Mode d'emploi v1.0 — Mai 2026</p>
+
+</body>
+</html>

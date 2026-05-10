@@ -33,7 +33,7 @@ const OUT_DIR = path.join(ROOT, 'extractions');
 const TECHSTACK_PATH = path.join(ROOT, 'data', 'bank_techstack.json');
 
 const API_URL = 'https://api.deepinfra.com/v1/openai/chat/completions';
-const MODEL = process.env.DEEPINFRA_MODEL || 'deepseek-ai/DeepSeek-V3';
+const MODEL = process.env.DEEPINFRA_MODEL || 'meta-llama/Llama-3.3-70B-Instruct';
 const API_KEY = process.env.DEEPINFRA_API_KEY;
 
 // ─────────────────────────────────────────────────────────────────
@@ -148,7 +148,7 @@ const BANK_SIGNAL_KEYWORDS = [
   'merchant finance', 'seller finance', 'marketplace',
 ];
 
-function extractRelevantChunks(fullText, maxChars = 70000) {
+function extractRelevantChunks(fullText, maxChars = 15000) {
   const lines = fullText.split('\n');
   const re = new RegExp(BANK_SIGNAL_KEYWORDS.map(k =>
     k.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -174,7 +174,7 @@ function extractRelevantChunks(fullText, maxChars = 70000) {
   return chunk;
 }
 
-async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 90000) {
+async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
   if (!API_KEY) throw new Error('DEEPINFRA_API_KEY env var required');
   const payload = JSON.stringify({
     model: MODEL,
