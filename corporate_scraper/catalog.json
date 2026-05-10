@@ -14,7 +14,9 @@
       "sector": "FMCG",
       "revenue_eur_bn": 91,
       "ir_url": "https://www.nestle.com/investors/annual-report",
-      "report_pattern": "annual report"
+      "report_pattern": "annual report",
+      "direct_pdf_url": "https://www.nestle.com/sites/default/files/2025-02/annual-review-2024-en.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "volkswagen",
@@ -54,7 +56,9 @@
       "country": "FR",
       "sector": "Energy",
       "revenue_eur_bn": 195,
-      "ir_url": "https://totalenergies.com/investors/publications-and-regulated-information/annual-and-quarterly-reports"
+      "ir_url": "https://totalenergies.com/investors/publications-and-regulated-information/annual-and-quarterly-reports",
+      "direct_pdf_url": "https://totalenergies.com/system/files/documents/totalenergies_universal-registration-document-2024_2025_en.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "bp",
@@ -82,7 +86,9 @@
       "country": "DE",
       "sector": "Energy",
       "revenue_eur_bn": 30,
-      "ir_url": "https://www.siemens-energy.com/global/en/home/investor-relations/financial-publications.html"
+      "ir_url": "https://www.siemens-energy.com/global/en/home/investor-relations/financial-publications.html",
+      "direct_pdf_url": "https://p3.aprimocdn.net/siemensenergy/6974f976-432a-4ed9-ba61-b24301167dc8/A-Siemens-Energy-Annual-Report-2024-pdf_Original%20file.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "bmw",
@@ -90,7 +96,9 @@
       "country": "DE",
       "sector": "Automotive",
       "revenue_eur_bn": 142,
-      "ir_url": "https://www.bmwgroup.com/en/investor-relations/financial-reports.html"
+      "ir_url": "https://www.bmwgroup.com/en/investor-relations/financial-reports.html",
+      "direct_pdf_url": "https://www.bmwgroup.com/en/report/2024/downloads/BMW-Group-Report-2024-en.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "mercedes-benz",
@@ -98,7 +106,9 @@
       "country": "DE",
       "sector": "Automotive",
       "revenue_eur_bn": 153,
-      "ir_url": "https://group.mercedes-benz.com/investors/reports-news/annual-reports/"
+      "ir_url": "https://group.mercedes-benz.com/investors/reports-news/annual-reports/",
+      "direct_pdf_url": "https://group.mercedes-benz.com/documents/investors/reports/annual-report/mercedes-benz/mercedes-benz-annual-report-2024-incl-combined-management-report-mbg-ag.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "bosch",
@@ -106,7 +116,9 @@
       "country": "DE",
       "sector": "Industrial",
       "revenue_eur_bn": 90,
-      "ir_url": "https://www.bosch.com/company/annual-report/"
+      "ir_url": "https://www.bosch.com/company/annual-report/",
+      "direct_pdf_url": "https://assets.bosch.com/media/global/bosch_group/our_figures/pdf/bosch-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "basf",
@@ -114,7 +126,9 @@
       "country": "DE",
       "sector": "Chemicals",
       "revenue_eur_bn": 69,
-      "ir_url": "https://www.basf.com/global/en/investors/calendar-and-publications/financial-publications.html"
+      "ir_url": "https://www.basf.com/global/en/investors/calendar-and-publications/financial-publications.html",
+      "direct_pdf_url": "https://report.basf.com/2024/en/_assets/downloads/entire-full-report-basf-ar24.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "bayer",
@@ -122,7 +136,9 @@
       "country": "DE",
       "sector": "Pharma",
       "revenue_eur_bn": 47,
-      "ir_url": "https://www.bayer.com/en/investors/financial-publications"
+      "ir_url": "https://www.bayer.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://www.bayer.com/sites/default/files/2025-03/bayer-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "boehringer",
@@ -130,7 +146,9 @@
       "country": "DE",
       "sector": "Pharma",
       "revenue_eur_bn": 26,
-      "ir_url": "https://www.boehringer-ingelheim.com/about-us/sustainable-development/annual-report"
+      "ir_url": "https://www.boehringer-ingelheim.com/about-us/sustainable-development/annual-report",
+      "direct_pdf_url": "https://annualreports.com/Click/29758",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "merck-kgaa",
@@ -146,7 +164,9 @@
       "country": "DE",
       "sector": "Industrial",
       "revenue_eur_bn": 35,
-      "ir_url": "https://www.thyssenkrupp.com/en/investors/financial-publications"
+      "ir_url": "https://www.thyssenkrupp.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://d2zo35mdb530wx.cloudfront.net/_binary/UCPthyssenkruppAG/fb33c65d-f47f-4229-8501-436cf05956c9/Annual_report_2024_2025_of_thyssenkrupp_AG_WEB.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "eon",
@@ -154,7 +174,9 @@
       "country": "DE",
       "sector": "Utilities",
       "revenue_eur_bn": 94,
-      "ir_url": "https://www.eon.com/en/investor-relations/financial-publications.html"
+      "ir_url": "https://www.eon.com/en/investor-relations/financial-publications.html",
+      "direct_pdf_url": "https://www.lobbyregister.bundestag.de/media/c4/a9/609629/EON_GB24-gesamt-DE_final.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "rwe",
@@ -162,7 +184,9 @@
       "country": "DE",
       "sector": "Utilities",
       "revenue_eur_bn": 30,
-      "ir_url": "https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/"
+      "ir_url": "https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/",
+      "direct_pdf_url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2024-gj/2025-03-20-rwe-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "deutsche-telekom",
@@ -170,7 +194,9 @@
       "country": "DE",
       "sector": "Telecom",
       "revenue_eur_bn": 115,
-      "ir_url": "https://www.telekom.com/en/investor-relations/publications/financial-reports"
+      "ir_url": "https://www.telekom.com/en/investor-relations/publications/financial-reports",
+      "direct_pdf_url": "https://report.telekom.com/annual-report-2024/_assets/downloads/entire-dtag-ar24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "deutsche-post",
@@ -178,7 +204,9 @@
       "country": "DE",
       "sector": "Logistics",
       "revenue_eur_bn": 84,
-      "ir_url": "https://group.dhl.com/en/investors/financial-reports.html"
+      "ir_url": "https://group.dhl.com/en/investors/financial-reports.html",
+      "direct_pdf_url": "https://group.dhl.com/content/dam/deutschepostdhl/en/media-center/investors/documents/annual-reports/DHL-Group-2024-Annual-Report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "henkel",
@@ -194,7 +222,9 @@
       "country": "DE",
       "sector": "Tech",
       "revenue_eur_bn": 34,
-      "ir_url": "https://www.sap.com/investors/en/reports.html"
+      "ir_url": "https://www.sap.com/investors/en/reports.html",
+      "direct_pdf_url": "https://www.sap.com/docs/download/investors/2024/sap-2024-integrated-report.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "lufthansa",
@@ -202,7 +232,9 @@
       "country": "DE",
       "sector": "Aviation",
       "revenue_eur_bn": 36,
-      "ir_url": "https://investor-relations.lufthansagroup.com/en/publications.html"
+      "ir_url": "https://investor-relations.lufthansagroup.com/en/publications.html",
+      "direct_pdf_url": "https://investor-relations.lufthansagroup.com/fileadmin/downloads/en/financial-reports/annual-reports/LH-AR-2024-e.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "continental",
@@ -210,7 +242,9 @@
       "country": "DE",
       "sector": "Automotive",
       "revenue_eur_bn": 41,
-      "ir_url": "https://www.continental.com/en/investors/financial-publications/"
+      "ir_url": "https://www.continental.com/en/investors/financial-publications/",
+      "direct_pdf_url": "https://cdn.continental.com/fileadmin/__imported/sites/corporate/_international/english/hubpages/30_20investors/30_20reports/annual_20reports/downloads/annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "zf-friedrichshafen",
@@ -218,7 +252,9 @@
       "country": "DE",
       "sector": "Automotive",
       "revenue_eur_bn": 47,
-      "ir_url": "https://www.zf.com/site/investor-relations/en/financial-reports.html"
+      "ir_url": "https://www.zf.com/site/investor-relations/en/financial-reports.html",
+      "direct_pdf_url": "https://www.zf.com/master/media/en/corporate/m_zf_com/company/bonds_relations_/financial_reports/annual_report/2024_3/ZF_AnnualReport24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "fresenius",
@@ -226,7 +262,9 @@
       "country": "DE",
       "sector": "Healthcare",
       "revenue_eur_bn": 22,
-      "ir_url": "https://www.fresenius.com/financial-reports"
+      "ir_url": "https://www.fresenius.com/financial-reports",
+      "direct_pdf_url": "https://www.fresenius.com/sites/default/files/2025-03/Fresenius_Annual_Report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "lvmh",
@@ -234,7 +272,9 @@
       "country": "FR",
       "sector": "Luxury",
       "revenue_eur_bn": 86,
-      "ir_url": "https://www.lvmh.com/investors/publications/"
+      "ir_url": "https://www.lvmh.com/investors/publications/",
+      "direct_pdf_url": "https://lvmh-com.cdn.prismic.io/lvmh-com/Z-PY3HdAxsiBv6wN_UniversalRegistrationDocument2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "loreal",
@@ -242,7 +282,9 @@
       "country": "FR",
       "sector": "FMCG",
       "revenue_eur_bn": 41,
-      "ir_url": "https://www.loreal-finance.com/en/annual-report-2024"
+      "ir_url": "https://www.loreal-finance.com/en/annual-report-2024",
+      "direct_pdf_url": "https://www.loreal.com/-/media/project/loreal/brand-sites/corp/master/lcorp/2-group/annual-reports/loreal2024annualreport.pdf?rev=-1",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "danone",
@@ -250,7 +292,9 @@
       "country": "FR",
       "sector": "FMCG",
       "revenue_eur_bn": 27,
-      "ir_url": "https://www.danone.com/investor-relations/publications.html"
+      "ir_url": "https://www.danone.com/investor-relations/publications.html",
+      "direct_pdf_url": "https://www.danone.com/content/dam/corp/global/danonecom/investors/en-sustainability/reports-and-data/cross-topic/danoneiar2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "carrefour",
@@ -258,7 +302,9 @@
       "country": "FR",
       "sector": "Retail",
       "revenue_eur_bn": 95,
-      "ir_url": "https://www.carrefour.com/en/finance/regulated-information/annual-reports"
+      "ir_url": "https://www.carrefour.com/en/finance/regulated-information/annual-reports",
+      "direct_pdf_url": "https://www.carrefour.com/sites/default/files/2025-04/CFR_URD_2024_EN_250328_MEL.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "michelin",
@@ -266,7 +312,9 @@
       "country": "FR",
       "sector": "Industrial",
       "revenue_eur_bn": 28,
-      "ir_url": "https://www.michelin.com/en/finance/financial-publications/"
+      "ir_url": "https://www.michelin.com/en/finance/financial-publications/",
+      "direct_pdf_url": "https://www.bnains.org/archives/communiques/Michelin/20250404_Document_d_enregistrement_universel_2024_Michelin.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "stellantis-fr",
@@ -274,7 +322,9 @@
       "country": "FR",
       "sector": "Automotive",
       "revenue_eur_bn": 53,
-      "ir_url": "https://www.renaultgroup.com/en/finance/regulated-information/annual-reports/"
+      "ir_url": "https://www.renaultgroup.com/en/finance/regulated-information/annual-reports/",
+      "direct_pdf_url": "https://www.stellantis.com/content/dam/stellantis-corporate/investors/financial-reports/Stellantis-NV-20241231-Annual-Report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "engie",
@@ -282,7 +332,9 @@
       "country": "FR",
       "sector": "Utilities",
       "revenue_eur_bn": 82,
-      "ir_url": "https://www.engie.com/en/finance/results/annual-results"
+      "ir_url": "https://www.engie.com/en/finance/results/annual-results",
+      "direct_pdf_url": "https://www.engie.com/sites/default/files/assets/documents/2025-02/2024%20Management%20report%20and%20Annual%20consolidated%20financial%20statements.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "edf",
@@ -290,7 +342,9 @@
       "country": "FR",
       "sector": "Utilities",
       "revenue_eur_bn": 110,
-      "ir_url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/finance/financial-information/financial-publications"
+      "ir_url": "https://www.edf.fr/en/the-edf-group/dedicated-sections/finance/financial-information/financial-publications",
+      "direct_pdf_url": "https://www.edf.fr/sites/groupe/files/2025-05/edf-urd-annual-financial-report-2024-en-accessible.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "schneider-electric",
@@ -298,7 +352,9 @@
       "country": "FR",
       "sector": "Industrial",
       "revenue_eur_bn": 38,
-      "ir_url": "https://www.se.com/ww/en/about-us/investor-relations/financial-publications/annual-reports.jsp"
+      "ir_url": "https://www.se.com/ww/en/about-us/investor-relations/financial-publications/annual-reports.jsp",
+      "direct_pdf_url": "https://www.se.com/ww/en/assets/564/document/510443/2024-universal-registration-document.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "saint-gobain",
@@ -306,7 +362,9 @@
       "country": "FR",
       "sector": "Construction",
       "revenue_eur_bn": 47,
-      "ir_url": "https://www.saint-gobain.com/en/finance/regulated-information/annual-reports"
+      "ir_url": "https://www.saint-gobain.com/en/finance/regulated-information/annual-reports",
+      "direct_pdf_url": "https://www.saint-gobain.com/sites/saint-gobain.com/files/media/document/Saint-Gobain_2024_DEU_VA.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "vinci",
@@ -314,7 +372,9 @@
       "country": "FR",
       "sector": "Construction",
       "revenue_eur_bn": 69,
-      "ir_url": "https://www.vinci.com/vinci.nsf/en/finance/pages/index.htm"
+      "ir_url": "https://www.vinci.com/vinci.nsf/en/finance/pages/index.htm",
+      "direct_pdf_url": "https://www.vinci.com/publi/vinci/vinci-2024-report-financial-statements.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "bouygues",
@@ -322,7 +382,9 @@
       "country": "FR",
       "sector": "Construction",
       "revenue_eur_bn": 56,
-      "ir_url": "https://www.bouygues.com/en/financial-information/financial-reports/"
+      "ir_url": "https://www.bouygues.com/en/financial-information/financial-reports/",
+      "direct_pdf_url": "https://www.bouygues.com/wp-content/uploads/2025/04/20250402-ri-va-tds.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "airbus",
@@ -330,7 +392,9 @@
       "country": "FR",
       "sector": "Aerospace",
       "revenue_eur_bn": 65,
-      "ir_url": "https://www.airbus.com/en/investors/financial-results-and-annual-reports"
+      "ir_url": "https://www.airbus.com/en/investors/financial-results-and-annual-reports",
+      "direct_pdf_url": "https://www.airbus.com/sites/g/files/jlcbta136/files/2025-04/Airbus%20Annual%20Report%202024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "thales",
@@ -338,7 +402,9 @@
       "country": "FR",
       "sector": "Aerospace",
       "revenue_eur_bn": 19,
-      "ir_url": "https://www.thalesgroup.com/en/investors/financial-reports"
+      "ir_url": "https://www.thalesgroup.com/en/investors/financial-reports",
+      "direct_pdf_url": "https://www.thalesgroup.com/sites/default/files/investor/documents/Thales_-_Consolidated_Financial_Statements_at_31_December_2024_0_1.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "safran",
@@ -346,7 +412,9 @@
       "country": "FR",
       "sector": "Aerospace",
       "revenue_eur_bn": 27,
-      "ir_url": "https://www.safran-group.com/finance/financial-publications"
+      "ir_url": "https://www.safran-group.com/finance/financial-publications",
+      "direct_pdf_url": "https://www.safran-group.com/sites/default/files/2025-04/2024-safran-universal-registration-document.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "publicis",
@@ -354,7 +422,9 @@
       "country": "FR",
       "sector": "Advertising",
       "revenue_eur_bn": 14,
-      "ir_url": "https://www.publicisgroupe.com/en/investors/financial-publications"
+      "ir_url": "https://www.publicisgroupe.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://publicisgroupe-csr-smart-data.com/assets/upload/en/universal_registration_document_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "sanofi",
@@ -362,7 +432,9 @@
       "country": "FR",
       "sector": "Pharma",
       "revenue_eur_bn": 43,
-      "ir_url": "https://www.sanofi.com/en/investors/financial-results-and-events/financial-results"
+      "ir_url": "https://www.sanofi.com/en/investors/financial-results-and-events/financial-results",
+      "direct_pdf_url": "https://www.sanofi.com/assets/dotcom/content-app/publications/annual-report-on-form-20-f/2024-01-01-form-20-f-2024-en.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "kering",
@@ -370,7 +442,9 @@
       "country": "FR",
       "sector": "Luxury",
       "revenue_eur_bn": 18,
-      "ir_url": "https://www.kering.com/en/finance/publications/"
+      "ir_url": "https://www.kering.com/en/finance/publications/",
+      "direct_pdf_url": "https://www.kering.com/api/download-file/?path=DEU_FR_2024_interactif_f093a9378e.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "hermes",
@@ -378,7 +452,9 @@
       "country": "FR",
       "sector": "Luxury",
       "revenue_eur_bn": 13,
-      "ir_url": "https://finance.hermes.com/en/regulated-information/annual-reports/"
+      "ir_url": "https://finance.hermes.com/en/regulated-information/annual-reports/",
+      "direct_pdf_url": "https://assets-finance.hermes.com/s3fs-public/node/pdf_file/2025-05/1746455904/250328_hermes_urd2024_en.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "orange",
@@ -386,7 +462,9 @@
       "country": "FR",
       "sector": "Telecom",
       "revenue_eur_bn": 41,
-      "ir_url": "https://www.orange.com/en/results-and-publications"
+      "ir_url": "https://www.orange.com/en/results-and-publications",
+      "direct_pdf_url": "https://mastermedia.dam-broadcast.com/medias/domain12751/media101349/404740-ke0wtvsost-75.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "vivendi",
@@ -394,7 +472,9 @@
       "country": "FR",
       "sector": "Media",
       "revenue_eur_bn": 10,
-      "ir_url": "https://www.vivendi.com/en/regulated-information/"
+      "ir_url": "https://www.vivendi.com/en/regulated-information/",
+      "direct_pdf_url": "https://www.vivendi.com/wp-content/uploads/2025/04/20250407_VIV_VIVENDI_URD_EN.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "veolia",
@@ -402,7 +482,9 @@
       "country": "FR",
       "sector": "Utilities",
       "revenue_eur_bn": 45,
-      "ir_url": "https://www.veolia.com/en/finance/financial-information/financial-publications"
+      "ir_url": "https://www.veolia.com/en/finance/financial-information/financial-publications",
+      "direct_pdf_url": "https://www.veolia.com/sites/g/files/dvc4206/files/document/2025/03/Veolia_2024_URD.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "pernod-ricard",
@@ -410,7 +492,9 @@
       "country": "FR",
       "sector": "FMCG",
       "revenue_eur_bn": 12,
-      "ir_url": "https://www.pernod-ricard.com/en/investors/financial-results/"
+      "ir_url": "https://www.pernod-ricard.com/en/investors/financial-results/",
+      "direct_pdf_url": "https://www.pernod-ricard.com/sites/default/files/news/downloads/2024-09/PERNOD-RICARD_DEU_23-24_VUK_MEL_2409.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "lafarge",
@@ -418,7 +502,9 @@
       "country": "CH",
       "sector": "Construction",
       "revenue_eur_bn": 26,
-      "ir_url": "https://www.holcim.com/investors/results-reports-presentations"
+      "ir_url": "https://www.holcim.com/investors/results-reports-presentations",
+      "direct_pdf_url": "https://www.holcim.com/sites/holcim/files/docs/28022025-finance-holcim-fy-2024-report-full-en.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "ferrari",
@@ -426,7 +512,9 @@
       "country": "IT",
       "sector": "Automotive",
       "revenue_eur_bn": 7,
-      "ir_url": "https://corporate.ferrari.com/en/investors/financial-documents"
+      "ir_url": "https://corporate.ferrari.com/en/investors/financial-documents",
+      "direct_pdf_url": "https://cdn.ferrari.com/cms/network/media/pdf/Ferrari%20NV%20Annual%20Report%202024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "eni",
@@ -434,7 +522,9 @@
       "country": "IT",
       "sector": "Energy",
       "revenue_eur_bn": 95,
-      "ir_url": "https://www.eni.com/en-IT/investors/reports.html"
+      "ir_url": "https://www.eni.com/en-IT/investors/reports.html",
+      "direct_pdf_url": "https://www.eni.com/content/dam/enicom/documents/eng/reports/2024/ar-2024/Annual-Report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "enel",
@@ -442,7 +532,9 @@
       "country": "IT",
       "sector": "Utilities",
       "revenue_eur_bn": 95,
-      "ir_url": "https://www.enel.com/investors/financials"
+      "ir_url": "https://www.enel.com/investors/financials",
+      "direct_pdf_url": "https://www.enel.com/content/dam/enel-com/documenti/investitori/informazioni-finanziarie/2024/annuali/en/enel-spa-financial-statements_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "snam",
@@ -450,7 +542,9 @@
       "country": "IT",
       "sector": "Utilities",
       "revenue_eur_bn": 4,
-      "ir_url": "https://www.snam.it/en/investor_relations/"
+      "ir_url": "https://www.snam.it/en/investor_relations/",
+      "direct_pdf_url": "https://www.snam.it/content/dam/snam/pages-attachments-search/en/documenti/bilanci-annuali/2024/annual_report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "leonardo",
@@ -458,7 +552,9 @@
       "country": "IT",
       "sector": "Aerospace",
       "revenue_eur_bn": 16,
-      "ir_url": "https://www.leonardo.com/en/investors/financial-reports"
+      "ir_url": "https://www.leonardo.com/en/investors/financial-reports",
+      "direct_pdf_url": "https://www.leonardo.com/documents/15646808/28608810/2024+Integrated+Annual+Report.pdf/41cda2e3-e866-e3cd-6eb9-116eac955c7d?t=1741973243807",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "pirelli",
@@ -466,7 +562,9 @@
       "country": "IT",
       "sector": "Industrial",
       "revenue_eur_bn": 7,
-      "ir_url": "https://corporate.pirelli.com/corporate/en-ww/investors/financial-publications"
+      "ir_url": "https://corporate.pirelli.com/corporate/en-ww/investors/financial-publications",
+      "direct_pdf_url": "https://corp2-assets.pirelli.com/corporate/Annual_Report_Pirelli_2024_ENG.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "ferrero",
@@ -482,7 +580,9 @@
       "country": "IT",
       "sector": "FMCG",
       "revenue_eur_bn": 3,
-      "ir_url": "https://www.camparigroup.com/en/investors/results-and-presentations/annual-report"
+      "ir_url": "https://www.camparigroup.com/en/investors/results-and-presentations/annual-report",
+      "direct_pdf_url": "https://www.camparigroup.com/sites/default/files/downloads/01.1%20Campari%20Group_Annual%20Report%20for%20the%20year%20ended%2031%20December%202024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "stm",
@@ -490,7 +590,9 @@
       "country": "CH",
       "sector": "Tech",
       "revenue_eur_bn": 14,
-      "ir_url": "https://investors.st.com/financial-information/financial-and-strategic-reports"
+      "ir_url": "https://investors.st.com/financial-information/financial-and-strategic-reports",
+      "direct_pdf_url": "https://investors.st.com/static-files/ea3b0c4d-88be-404f-ac90-9236fe61d454",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "luxottica",
@@ -498,7 +600,9 @@
       "country": "FR",
       "sector": "Consumer",
       "revenue_eur_bn": 27,
-      "ir_url": "https://www.essilorluxottica.com/en/investors/financial-information/annual-financial-reports"
+      "ir_url": "https://www.essilorluxottica.com/en/investors/financial-information/annual-financial-reports",
+      "direct_pdf_url": "https://media.essilorluxottica.com/cms/caas/v1/media/247414/data/download/c32a98c7f0cb8029add5d1c5d6ac33be.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "fiat",
@@ -506,7 +610,9 @@
       "country": "IT",
       "sector": "Automotive",
       "revenue_eur_bn": 16,
-      "ir_url": "https://www.ivecogroup.com/investors/financial-documents/"
+      "ir_url": "https://www.ivecogroup.com/investors/financial-documents/",
+      "direct_pdf_url": "https://www.ivecogroup.com/-/media/investors/shareholder_meetings/docs/agm_2025/doc/IVG_Annual_Report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "prysmian",
@@ -514,7 +620,9 @@
       "country": "IT",
       "sector": "Industrial",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.prysmiangroup.com/en/investors/financial-publications"
+      "ir_url": "https://www.prysmiangroup.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://www.prysmian.com/sites/www.prysmian.com/files/2025-03/Integrated_Annual_Report_2024_Prysmian_ENG.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "cnh",
@@ -522,7 +630,9 @@
       "country": "IT",
       "sector": "Industrial",
       "revenue_eur_bn": 19,
-      "ir_url": "https://www.cnhindustrial.com/en/investors/financial_information/Pages/annual_reports.aspx"
+      "ir_url": "https://www.cnhindustrial.com/en/investors/financial_information/Pages/annual_reports.aspx",
+      "direct_pdf_url": "https://www.cnh.com/-/media/CNHi/cnhicorporate/Investor-relation/financial_information/annual_reports/2024/CNH-2024-10-K.pdf?rev=-1",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "inditex",
@@ -530,7 +640,9 @@
       "country": "ES",
       "sector": "Retail",
       "revenue_eur_bn": 36,
-      "ir_url": "https://www.inditex.com/itxcomweb/en/investors/financial-information/annual-reports"
+      "ir_url": "https://www.inditex.com/itxcomweb/en/investors/financial-information/annual-reports",
+      "direct_pdf_url": "https://www.inditex.com/itxcomweb/api/media/604197b9-50de-4f4f-ab84-c1e379cb3fd0/Inditex_Group_Annual_Report_2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "telefonica",
@@ -538,7 +650,9 @@
       "country": "ES",
       "sector": "Telecom",
       "revenue_eur_bn": 41,
-      "ir_url": "https://www.telefonica.com/en/shareholders-investors/financial-information/quarterly-results/"
+      "ir_url": "https://www.telefonica.com/en/shareholders-investors/financial-information/quarterly-results/",
+      "direct_pdf_url": "https://www.telefonica.com/en/wp-content/uploads/sites/5/2025/02/Consolidated-Annual-Accounts-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "iberdrola",
@@ -546,7 +660,9 @@
       "country": "ES",
       "sector": "Utilities",
       "revenue_eur_bn": 49,
-      "ir_url": "https://www.iberdrola.com/shareholders-investors/annual-reports"
+      "ir_url": "https://www.iberdrola.com/shareholders-investors/annual-reports",
+      "direct_pdf_url": "https://www.iberdrola.com/documents/20125/4778712/gsm25-annual-accounts-individual-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "repsol",
@@ -554,7 +670,9 @@
       "country": "ES",
       "sector": "Energy",
       "revenue_eur_bn": 65,
-      "ir_url": "https://www.repsol.com/en/shareholders-and-investors/financial-information/annual-reports/"
+      "ir_url": "https://www.repsol.com/en/shareholders-and-investors/financial-information/annual-reports/",
+      "direct_pdf_url": "https://www.repsol.com/content/dam/repsol-corporate/es/accionistas-e-inversores/rif/2025/rif20022025-2024-repsol-group-annual-financial-report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "naturgy",
@@ -578,7 +696,9 @@
       "country": "ES",
       "sector": "Construction",
       "revenue_eur_bn": 9,
-      "ir_url": "https://www.ferrovial.com/en/shareholders-and-investors/financial-and-business-information/annual-report/"
+      "ir_url": "https://www.ferrovial.com/en/shareholders-and-investors/financial-and-business-information/annual-report/",
+      "direct_pdf_url": "https://static-iai.ferrovial.com/wp-content/uploads/sites/13/2025/03/03192626/ferrovial-integrated-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "amadeus-it",
@@ -586,7 +706,9 @@
       "country": "ES",
       "sector": "Tech",
       "revenue_eur_bn": 6,
-      "ir_url": "https://corporate.amadeus.com/en/investors/financial-information/annual-reports"
+      "ir_url": "https://corporate.amadeus.com/en/investors/financial-information/annual-reports",
+      "direct_pdf_url": "https://amadeus.com/content/dam/amadeuswebevo/brand/amadeus/photos/sections/resources/global-report/pdfs/en/amadeus-global-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "mapfre",
@@ -594,7 +716,9 @@
       "country": "ES",
       "sector": "Insurance",
       "revenue_eur_bn": 28,
-      "ir_url": "https://www.mapfre.com/en/shareholders-investors/financial-information/"
+      "ir_url": "https://www.mapfre.com/en/shareholders-investors/financial-information/",
+      "direct_pdf_url": "https://www.mapfre.com/media/shareholders/2025/consolidated-annual-account-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "unilever",
@@ -602,7 +726,9 @@
       "country": "UK",
       "sector": "FMCG",
       "revenue_eur_bn": 60,
-      "ir_url": "https://www.unilever.com/investors/annual-report-and-accounts/"
+      "ir_url": "https://www.unilever.com/investors/annual-report-and-accounts/",
+      "direct_pdf_url": "https://www.unilever.com/files/unilever-annual-report-and-accounts-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "diageo",
@@ -610,7 +736,9 @@
       "country": "UK",
       "sector": "FMCG",
       "revenue_eur_bn": 20,
-      "ir_url": "https://www.diageo.com/en/investors/financial-reports"
+      "ir_url": "https://www.diageo.com/en/investors/financial-reports",
+      "direct_pdf_url": "https://www.diageo.com/~/media/Files/D/Diageo-V2/Diageo-Corp/investors/results-reports-and-events/annual-reports/diageo-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "british-american-tobacco",
@@ -618,7 +746,9 @@
       "country": "UK",
       "sector": "FMCG",
       "revenue_eur_bn": 33,
-      "ir_url": "https://www.bat.com/group/sites/UK__9D9KCY.nsf/vwPagesWebLive/DOATBVLT"
+      "ir_url": "https://www.bat.com/group/sites/UK__9D9KCY.nsf/vwPagesWebLive/DOATBVLT",
+      "direct_pdf_url": "https://www.bat.com/content/dam/batcom/global/main-nav/investors-and-reporting/reporting/combined-annual-and-sustainability-report/BAT_Annual_Report_on_Form_20-F_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "tesco",
@@ -626,7 +756,9 @@
       "country": "UK",
       "sector": "Retail",
       "revenue_eur_bn": 80,
-      "ir_url": "https://www.tescoplc.com/investors/reports-results-and-presentations/"
+      "ir_url": "https://www.tescoplc.com/investors/reports-results-and-presentations/",
+      "direct_pdf_url": "https://www.tescoplc.com/media/zgvhd0dn/tescos_ar24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "sainsbury",
@@ -634,7 +766,9 @@
       "country": "UK",
       "sector": "Retail",
       "revenue_eur_bn": 38,
-      "ir_url": "https://www.about.sainsburys.co.uk/investors/results-reports-and-presentations"
+      "ir_url": "https://www.about.sainsburys.co.uk/investors/results-reports-and-presentations",
+      "direct_pdf_url": "https://corporate.sainsburys.co.uk/media/n3bdgevz/sainsbury-annual-report-and-financial-statements-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "marks-spencer",
@@ -642,7 +776,9 @@
       "country": "UK",
       "sector": "Retail",
       "revenue_eur_bn": 16,
-      "ir_url": "https://corporate.marksandspencer.com/investors/financial-reports"
+      "ir_url": "https://corporate.marksandspencer.com/investors/financial-reports",
+      "direct_pdf_url": "https://corporate.marksandspencer.com/sites/marksandspencer/files/2024-06/M-and-S-2024-Annual-Report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "next-plc",
@@ -650,7 +786,9 @@
       "country": "UK",
       "sector": "Retail",
       "revenue_eur_bn": 7,
-      "ir_url": "https://www.nextplc.co.uk/investors/reports-and-presentations"
+      "ir_url": "https://www.nextplc.co.uk/investors/reports-and-presentations",
+      "direct_pdf_url": "https://www.nextplc.co.uk/~/media/Files/N/next-plc-v4/about-next/annual-report-and-accounts-jan-2025.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "rolls-royce",
@@ -658,7 +796,9 @@
       "country": "UK",
       "sector": "Aerospace",
       "revenue_eur_bn": 19,
-      "ir_url": "https://www.rolls-royce.com/investors/financial-results.aspx"
+      "ir_url": "https://www.rolls-royce.com/investors/financial-results.aspx",
+      "direct_pdf_url": "https://www.rolls-royce.com/~/media/Files/R/Rolls-Royce/documents/annual-report/2025/2024-annual-report-interactive.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "bae-systems",
@@ -666,7 +806,9 @@
       "country": "UK",
       "sector": "Aerospace",
       "revenue_eur_bn": 31,
-      "ir_url": "https://www.baesystems.com/en/investors/annual-report"
+      "ir_url": "https://www.baesystems.com/en/investors/annual-report",
+      "direct_pdf_url": "https://annualreport.baesystems.com/dam/jcr:f57706a5-0a28-441a-8829-0e0c213436c1/BAE-Systems-Annual-Report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "glaxosmithkline",
@@ -674,7 +816,9 @@
       "country": "UK",
       "sector": "Pharma",
       "revenue_eur_bn": 36,
-      "ir_url": "https://www.gsk.com/en-gb/investors/"
+      "ir_url": "https://www.gsk.com/en-gb/investors/",
+      "direct_pdf_url": "https://www.gsk.com/media/wrvfwob1/annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "astrazeneca",
@@ -682,7 +826,9 @@
       "country": "UK",
       "sector": "Pharma",
       "revenue_eur_bn": 50,
-      "ir_url": "https://www.astrazeneca.com/investor-relations/annual-reports.html"
+      "ir_url": "https://www.astrazeneca.com/investor-relations/annual-reports.html",
+      "direct_pdf_url": "https://www.astrazeneca.com/content/dam/az/Investor_Relations/annual-report-2024/pdf/AstraZeneca_AR_2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "vodafone",
@@ -690,7 +836,9 @@
       "country": "UK",
       "sector": "Telecom",
       "revenue_eur_bn": 37,
-      "ir_url": "https://investors.vodafone.com/reports-information/results-reports-presentations"
+      "ir_url": "https://investors.vodafone.com/reports-information/results-reports-presentations",
+      "direct_pdf_url": "https://data.fca.org.uk/artefacts/NSM/Portal/NI-000097578/NI-000097578.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "bt-group",
@@ -698,7 +846,9 @@
       "country": "UK",
       "sector": "Telecom",
       "revenue_eur_bn": 23,
-      "ir_url": "https://www.bt.com/about/investors/financial-reporting-and-news/annual-reports"
+      "ir_url": "https://www.bt.com/about/investors/financial-reporting-and-news/annual-reports",
+      "direct_pdf_url": "https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2024/2024-bt-group-plc-annual-report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "national-grid",
@@ -706,7 +856,9 @@
       "country": "UK",
       "sector": "Utilities",
       "revenue_eur_bn": 23,
-      "ir_url": "https://www.nationalgrid.com/about-us/investors-and-performance/annual-reports"
+      "ir_url": "https://www.nationalgrid.com/about-us/investors-and-performance/annual-reports",
+      "direct_pdf_url": "https://www.nationalgrid.com/document/560311/download",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "centrica",
@@ -714,7 +866,9 @@
       "country": "UK",
       "sector": "Utilities",
       "revenue_eur_bn": 30,
-      "ir_url": "https://www.centrica.com/investors/results-and-presentations/"
+      "ir_url": "https://www.centrica.com/investors/results-and-presentations/",
+      "direct_pdf_url": "https://www.centrica.com/media/2pjoazw0/annual-report-and-accounts-2024-untagged.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "wpp",
@@ -722,7 +876,9 @@
       "country": "UK",
       "sector": "Advertising",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.wpp.com/investors/financial-reports-and-presentations"
+      "ir_url": "https://www.wpp.com/investors/financial-reports-and-presentations",
+      "direct_pdf_url": "https://www.wpp.com/-/media/project/wpp/files/investors/2025/annual-report/wpp_annual_report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "reckitt",
@@ -730,7 +886,9 @@
       "country": "UK",
       "sector": "FMCG",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.reckitt.com/investors/financial-reports/annual-reports/"
+      "ir_url": "https://www.reckitt.com/investors/financial-reports/annual-reports/",
+      "direct_pdf_url": "https://data.fca.org.uk/artefacts/NSM/Portal/NI-000115992/NI-000115992.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "associated-british-foods",
@@ -738,7 +896,9 @@
       "country": "UK",
       "sector": "FMCG",
       "revenue_eur_bn": 23,
-      "ir_url": "https://www.abf.co.uk/investorrelations/results_centre"
+      "ir_url": "https://www.abf.co.uk/investorrelations/results_centre",
+      "direct_pdf_url": "https://www.abf.co.uk/content/dam/abf/corporate/ar-assets-2024/pdfs/abf-annual-report-2024.pdf.downloadasset.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "anglo-american",
@@ -746,7 +906,9 @@
       "country": "UK",
       "sector": "Mining",
       "revenue_eur_bn": 27,
-      "ir_url": "https://www.angloamerican.com/investors/annual-reporting"
+      "ir_url": "https://www.angloamerican.com/investors/annual-reporting",
+      "direct_pdf_url": "https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group-v9/PLC/investors/annual-reporting/2024/aa-annual-report-full-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "rio-tinto",
@@ -754,7 +916,9 @@
       "country": "UK",
       "sector": "Mining",
       "revenue_eur_bn": 49,
-      "ir_url": "https://www.riotinto.com/invest/financial-news-performance/annual-report"
+      "ir_url": "https://www.riotinto.com/invest/financial-news-performance/annual-report",
+      "direct_pdf_url": "https://company-announcements.afr.com/asx/rio/368b5372-ef01-11ef-bad1-e21e95c6ff03.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "glencore",
@@ -762,7 +926,9 @@
       "country": "CH",
       "sector": "Mining",
       "revenue_eur_bn": 195,
-      "ir_url": "https://www.glencore.com/investors/reports-results"
+      "ir_url": "https://www.glencore.com/investors/reports-results",
+      "direct_pdf_url": "https://www.glencore.com/.rest/api/v1/documents/static/7a4295e4-3674-45e9-94c4-7d7fb285faff/GLEN-2024-Annual-Report.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "bunge",
@@ -770,7 +936,9 @@
       "country": "CH",
       "sector": "Agribusiness",
       "revenue_eur_bn": 50,
-      "ir_url": "https://www.bunge.com/investors/financial-information"
+      "ir_url": "https://www.bunge.com/investors/financial-information",
+      "direct_pdf_url": "https://investors.bunge.com/~/media/Files/B/Bunge-IR/documents/financial-information/annual-reports/2024-bunge-annual-report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "ahold-delhaize",
@@ -778,7 +946,9 @@
       "country": "NL",
       "sector": "Retail",
       "revenue_eur_bn": 89,
-      "ir_url": "https://www.aholddelhaize.com/investors/annual-reports/"
+      "ir_url": "https://www.aholddelhaize.com/investors/annual-reports/",
+      "direct_pdf_url": "https://media.aholddelhaize.com/media/sedod1fo/annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "heineken",
@@ -786,7 +956,9 @@
       "country": "NL",
       "sector": "FMCG",
       "revenue_eur_bn": 30,
-      "ir_url": "https://www.theheinekencompany.com/investors/reports-and-presentations"
+      "ir_url": "https://www.theheinekencompany.com/investors/reports-and-presentations",
+      "direct_pdf_url": "https://www.theheinekencompany.com/sites/heineken-corp/files/2025-02/heineken_n_v_annual_report_2024_final_20feb2025.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "philips",
@@ -794,7 +966,9 @@
       "country": "NL",
       "sector": "Healthcare",
       "revenue_eur_bn": 18,
-      "ir_url": "https://www.philips.com/a-w/about/investor.html"
+      "ir_url": "https://www.philips.com/a-w/about/investor.html",
+      "direct_pdf_url": "https://www.results.philips.com/publications/ar24/downloads/files/en/PhilipsFullAnnualReport2024-English.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "asml",
@@ -802,7 +976,9 @@
       "country": "NL",
       "sector": "Tech",
       "revenue_eur_bn": 28,
-      "ir_url": "https://www.asml.com/en/investors/annual-report"
+      "ir_url": "https://www.asml.com/en/investors/annual-report",
+      "direct_pdf_url": "https://ourbrand.asml.com/m/79d325b168e0fd7e/original/2024-Annual-Report-based-on-US-GAAP.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "akzo-nobel",
@@ -810,7 +986,9 @@
       "country": "NL",
       "sector": "Chemicals",
       "revenue_eur_bn": 11,
-      "ir_url": "https://www.akzonobel.com/en/investor-relations/financial-information/annual-reports"
+      "ir_url": "https://www.akzonobel.com/en/investor-relations/financial-information/annual-reports",
+      "direct_pdf_url": "https://www.akzonobel.com/content/dam/akzonobel-corporate/global/en/investor-relations-images/result-center/archive-annual-reports/2029-2020/AkzoNobel-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "dsm-firmenich",
@@ -818,7 +996,9 @@
       "country": "NL",
       "sector": "Chemicals",
       "revenue_eur_bn": 12,
-      "ir_url": "https://www.dsm-firmenich.com/corporate/investors/financial-publications.html"
+      "ir_url": "https://www.dsm-firmenich.com/corporate/investors/financial-publications.html",
+      "direct_pdf_url": "https://annualreport.dsm-firmenich.com/2024/_assets/downloads/entire-dsmfirmenich-iar24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "kpn",
@@ -826,7 +1006,9 @@
       "country": "NL",
       "sector": "Telecom",
       "revenue_eur_bn": 5,
-      "ir_url": "https://www.kpn.com/algemeen/over-kpn/investor-relations/financial-results.htm"
+      "ir_url": "https://www.kpn.com/algemeen/over-kpn/investor-relations/financial-results.htm",
+      "direct_pdf_url": "https://s202.q4cdn.com/886546970/files/doc_financials/2024/ar/6-2024-KPN-Integrated-Annual-Report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "randstad",
@@ -834,7 +1016,9 @@
       "country": "NL",
       "sector": "Services",
       "revenue_eur_bn": 25,
-      "ir_url": "https://www.randstad.com/investors/results-and-reports/annual-reports/"
+      "ir_url": "https://www.randstad.com/investors/results-and-reports/annual-reports/",
+      "direct_pdf_url": "https://www.randstad.com/s3fs-media/rscom/public/2025-02/Randstad_Annual_Report_2024_0.pdf?VersionId=LlTQ.5dhCvH0C3FiBnYOryA5qOtq9aVi",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "anheuser-busch",
@@ -842,7 +1026,9 @@
       "country": "BE",
       "sector": "FMCG",
       "revenue_eur_bn": 53,
-      "ir_url": "https://www.ab-inbev.com/investors/reports-and-filings/annual-and-hy-reports/"
+      "ir_url": "https://www.ab-inbev.com/investors/reports-and-filings/annual-and-hy-reports/",
+      "direct_pdf_url": "https://www.annualreports.com/HostedData/AnnualReports/PDF/NYSE_BUD_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "solvay",
@@ -850,7 +1036,9 @@
       "country": "BE",
       "sector": "Chemicals",
       "revenue_eur_bn": 5,
-      "ir_url": "https://www.solvay.com/en/investors/financial-publications"
+      "ir_url": "https://www.solvay.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://www.solvay.com/sites/g/files/srpend616/files/2025-04/Solvay_AIR_2024_EN_BD.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "umicore",
@@ -858,7 +1046,9 @@
       "country": "BE",
       "sector": "Chemicals",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.umicore.com/en/investors/financial-publications/"
+      "ir_url": "https://www.umicore.com/en/investors/financial-publications/",
+      "direct_pdf_url": "https://www.umicore.com/files/secure-documents/f80f2918-ed1f-4461-9f59-d6ef5aa9f7a5.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "kbc-corp",
@@ -866,7 +1056,9 @@
       "country": "BE",
       "sector": "Banking",
       "revenue_eur_bn": 11,
-      "ir_url": "https://www.kbc.com/en/investor-relations.html"
+      "ir_url": "https://www.kbc.com/en/investor-relations.html",
+      "direct_pdf_url": "https://www.kbc.com/content/dam/kbccom/doc/investor-relations/Results/jvs-2024/jvs-2024-grp-en.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "novartis",
@@ -874,7 +1066,9 @@
       "country": "CH",
       "sector": "Pharma",
       "revenue_eur_bn": 50,
-      "ir_url": "https://www.novartis.com/investors/financial-data/annual-results"
+      "ir_url": "https://www.novartis.com/investors/financial-data/annual-results",
+      "direct_pdf_url": "https://www.novartis.com/sites/novartiscom/files/novartis-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "roche",
@@ -882,7 +1076,9 @@
       "country": "CH",
       "sector": "Pharma",
       "revenue_eur_bn": 65,
-      "ir_url": "https://www.roche.com/investors/annualreport24"
+      "ir_url": "https://www.roche.com/investors/annualreport24",
+      "direct_pdf_url": "https://assets.roche.com/f/174029/x/74e4b5f7dc/roche-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "abb",
@@ -890,7 +1086,9 @@
       "country": "CH",
       "sector": "Industrial",
       "revenue_eur_bn": 32,
-      "ir_url": "https://global.abb/group/en/investors/annual-reporting"
+      "ir_url": "https://global.abb/group/en/investors/annual-reporting",
+      "direct_pdf_url": "https://library.e.abb.com/public/ab32fda35c6f4a3cb62f8c5e2e4476c6/Integrated%20Report%202024_ENGLISH.pdf?x-sign=UnYjin5fuVkgZrq9TiPNJidsd1Jwly1KyOCd8f2g7uTIbSW3jzsaDeZEZ2sZxjoK",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "richemont",
@@ -898,7 +1096,9 @@
       "country": "CH",
       "sector": "Luxury",
       "revenue_eur_bn": 21,
-      "ir_url": "https://www.richemont.com/en/home/investors/results-reports-and-presentations/"
+      "ir_url": "https://www.richemont.com/en/home/investors/results-reports-and-presentations/",
+      "direct_pdf_url": "https://www.richemont.com/media/ke2kroab/richemont-fy24-annual-report-en.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "swatch-group",
@@ -906,7 +1106,9 @@
       "country": "CH",
       "sector": "Luxury",
       "revenue_eur_bn": 7,
-      "ir_url": "https://www.swatchgroup.com/en/investors/key-figures/annual-report"
+      "ir_url": "https://www.swatchgroup.com/en/investors/key-figures/annual-report",
+      "direct_pdf_url": "https://www.swatchgroup.com/sites/default/files/media-files/de_swatchgroup_2024_komplett_0.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "swisscom",
@@ -922,7 +1124,9 @@
       "country": "CH",
       "sector": "Pharma",
       "revenue_eur_bn": 7,
-      "ir_url": "https://www.lonza.com/investors/financial-publications"
+      "ir_url": "https://www.lonza.com/investors/financial-publications",
+      "direct_pdf_url": "https://www.lonza.com/annualreport/2024/documents/Lonza%20Annual%20Report%202024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "geberit",
@@ -930,7 +1134,9 @@
       "country": "CH",
       "sector": "Industrial",
       "revenue_eur_bn": 4,
-      "ir_url": "https://www.geberit.com/investor-relations/results-and-reports/"
+      "ir_url": "https://www.geberit.com/investor-relations/results-and-reports/",
+      "direct_pdf_url": "https://reports.geberit.com/annual-report/2024/_assets/downloads/geberit-ar24-en-entire.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "sika",
@@ -938,7 +1144,9 @@
       "country": "CH",
       "sector": "Construction",
       "revenue_eur_bn": 12,
-      "ir_url": "https://www.sika.com/en/investors/results.html"
+      "ir_url": "https://www.sika.com/en/investors/results.html",
+      "direct_pdf_url": "https://www.sika.com/dam/dms/corporate/media/glo-ar-24-annual-report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "novo-nordisk",
@@ -946,7 +1154,9 @@
       "country": "DK",
       "sector": "Pharma",
       "revenue_eur_bn": 31,
-      "ir_url": "https://www.novonordisk.com/investors/financial-reports.html"
+      "ir_url": "https://www.novonordisk.com/investors/financial-reports.html",
+      "direct_pdf_url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/irmaterial/annual_report/2025/novo-nordisk-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "carlsberg",
@@ -954,7 +1164,9 @@
       "country": "DK",
       "sector": "FMCG",
       "revenue_eur_bn": 10,
-      "ir_url": "https://www.carlsberggroup.com/investor-relations/financial-reports-and-presentations/"
+      "ir_url": "https://www.carlsberggroup.com/investor-relations/financial-reports-and-presentations/",
+      "direct_pdf_url": "https://www.carlsberggroup.com/reports-downloads/carlsberg-group-2024-annual-report/",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "maersk",
@@ -962,7 +1174,9 @@
       "country": "DK",
       "sector": "Logistics",
       "revenue_eur_bn": 50,
-      "ir_url": "https://investor.maersk.com/financial-results"
+      "ir_url": "https://investor.maersk.com/financial-results",
+      "direct_pdf_url": "https://www.maersk.com/~/media_sc9/maersk/corporate/sustainability/files/resources/2024/maersk-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "vestas",
@@ -970,7 +1184,9 @@
       "country": "DK",
       "sector": "Energy",
       "revenue_eur_bn": 16,
-      "ir_url": "https://www.vestas.com/en/investor/financial-reports-and-presentations"
+      "ir_url": "https://www.vestas.com/en/investor/financial-reports-and-presentations",
+      "direct_pdf_url": "https://www.vestas.com/content/dam/vestas-com/global/en/investor/reports-and-presentations/financial/2024/fy-2024/Vestas%20Annual%20Report%202024.pdf.coredownload.inline.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "orsted",
@@ -978,7 +1194,9 @@
       "country": "DK",
       "sector": "Energy",
       "revenue_eur_bn": 11,
-      "ir_url": "https://orsted.com/en/investors/ir-material/financial-reports-and-presentations"
+      "ir_url": "https://orsted.com/en/investors/ir-material/financial-reports-and-presentations",
+      "direct_pdf_url": "https://cdn.orsted.com/-/media/annual2024/orsted-annual-report-2024.pdf?rev=02bde37dc8424c8eb8e4e9f3b65cc833",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "danfoss",
@@ -986,7 +1204,9 @@
       "country": "DK",
       "sector": "Industrial",
       "revenue_eur_bn": 10,
-      "ir_url": "https://www.danfoss.com/en/about-danfoss/our-businesses/results-reports/"
+      "ir_url": "https://www.danfoss.com/en/about-danfoss/our-businesses/results-reports/",
+      "direct_pdf_url": "https://assets.danfoss.com/documents/latest/467423/AH516931434208en-000201.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "volvo-group",
@@ -994,7 +1214,9 @@
       "country": "SE",
       "sector": "Industrial",
       "revenue_eur_bn": 47,
-      "ir_url": "https://www.volvogroup.com/en/investors/reports-and-presentations/annual-and-sustainability-report.html"
+      "ir_url": "https://www.volvogroup.com/en/investors/reports-and-presentations/annual-and-sustainability-report.html",
+      "direct_pdf_url": "https://www.volvogroup.com/content/dam/volvo-group/markets/master/events/2025/annual-reports/volvo-group-annual-report-2024.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "volvo-cars",
@@ -1002,7 +1224,9 @@
       "country": "SE",
       "sector": "Automotive",
       "revenue_eur_bn": 36,
-      "ir_url": "https://investors.volvocars.com/reports-and-presentations"
+      "ir_url": "https://investors.volvocars.com/reports-and-presentations",
+      "direct_pdf_url": "http://investors.volvocars.com/~/media/Files/V/Volvo-Cars-IR-V2/AGM%202025%20ENG/VCG_AR_2024_ENG_250312.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "ericsson",
@@ -1010,7 +1234,9 @@
       "country": "SE",
       "sector": "Tech",
       "revenue_eur_bn": 22,
-      "ir_url": "https://www.ericsson.com/en/investors/financial-reports"
+      "ir_url": "https://www.ericsson.com/en/investors/financial-reports",
+      "direct_pdf_url": "https://mb.cision.com/Main/15448/4111351/3285959.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "h-and-m",
@@ -1018,7 +1244,9 @@
       "country": "SE",
       "sector": "Retail",
       "revenue_eur_bn": 21,
-      "ir_url": "https://hmgroup.com/investors/annual-and-sustainability-report/"
+      "ir_url": "https://hmgroup.com/investors/annual-and-sustainability-report/",
+      "direct_pdf_url": "https://hmgroup.com/wp-content/uploads/2025/03/HM-Group-Annual-and-sustainability-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "atlas-copco",
@@ -1026,7 +1254,9 @@
       "country": "SE",
       "sector": "Industrial",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.atlascopcogroup.com/en/investors/financial-reports"
+      "ir_url": "https://www.atlascopcogroup.com/en/investors/financial-reports",
+      "direct_pdf_url": "https://www.atlascopcogroup.com/content/dam/atlas-copco/group/documents/investors/financial-publications/english/20250320-annual-report-2024-incl-sustainability-report-and-corporate-governance-report-copy-of-the-official-ESEF-format.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "skf",
@@ -1034,7 +1264,9 @@
       "country": "SE",
       "sector": "Industrial",
       "revenue_eur_bn": 9,
-      "ir_url": "https://www.skf.com/group/investors/reports-and-presentations"
+      "ir_url": "https://www.skf.com/group/investors/reports-and-presentations",
+      "direct_pdf_url": "https://mb.cision.com/Main/637/4115866/3306976.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "electrolux",
@@ -1042,7 +1274,9 @@
       "country": "SE",
       "sector": "Consumer",
       "revenue_eur_bn": 12,
-      "ir_url": "https://www.electroluxgroup.com/en/financial-reports/"
+      "ir_url": "https://www.electroluxgroup.com/en/financial-reports/",
+      "direct_pdf_url": "https://www.electroluxgroup.com/wp-content/uploads/sites/2/2025/02/electrolux-Annual-Report-2024-250220.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "essity",
@@ -1050,7 +1284,9 @@
       "country": "SE",
       "sector": "FMCG",
       "revenue_eur_bn": 14,
-      "ir_url": "https://www.essity.com/investors/financial-reports/"
+      "ir_url": "https://www.essity.com/investors/financial-reports/",
+      "direct_pdf_url": "https://assets.www.essity.com/essity/Essity_AR24_Eng.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "scania",
@@ -1058,7 +1294,9 @@
       "country": "SE",
       "sector": "Industrial",
       "revenue_eur_bn": 18,
-      "ir_url": "https://www.scania.com/group/en/home/investors/financial-reports.html"
+      "ir_url": "https://www.scania.com/group/en/home/investors/financial-reports.html",
+      "direct_pdf_url": "https://www.scania.com/content/dam/group/investor-relations/annual-review/download-full-report/scania-annual-and-sustainability-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "ikea",
@@ -1066,7 +1304,9 @@
       "country": "NL",
       "sector": "Retail",
       "revenue_eur_bn": 47,
-      "ir_url": "https://www.inter.ikea.com/en/finance"
+      "ir_url": "https://www.inter.ikea.com/en/finance",
+      "direct_pdf_url": "https://www.inter.ikea.com/-/media/interikea/igi/financial-reports/fy24-financial-reports/inter-ikea-holding-bv-annual-report-fy24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "alfa-laval",
@@ -1074,7 +1314,9 @@
       "country": "SE",
       "sector": "Industrial",
       "revenue_eur_bn": 5,
-      "ir_url": "https://www.alfalaval.com/about-us/investors/reports-and-presentations/"
+      "ir_url": "https://www.alfalaval.com/about-us/investors/reports-and-presentations/",
+      "direct_pdf_url": "https://www.alfalaval.com/globalassets/documents/investors/english/annual-reports/2024/alfa-laval-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "equinor",
@@ -1082,7 +1324,9 @@
       "country": "NO",
       "sector": "Energy",
       "revenue_eur_bn": 95,
-      "ir_url": "https://www.equinor.com/investors/annual-reports"
+      "ir_url": "https://www.equinor.com/investors/annual-reports",
+      "direct_pdf_url": "https://cdn.equinor.com/files/h61q9gi9/global/c8e6889639a38f3544364dc1da440e13e2e58e57.pdf",
+      "direct_pdf_source": "exa-search"
     },
     {
       "id": "yara",
@@ -1090,7 +1334,9 @@
       "country": "NO",
       "sector": "Chemicals",
       "revenue_eur_bn": 14,
-      "ir_url": "https://www.yara.com/investor-relations/annual-report-2024/"
+      "ir_url": "https://www.yara.com/investor-relations/annual-report-2024/",
+      "direct_pdf_url": "https://www.yara.com/siteassets/investors/057-reports-and-presentations/annual-reports/2024/yara-integrated-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "telenor",
@@ -1098,7 +1344,9 @@
       "country": "NO",
       "sector": "Telecom",
       "revenue_eur_bn": 11,
-      "ir_url": "https://www.telenor.com/investors/reports/"
+      "ir_url": "https://www.telenor.com/investors/reports/",
+      "direct_pdf_url": "https://www.telenor.no/binaries/om/group/Annual-Report-2024-English.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "hydro-norsk",
@@ -1106,7 +1354,9 @@
       "country": "NO",
       "sector": "Mining",
       "revenue_eur_bn": 17,
-      "ir_url": "https://www.hydro.com/en-NO/investors/reports-and-presentations/"
+      "ir_url": "https://www.hydro.com/en-NO/investors/reports-and-presentations/",
+      "direct_pdf_url": "https://www.hydro.com/globalassets/06-investors/reports-and-presentations/annual-report/nhy-2024/integrated-annual-report-2024-en.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "neste",
@@ -1114,7 +1364,9 @@
       "country": "FI",
       "sector": "Energy",
       "revenue_eur_bn": 22,
-      "ir_url": "https://www.neste.com/investors/financial-information/financial-reports-and-presentations"
+      "ir_url": "https://www.neste.com/investors/financial-information/financial-reports-and-presentations",
+      "direct_pdf_url": "https://www.neste.com/files/pdf/3kFaGuHcQk8hRDLS6tlvqF-Neste_Annual_Report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "nokia",
@@ -1122,7 +1374,9 @@
       "country": "FI",
       "sector": "Tech",
       "revenue_eur_bn": 22,
-      "ir_url": "https://www.nokia.com/about-us/investors/reports-filings/"
+      "ir_url": "https://www.nokia.com/about-us/investors/reports-filings/",
+      "direct_pdf_url": "https://www.nokia.com/system/files/2025-04/nokia-form-20-f-2024_0.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "kone",
@@ -1130,7 +1384,9 @@
       "country": "FI",
       "sector": "Industrial",
       "revenue_eur_bn": 11,
-      "ir_url": "https://www.kone.com/en/investors/reports-and-presentations/"
+      "ir_url": "https://www.kone.com/en/investors/reports-and-presentations/",
+      "direct_pdf_url": "https://www.kone.com/en/Images/KONE_Annual%20Review_2024_tcm17-134328.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "stora-enso",
@@ -1138,7 +1394,9 @@
       "country": "FI",
       "sector": "Pulp/Paper",
       "revenue_eur_bn": 9,
-      "ir_url": "https://www.storaenso.com/en/investors/reports-and-presentations"
+      "ir_url": "https://www.storaenso.com/en/investors/reports-and-presentations",
+      "direct_pdf_url": "https://www.storaenso.com/-/media/documents/download-center/documents/annual-reports/2024/storaenso_annual_report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "upm",
@@ -1146,7 +1404,9 @@
       "country": "FI",
       "sector": "Pulp/Paper",
       "revenue_eur_bn": 10,
-      "ir_url": "https://www.upm.com/investors/reports-and-presentations/"
+      "ir_url": "https://www.upm.com/investors/reports-and-presentations/",
+      "direct_pdf_url": "https://www.upm.com/siteassets/investors/reports-and-presentations/2024/upm-annual-report-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "voestalpine",
@@ -1154,7 +1414,9 @@
       "country": "AT",
       "sector": "Industrial",
       "revenue_eur_bn": 16,
-      "ir_url": "https://www.voestalpine.com/group/en/investors/financial-reports/"
+      "ir_url": "https://www.voestalpine.com/group/en/investors/financial-reports/",
+      "direct_pdf_url": "https://www.voestalpine.com/group/static/sites/group/.downloads/en/publications-2023-24/2023-24-annual-report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "omv",
@@ -1162,7 +1424,9 @@
       "country": "AT",
       "sector": "Energy",
       "revenue_eur_bn": 38,
-      "ir_url": "https://www.omv.com/en/investors/financial-publications"
+      "ir_url": "https://www.omv.com/en/investors/financial-publications",
+      "direct_pdf_url": "https://reports.omv.com/en/annual-report/2024/_assets/downloads/entire-omv-ar24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "andritz",
@@ -1170,7 +1434,9 @@
       "country": "AT",
       "sector": "Industrial",
       "revenue_eur_bn": 8,
-      "ir_url": "https://www.andritz.com/group-en/investor-relations/financial-reports"
+      "ir_url": "https://www.andritz.com/group-en/investor-relations/financial-reports",
+      "direct_pdf_url": "https://www.andritz.com/resource/blob/621030/9b073db5f0c2199a357210ff2163950b/andritz-annual-report-2024-web-data.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "verbund",
@@ -1178,7 +1444,9 @@
       "country": "AT",
       "sector": "Utilities",
       "revenue_eur_bn": 7,
-      "ir_url": "https://www.verbund.com/en-at/about-verbund/investor-relations/publications"
+      "ir_url": "https://www.verbund.com/en-at/about-verbund/investor-relations/publications",
+      "direct_pdf_url": "https://www.verbund.com/media/blvmvqqw/16_integrated_annual_report_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "edp-portugal",
@@ -1186,7 +1454,9 @@
       "country": "PT",
       "sector": "Utilities",
       "revenue_eur_bn": 19,
-      "ir_url": "https://www.edp.com/en/investors/economic-financial-information/results-and-reports"
+      "ir_url": "https://www.edp.com/en/investors/economic-financial-information/results-and-reports",
+      "direct_pdf_url": "https://edp.com/sites/default/files/document/2025-04/Integrated%2520Annual%2520Report%25202024%2520-%2520Unofficial%2520Version%2520-%2520Unaudited.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "galp",
@@ -1194,7 +1464,9 @@
       "country": "PT",
       "sector": "Energy",
       "revenue_eur_bn": 23,
-      "ir_url": "https://www.galp.com/corp/en/investors/financial-information/annual-reports"
+      "ir_url": "https://www.galp.com/corp/en/investors/financial-information/annual-reports",
+      "direct_pdf_url": "https://www.galp.com/corp/Portals/0/Recursos/Investidores/IMR2024/AnnualIntegratedReport2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "jeronimo-martins",
@@ -1202,7 +1474,9 @@
       "country": "PT",
       "sector": "Retail",
       "revenue_eur_bn": 31,
-      "ir_url": "https://www.jeronimomartins.com/en/investors/financial-information/annual-reports/"
+      "ir_url": "https://www.jeronimomartins.com/en/investors/financial-information/annual-reports/",
+      "direct_pdf_url": "https://reports.jeronimomartins.com/annual-report/2024/_assets/downloads/entire-jeronimomartins-ar24.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "intesa-sanpaolo-corp",
@@ -1210,7 +1484,9 @@
       "country": "IT",
       "sector": "Banking",
       "revenue_eur_bn": 25,
-      "ir_url": "https://group.intesasanpaolo.com/en/investor-relations/financial-statements"
+      "ir_url": "https://group.intesasanpaolo.com/en/investor-relations/financial-statements",
+      "direct_pdf_url": "https://group.intesasanpaolo.com/content/dam/portalgroup/repository-documenti/investor-relations/bilanci-relazioni-en/2024/2024_Annual_report.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "unicredit-corp",
@@ -1218,7 +1494,9 @@
       "country": "IT",
       "sector": "Banking",
       "revenue_eur_bn": 24,
-      "ir_url": "https://www.unicreditgroup.eu/en/investors/financial-reports.html"
+      "ir_url": "https://www.unicreditgroup.eu/en/investors/financial-reports.html",
+      "direct_pdf_url": "https://www.unicreditgroup.eu/content/dam/unicreditgroup-eu/documents/en/investors/financial-reports/2024/4Q24/2024-Annual-Reports-and-Accounts-General-Meeting-Draft.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "pkn-orlen",
@@ -1226,7 +1504,9 @@
       "country": "PL",
       "sector": "Energy",
       "revenue_eur_bn": 73,
-      "ir_url": "https://www.orlen.pl/en/investor-relations/financial-results/annual-reports"
+      "ir_url": "https://www.orlen.pl/en/investor-relations/financial-results/annual-reports",
+      "direct_pdf_url": "https://db.srnav.com/storage/v1/object/public/document-pdfs/cce7171a-8156-4818-adc0-6f6084e3116e.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "kghm",
@@ -1234,7 +1514,9 @@
       "country": "PL",
       "sector": "Mining",
       "revenue_eur_bn": 8,
-      "ir_url": "https://kghm.com/en/investors/financial-results/financial-reports"
+      "ir_url": "https://kghm.com/en/investors/financial-results/financial-reports",
+      "direct_pdf_url": "https://kghm.com/sites/default/files/2025-03/MBs%20report%20on%20activities%20in%202024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "lpp",
@@ -1242,7 +1524,9 @@
       "country": "PL",
       "sector": "Retail",
       "revenue_eur_bn": 4,
-      "ir_url": "https://www.lppsa.com/en/investor-relations/reports/annual-reports"
+      "ir_url": "https://www.lppsa.com/en/investor-relations/reports/annual-reports",
+      "direct_pdf_url": "https://wwwlpp62711ea95a.blob.core.windows.net/blobwwwlpp62711ea95a/wp-content/uploads/2025/04/Consolidated-annual-report-of-LPP-SA-Group-for-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "cd-projekt",
@@ -1250,7 +1534,9 @@
       "country": "PL",
       "sector": "Tech",
       "revenue_eur_bn": 1,
-      "ir_url": "https://www.cdprojekt.com/en/investors/"
+      "ir_url": "https://www.cdprojekt.com/en/investors/",
+      "direct_pdf_url": "https://www.cdprojekt.com/en/wp-content/uploads-en/2025/03/management-board-report-on-cd-projekt-group-activities-in-2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "cez",
@@ -1258,7 +1544,9 @@
       "country": "CZ",
       "sector": "Utilities",
       "revenue_eur_bn": 14,
-      "ir_url": "https://www.cez.cz/en/investors/financial-and-operating-results/annual-reports"
+      "ir_url": "https://www.cez.cz/en/investors/financial-and-operating-results/annual-reports",
+      "direct_pdf_url": "https://www.cez.cz/webpublic/file/edee/esg/documents/anual-reports/cez_en_vfz_2024.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "skoda-auto",
@@ -1266,7 +1554,9 @@
       "country": "CZ",
       "sector": "Automotive",
       "revenue_eur_bn": 27,
-      "ir_url": "https://www.skoda-storyboard.com/en/about-skoda-auto/annual-press-conference/"
+      "ir_url": "https://www.skoda-storyboard.com/en/about-skoda-auto/annual-press-conference/",
+      "direct_pdf_url": "https://cdn.skoda-storyboard.com/2025/03/Skoda_Auto-Annual_Report-2024_EN_e2c82f13.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "agrofert",
@@ -1274,7 +1564,9 @@
       "country": "CZ",
       "sector": "Agribusiness",
       "revenue_eur_bn": 8,
-      "ir_url": "https://www.agrofert.cz/en/about-us/annual-reports"
+      "ir_url": "https://www.agrofert.cz/en/about-us/annual-reports",
+      "direct_pdf_url": "https://www.agrofert.cz/sites/default/files/prilohy/agrofert-annual_report_2024_consolidated.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "mol",
@@ -1282,7 +1574,9 @@
       "country": "HU",
       "sector": "Energy",
       "revenue_eur_bn": 22,
-      "ir_url": "https://molgroup.info/en/investor-relations/results-and-publications"
+      "ir_url": "https://molgroup.info/en/investor-relations/results-and-publications",
+      "direct_pdf_url": "https://molgroup.info/storage/documents/publications/annual_reports/2024/integrated-annual-report-2024-eng.pdf",
+      "direct_pdf_source": "exa_search"
     },
     {
       "id": "richter",
@@ -1290,7 +1584,9 @@
       "country": "HU",
       "sector": "Pharma",
       "revenue_eur_bn": 2,
-      "ir_url": "https://www.richter.hu/en-US/investors/Financial-Reports"
+      "ir_url": "https://www.richter.hu/en-US/investors/Financial-Reports",
+      "direct_pdf_url": "https://www.gedeonrichter.com/-/media/sites/hq/documents/investors/financial-reports/annual-report/en/2024/annual-report-2024-nonofficial.pdf",
+      "direct_pdf_source": "exa_search"
     }
   ]
 }
