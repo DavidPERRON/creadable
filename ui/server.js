@@ -160,6 +160,7 @@ const COMMANDS = {
   'cs:dashboard':     { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/dashboard.js'] },
   'cs:full':          { cwd: 'corporate_scraper', cmd: 'make', args: ['full'] },
   // Bank intelligence
+  'bi:download':      { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_downloader.js'] },
   'bi:extract':       { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_extractor.js'] },
   'bi:bis':           { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bis_calculator.js'] },
   'bi:report':        { cwd: 'bank_intelligence', cmd: 'make', args: ['report'] },
@@ -245,7 +246,9 @@ app.get('/api/logs/:jobId', (req, res) => {
   if (job.done) { sseWrite(res, 'done', { code: job.exitCode }); return res.end(); }
 
   job.clients.push(res);
+  const heartbeat = setInterval(() => res.write(": heartbeat\n\n"), 20000);
   req.on('close', () => {
+    clearInterval(heartbeat);
     job.clients = job.clients.filter(c => c !== res);
   });
 });
