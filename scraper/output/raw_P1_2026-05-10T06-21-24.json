@@ -1,0 +1,2289 @@
+{
+  "banks": [
+    {
+      "name": "BCGE",
+      "country": "CH",
+      "priority": "P1",
+      "bankPages": [
+        {
+          "url": "https://www.bcge.ch/en/entreprises",
+          "title": "A bank committed to the success of companies",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Online portal",
+              "href": "https://www.bcge.ch/authen/login?lang=en"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/entreprises#"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bcge.ch/en/news"
+            },
+            {
+              "txt": "About Us",
+              "href": "https://www.bcge.ch/en/qui-sommes-nous"
+            },
+            {
+              "txt": "Organisation",
+              "href": "https://www.bcge.ch/en/organisation"
+            },
+            {
+              "txt": "Shareholders and investors",
+              "href": "https://www.bcge.ch/en/actionnaires-investisseurs"
+            },
+            {
+              "txt": "Corporate social responsibility",
+              "href": "https://www.bcge.ch/en/rse"
+            },
+            {
+              "txt": "Publications",
+              "href": "https://www.bcge.ch/en/propos-publications"
+            },
+            {
+              "txt": "Media",
+              "href": "https://www.bcge.ch/en/media"
+            },
+            {
+              "txt": "Partnerships",
+              "href": "https://www.bcge.ch/en/partenariats"
+            },
+            {
+              "txt": "Open positions",
+              "href": "https://www.bcge.ch/en/carriere-bcge"
+            },
+            {
+              "txt": "Français",
+              "href": "https://www.bcge.ch/fr/entreprises"
+            },
+            {
+              "txt": "Deutsch",
+              "href": "https://www.bcge.ch/de/entreprises"
+            },
+            {
+              "txt": "Branches",
+              "href": "https://www.bcge.ch/en/agences-et-bancomats-bcge"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.bcge.ch/en/contact"
+            },
+            {
+              "txt": "Online help",
+              "href": "https://support.bcge.ch/en/home"
+            },
+            {
+              "txt": "Branches",
+              "href": "https://www.bcge.ch/en/agences-et-bancomats-bcge"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.bcge.ch/en/contact"
+            },
+            {
+              "txt": "Online help",
+              "href": "https://support.bcge.ch/en/home"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bcge.ch/en/news"
+            },
+            {
+              "txt": "About Us",
+              "href": "https://www.bcge.ch/en/qui-sommes-nous"
+            },
+            {
+              "txt": "Organisation",
+              "href": "https://www.bcge.ch/en/organisation"
+            },
+            {
+              "txt": "Shareholders and investors",
+              "href": "https://www.bcge.ch/en/actionnaires-investisseurs"
+            },
+            {
+              "txt": "Corporate social responsibility",
+              "href": "https://www.bcge.ch/en/rse"
+            },
+            {
+              "txt": "Publications",
+              "href": "https://www.bcge.ch/en/propos-publications"
+            },
+            {
+              "txt": "Media",
+              "href": "https://www.bcge.ch/en/media"
+            },
+            {
+              "txt": "Partnerships",
+              "href": "https://www.bcge.ch/en/partenariats"
+            },
+            {
+              "txt": "Open positions",
+              "href": "https://www.bcge.ch/en/carriere-bcge"
+            },
+            {
+              "txt": "Online portal",
+              "href": "https://www.bcge.ch/authen/login?lang=en"
+            },
+            {
+              "txt": "Français",
+              "href": "https://www.bcge.ch/fr/entreprises"
+            },
+            {
+              "txt": "Deutsch",
+              "href": "https://www.bcge.ch/de/entreprises"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/entreprises#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/entreprises#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/entreprises#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/authen/login?lang=en?lang=en"
+            },
+            {
+              "txt": "Discover\n\nBCGE Entreprises account",
+              "href": "https://www.bcge.ch/en/bcge-entreprises"
+            },
+            {
+              "txt": "Discover\n\nForXchange by BCGE",
+              "href": "https://www.bcge.ch/en/forexchange-entreprises"
+            },
+            {
+              "txt": "Discover\n\nPension fund (LPP)",
+              "href": "https://www.bcge.ch/en/caisse-pension-lpp-entreprises"
+            },
+            {
+              "txt": "Discover\n\nFixed-rate mortgage",
+              "href": "https://www.bcge.ch/en/pret-hypothecaire-fixe-entreprises"
+            },
+            {
+              "txt": "Discover\n\nFinancing",
+              "href": "https://www.bcge.ch/en/financements-entreprises"
+            },
+            {
+              "txt": "Discover\n\nCapital goods leasing",
+              "href": "https://www.bcge.ch/en/leasing-biens-equipement-entreprises"
+            },
+            {
+              "txt": "Discover\n\nBCGE Horizon Entreprises",
+              "href": "https://www.bcge.ch/en/bcge-tresorerie-ent"
+            },
+            {
+              "txt": "Discover\n\nSynchrony Funds",
+              "href": "https://www.bcge.ch/en/synchrony"
+            },
+            {
+              "txt": "Discover\n\nOnline Trading 1816",
+              "href": "https://www.bcge.ch/en/trading-online-1816-ent"
+            },
+            {
+              "txt": "Discover\n\nDeposit account",
+              "href": "https://www.bcge.ch/en/compte-consignation-entreprises"
+            },
+            {
+              "txt": "Discover\n\nFinancial engineering",
+              "href": "https://www.bcge.ch/en/ingenierie-financiere-entreprises"
+            },
+            {
+              "txt": "Discover\n\nCreating value in mergers and acquisitions",
+              "href": "https://www.bcge.ch/en/mise-en-valeur-transmission-entreprises"
+            },
+            {
+              "txt": "More information",
+              "href": "https://cookiepedia.co.uk/giving-consent-to-cookies"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.bcge.ch/en/newsroom",
+          "title": "BCGE: Page d'erreur 404 - Error page 404 - Fehlerseite 404",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Cliquer ici pour accéder à l'Espace Client",
+              "href": "https://www.bcge.ch/portal/netbanking"
+            },
+            {
+              "txt": "Click here to log on Online Solutions",
+              "href": "https://www.bcge.ch/portal/netbanking"
+            },
+            {
+              "txt": "Klicken Sie hier, um sich in Ihren Kundenbereich einzuloggen",
+              "href": "https://www.bcge.ch/portal/netbanking"
+            }
+          ]
+        },
+        {
+          "url": "https://www.bcge.ch/en/direction-generale",
+          "title": "Executive Board",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "s Credit Suisse entities in Lausanne, Zurich and New York before becoming Chief Executive & Managing Director of Global Supply Chain Finance in Zug. Katia Coudray, Head of the Wealth & Asset management division Born 26 September 1969, Swiss national Professional career Katia Coudray holds a Bachelor’s degree in Business Administration from HES-SO Valais, a Certified International I"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "er of the executive board, head of this same division as of 1 April 2018. Eric Balmer, Head of the Corporate Banking & Trade Finance division Born 11 September 1972, Swiss nationality Professional career Eric Balmer holds a Master’s degree in law from the University of Fribourg and a PhD in law from the University of Lausanne. He has extensive experience in corporate banking. D"
+            }
+          ],
+          "error": "",
+          "links": [
+            {
+              "txt": "Online portal",
+              "href": "https://www.bcge.ch/authen/login?lang=en"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bcge.ch/en/news"
+            },
+            {
+              "txt": "About Us",
+              "href": "https://www.bcge.ch/en/qui-sommes-nous"
+            },
+            {
+              "txt": "Organisation",
+              "href": "https://www.bcge.ch/en/organisation"
+            },
+            {
+              "txt": "Shareholders and investors",
+              "href": "https://www.bcge.ch/en/actionnaires-investisseurs"
+            },
+            {
+              "txt": "Corporate social responsibility",
+              "href": "https://www.bcge.ch/en/rse"
+            },
+            {
+              "txt": "Publications",
+              "href": "https://www.bcge.ch/en/propos-publications"
+            },
+            {
+              "txt": "Media",
+              "href": "https://www.bcge.ch/en/media"
+            },
+            {
+              "txt": "Partnerships",
+              "href": "https://www.bcge.ch/en/partenariats"
+            },
+            {
+              "txt": "Open positions",
+              "href": "https://www.bcge.ch/en/carriere-bcge"
+            },
+            {
+              "txt": "Français",
+              "href": "https://www.bcge.ch/fr/direction-generale"
+            },
+            {
+              "txt": "Deutsch",
+              "href": "https://www.bcge.ch/de/direction-generale"
+            },
+            {
+              "txt": "Branches",
+              "href": "https://www.bcge.ch/en/agences-et-bancomats-bcge"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.bcge.ch/en/contact"
+            },
+            {
+              "txt": "Online help",
+              "href": "https://support.bcge.ch/en/home"
+            },
+            {
+              "txt": "",
+              "href": "http://www.facebook.com/sharer.php?display=page&u=http://www.bcge.ch/en/direction-generale"
+            },
+            {
+              "txt": "",
+              "href": "https://twitter.com/intent/tweet?url=http://www.bcge.ch/en/direction-generale&text=Executive%20Board"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/direction-generale"
+            },
+            {
+              "txt": "Branches",
+              "href": "https://www.bcge.ch/en/agences-et-bancomats-bcge"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.bcge.ch/en/contact"
+            },
+            {
+              "txt": "Online help",
+              "href": "https://support.bcge.ch/en/home"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bcge.ch/en/news"
+            },
+            {
+              "txt": "About Us",
+              "href": "https://www.bcge.ch/en/qui-sommes-nous"
+            },
+            {
+              "txt": "Organisation",
+              "href": "https://www.bcge.ch/en/organisation"
+            },
+            {
+              "txt": "Shareholders and investors",
+              "href": "https://www.bcge.ch/en/actionnaires-investisseurs"
+            },
+            {
+              "txt": "Corporate social responsibility",
+              "href": "https://www.bcge.ch/en/rse"
+            },
+            {
+              "txt": "Publications",
+              "href": "https://www.bcge.ch/en/propos-publications"
+            },
+            {
+              "txt": "Media",
+              "href": "https://www.bcge.ch/en/media"
+            },
+            {
+              "txt": "Partnerships",
+              "href": "https://www.bcge.ch/en/partenariats"
+            },
+            {
+              "txt": "Open positions",
+              "href": "https://www.bcge.ch/en/carriere-bcge"
+            },
+            {
+              "txt": "Online portal",
+              "href": "https://www.bcge.ch/authen/login?lang=en"
+            },
+            {
+              "txt": "Français",
+              "href": "https://www.bcge.ch/fr/direction-generale"
+            },
+            {
+              "txt": "Deutsch",
+              "href": "https://www.bcge.ch/de/direction-generale"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/en"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bcge.ch/authen/login?lang=en?lang=en"
+            },
+            {
+              "txt": "Home",
+              "href": "https://www.bcge.ch/en"
+            },
+            {
+              "txt": "About BCGE",
+              "href": "https://www.bcge.ch/a-propos-de-la-bcge"
+            },
+            {
+              "txt": "Organisation",
+              "href": "https://www.bcge.ch/organisation"
+            },
+            {
+              "txt": "Nicolas Krügel, Chief Executive Officer (CEO)",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Frédéric Vernet, Head of the Finance (CFO), Chief Risk Officer (CRO)",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Pierrette Jaton Klopfenstein, Head of Individuals & Digital Banking",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Eric Balmer, Head of the Corporate Banking & Trade Finance division",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Katia Coudray, Head of the Wealth & Asset management division",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Philippe Marti, Head of the Legal and Compliance Division.",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "Jean-Marc Joris, Head of the Operations Division",
+              "href": "https://www.bcge.ch/en/direction-generale#"
+            },
+            {
+              "txt": "More information",
+              "href": "https://cookiepedia.co.uk/giving-consent-to-cookies"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.bcge.ch/en/actualites",
+          "title": "BCGE: Page d'erreur 404 - Error page 404 - Fehlerseite 404",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "BCGE supply chain finance",
+          "url": "https://www.gtreview.com/?s=BCGE%20supply%20chain%20finance",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "Skip to content Search Found 2 post(s) for term BCGE supply chain finance On the Move May 28, 2025 BCGE appoints new head of corporate banking and trade finance Digital Trade February 4, 2020 komgo acquires Trafec to scale up network"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "d 2 post(s) for term BCGE supply chain finance On the Move May 28, 2025 BCGE appoints new head of corporate banking and trade finance Digital Trade February 4, 2020 komgo acquires Trafec to scale up network"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=BCGE%20supply%20chain%20finance#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "BCGE supply chain finance",
+          "url": "https://www.tradefinanceglobal.com/?s=BCGE%20supply%20chain%20finance",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": ": 158 Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BCGE supply chain finance\" Trade Finance Global Search Result for \"BCGE supply chain finance\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BCGE supply chain finance\" Trade Finance Global Search Result for \"BCGE supply chain finance\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "BCGE supply chain finance",
+          "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=BCGE%20supply%20chain%20finance#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "supply chain finance",
+          "context": "s Credit Suisse entities in Lausanne, Zurich and New York before becoming Chief Executive & Managing Director of Global Supply Chain Finance in Zug. Katia Coudray, Head of the Wealth & Asset management division Born 26 September 1969, Swiss national Professional career Katia Coudray holds a Bachelor’s degree in Business Administration from HES-SO Valais, a Certified International I"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "er of the executive board, head of this same division as of 1 April 2018. Eric Balmer, Head of the Corporate Banking & Trade Finance division Born 11 September 1972, Swiss nationality Professional career Eric Balmer holds a Master’s degree in law from the University of Fribourg and a PhD in law from the University of Lausanne. He has extensive experience in corporate banking. D"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "Skip to content Search Found 2 post(s) for term BCGE supply chain finance On the Move May 28, 2025 BCGE appoints new head of corporate banking and trade finance Digital Trade February 4, 2020 komgo acquires Trafec to scale up network"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "d 2 post(s) for term BCGE supply chain finance On the Move May 28, 2025 BCGE appoints new head of corporate banking and trade finance Digital Trade February 4, 2020 komgo acquires Trafec to scale up network"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": ": 158 Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BCGE supply chain finance\" Trade Finance Global Search Result for \"BCGE supply chain finance\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BCGE supply chain finance\" Trade Finance Global Search Result for \"BCGE supply chain finance\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 8 hits (4 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "Komercni_banka",
+      "country": "CZ",
+      "priority": "P1",
+      "bankPages": [
+        {
+          "url": "https://www.kb.cz/en/company/press-centre",
+          "title": "Stránku jsme nenašli | Komerční banka",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Individuals",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Support",
+              "href": "https://www.kb.cz/en/faq-and-support"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Česky",
+              "href": "https://www.kb.cz/cs/404"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/search"
+            },
+            {
+              "txt": "MyProfile",
+              "href": "https://www.kb.cz/en/our-aplications/mujprofil"
+            },
+            {
+              "txt": "Documents",
+              "href": "https://www.kb.cz/en/about-bank/documents"
+            },
+            {
+              "txt": "Contacts",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Exchange rates",
+              "href": "https://www.kb.cz/en/exchange-rates"
+            },
+            {
+              "txt": "Transparent accounts",
+              "href": "https://www.kb.cz/en/transparent-accounts"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "MyProfile",
+              "href": "https://www.kb.cz/en/our-aplications/mujprofil"
+            },
+            {
+              "txt": "Documents",
+              "href": "https://www.kb.cz/en/about-bank/documents"
+            },
+            {
+              "txt": "Contacts",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Exchange rates",
+              "href": "https://www.kb.cz/en/exchange-rates"
+            },
+            {
+              "txt": "Transparent accounts",
+              "href": "https://www.kb.cz/en/transparent-accounts"
+            },
+            {
+              "txt": "Individuals\n                            change",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Support",
+              "href": "https://www.kb.cz/en/faq-and-support"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Česky",
+              "href": "https://www.kb.cz/cs/404"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "entrepreneurs and small businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "corporations and institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "www.kb.cz",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "www.kb.cz/kbpremium",
+              "href": "https://www.kb.cz/en/kb-premium"
+            },
+            {
+              "txt": "www.kb.cz/priv",
+              "href": "https://www.kb.cz/en/private-banking"
+            },
+            {
+              "txt": "www.sgef.cz",
+              "href": "https://www.kb.cz/en/sgef"
+            },
+            {
+              "txt": "www.kb.sk",
+              "href": "https://www.kb.cz/en/slovakia"
+            },
+            {
+              "txt": "adjust their settings.",
+              "href": "https://www.kb.cz/en/protection-of-personal-data/manage-cookies-and-similar-technology"
+            }
+          ]
+        },
+        {
+          "url": "https://www.kb.cz/en/company/investor-relations/financial-results",
+          "title": "Stránku jsme nenašli | Komerční banka",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Individuals",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Support",
+              "href": "https://www.kb.cz/en/faq-and-support"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Česky",
+              "href": "https://www.kb.cz/cs/404"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/search"
+            },
+            {
+              "txt": "MyProfile",
+              "href": "https://www.kb.cz/en/our-aplications/mujprofil"
+            },
+            {
+              "txt": "Documents",
+              "href": "https://www.kb.cz/en/about-bank/documents"
+            },
+            {
+              "txt": "Contacts",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Exchange rates",
+              "href": "https://www.kb.cz/en/exchange-rates"
+            },
+            {
+              "txt": "Transparent accounts",
+              "href": "https://www.kb.cz/en/transparent-accounts"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "MyProfile",
+              "href": "https://www.kb.cz/en/our-aplications/mujprofil"
+            },
+            {
+              "txt": "Documents",
+              "href": "https://www.kb.cz/en/about-bank/documents"
+            },
+            {
+              "txt": "Contacts",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Exchange rates",
+              "href": "https://www.kb.cz/en/exchange-rates"
+            },
+            {
+              "txt": "Transparent accounts",
+              "href": "https://www.kb.cz/en/transparent-accounts"
+            },
+            {
+              "txt": "Individuals\n                            change",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Entrepreneurs and Small Businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "Corporations and Institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "Support",
+              "href": "https://www.kb.cz/en/faq-and-support"
+            },
+            {
+              "txt": "Contact",
+              "href": "https://www.kb.cz/en/about-bank/contacts"
+            },
+            {
+              "txt": "Česky",
+              "href": "https://www.kb.cz/cs/404"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "entrepreneurs and small businesses",
+              "href": "https://www.kb.cz/en/entrepreneurs-and-small-businesses"
+            },
+            {
+              "txt": "corporations and institutions",
+              "href": "https://www.kb.cz/en/corporations-and-institutions"
+            },
+            {
+              "txt": "www.kb.cz",
+              "href": "https://www.kb.cz/en/individuals"
+            },
+            {
+              "txt": "www.kb.cz/kbpremium",
+              "href": "https://www.kb.cz/en/kb-premium"
+            },
+            {
+              "txt": "www.kb.cz/priv",
+              "href": "https://www.kb.cz/en/private-banking"
+            },
+            {
+              "txt": "www.sgef.cz",
+              "href": "https://www.kb.cz/en/sgef"
+            },
+            {
+              "txt": "www.kb.sk",
+              "href": "https://www.kb.cz/en/slovakia"
+            },
+            {
+              "txt": "adjust their settings.",
+              "href": "https://www.kb.cz/en/protection-of-personal-data/manage-cookies-and-similar-technology"
+            }
+          ]
+        },
+        {
+          "url": "https://www.factoringkb.cz/en/supply-chain-finance",
+          "title": "Page not found - Factoring KB",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://www.factoringkb.cz/en"
+            },
+            {
+              "txt": "Login to eFactoring",
+              "href": "https://online.factoringkb.cz/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.kb.cz/en/company/press-centre/press-releases",
+          "title": "Stránku jsme nenašli | Komerční banka",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "Komerční banka supply chain finance",
+          "url": "https://www.gtreview.com/?s=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": []
+        },
+        "Trade Finance Global": {
+          "query": "Komerční banka supply chain finance",
+          "url": "https://www.tradefinanceglobal.com/?s=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "dors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Komerční banka supply chain finance\" Trade Finance Global Search Result for \"Komerční banka supply chain finance\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Komerční banka supply chain finance\" Trade Finance Global Search Result for \"Komerční banka supply chain finance\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "Komerční banka supply chain finance",
+          "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=Komer%C4%8Dn%C3%AD%20banka%20supply%20chain%20finance#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "supply chain finance",
+          "context": "dors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Komerční banka supply chain finance\" Trade Finance Global Search Result for \"Komerční banka supply chain finance\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Komerční banka supply chain finance\" Trade Finance Global Search Result for \"Komerční banka supply chain finance\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 4 hits (4 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "Bankinter",
+      "country": "ES",
+      "priority": "P1",
+      "bankPages": [
+        {
+          "url": "https://www.bankinter.com/empresas/en/international-currency-market/financing/scf-reverse-factoring-solutions",
+          "title": "SCF Reverse Factoring Solutions | Bankinter Corporate",
+          "kwCount": 12,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your"
+            },
+            {
+              "keyword": "supply chain finance",
+              "context": "ur company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abroad. The formula is designed to let you delegate the management of your foreign currency payments to international suppliers. Your company will be able"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "ce your company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "risk facilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+            },
+            {
+              "keyword": "factoring",
+              "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+            },
+            {
+              "keyword": "factoring",
+              "context": "company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+            },
+            {
+              "keyword": "factoring",
+              "context": "cilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+            },
+            {
+              "keyword": "without recourse",
+              "context": "your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your company gives us a payment order for a specific date and, when the time comes, we make the payment by transfer. We inform the beneficiary that the payment has been ordered and offer them the possibility of collecting it in a"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "cilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+            }
+          ],
+          "error": "",
+          "links": [
+            {
+              "txt": "Jump to the content area",
+              "href": "https://www.bankinter.com/empresas/en/international-currency-market/financing/scf-reverse-factoring-solutions#contentZone"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bankinter.com/empresas/en/home"
+            },
+            {
+              "txt": "BRANCH FINDER",
+              "href": "https://www.bankinter.com/empresas/en/branches-bankinter-corporate"
+            },
+            {
+              "txt": "International\nExport remittances\n FIND OUT MORE\nABOUT EXPORT REMITTANCES",
+              "href": "https://www.bankinter.com/empresas/en/international-currency-market/letter-of-credit-business/export-remittances"
+            },
+            {
+              "txt": "International\nSwift gpi\nFIND OUT MORE\nABOUT SWIFT GPI",
+              "href": "https://www.bankinter.com/empresas/en/international-currency-market/collections-payments-cash/swift-gpi"
+            },
+            {
+              "txt": "LOG IN",
+              "href": "https://www.bankinter.com/empresas/en/help"
+            },
+            {
+              "txt": "CONTACT US",
+              "href": "https://www.bankinter.com/empresas/en/customer-service"
+            },
+            {
+              "txt": "ATMS AND BRANCHES",
+              "href": "https://www.bankinter.com/empresas/en/branches-bankinter-corporate"
+            },
+            {
+              "txt": "https://www.bankinter.com/banca/nav/documentos-datos-fundamentales",
+              "href": "https://www.bankinter.com/banca/nav/documentos-datos-fundamentales"
+            },
+            {
+              "txt": "cookie policy.",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "Cookie policy",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.bankinter.com/cfo-forum/en/international-business",
+          "title": "International business | CFO Forum",
+          "kwCount": 3,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "15 Jun 2022 Tools to reactive exports. VIEW EVENT ABOUT TOOLS TO REACTIVE EXPORTS. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. READ MORE ABOUT SUPPLY CHAIN FINANCE. The latest News VIEW ALL THE LATEST NEWS International business 20 Jun 2022 Companies are putting protective mechanisms in place for their export activity in order to"
+            },
+            {
+              "keyword": "supply chain finance",
+              "context": "RTS. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. READ MORE ABOUT SUPPLY CHAIN FINANCE. The latest News VIEW ALL THE LATEST NEWS International business 20 Jun 2022 Companies are putting protective mechanisms in place for their export activity in order to help them continue internationalising. Learn about the ideas and tools at your d"
+            },
+            {
+              "keyword": "supply chain finance",
+              "context": "bout the ideas and tools at your disposal to reactivate your export activity safely. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. Events VIEW ALL ABOUT EVENTS International business 15 Jun 2022 Tools to reactive exports. International business 01 Oct 2021 ZEC Webinar (Canary Islands Special Zone). International business 08 Jul 2021 Br"
+            }
+          ],
+          "error": "",
+          "links": [
+            {
+              "txt": "Jump to the content area",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business#contentZone"
+            },
+            {
+              "txt": "Skip to contents",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business#zonaContenidos"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bankinter.com/cfo-forum/en/home"
+            },
+            {
+              "txt": "NEWS",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news"
+            },
+            {
+              "txt": "EVENTS",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events"
+            },
+            {
+              "txt": "READ MORE\nABOUT COMPANIES ARE PUTTING PROTECTIVE MECHANISMS IN PLACE FOR THEIR EXPORT ACTIVITY IN ORDER TO HELP THEM CON",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news/exporting-helps-companies-to-continue-internationalising"
+            },
+            {
+              "txt": "VIEW EVENT\nABOUT TOOLS TO REACTIVE EXPORTS.",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events/webinar-on-export-activity-tools"
+            },
+            {
+              "txt": "READ MORE\nABOUT SUPPLY CHAIN FINANCE.",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news/scf-finance-supplier-ensure-supply"
+            },
+            {
+              "txt": "VIEW ALL\nTHE LATEST NEWS",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news"
+            },
+            {
+              "txt": "International business\n20 Jun 2022\nCompanies are putting protective mechanisms in place for their export activity in ord",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news/exporting-helps-companies-to-continue-internationalising"
+            },
+            {
+              "txt": "International business\n11 Mar 2022\nSupply Chain Finance.\nFinancing the supplier to ensure supply.",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/news/scf-finance-supplier-ensure-supply"
+            },
+            {
+              "txt": "VIEW ALL\nABOUT EVENTS",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events"
+            },
+            {
+              "txt": "International business\n15 Jun 2022\nTools to reactive exports.",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events/webinar-on-export-activity-tools"
+            },
+            {
+              "txt": "International business\n01 Oct 2021\nZEC Webinar (Canary Islands Special Zone).",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events/zec-webinar"
+            },
+            {
+              "txt": "International business\n08 Jul 2021\nBreakfast with FX.",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events/breakfast-with-fx-08-07-21"
+            },
+            {
+              "txt": "International business\n23 Feb 2021\nInternational Financing Tools",
+              "href": "https://www.bankinter.com/cfo-forum/en/international-business/events/international-financing-tools"
+            },
+            {
+              "txt": "cookie policy.",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "Cookie policy",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.bankinter.com/webcorporativa/en/communication-room/news",
+          "title": "News | Bankinter Corporate Website",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Jump to the content area",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news#contentZone"
+            },
+            {
+              "txt": "",
+              "href": "https://www.bankinter.com/webcorporativa/inicio"
+            },
+            {
+              "txt": "BKT\n-0.848%\n14.025 EUR d\n07/05/2026",
+              "href": "https://www.bankinter.com/webcorporativa/es/accionistas-inversores/accionistas/accion-bankinter"
+            },
+            {
+              "txt": "INSTITUTIONAL",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "BUSINESS",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business"
+            },
+            {
+              "txt": "SEARCH",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news#"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Institutional",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "Bankinter respalda el glosario de más de 250 términos artísticos para personas sordas del Museo Thyssen-Bornemisza",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional/copy-of-bankinter-vuelve-a-figurar-entre-los-bancos-mas-sostenibles-del-mundo-al-renovar-su-pertenencia-al-dow-jones-best-in-class"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Institutional",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "Bankinter vuelve a figurar entre los bancos más sostenibles del mundo al renovar su pertenencia al Dow Jones Best in Cla",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional/bankinter-vuelve-a-figurar-entre-los-bancos-mas-sostenibles-del-mundo-al-renovar-su-pertenencia-al-dow-jones-best-in-class"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Institutional",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "Bankinter reports a profit of 291 million euros in the first quarter of 2026, up 8%, with growth across all business lin",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional/bankinter-reports-a-profit-of-291-million-euros-in-the-first-quarter-of-2026-up-8--with-growth-across-all-business-lines-and-continued-expansion-of-its-customer-franchise"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Business",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business"
+            },
+            {
+              "txt": "Bankinter prorroga hasta el 11 de mayo la remuneración de su Cuenta Digital hasta el 2% TAE para nuevos clientes",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business/bankinter-prorroga-hasta-el-11-de-mayo--la--remuneracion-de-su-cuenta-digital-hasta-el-2-tae-para-nuevos-clientes"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Institutional",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "Bankinter launches a pioneering generative AI-powered WhatsApp assistant in the Spanish banking sector",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional/bankinter-lanza-un-asistente-de-whatsapp-pionero-desarrollado-con-ia-generativa-dentro-de-la-banca-espanola"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Institutional",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional"
+            },
+            {
+              "txt": "Bankinter becomes the first Spanish bank to implement Microsoft's advanced generative AI for its entire workforce",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/institutional/bankinter-se-convierte-en-el-primer-banco-espanol-en-implantar-la-ia-generativa-avanzada-de-microsoft-para-toda-su-plantilla"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Business",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business"
+            },
+            {
+              "txt": "Bankinter Investment launches a hedge fund to make diversified alternative investments accessible to a greater number of",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business/bankinter-investment-lanza-un-fondo-de-inversion-libre-para-acercar-la-inversion-alternativa-diversificada-a-un-mayor-numero-de-clientes"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Business",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business"
+            },
+            {
+              "txt": "Bankinter y Avalmadrid elevan a 30 millones su línea conjunta de financiación para pymes y autónomos",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business/bankinter-y-avalmadrid-elevan-a-30-millones-su-linea-conjunta-de-financiacion-para-pymes-y-autonomos"
+            },
+            {
+              "txt": "News",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news"
+            },
+            {
+              "txt": "Business",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business"
+            },
+            {
+              "txt": "Bankinter Investment and Plenium Partners sell to Galp 351 MW of wind assets from the alternative investment vehicles He",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business/bankinter-investment-y-plenium-partners-venden-a-galp-351-mw-en-activos-eolicos-procedentes-de-los-vehiculos-de-inversion-alternativa-helia-ii--iii-y-iv"
+            },
+            {
+              "txt": "CONTACT US",
+              "href": "https://www.bankinter.com/webcorporativa/en/communication-room/information"
+            },
+            {
+              "txt": "cookie policy.",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "Cookie policy",
+              "href": "https://www.bankinter.com/file_source/nbol/estaticos/plataformas/particulares/cookies/cookies-bankinter-en.pdf"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.bankinter.com/webcorporativa/en/communication-room/news/business",
+          "title": "Business news | Bankinter Corporate Website",
+          "kwCount": 1,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "its lending figures over the last five years. Bankinter consolidates its position as a leading player in the field of supply chain finance, with an 75% year-on-year increase in lending. 10.02.2026 News / Business Bankinter launches a new service for high-net-worth individuals that offers a single snapshot of all their assets at the Bank and at other entities Wealth Management custome"
+            }
+          ]
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "Bankinter supply chain finance 2024 2025",
+          "url": "https://www.gtreview.com/?s=Bankinter%20supply%20chain%20finance%202024%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=Bankinter%20supply%20chain%20finance%202024%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "Bankinter supply chain finance 2024 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=Bankinter%20supply%20chain%20finance%202024%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Bankinter supply chain finance 2024 2025\" Trade Finance Global Search Result for \"Bankinter supply chain finance 2024 2025\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Bankinter supply chain finance 2024 2025\" Trade Finance Global Search Result for \"Bankinter supply chain finance 2024 2025\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "Bankinter supply chain finance 2024 2025",
+          "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=Bankinter%20supply%20chain%20finance%202024%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "supply chain finance",
+          "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "ur company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abroad. The formula is designed to let you delegate the management of your foreign currency payments to international suppliers. Your company will be able"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "ce your company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "risk facilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+        },
+        {
+          "keyword": "factoring",
+          "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+        },
+        {
+          "keyword": "factoring",
+          "context": "company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+        },
+        {
+          "keyword": "factoring",
+          "context": "cilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+        },
+        {
+          "keyword": "without recourse",
+          "context": "your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your company gives us a payment order for a specific date and, when the time comes, we make the payment by transfer. We inform the beneficiary that the payment has been ordered and offer them the possibility of collecting it in a"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "Jump to the content area Main content of the website SUPPLY CHAIN FINANCE / SCF REVERSE FACTORING SOLUTIONS Your company has the value. We help you get the most out of it. With the reverse factoring solution offered by Bankinter Supply Chain Finance, you can get maximum value out of your supply chain and strengthen your company's reputation abr"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "company's negotiating capacity Content Enhance your company's negotiating capacity The benefits of Supply Chain Reverse Factoring Solutions will have a direct impact on trust in your company and your ability to negotiate better terms and conditions. Don't miss out on prompt payment Content Don't miss out on prompt payment Do the maths. If your suppliers offer prompt payment di"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "cilities and without the invoice appearing on their balance sheet as a receivable. This is how the Supply Chain Reverse Factoring Solutions works: Before the due date, you canapply for financing ora guarantee for your payment Order the payment in the agreed currency Multilingualcall centre for suppliers16/5 You canadvance payment, without recourse Company Suppliers Your compa"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "15 Jun 2022 Tools to reactive exports. VIEW EVENT ABOUT TOOLS TO REACTIVE EXPORTS. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. READ MORE ABOUT SUPPLY CHAIN FINANCE. The latest News VIEW ALL THE LATEST NEWS International business 20 Jun 2022 Companies are putting protective mechanisms in place for their export activity in order to"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "RTS. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. READ MORE ABOUT SUPPLY CHAIN FINANCE. The latest News VIEW ALL THE LATEST NEWS International business 20 Jun 2022 Companies are putting protective mechanisms in place for their export activity in order to help them continue internationalising. Learn about the ideas and tools at your d"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "bout the ideas and tools at your disposal to reactivate your export activity safely. International business 11 Mar 2022 Supply Chain Finance. Financing the supplier to ensure supply. Events VIEW ALL ABOUT EVENTS International business 15 Jun 2022 Tools to reactive exports. International business 01 Oct 2021 ZEC Webinar (Canary Islands Special Zone). International business 08 Jul 2021 Br"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "its lending figures over the last five years. Bankinter consolidates its position as a leading player in the field of supply chain finance, with an 75% year-on-year increase in lending. 10.02.2026 News / Business Bankinter launches a new service for high-net-worth individuals that offers a single snapshot of all their assets at the Bank and at other entities Wealth Management custome"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Bankinter supply chain finance 2024 2025\" Trade Finance Global Search Result for \"Bankinter supply chain finance 2024 2025\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Bankinter supply chain finance 2024 2025\" Trade Finance Global Search Result for \"Bankinter supply chain finance 2024 2025\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 20 hits (8 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "BPER_Banca",
+      "country": "IT",
+      "priority": "P1",
+      "bankPages": [
+        {
+          "url": "https://www.bper.it/imprese-professionisti/finanziamenti/gestione-crediti/factoring",
+          "title": "Factoring Bancario per Imprese | BPER Banca",
+          "kwCount": 22,
+          "keywords": [
+            {
+              "keyword": "reverse factoring",
+              "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteri"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "ziamento dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "e desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+            },
+            {
+              "keyword": "reverse factoring",
+              "context": "di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4242 Contattaci Pass"
+            },
+            {
+              "keyword": "factoring",
+              "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propri"
+            },
+            {
+              "keyword": "factoring",
+              "context": "e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assum"
+            },
+            {
+              "keyword": "factoring",
+              "context": "a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assume l’onere di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operativ"
+            },
+            {
+              "keyword": "factoring",
+              "context": "e di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operative legate alle diverse modalità di applicazione dei servizi base, come l’amministrazione dei crediti e gestione degli incassi, il finanziamento dei crediti ceduti, la garanzia di solvenza sui crediti cedut"
+            },
+            {
+              "keyword": "factoring",
+              "context": "dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+            },
+            {
+              "keyword": "factoring",
+              "context": "ofondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le moda"
+            },
+            {
+              "keyword": "factoring",
+              "context": "rano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+            },
+            {
+              "keyword": "factoring",
+              "context": "zione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pagamento da parte della società di factoring e la possibilità di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa."
+            },
+            {
+              "keyword": "factoring",
+              "context": "di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propri"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assum"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assume l’onere di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operativ"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "e di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operative legate alle diverse modalità di applicazione dei servizi base, come l’amministrazione dei crediti e gestione degli incassi, il finanziamento dei crediti ceduti, la garanzia di solvenza sui crediti cedut"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "ofondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le moda"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "rano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "zione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pagamento da parte della società di factoring e la possibilità di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa."
+            },
+            {
+              "keyword": "Factoring",
+              "context": "di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4"
+            }
+          ],
+          "error": "",
+          "links": [
+            {
+              "txt": "ACCESSO ALL'INTERNET BANKING",
+              "href": "https://homebanking.bpergroup.net/cp/gtw/login/start?bank=05387"
+            },
+            {
+              "txt": "Ex Clienti UBI Banca Attivazione Internet Banking",
+              "href": "https://lobby.bper.it/"
+            },
+            {
+              "txt": "Assistenza",
+              "href": "https://www.bper.it/parla-con-noi"
+            },
+            {
+              "txt": "Numeri Utili",
+              "href": "https://www.bper.it/footer/numeri-utili"
+            },
+            {
+              "txt": "Domande frequenti",
+              "href": "https://www.bper.it/faq"
+            },
+            {
+              "txt": "Filiali",
+              "href": "https://www.bper.it/trova-filiali"
+            },
+            {
+              "txt": "Approfondisci su bperfactor.it",
+              "href": "https://bperfactor.it/"
+            },
+            {
+              "txt": "Approfondisci su bperfactor.it",
+              "href": "https://bperfactor.it/"
+            },
+            {
+              "txt": "Trova le risposte\nCerca tra le FAQ\nVai alle FAQ",
+              "href": "https://www.bper.it/faq"
+            },
+            {
+              "txt": "Contattaci direttamente\nChiamaci al numero 059 4242\nContattaci",
+              "href": "https://www.bper.it/parla-con-noi"
+            },
+            {
+              "txt": "Passa a trovarci\nCerca la filiale più vicina a te\nTrova una filiale",
+              "href": "https://www.bper.it/trova-filiali"
+            },
+            {
+              "txt": "www.bper.it",
+              "href": "https://www.bper.it/"
+            },
+            {
+              "txt": "qui",
+              "href": "https://www.bper.it/footer/trasparenza"
+            },
+            {
+              "txt": "Informativa",
+              "href": "https://www.bper.it/footer/privacy-policy?_ga=2.151884863.789317946.1611231782-400313743.1557833061"
+            },
+            {
+              "txt": "Proteggiti dalle frodi online",
+              "href": "https://www.bper.it/privati/servizi-digitali/sicurezza-online"
+            },
+            {
+              "txt": "",
+              "href": "https://homebanking.bpergroup.net/auth/#/auth?bank=05387"
+            },
+            {
+              "txt": "",
+              "href": "https://homebanking.bpergroup.net/auth/#/auth?bank=05387"
+            },
+            {
+              "txt": "",
+              "href": "https://cbi.bpergroup.net/ibk/web/gruppobper/bper"
+            },
+            {
+              "txt": "",
+              "href": "https://cbi.bpergroup.net/ibk/web/gruppobper/bper"
+            },
+            {
+              "txt": "",
+              "href": "https://corporatebanking.bpergroup.net/"
+            },
+            {
+              "txt": "",
+              "href": "https://corporatebanking.bpergroup.net/"
+            },
+            {
+              "txt": "",
+              "href": "https://migrazioneib.bpergroup.net/onboarding"
+            },
+            {
+              "txt": "",
+              "href": "https://migrazioneib.bpergroup.net/onboarding"
+            },
+            {
+              "txt": "",
+              "href": "https://areariservata.divisioneconsumer.it/#/"
+            },
+            {
+              "txt": "",
+              "href": "https://areariservata.divisioneconsumer.it/#/"
+            },
+            {
+              "txt": "",
+              "href": "https://areariservata.divisioneconsumer.it/?typ=azienda#/"
+            },
+            {
+              "txt": "",
+              "href": "https://areariservata.divisioneconsumer.it/?typ=azienda#/"
+            },
+            {
+              "txt": "Tesoreria",
+              "href": "http://tesoreriaonline.bper.it/tesoreria/index.jsp"
+            }
+          ]
+        },
+        {
+          "url": "https://group.bper.it/investor-relations/risultati-gruppo/bilanci-e-relazioni",
+          "title": "Bilanci e relazioni BPER Banca | BPER Banca",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://group.bper.it/home"
+            },
+            {
+              "txt": "Vedi",
+              "href": "https://group.bper.it/documents/133577364/2801080800/Dati+Finanziari+032026.xlsx/642afe6a-3ddf-2da5-b39c-f94f49dc78d5?version=1.0&t=1778130918899"
+            },
+            {
+              "txt": "Scarica",
+              "href": "https://group.bper.it/documents/133577364/2801080800/Dati+Finanziari+032026.xlsx/642afe6a-3ddf-2da5-b39c-f94f49dc78d5?version=1.0&t=1778130918899&download=true"
+            },
+            {
+              "txt": "cookie policy completa",
+              "href": "https://group.bper.it/politiche-cookie"
+            }
+          ]
+        },
+        {
+          "url": "https://group.bper.it/sala-stampa",
+          "title": "BPER Banca",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://group.bper.it/sala-stampa#"
+            },
+            {
+              "txt": "Torna alla home",
+              "href": "https://group.bper.it/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://group.bper.it/sala-stampa/comunicati-stampa",
+          "title": "BPER Banca",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "BPER Banca supply chain finance 2025",
+          "url": "https://www.gtreview.com/?s=BPER%20Banca%20supply%20chain%20finance%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=BPER%20Banca%20supply%20chain%20finance%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "BPER Banca supply chain finance 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=BPER%20Banca%20supply%20chain%20finance%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BPER Banca supply chain finance 2025\" Trade Finance Global Search Result for \"BPER Banca supply chain finance 2025\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "rs (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BPER Banca supply chain finance 2025\" Trade Finance Global Search Result for \"BPER Banca supply chain finance 2025\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "BPER Banca supply chain finance 2025",
+          "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=BPER%20Banca%20supply%20chain%20finance%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "reverse factoring",
+          "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteri"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "ziamento dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "e desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+        },
+        {
+          "keyword": "reverse factoring",
+          "context": "di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4242 Contattaci Pass"
+        },
+        {
+          "keyword": "factoring",
+          "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propri"
+        },
+        {
+          "keyword": "factoring",
+          "context": "e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assum"
+        },
+        {
+          "keyword": "factoring",
+          "context": "a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assume l’onere di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operativ"
+        },
+        {
+          "keyword": "factoring",
+          "context": "e di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operative legate alle diverse modalità di applicazione dei servizi base, come l’amministrazione dei crediti e gestione degli incassi, il finanziamento dei crediti ceduti, la garanzia di solvenza sui crediti cedut"
+        },
+        {
+          "keyword": "factoring",
+          "context": "dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+        },
+        {
+          "keyword": "factoring",
+          "context": "ofondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le moda"
+        },
+        {
+          "keyword": "factoring",
+          "context": "rano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+        },
+        {
+          "keyword": "factoring",
+          "context": "zione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pagamento da parte della società di factoring e la possibilità di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa."
+        },
+        {
+          "keyword": "factoring",
+          "context": "di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "Accesso Clienti ACCESSO ALL'INTERNET BANKING Ex Clienti UBI Banca Attivazione Internet Banking Factoring e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propri"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "e Reverse Factoring Per la gestione dei tuoi crediti commerciali e debiti di fornitura. Factoring Con il contratto di factoring, l’impresa cede i propri crediti, presenti e futuri, a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assum"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "a una società specializzata e quindi può concentrarsi sulla propria attività caratteristica. BPER Factor la società di factoring del Gruppo BPER, dietro il pagamento di un corrispettivo, si assume l’onere di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operativ"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "e di riscuotere i crediti per il proprio cliente e può anticipare all’impresa cliente i crediti non ancora scaduti. Il Factoring viene oggi proposto in varie formule operative legate alle diverse modalità di applicazione dei servizi base, come l’amministrazione dei crediti e gestione degli incassi, il finanziamento dei crediti ceduti, la garanzia di solvenza sui crediti cedut"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "dei crediti ceduti, la garanzia di solvenza sui crediti ceduti (pro soluto). Approfondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "ofondisci su bperfactor.it Reverse Factoring Il Reverse Factoring è un contratto che inverte la logica applicata nel Factoring tradizionale, prevedendo che l’operazione di cessione dei crediti avvenga su richiesta dell’impresa debitrice. Lo strumento è pensato per le imprese che desiderano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le moda"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "rano un’assistenza completa per semplificare la gestione dei debiti di fornitura. Le modalità di intervento di Reverse Factoring presuppongono la formalizzazione di un accordo con il debitore e BPER FACTOR, società del Gruppo BPER. I vantaggi del servizio per l’impresa Cedente sono la riduzione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pag"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "zione dei costi interni di gestione dei propri crediti commerciali, la garanzia del pagamento da parte della società di factoring e la possibilità di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa."
+        },
+        {
+          "keyword": "Factoring",
+          "context": "di disporre di una fonte di finanziamento. Approfondisci su bperfactor.it separatore Vuoi maggiori informazioni su Factoring e Reverse Factoring? Siamo a disposizione per trovare insieme la soluzione giusta per la tua impresa. Voglio essere contattato Hai bisogno di aiuto? Trova le risposte Cerca tra le FAQ Vai alle FAQ Contattaci direttamente Chiamaci al numero 059 4"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BPER Banca supply chain finance 2025\" Trade Finance Global Search Result for \"BPER Banca supply chain finance 2025\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "rs (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"BPER Banca supply chain finance 2025\" Trade Finance Global Search Result for \"BPER Banca supply chain finance 2025\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 26 hits (7 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "Banca_Transilvania",
+      "country": "RO",
+      "priority": "P1",
+      "bankPages": [
+        {
+          "url": "https://www.bancatransilvania.ro/en/companies/products-and-services/factoring/",
+          "title": "Access Denied",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "factoring",
+              "context": "Access Denied You don't have permission to access \"http://www.bancatransilvania.ro/en/companies/products-and-services/factoring/\" on this server. Reference #18.921c2117.1778394328.84e6c8d2 https://errors.edgesuite.net/18.921c2117.1778394328.84e6c8d2"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "Access Denied You don't have permission to access \"http://www.bancatransilvania.ro/en/companies/products-and-services/factoring/\" on this server. Reference #18.921c2117.1778394328.84e6c8d2 https://errors.edgesuite.net/18.921c2117.1778394328.84e6c8d2"
+            }
+          ],
+          "error": "",
+          "links": []
+        },
+        {
+          "url": "https://www.bancatransilvania.ro/en/companies/products-and-services/trade-finance/",
+          "title": "Access Denied",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": []
+        },
+        {
+          "url": "https://ir.bancatransilvania.ro/en/press-releases",
+          "title": "",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "net::ERR_NAME_NOT_RESOLVED at https://ir.bancatransilvania.ro/en/press-releases",
+          "links": []
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.bancatransilvania.ro/en/media/press-releases/",
+          "title": "Access Denied",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "Banca Transilvania supply chain finance EBRD 2024",
+          "url": "https://www.gtreview.com/?s=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": []
+        },
+        "Trade Finance Global": {
+          "query": "Banca Transilvania supply chain finance EBRD 2024",
+          "url": "https://www.tradefinanceglobal.com/?s=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "supply chain finance",
+              "context": "Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Trade Finance Global Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ect All Save My Preferences Accept All Powered by Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Trade Finance Global Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "Banca Transilvania supply chain finance EBRD 2024",
+          "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=Banca%20Transilvania%20supply%20chain%20finance%20EBRD%202024#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "factoring",
+          "context": "Access Denied You don't have permission to access \"http://www.bancatransilvania.ro/en/companies/products-and-services/factoring/\" on this server. Reference #18.921c2117.1778394328.84e6c8d2 https://errors.edgesuite.net/18.921c2117.1778394328.84e6c8d2"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "Access Denied You don't have permission to access \"http://www.bancatransilvania.ro/en/companies/products-and-services/factoring/\" on this server. Reference #18.921c2117.1778394328.84e6c8d2 https://errors.edgesuite.net/18.921c2117.1778394328.84e6c8d2"
+        },
+        {
+          "keyword": "supply chain finance",
+          "context": "Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Trade Finance Global Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ect All Save My Preferences Accept All Powered by Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Trade Finance Global Search Result for \"Banca Transilvania supply chain finance EBRD 2024\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 6 hits (6 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    }
+  ],
+  "associations": []
+}
