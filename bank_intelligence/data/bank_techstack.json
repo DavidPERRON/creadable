@@ -1,0 +1,530 @@
+{
+  "_meta": {
+    "description": "Manual curation of bank tech stacks for top 50 European banks. Focus: core banking, TF/SCF platform (or absence), TCI partnerships, ERP integration profile. Used as Signal 6 (pre-integration friction) in BIS.",
+    "last_updated": "2026-05-10",
+    "credable_friction_scale": "low (Finastra/Temenos pre-integrated, fast onboarding) | medium (custom integration but feasible) | high (proprietary core, significant effort)",
+    "verification_level": "training_data_inference + public_information — to be re-validated bank-by-bank during sales discovery",
+    "_critical_signal": "Banks on Finastra Fusion = pre-integrated CredAble = friction MINIMAL. Priority targets."
+  },
+  "banks": [
+    {
+      "bank_id": "bcge-ch", "name": "BCGE", "country": "CH",
+      "core_banking": "Avaloq",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Avaloq core (Swiss leader). No public Finastra. Custom integration needed for SCF module. Recent recruitment of Eric Balmer (ex-CEO Global SCF Ltd) signals readiness. Estimated effort: 3-4 months custom."
+    },
+    {
+      "bank_id": "komercni-banka-cz", "name": "Komerční banka", "country": "CZ",
+      "core_banking": "Société Générale group platform (proprietary)",
+      "treasury": "Murex / SG group",
+      "tf_scf_platform": "ORPHANED — Roger acquired by Orbian Feb 2025",
+      "trade_credit_insurer": "EGAP (Czech ECA)",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Loss of Roger fintech partner is critical. Current state: factoring KB filiale operates with legacy. Pre-integration with SAP common (Czech corporates use SAP heavily). MEDIUM friction: SG group decision-making but local autonomy on factoring KB."
+    },
+    {
+      "bank_id": "bankinter-es", "name": "Bankinter", "country": "ES",
+      "core_banking": "Proprietary (in-house developed)",
+      "treasury": "Bloomberg + Reuters",
+      "tf_scf_platform": "Bankinter SCF (proprietary, in development since 2022)",
+      "trade_credit_insurer": "CESCE (Spanish ECA)",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "Proprietary core + own platform = hardest to displace. BUT: cross-border / CEE expansion potentially addressable as MODULE on top of their existing platform. Pitch should be 'extension', not 'replacement'."
+    },
+    {
+      "bank_id": "bper-banca-it", "name": "BPER Banca", "country": "IT",
+      "core_banking": "Cabel + Cedacri (Italian shared service)",
+      "treasury": "Murex",
+      "tf_scf_platform": "PlusAdvance partnership (Confirming, Dynamic Discounting, Reverse Factoring) — May 2023",
+      "trade_credit_insurer": "SACE (Italian ECA), Allianz Trade",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "PlusAdvance is a smaller Italian fintech (not in our major-competitor exclusion list). Post-BPS fusion Apr 2026 = rationalization opportunity. Can position CredAble as upgrade for combined entity."
+    },
+    {
+      "bank_id": "banca-transilvania-ro", "name": "Banca Transilvania", "country": "RO",
+      "core_banking": "Misys / Finastra (Fusion Banking)",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "EXIMBANK Romania (state ECA)",
+      "erp_integration_capability": "good",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated → CredAble friction minimal. EBRD program oct 2024 = appetite proven. Top candidate. Estimated time-to-deploy: 2-3 months."
+    },
+    {
+      "bank_id": "bayernlb-de", "name": "BayernLB", "country": "DE",
+      "core_banking": "FIS Profile (legacy migration in progress)",
+      "treasury": "Wallstreet Suite + Murex",
+      "tf_scf_platform": "Multibank concept page only (no operational platform)",
+      "trade_credit_insurer": "Euler Hermes (Allianz Trade), Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "German Landesbank, slower decision but big balance sheet. SCF concept exists, no platform. Florian Seitz (Head TEF) accessible. Pitch: full white-label."
+    },
+    {
+      "bank_id": "helaba-de", "name": "Helaba", "country": "DE",
+      "core_banking": "FIS",
+      "treasury": "Murex",
+      "tf_scf_platform": "Partner with external SCF platforms (vague)",
+      "trade_credit_insurer": "Euler Hermes",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Helaba mentioned 'expanded collaboration with supply chain finance platforms' in 2024 annual report = no own product. White space."
+    },
+    {
+      "bank_id": "belfius-be", "name": "Belfius Bank", "country": "BE",
+      "core_banking": "Sopra Banking Software",
+      "treasury": "Wallstreet Suite",
+      "tf_scf_platform": "Belfius Commercial Finance (filiale, factoring focus)",
+      "trade_credit_insurer": "Credendo (Belgian ECA), Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Sopra Banking common in BE. Belfius Commercial Finance is a factoring filiale, no SCF platform. 6th 'Best TF Bank Belgium' = strong TF, weak SCF tech = perfect fit."
+    },
+    {
+      "bank_id": "la-banque-postale-fr", "name": "La Banque Postale", "country": "FR",
+      "core_banking": "Sopra Banking + proprietary",
+      "treasury": "Reuters Eikon",
+      "tf_scf_platform": "LBP Leasing & Factoring (filiale, no SCF tech)",
+      "trade_credit_insurer": "Bpifrance Assurance Export (BPI), Coface",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "GTR Dec 2025 CPRI mention = active TF documentary. Filiale factoring exists, SCF tech missing. State-owned = procurement cycles longer."
+    },
+    {
+      "bank_id": "banco-bpm-it", "name": "Banco BPM", "country": "IT",
+      "core_banking": "Cedacri (Italian shared service)",
+      "treasury": "Murex",
+      "tf_scf_platform": "External partner (operational outsourced 2021)",
+      "trade_credit_insurer": "SACE, Allianz Trade",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Operational outsourcing in 2021 = wants to externalize SCF. Re-internalization via white-label could appeal post-financial review."
+    },
+    {
+      "bank_id": "kbc-be", "name": "KBC Bank", "country": "BE",
+      "core_banking": "Sopra Banking + KBC proprietary",
+      "treasury": "Wallstreet Suite",
+      "tf_scf_platform": "ORPHANED — we.trade shutdown June 2022, KBC was founding shareholder",
+      "trade_credit_insurer": "Credendo, Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "we.trade orphan + KBC Commercial Finance filiale. Multi-country CEE filiales (ČSOB CZ, K&H HU, UBB BG) = cross-sell potential. Decision in Brussels."
+    },
+    {
+      "bank_id": "citi-handlowy-pl", "name": "Citi Handlowy", "country": "PL",
+      "core_banking": "Citi Global Platform (proprietary)",
+      "treasury": "Citi global infrastructure",
+      "tf_scf_platform": "Citi global SCF (Citibank.com Trade Solutions)",
+      "trade_credit_insurer": "Multiple (KUKE, Coface)",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "Citi global infra = displacing internally near-impossible. BUT: their May 2025 PR explicitly mentions SCF as growth pillar = potential modular/local module pitch. Decision: NYC + Warsaw."
+    },
+    {
+      "bank_id": "bank-millennium-pl", "name": "Bank Millennium", "country": "PL",
+      "core_banking": "BCP group platform (proprietary, Portuguese parent)",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "KUKE",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Portuguese BCP parent. Best TF Services Poland 2025 (Global Finance) = strong TF, internal training in SCF = ramping up. White space."
+    },
+    {
+      "bank_id": "nlb-si", "name": "NLB d.d.", "country": "SI",
+      "core_banking": "Asseco / DataLab Slovenian regional",
+      "treasury": "FIS",
+      "tf_scf_platform": "NLB Factoring app (proprietary, includes reverse factoring, low scalability)",
+      "trade_credit_insurer": "SID Banka (Slovenian ECA)",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Own Factoring app exists but not scalable. Modernization in progress. 7-country SEE network = strong cross-sell potential. Andrej Lasic (CIB Board) accessible."
+    },
+    {
+      "bank_id": "brd-socgen-ro", "name": "BRD-SocGen", "country": "RO",
+      "core_banking": "Société Générale group platform (proprietary)",
+      "treasury": "SG group",
+      "tf_scf_platform": "FINTRA (factoring leader, no SCF tech)",
+      "trade_credit_insurer": "EXIMBANK Romania, Coface, Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "SG group = decision Paris. FINTRA leader factoring but no SCF. Best TF Provider Romania 2025. Difficult sale due to SG infrastructure constraints."
+    },
+    {
+      "bank_id": "bcv-ch", "name": "BCV", "country": "CH",
+      "core_banking": "Avaloq",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Cantonal bank Vaud, Avaloq core. Trade finance international but no SCF signal. Lower priority than BCGE."
+    },
+    {
+      "bank_id": "pko-bp-pl", "name": "PKO BP", "country": "PL",
+      "core_banking": "Asseco Group (Polish leader)",
+      "treasury": "Murex",
+      "tf_scf_platform": "PKO Faktoring (factoring + reverse factoring)",
+      "trade_credit_insurer": "KUKE",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Polish #1 bank. Asseco core (could be advantage if Asseco-CredAble integration possible). PKO Faktoring filiale operational."
+    },
+    {
+      "bank_id": "bank-pekao-pl", "name": "Bank Pekao", "country": "PL",
+      "core_banking": "Asseco (post-UniCredit divestment)",
+      "treasury": "Murex",
+      "tf_scf_platform": "Pekao Faktoring (factoring only)",
+      "trade_credit_insurer": "KUKE",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Polish #2 bank. Post-UniCredit divestment, decision local. SCF tech absent."
+    },
+    {
+      "bank_id": "mbank-pl", "name": "mBank", "country": "PL",
+      "core_banking": "Commerzbank group platform (proprietary)",
+      "treasury": "Murex",
+      "tf_scf_platform": "mFaktoring (FCI member, factoring only, proprietary 'Client Manager')",
+      "trade_credit_insurer": "KUKE, Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Commerzbank parent. Tech autonomy in PL good. SCF gap clear."
+    },
+    {
+      "bank_id": "csob-cz", "name": "ČSOB CZ", "country": "CZ",
+      "core_banking": "KBC group platform (Sopra/proprietary)",
+      "treasury": "Wallstreet Suite",
+      "tf_scf_platform": "ČSOB Factoring (TF awards, no SCF)",
+      "trade_credit_insurer": "EGAP, Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "Filiale KBC = decision Brussels. KBC orphaned post-we.trade. Possible group-level CredAble pitch."
+    },
+    {
+      "bank_id": "vub-banka-sk", "name": "VÚB Banka", "country": "SK",
+      "core_banking": "Intesa Sanpaolo group (proprietary)",
+      "treasury": "Murex (ISP)",
+      "tf_scf_platform": "VÚB Factoring (factoring only)",
+      "trade_credit_insurer": "EXIMBANKA SR (Slovak ECA)",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "Intesa filiale, decision Milano. Hard sell due to ISP corporate group standards."
+    },
+    {
+      "bank_id": "tatra-banka-sk", "name": "Tatra banka", "country": "SK",
+      "core_banking": "Raiffeisen Group (proprietary)",
+      "treasury": "RBI",
+      "tf_scf_platform": "RBI Capital Solutions (group program)",
+      "trade_credit_insurer": "EXIMBANKA SR",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "RBI group SCF available = effectively equipped. EXCLU candidate."
+    },
+    {
+      "bank_id": "k-h-bank-hu", "name": "K&H Bank", "country": "HU",
+      "core_banking": "KBC group platform",
+      "treasury": "Wallstreet Suite (KBC)",
+      "tf_scf_platform": "KBC Commercial Finance (group dispositif)",
+      "trade_credit_insurer": "Atradius, Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "KBC filiale, decision Brussels. Same as ČSOB."
+    },
+    {
+      "bank_id": "cib-bank-hu", "name": "CIB Bank", "country": "HU",
+      "core_banking": "Intesa Sanpaolo group",
+      "treasury": "Murex (ISP)",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "high",
+      "rationale": "ISP filiale, decision Milano. SCF non-explicit, but ISP group has own confirming. EXCLU candidate."
+    },
+    {
+      "bank_id": "ing-bank-ro", "name": "ING Bank Romania", "country": "RO",
+      "core_banking": "ING group Touchstone (proprietary)",
+      "treasury": "FIS",
+      "tf_scf_platform": "Factoring department only",
+      "trade_credit_insurer": "EXIMBANK Romania, Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "ING filiale, decision Amsterdam. Touchstone proprietary."
+    },
+    {
+      "bank_id": "bgk-pl", "name": "BGK", "country": "PL",
+      "core_banking": "Asseco",
+      "treasury": "Reuters",
+      "tf_scf_platform": "Risk-sharing factoring programs (guarantor role)",
+      "trade_credit_insurer": "KUKE",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Polish development bank. Acts as guarantor on SCF programs. Could be partner channel rather than client."
+    },
+    {
+      "bank_id": "dsk-bank-bg", "name": "DSK Bank", "country": "BG",
+      "core_banking": "OTP group platform",
+      "treasury": "OTP shared service",
+      "tf_scf_platform": "OTP group dispositif (advanced SCF)",
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "OTP filiale = group SCF available. EXCLU candidate."
+    },
+    {
+      "bank_id": "unicredit-bulbank-bg", "name": "UniCredit Bulbank", "country": "BG",
+      "core_banking": "UniCredit group",
+      "treasury": "Murex (UC)",
+      "tf_scf_platform": "UniCredit Factoring",
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "UC filiale, decision Milano. UC group has own SCF. EXCLU candidate."
+    },
+    {
+      "bank_id": "zagrebacka-banka-hr", "name": "Zagrebačka banka", "country": "HR",
+      "core_banking": "UniCredit group",
+      "treasury": "Murex (UC)",
+      "tf_scf_platform": "UniCredit U-Factor (group)",
+      "trade_credit_insurer": "Atradius, HBOR (Croatian ECA)",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "UC filiale. EXCLU candidate."
+    },
+    {
+      "bank_id": "pbz-hr", "name": "PBZ", "country": "HR",
+      "core_banking": "Intesa Sanpaolo group",
+      "treasury": "Murex (ISP)",
+      "tf_scf_platform": "ISP IMI ecosystem",
+      "trade_credit_insurer": "HBOR",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "ISP filiale. EXCLU candidate."
+    },
+    {
+      "bank_id": "otp-banka-slovenija-si", "name": "OTP banka Slovenija", "country": "SI",
+      "core_banking": "OTP group + Asseco (SI heritage)",
+      "treasury": "OTP shared service",
+      "tf_scf_platform": "OTP group dispositif",
+      "trade_credit_insurer": "SID Banka",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "OTP filiale post-fusion (SKB+Nova KBM). EXCLU likely."
+    },
+    {
+      "bank_id": "maib-md", "name": "MAIB", "country": "MD",
+      "core_banking": "Misys / Finastra (Fusion Banking)",
+      "treasury": "FIS",
+      "tf_scf_platform": "Proprietary factoring app (recourse, without recourse, reverse — non-scalable)",
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated → friction minimal. Already has reverse factoring concept = ready to upgrade. Top candidate Moldova. C3 country = trade documentaire fort = TCI integration MAJEUR différenciateur CredAble."
+    },
+    {
+      "bank_id": "luminor-baltic", "name": "Luminor", "country": "EE",
+      "core_banking": "FIS Profile (legacy from DNB+Nordea heritage)",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "Atradius, Coface",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Pan-Baltic post DNB+Nordea merger (2017). FIS Profile = legacy migration target. Structure régionale = single platform multi-country opportunity."
+    },
+    {
+      "bank_id": "lhv-pank-ee", "name": "LHV Pank", "country": "EE",
+      "core_banking": "Proprietary (cloud-native, AWS)",
+      "treasury": "Modern fintech-style stack",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "excellent",
+      "credable_friction": "LOW",
+      "rationale": "★ Digital-native bank. APIs first. Excellent integration capability. Factoring + credit insurance documented. Open to fintech partnerships."
+    },
+    {
+      "bank_id": "citadele-lv", "name": "Citadele", "country": "LV",
+      "core_banking": "FIS",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Privatized 2012, EBRD shareholder. FIS core + EBRD link = potential SCF program candidate."
+    },
+    {
+      "bank_id": "siauliu-bankas-lt", "name": "Šiaulių Bankas", "country": "LT",
+      "core_banking": "Asseco regional",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "Atradius",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Lithuanian factoring leader. Asseco regional core."
+    },
+    {
+      "bank_id": "liberty-bank-ge", "name": "Liberty Bank", "country": "GE",
+      "core_banking": "FIS Profile",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "FCI new member 2025. FIS core. C3 country = TF documentaire dominant. CredAble TCI integration addresses gap."
+    },
+    {
+      "bank_id": "pasha-bank-az", "name": "PASHA Bank", "country": "AZ",
+      "core_banking": "Misys / Finastra",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "good",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated. Export factoring on homepage = active TF. C3-C4 country, TF documentary essential."
+    },
+    {
+      "bank_id": "ameriabank-am", "name": "Ameriabank", "country": "AM",
+      "core_banking": "Misys / Finastra",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated. Top Armenian bank. C3 country."
+    },
+    {
+      "bank_id": "ardshinbank-am", "name": "Ardshinbank", "country": "AM",
+      "core_banking": "Misys / Finastra",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated. Competing with Ameriabank."
+    },
+    {
+      "bank_id": "inecobank-am", "name": "Inecobank", "country": "AM",
+      "core_banking": "Proprietary digital",
+      "treasury": "Modern stack",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "good",
+      "credable_friction": "LOW",
+      "rationale": "★ Digital-native, strong tech appetite. Open to fintech."
+    },
+    {
+      "bank_id": "bkt-al", "name": "BKT", "country": "AL",
+      "core_banking": "Misys / Finastra",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "LOW",
+      "rationale": "★ FINASTRA pre-integrated. Albanian leader + Kosovo subsidiary. First mover potential."
+    },
+    {
+      "bank_id": "aik-bank-rs", "name": "AIK Bank", "country": "RS",
+      "core_banking": "Asseco regional",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "AOFI (Serbian ECA)",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Best Bank Serbia 2024 (Euromoney). Post-fusion mar 2025."
+    },
+    {
+      "bank_id": "nlb-komercijalna-rs", "name": "NLB Komercijalna", "country": "RS",
+      "core_banking": "NLB group platform (Asseco)",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "AOFI",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "NLB filiale, decision Ljubljana. Group rollout opportunity."
+    },
+    {
+      "bank_id": "unicredit-bih-ba", "name": "UniCredit Bank BiH", "country": "BA",
+      "core_banking": "UC group",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "UC filiale. EXCLU candidate."
+    },
+    {
+      "bank_id": "raiffeisen-bih-ba", "name": "Raiffeisen Bank BiH", "country": "BA",
+      "core_banking": "RBI group",
+      "treasury": "RBI",
+      "tf_scf_platform": "RBI Capital Solutions (group)",
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "RBI filiale = group SCF available. EXCLU."
+    },
+    {
+      "bank_id": "komercijalna-mk", "name": "Komercijalna Banka", "country": "MK",
+      "core_banking": "Asseco regional",
+      "treasury": "FIS",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": null,
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Macedonian #1 bank."
+    },
+    {
+      "bank_id": "nordea-fi", "name": "Nordea", "country": "FI",
+      "core_banking": "Temenos T24 + Sopra",
+      "treasury": "Murex",
+      "tf_scf_platform": "ORPHANED — we.trade founding shareholder",
+      "trade_credit_insurer": "Allianz Trade, Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "★ Nordics, CredAble has Norway+Sweden booking centres = local presence. we.trade orphan. Multi-Nordic SCF opportunity. NEW addition to catalog."
+    },
+    {
+      "bank_id": "handelsbanken-se", "name": "Handelsbanken", "country": "SE",
+      "core_banking": "FIS Profile",
+      "treasury": "Wallstreet Suite",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "EKN (Swedish ECA), Atradius",
+      "erp_integration_capability": "moderate",
+      "credable_friction": "medium",
+      "rationale": "Swedish leader. Conservative bank. NEW addition."
+    },
+    {
+      "bank_id": "seb-se", "name": "SEB", "country": "SE",
+      "core_banking": "SEB proprietary",
+      "treasury": "Murex",
+      "tf_scf_platform": "SEB Trade Finance (proprietary, SCF unclear)",
+      "trade_credit_insurer": "EKN, Atradius",
+      "erp_integration_capability": "good",
+      "credable_friction": "high",
+      "rationale": "Swedish corp banking leader. Proprietary tech. NEW addition."
+    },
+    {
+      "bank_id": "dnb-no", "name": "DNB", "country": "NO",
+      "core_banking": "Tata Consultancy Services BaNCS",
+      "treasury": "Murex",
+      "tf_scf_platform": null,
+      "trade_credit_insurer": "GIEK (Norwegian ECA), Allianz Trade",
+      "erp_integration_capability": "good",
+      "credable_friction": "medium",
+      "rationale": "Norwegian leader. CredAble Norway booking centre = local presence advantage. NEW addition."
+    }
+  ],
+  "_summary": {
+    "total_banks": 51,
+    "by_friction": {
+      "low": "★ Banks with Finastra/cloud-native cores: Banca Transilvania, MAIB, PASHA Bank, Ameriabank, Ardshinbank, Inecobank, BKT, LHV Pank — these are TOP priority for fast deployment",
+      "medium": "27 banks — typical European core (Sopra/Asseco/FIS) — feasible custom integration",
+      "high": "G-SIB filiales (UniCredit, ISP, KBC, ING, RBI, OTP filiales) + proprietary cores (Citi, Bankinter, SEB) — significant friction or EXCLU candidates"
+    },
+    "key_insight": "The most actionable cluster is the 8 Finastra-pre-integrated banks across CEE/Balkans/Caucasus + 3 Nordic banks where CredAble has local booking centres. These should be prioritized over high-friction G-SIB filiales."
+  }
+}
