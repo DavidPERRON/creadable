@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CredAble Intelligence — Control Panel</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #242736;
+  --border: #2e3249;
+  --accent: #4f6ef7;
+  --accent2: #7c3aed;
+  --green: #22c55e;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --code: #94a3b8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
+
+/* Layout */
+.layout { display: flex; height: 100vh; }
+.sidebar { width: 220px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+.main { flex: 1; overflow-y: auto; }
+
+/* Sidebar */
+.sidebar-logo { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); }
+.sidebar-logo .brand { font-weight: 700; font-size: 15px; color: var(--text); }
+.sidebar-logo .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.nav-section { padding: 16px 0 8px; }
+.nav-label { padding: 0 16px 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 16px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.15s; border-left: 2px solid transparent; }
+.nav-item:hover { color: var(--text); background: var(--surface2); }
+.nav-item.active { color: var(--accent); background: rgba(79,110,247,0.08); border-left-color: var(--accent); }
+.nav-item svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* Status dot */
+.api-status { margin: auto 0 0; padding: 12px 16px; border-top: 1px solid var(--border); }
+.status-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+.dot.ok { background: var(--green); }
+
+/* Page content */
+.page { display: none; padding: 28px 32px; max-width: 1100px; }
+.page.active { display: block; }
+.page-header { margin-bottom: 24px; }
+.page-title { font-size: 22px; font-weight: 700; color: var(--text); }
+.page-subtitle { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* Cards */
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.card-value { font-size: 32px; font-weight: 700; color: var(--text); }
+.card-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Section */
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 20px; }
+.section-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.section-title { font-weight: 600; font-size: 14px; }
+.section-body { padding: 20px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; transition: all 0.15s; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #3d5be0; }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-danger { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+.btn-danger:hover { background: rgba(239,68,68,0.25); }
+.btn-success { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+.btn-success:hover { background: rgba(34,197,94,0.25); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+
+/* Pipeline buttons group */
+.pipeline-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.pipeline-step { display: flex; flex-direction: column; gap: 4px; }
+.pipeline-step .step-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
+
+/* Badge */
+.badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+.badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-yellow { background: rgba(245,158,11,0.15); color: var(--yellow); }
+.badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
+.badge-blue { background: rgba(79,110,247,0.15); color: var(--accent); }
+
+/* Log terminal */
+.log-terminal { background: #0a0c14; border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace; font-size: 12px; line-height: 1.6; height: 380px; overflow-y: auto; color: var(--code); }
+.log-terminal .log-stdout { color: #94a3b8; }
+.log-terminal .log-stderr { color: #f59e0b; }
+.log-terminal .log-done-ok { color: var(--green); font-weight: 600; }
+.log-terminal .log-done-err { color: var(--red); font-weight: 600; }
+.log-terminal .log-info { color: #60a5fa; }
+
+/* Form */
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+.form-input { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 9px 12px; color: var(--text); font-size: 13px; outline: none; transition: border-color 0.15s; }
+.form-input:focus { border-color: var(--accent); }
+.form-textarea { width: 100%; background: #0a0c14; border: 1px solid var(--border); border-radius: 6px; padding: 12px; color: var(--code); font-family: 'SF Mono', 'Monaco', monospace; font-size: 12px; line-height: 1.6; outline: none; resize: vertical; transition: border-color 0.15s; }
+.form-textarea:focus { border-color: var(--accent); }
+.form-actions { display: flex; gap: 8px; margin-top: 12px; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+td { padding: 10px 12px; border-bottom: 1px solid rgba(46,50,73,0.5); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* Alert */
+.alert { padding: 12px 16px; border-radius: 8px; font-size: 13px; margin-bottom: 16px; }
+.alert-warn { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); color: #fbbf24; }
+.alert-info { background: rgba(79,110,247,0.08); border: 1px solid rgba(79,110,247,0.25); color: #93aff8; }
+.alert-error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; }
+
+/* Progress bar */
+.progress-bar { height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+/* Tab bar */
+.tab-bar { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tab { padding: 8px 16px; cursor: pointer; font-size: 13px; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab:hover { color: var(--text); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; }
+
+/* BIS score display */
+.score-high { color: var(--green); }
+.score-mh { color: #22d3ee; }
+.score-m { color: var(--yellow); }
+.score-low { color: var(--muted); }
+
+.empty-state { text-align: center; padding: 40px; color: var(--muted); }
+.empty-state svg { width: 40px; height: 40px; margin: 0 auto 12px; display: block; opacity: 0.3; }
+
+/* Iframe */
+.report-frame { width: 100%; height: 680px; border: none; border-radius: 8px; background: white; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand">CredAble Intel</div>
+    <div class="sub">Control Panel v1</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Vue d'ensemble</div>
+    <div class="nav-item active" onclick="showPage('dashboard')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      Dashboard
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Corporate Scraper</div>
+    <div class="nav-item" onclick="showPage('pipeline')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      Pipeline
+    </div>
+    <div class="nav-item" onclick="showPage('extractions-corp')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Extractions
+    </div>
+    <div class="nav-item" onclick="showPage('report-corp')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Dashboard
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Bank Intelligence</div>
+    <div class="nav-item" onclick="showPage('bis')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+      BIS Scores
+    </div>
+    <div class="nav-item" onclick="showPage('bis-report')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+      BIS Dashboard
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Données</div>
+    <div class="nav-item" onclick="showPage('data')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 4-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+      Fichiers JSON
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Système</div>
+    <div class="nav-item" onclick="showPage('config')">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Configuration
+    </div>
+  </div>
+
+  <div class="api-status">
+    <div class="status-row">
+      <div class="dot" id="api-dot"></div>
+      <span id="api-status-text">API key non configurée</span>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- ── DASHBOARD ─────────────────────────────────────────────── -->
+<div class="page active" id="page-dashboard">
+  <div class="page-header">
+    <div class="page-title">Vue d'ensemble</div>
+    <div class="page-subtitle">État du pipeline CredAble Intelligence</div>
+  </div>
+
+  <div class="grid grid-4" style="margin-bottom:20px" id="stats-grid">
+    <div class="card"><div class="card-title">Corporates</div><div class="card-value" id="stat-corp">—</div><div class="card-sub" id="stat-corp-sub">dans le catalogue</div></div>
+    <div class="card"><div class="card-title">Extractions</div><div class="card-value" id="stat-ext">—</div><div class="card-sub" id="stat-ext-sub">rapports analysés</div></div>
+    <div class="card"><div class="card-title">Banques BIS</div><div class="card-value" id="stat-banks">—</div><div class="card-sub" id="stat-banks-sub">scorées</div></div>
+    <div class="card"><div class="card-title">HIGH priority</div><div class="card-value score-high" id="stat-high">—</div><div class="card-sub">BIS ≥ 70</div></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="section">
+      <div class="section-header"><span class="section-title">🏢 Corporate Scraper</span></div>
+      <div class="section-body">
+        <table>
+          <tr><td>Catalogue corporates</td><td id="d-corp-total">—</td></tr>
+          <tr><td>Avec URL PDF</td><td id="d-corp-url">—</td></tr>
+          <tr><td>PDFs téléchargés</td><td id="d-corp-pdf">—</td></tr>
+          <tr><td>Textes extraits</td><td id="d-corp-txt">—</td></tr>
+          <tr><td>Extractions LLM</td><td id="d-corp-ext">—</td></tr>
+        </table>
+        <div style="margin-top:16px; display:flex; gap:8px;">
+          <button class="btn btn-primary btn-sm" onclick="showPage('pipeline')">Lancer pipeline →</button>
+          <button class="btn btn-secondary btn-sm" onclick="showPage('report-corp')">Dashboard →</button>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">🏦 Bank Intelligence</span></div>
+      <div class="section-body">
+        <table>
+          <tr><td>Banques tech stack</td><td id="d-bank-ts">—</td></tr>
+          <tr><td>Extractions banques</td><td id="d-bank-ext">—</td></tr>
+          <tr><td>Banques BIS scorées</td><td id="d-bank-bis">—</td></tr>
+          <tr><td>Dashboard BIS</td><td id="d-bis-ready">—</td></tr>
+          <tr><td>Dashboard Corporate</td><td id="d-corp-ready">—</td></tr>
+        </table>
+        <div style="margin-top:16px; display:flex; gap:8px;">
+          <button class="btn btn-primary btn-sm" onclick="showPage('bis')">Scores BIS →</button>
+          <button class="btn btn-secondary btn-sm" onclick="showPage('bis-report')">Dashboard →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PIPELINE ───────────────────────────────────────────────── -->
+<div class="page" id="page-pipeline">
+  <div class="page-header">
+    <div class="page-title">Pipeline Corporate Scraper</div>
+    <div class="page-subtitle">Téléchargement et analyse des rapports annuels corporates</div>
+  </div>
+
+  <div id="pipeline-api-warn" class="alert alert-warn" style="display:none">
+    ⚠️ La clé DEEPINFRA_API_KEY n'est pas configurée — l'étape Extract (LLM) sera bloquée.
+    <a href="#" onclick="showPage('config')" style="color:inherit;font-weight:600;"> Configurer →</a>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Pipeline complet</span></div>
+    <div class="section-body">
+      <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Enchaîne les 4 étapes : Discover → Download → Extract → Aggregate</p>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-primary" onclick="runCmd('cs:full')">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Lancer pipeline complet
+        </button>
+        <button class="btn btn-secondary" onclick="runCmd('cs:extract-dry')">Dry-run (sans LLM)</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Étapes individuelles</span></div>
+    <div class="section-body">
+      <div class="pipeline-group">
+        <div class="pipeline-step">
+          <div class="step-label">1 — Discover</div>
+          <button class="btn btn-secondary" onclick="runCmd('cs:discover')">Discover URLs</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">2 — Download</div>
+          <button class="btn btn-secondary" onclick="runCmd('cs:download')">Download PDFs</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">3 — Extract (LLM)</div>
+          <button class="btn btn-primary" onclick="runCmd('cs:extract')">Extract</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">4 — Aggregate</div>
+          <button class="btn btn-secondary" onclick="runCmd('cs:aggregate')">Aggregate</button>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.05em">Extraction par corporate</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="extract-corp-id" class="form-input" style="max-width:240px" placeholder="ID (ex: volkswagen-de)">
+          <button class="btn btn-primary" onclick="runExtractId('corporate')">Extraire ce corporate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
+    <div class="section-header">
+      <span class="section-title">Logs en temps réel</span>
+      <button class="btn btn-secondary btn-sm" onclick="clearLog()">Effacer</button>
+    </div>
+    <div class="section-body" style="padding:0">
+      <div class="log-terminal" id="log-output">
+        <span class="log-info">Prêt. Lance une commande pour voir les logs ici.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── EXTRACTIONS CORP ───────────────────────────────────────── -->
+<div class="page" id="page-extractions-corp">
+  <div class="page-header">
+    <div class="page-title">Extractions Corporates</div>
+    <div class="page-subtitle">Résultats LLM par corporate — signaux working capital détectés</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Fichiers extraits</span>
+      <button class="btn btn-secondary btn-sm" onclick="loadExtractions('corporate')">Actualiser</button>
+    </div>
+    <div class="section-body" style="padding:0">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Corporate</th><th>Mis à jour</th><th>Action</th></tr></thead>
+          <tbody id="extractions-corp-list">
+            <tr><td colspan="3" class="empty-state">Cliquez Actualiser</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="extraction-viewer" style="display:none">
+    <div class="section-header">
+      <span class="section-title" id="extraction-viewer-title">Extraction</span>
+      <button class="btn btn-secondary btn-sm" onclick="document.getElementById('extraction-viewer').style.display='none'">Fermer</button>
+    </div>
+    <div class="section-body" style="padding:0">
+      <textarea class="form-textarea" id="extraction-content" style="height:500px;font-size:11px" readonly></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ── RAPPORT CORP ───────────────────────────────────────────── -->
+<div class="page" id="page-report-corp">
+  <div class="page-header">
+    <div class="page-title">Dashboard Corporate</div>
+    <div class="page-subtitle">Rapport sweet-spots et signaux détectés</div>
+  </div>
+  <div id="corp-dashboard-missing" class="alert alert-warn" style="display:none">
+    Le dashboard n'a pas encore été généré. <button class="btn btn-primary btn-sm" onclick="showPage('pipeline');runCmd('cs:dashboard')">Générer maintenant</button>
+  </div>
+  <iframe class="report-frame" id="corp-dashboard-frame" src="" style="display:none"></iframe>
+</div>
+
+<!-- ── BIS SCORES ────────────────────────────────────────────── -->
+<div class="page" id="page-bis">
+  <div class="page-header">
+    <div class="page-title">Buying Intent Scores</div>
+    <div class="page-subtitle">8 signaux pondérés — probabilité d'achat CredAble dans 12 mois</div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Calculer / Mettre à jour les BIS</span></div>
+    <div class="section-body">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="runBiCmd('bi:all')">Recalculer BIS + rapport</button>
+        <button class="btn btn-secondary" onclick="runBiCmd('bi:bis')">BIS seul</button>
+        <button class="btn btn-secondary" onclick="runBiCmd('bi:extract')">Extraire rapports banques (LLM)</button>
+        <div style="display:flex;gap:8px;align-items:center;margin-left:auto">
+          <input id="extract-bank-id" class="form-input" style="max-width:200px" placeholder="ID banque (ex: kb-cz)">
+          <button class="btn btn-secondary" onclick="runExtractId('bank')">Extraire cette banque</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px" id="bis-log-section" style="display:none">
+    <div class="section-header">
+      <span class="section-title">Logs</span>
+      <button class="btn btn-secondary btn-sm" onclick="clearBiLog()">Effacer</button>
+    </div>
+    <div class="section-body" style="padding:0">
+      <div class="log-terminal" id="bi-log-output"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Classement BIS</span>
+      <button class="btn btn-secondary btn-sm" onclick="loadBisScores()">Actualiser</button>
+    </div>
+    <div class="section-body" style="padding:0">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Banque</th><th>Pays</th>
+              <th>Score</th><th>Bucket</th><th>Fenêtre</th><th>Friction</th>
+              <th>Signaux forts</th>
+            </tr>
+          </thead>
+          <tbody id="bis-table-body">
+            <tr><td colspan="8" class="empty-state">Cliquez Actualiser</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BIS DASHBOARD ─────────────────────────────────────────── -->
+<div class="page" id="page-bis-report">
+  <div class="page-header">
+    <div class="page-title">BIS Dashboard</div>
+    <div class="page-subtitle">Dashboard interactif — 5 onglets</div>
+  </div>
+  <div id="bis-dashboard-missing" class="alert alert-warn" style="display:none">
+    Le dashboard BIS n'a pas encore été généré. <button class="btn btn-primary btn-sm" onclick="showPage('bis');runBiCmd('bi:all')">Générer maintenant</button>
+  </div>
+  <iframe class="report-frame" id="bis-dashboard-frame" src="" style="display:none"></iframe>
+</div>
+
+<!-- ── DATA ─────────────────────────────────────────────────── -->
+<div class="page" id="page-data">
+  <div class="page-header">
+    <div class="page-title">Fichiers de données</div>
+    <div class="page-subtitle">Édition directe des JSON de configuration</div>
+  </div>
+
+  <div class="tab-bar">
+    <div class="tab active" onclick="showDataTab('bank_techstack')">Tech Stack Banques</div>
+    <div class="tab" onclick="showDataTab('fintech_failures')">Fintech Failures</div>
+    <div class="tab" onclick="showDataTab('competitor_intelligence')">Concurrents</div>
+    <div class="tab" onclick="showDataTab('catalog')">Catalogue Corporates</div>
+  </div>
+
+  <div id="data-editor">
+    <div class="alert alert-info" id="data-file-info">Chargement...</div>
+    <div class="form-group" style="margin-bottom:8px">
+      <textarea class="form-textarea" id="data-content" style="height:560px" spellcheck="false"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" onclick="saveData()">Sauvegarder</button>
+      <button class="btn btn-secondary" onclick="formatData()">Formater JSON</button>
+      <span id="data-save-msg" style="font-size:13px;color:var(--green);display:none">✓ Sauvegardé</span>
+      <span id="data-err-msg" style="font-size:13px;color:var(--red);display:none"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONFIG ────────────────────────────────────────────────── -->
+<div class="page" id="page-config">
+  <div class="page-header">
+    <div class="page-title">Configuration</div>
+    <div class="page-subtitle">Clé API et paramètres du pipeline</div>
+  </div>
+
+  <div class="section" style="max-width:500px">
+    <div class="section-header"><span class="section-title">DeepInfra API</span></div>
+    <div class="section-body">
+      <div class="form-group">
+        <label class="form-label">DEEPINFRA_API_KEY</label>
+        <input type="password" id="config-api-key" class="form-input" placeholder="votre clé DeepInfra">
+        <div style="font-size:11px;color:var(--muted);margin-top:4px">Stockée en mémoire serveur (non persistée sur disque)</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-primary" onclick="saveConfig()">Enregistrer</button>
+        <span id="config-save-msg" style="font-size:13px;color:var(--green);display:none">✓ Clé enregistrée</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="max-width:500px;margin-top:16px">
+    <div class="section-header"><span class="section-title">À propos</span></div>
+    <div class="section-body">
+      <table>
+        <tr><td style="color:var(--muted)">Version</td><td>1.0</td></tr>
+        <tr><td style="color:var(--muted)">Corporate scraper</td><td>159 EU corporates >€5bn</td></tr>
+        <tr><td style="color:var(--muted)">Bank intelligence</td><td>BIS 8-signaux, 51 banques</td></tr>
+        <tr><td style="color:var(--muted)">LLM</td><td>meta-llama/Llama-4-Scout via DeepInfra</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div><!-- .main -->
+</div><!-- .layout -->
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// Navigation
+// ─────────────────────────────────────────────────────────────────
+let currentPage = 'dashboard';
+let currentDataTab = 'bank_techstack';
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id)?.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick')?.includes("'" + id + "'")) n.classList.add('active');
+  });
+  currentPage = id;
+
+  // Side effects on page switch
+  if (id === 'dashboard') loadStats();
+  if (id === 'bis') loadBisScores();
+  if (id === 'bis-report') loadBisDashboard();
+  if (id === 'report-corp') loadCorpDashboard();
+  if (id === 'extractions-corp') loadExtractions('corporate');
+  if (id === 'config') loadConfig();
+  if (id === 'data') showDataTab(currentDataTab);
+  if (id === 'pipeline') checkApiForPipeline();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Stats
+// ─────────────────────────────────────────────────────────────────
+async function loadStats() {
+  try {
+    const r = await fetch('/api/stats');
+    const d = await r.json();
+
+    document.getElementById('stat-corp').textContent = d.corporates.total;
+    document.getElementById('stat-ext').textContent = d.corporates.extractions;
+    document.getElementById('stat-ext-sub').textContent = `sur ${d.corporates.total} corporates`;
+    document.getElementById('stat-banks').textContent = d.banks.bis_scored;
+    document.getElementById('stat-high').textContent = d.banks.bis_high;
+
+    document.getElementById('d-corp-total').textContent = d.corporates.total;
+    document.getElementById('d-corp-url').innerHTML = `${d.corporates.with_url} <span class="badge badge-${d.corporates.with_url > 100 ? 'green' : 'yellow'}">${Math.round(d.corporates.with_url/d.corporates.total*100)}%</span>`;
+    document.getElementById('d-corp-pdf').textContent = d.corporates.pdfs;
+    document.getElementById('d-corp-txt').textContent = d.corporates.texts;
+    document.getElementById('d-corp-ext').innerHTML = `${d.corporates.extractions} <span class="badge badge-${d.corporates.extractions > 0 ? 'green' : 'yellow'}">${Math.round(d.corporates.extractions/Math.max(d.corporates.total,1)*100)}%</span>`;
+    document.getElementById('d-bank-ts').textContent = d.banks.techstack;
+    document.getElementById('d-bank-ext').textContent = d.banks.bis_extractions;
+    document.getElementById('d-bank-bis').textContent = d.banks.bis_scored;
+    document.getElementById('d-bis-ready').innerHTML = d.reports.bis_dashboard ? '<span class="badge badge-green">✓ Prêt</span>' : '<span class="badge badge-yellow">Non généré</span>';
+    document.getElementById('d-corp-ready').innerHTML = d.reports.corporate_dashboard ? '<span class="badge badge-green">✓ Prêt</span>' : '<span class="badge badge-yellow">Non généré</span>';
+  } catch(e) { console.error(e); }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Config
+// ─────────────────────────────────────────────────────────────────
+async function loadConfig() {
+  const r = await fetch('/api/config');
+  const d = await r.json();
+  const dot = document.getElementById('api-dot');
+  const txt = document.getElementById('api-status-text');
+  if (d.api_key_set) {
+    dot.classList.add('ok');
+    txt.textContent = 'API: ' + d.api_key_preview;
+    document.getElementById('config-api-key').placeholder = d.api_key_preview;
+  } else {
+    dot.classList.remove('ok');
+    txt.textContent = 'API key non configurée';
+  }
+}
+
+async function saveConfig() {
+  const key = document.getElementById('config-api-key').value.trim();
+  if (!key) return;
+  await fetch('/api/config', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ api_key: key }) });
+  document.getElementById('config-save-msg').style.display = 'inline';
+  setTimeout(() => document.getElementById('config-save-msg').style.display = 'none', 2500);
+  loadConfig();
+}
+
+async function checkApiForPipeline() {
+  const r = await fetch('/api/config');
+  const d = await r.json();
+  document.getElementById('pipeline-api-warn').style.display = d.api_key_set ? 'none' : 'block';
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Pipeline runner (corporate scraper)
+// ─────────────────────────────────────────────────────────────────
+let currentEvtSource = null;
+
+function clearLog() { document.getElementById('log-output').innerHTML = ''; }
+
+function appendLog(el, event, text) {
+  const line = document.createElement('div');
+  if (event === 'stdout') line.className = 'log-stdout';
+  else if (event === 'stderr') line.className = 'log-stderr';
+  else if (event === 'done') line.className = text.includes('"code":0') ? 'log-done-ok' : 'log-done-err';
+  else line.className = 'log-info';
+  line.textContent = text;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+async function runCmd(cmd) {
+  showPage('pipeline');
+  clearLog();
+  const logEl = document.getElementById('log-output');
+  appendLog(logEl, 'info', `▶ Lancement: ${cmd}…`);
+
+  const r = await fetch(`/api/run/${cmd}`, { method: 'POST' });
+  if (!r.ok) {
+    const e = await r.json();
+    appendLog(logEl, 'stderr', '✗ Erreur: ' + e.error);
+    return;
+  }
+  const { jobId } = await r.json();
+  streamJob(jobId, logEl);
+}
+
+async function runBiCmd(cmd) {
+  showPage('bis');
+  document.getElementById('bis-log-section').style.display = 'block';
+  const logEl = document.getElementById('bi-log-output');
+  logEl.innerHTML = '';
+  appendLog(logEl, 'info', `▶ Lancement: ${cmd}…`);
+
+  const r = await fetch(`/api/run/${cmd}`, { method: 'POST' });
+  if (!r.ok) {
+    const e = await r.json();
+    appendLog(logEl, 'stderr', '✗ Erreur: ' + e.error);
+    return;
+  }
+  const { jobId } = await r.json();
+  streamJob(jobId, logEl, () => loadBisScores());
+}
+
+function clearBiLog() {
+  document.getElementById('bi-log-output').innerHTML = '';
+  document.getElementById('bis-log-section').style.display = 'none';
+}
+
+async function runExtractId(type) {
+  const idInput = type === 'corporate' ? 'extract-corp-id' : 'extract-bank-id';
+  const id = document.getElementById(idInput).value.trim();
+  if (!id) { alert('Entrez un ID'); return; }
+
+  if (type === 'corporate') showPage('pipeline');
+  const logEl = document.getElementById(type === 'corporate' ? 'log-output' : 'bi-log-output');
+  if (type === 'corporate') clearLog();
+  else { document.getElementById('bis-log-section').style.display='block'; logEl.innerHTML=''; }
+
+  appendLog(logEl, 'info', `▶ Extraction ${type}: ${id}…`);
+
+  const r = await fetch(`/api/run/extract-id/${type}/${id}`, { method: 'POST' });
+  if (!r.ok) {
+    const e = await r.json();
+    appendLog(logEl, 'stderr', '✗ Erreur: ' + e.error);
+    return;
+  }
+  const { jobId } = await r.json();
+  streamJob(jobId, logEl, type === 'bank' ? () => loadBisScores() : null);
+}
+
+function streamJob(jobId, logEl, onDone) {
+  if (currentEvtSource) currentEvtSource.close();
+  const es = new EventSource(`/api/logs/${jobId}`);
+  currentEvtSource = es;
+
+  es.addEventListener('stdout', e => appendLog(logEl, 'stdout', JSON.parse(e.data)));
+  es.addEventListener('stderr', e => appendLog(logEl, 'stderr', JSON.parse(e.data)));
+  es.addEventListener('done', e => {
+    const d = JSON.parse(e.data);
+    appendLog(logEl, 'done', d.code === 0 ? '✓ Terminé avec succès (exit 0)' : `✗ Terminé avec erreur (exit ${d.code})`);
+    es.close();
+    if (onDone && d.code === 0) setTimeout(onDone, 500);
+  });
+  es.onerror = () => es.close();
+}
+
+// ─────────────────────────────────────────────────────────────────
+// BIS scores
+// ─────────────────────────────────────────────────────────────────
+const BUCKET_BADGE = {
+  'HIGH':        'badge-green',
+  'MEDIUM-HIGH': 'badge-blue',
+  'MEDIUM':      'badge-yellow',
+  'LOW':         '',
+  'VERY LOW':    '',
+};
+const SCORE_CLASS = s => s >= 70 ? 'score-high' : s >= 50 ? 'score-mh' : s >= 30 ? 'score-m' : 'score-low';
+
+async function loadBisScores() {
+  const tbody = document.getElementById('bis-table-body');
+  try {
+    const r = await fetch('/api/data/bis_scores');
+    const d = await r.json();
+    const data = JSON.parse(d.content);
+    const banks = data.banks || [];
+    if (!banks.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Aucun score BIS. Lancez "Recalculer BIS".</td></tr>'; return; }
+
+    tbody.innerHTML = banks.map((b, i) => `
+      <tr>
+        <td style="color:var(--muted)">${i+1}</td>
+        <td style="font-weight:500">${b.bank_name || b.name}</td>
+        <td>${b.country || ''}</td>
+        <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
+        <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
+        <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
+        <td>${frictionBadge(b.friction)}</td>
+        <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
+      </tr>`).join('');
+  } catch(e) {
+    tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Fichier BIS non trouvé. Lancez "Recalculer BIS".</td></tr>';
+  }
+}
+
+function frictionBadge(f) {
+  if (!f) return '—';
+  const map = { LOW: 'badge-green', MEDIUM: 'badge-yellow', HIGH: 'badge-red' };
+  return `<span class="badge ${map[f] || ''}">${f === 'LOW' ? '★ ' : ''}${f}</span>`;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Dashboards
+// ─────────────────────────────────────────────────────────────────
+async function loadBisDashboard() {
+  const r = await fetch('/api/stats');
+  const d = await r.json();
+  if (d.reports.bis_dashboard) {
+    document.getElementById('bis-dashboard-missing').style.display = 'none';
+    const frame = document.getElementById('bis-dashboard-frame');
+    frame.style.display = 'block';
+    if (!frame.src) frame.src = '/reports/bis/bis_dashboard.html';
+  } else {
+    document.getElementById('bis-dashboard-missing').style.display = 'block';
+    document.getElementById('bis-dashboard-frame').style.display = 'none';
+  }
+}
+
+async function loadCorpDashboard() {
+  const r = await fetch('/api/stats');
+  const d = await r.json();
+  if (d.reports.corporate_dashboard) {
+    document.getElementById('corp-dashboard-missing').style.display = 'none';
+    const frame = document.getElementById('corp-dashboard-frame');
+    frame.style.display = 'block';
+    if (!frame.src) frame.src = '/reports/corporate/dashboard.html';
+  } else {
+    document.getElementById('corp-dashboard-missing').style.display = 'block';
+    document.getElementById('corp-dashboard-frame').style.display = 'none';
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Extractions list
+// ─────────────────────────────────────────────────────────────────
+async function loadExtractions(type) {
+  const r = await fetch(`/api/extractions/${type}`);
+  const d = await r.json();
+  const tbody = document.getElementById(`extractions-${type}-list`);
+  if (!d.files.length) {
+    tbody.innerHTML = '<tr><td colspan="3" class="empty-state">Aucune extraction trouvée</td></tr>';
+    return;
+  }
+  tbody.innerHTML = d.files.map(f => `
+    <tr>
+      <td style="font-weight:500">${f.name}</td>
+      <td style="color:var(--muted);font-size:12px">${new Date(f.updated).toLocaleString('fr-FR')}</td>
+      <td>
+        <button class="btn btn-secondary btn-sm" onclick="viewExtraction('${type}','${f.name}')">Voir</button>
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('extract-${type==='corporate'?'corp':'bank'}-id').value='${f.name}';runExtractId('${type}')">Re-extraire</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function viewExtraction(type, id) {
+  const r = await fetch(`/api/extraction/${type}/${id}`);
+  const d = await r.json();
+  const viewer = document.getElementById('extraction-viewer');
+  viewer.style.display = 'block';
+  document.getElementById('extraction-viewer-title').textContent = id;
+  const raw = JSON.parse(d.content);
+  document.getElementById('extraction-content').value = JSON.stringify(raw, null, 2);
+  viewer.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Data editor
+// ─────────────────────────────────────────────────────────────────
+const DATA_DESCRIPTIONS = {
+  bank_techstack:          'Tech stack curé de 51 banques (core banking, plateforme SCF, friction CredAble)',
+  fintech_failures:        'Faillites fintech et banques orphelines — Signal 3 du BIS',
+  competitor_intelligence: 'Intelligence concurrentielle vérifiée (sites web, mai 2026)',
+  catalog:                 'Catalogue de 159 corporates EU >€5bn CA',
+};
+
+async function showDataTab(name) {
+  currentDataTab = name;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => {
+    if (t.getAttribute('onclick')?.includes("'" + name + "'")) t.classList.add('active');
+  });
+  document.getElementById('data-file-info').textContent = DATA_DESCRIPTIONS[name] || name;
+  document.getElementById('data-save-msg').style.display = 'none';
+  document.getElementById('data-err-msg').style.display = 'none';
+
+  try {
+    const r = await fetch(`/api/data/${name}`);
+    const d = await r.json();
+    const parsed = JSON.parse(d.content);
+    document.getElementById('data-content').value = JSON.stringify(parsed, null, 2);
+  } catch(e) {
+    document.getElementById('data-content').value = `// Fichier non trouvé: ${name}`;
+  }
+}
+
+async function saveData() {
+  const content = document.getElementById('data-content').value;
+  const msgOk = document.getElementById('data-save-msg');
+  const msgErr = document.getElementById('data-err-msg');
+  msgOk.style.display = 'none';
+  msgErr.style.display = 'none';
+
+  try {
+    JSON.parse(content);
+  } catch(e) {
+    msgErr.textContent = '✗ JSON invalide: ' + e.message;
+    msgErr.style.display = 'inline';
+    return;
+  }
+
+  const r = await fetch(`/api/data/${currentDataTab}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ content })
+  });
+  if (r.ok) {
+    msgOk.style.display = 'inline';
+    setTimeout(() => msgOk.style.display = 'none', 3000);
+  } else {
+    const e = await r.json();
+    msgErr.textContent = '✗ ' + e.error;
+    msgErr.style.display = 'inline';
+  }
+}
+
+function formatData() {
+  try {
+    const raw = document.getElementById('data-content').value;
+    document.getElementById('data-content').value = JSON.stringify(JSON.parse(raw), null, 2);
+  } catch(e) {
+    document.getElementById('data-err-msg').textContent = '✗ JSON invalide: ' + e.message;
+    document.getElementById('data-err-msg').style.display = 'inline';
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Init
+// ─────────────────────────────────────────────────────────────────
+loadStats();
+loadConfig();
+</script>
+</body>
+</html>

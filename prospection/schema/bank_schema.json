@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bank Prospection Record",
+  "description": "Living record per bank — feeds scoring engine and report generator",
+  "type": "object",
+  "required": ["id", "name", "country", "country_risk", "scf_level", "score", "priority", "last_updated"],
+  "properties": {
+    "id": { "type": "string", "description": "slug — eg. bcge-ch" },
+    "name": { "type": "string" },
+    "country": { "type": "string", "description": "ISO 3166-1 alpha-2" },
+    "country_name": { "type": "string" },
+
+    "country_risk": {
+      "type": "object",
+      "properties": {
+        "allianz_grade": { "enum": ["AA1","AA2","A1","A2","A3","A4","B1","B2","B3","B4","C1","C2","C3","C4","D1","D2","D3","D4"] },
+        "allianz_level": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "marsh_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "trade_implication": { "enum": ["OPEN_ACCOUNT","MIXED","DOCUMENTARY_REQUIRED"] }
+      }
+    },
+
+    "tf_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "verbatim"],
+        "properties": {
+          "source": { "type": "string", "description": "GTR | TXF | TFG | Annual Report | Site corporate | EBRD | Euromoney | Global Finance | Bank press release | LinkedIn" },
+          "url": { "type": "string" },
+          "date": { "type": "string", "format": "date" },
+          "verbatim": { "type": "string" }
+        }
+      }
+    },
+
+    "scf_level": { "enum": ["ABSENT", "BASIQUE", "INTERMEDIAIRE", "AVANCE"] },
+    "scf_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source": { "type": "string" },
+          "url": { "type": "string" },
+          "verbatim": { "type": "string" }
+        }
+      }
+    },
+
+    "competitor_platform": {
+      "type": ["string", "null"],
+      "description": "Demica | Orbian | Taulia | Kyriba | PrimeRevenue | C2FO | Tradeshift | LiquidX | Komgo | QUALCO | PlusAdvance | Roger | null (free agent)"
+    },
+
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "date"],
+        "properties": {
+          "type": { "enum": ["RECRUITMENT","FINTECH_PARTNERSHIP_END","RFP","EBRD_PROGRAM","ALLIANZ_UPGRADE","M_AND_A","CEO_STATEMENT","PROFESSIONAL_PRESS","FCI_MEMBERSHIP"] },
+          "date": { "type": "string", "format": "date" },
+          "source": { "type": "string" },
+          "url": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+
+    "interlocutors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "linkedin": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    },
+
+    "financials": {
+      "type": "object",
+      "properties": {
+        "balance_sheet_eur": { "type": "number" },
+        "factoring_volume_eur": { "type": "number" },
+        "trade_finance_revenue_eur": { "type": "number" },
+        "year": { "type": "integer" }
+      }
+    },
+
+    "trade_flows_in": {
+      "type": "array",
+      "description": "Comtrade — top corridors for the country",
+      "items": {
+        "type": "object",
+        "properties": {
+          "partner": { "type": "string" },
+          "exports_usd": { "type": "number" },
+          "year": { "type": "integer" }
+        }
+      }
+    },
+
+    "score": {
+      "type": "object",
+      "properties": {
+        "tf_strength":        { "type": "integer", "minimum": 0, "maximum": 10 },
+        "scf_gap":            { "type": "integer", "minimum": 0, "maximum": 10 },
+        "trigger_freshness":  { "type": "integer", "minimum": 0, "maximum": 10 },
+        "country_flow":       { "type": "integer", "minimum": 0, "maximum": 10 },
+        "interlocutor_access":{ "type": "integer", "minimum": 0, "maximum": 5 },
+        "competitive_vacuum": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "regulatory_tailwind":{ "type": "integer", "minimum": 0, "maximum": 5 },
+        "total":              { "type": "integer", "minimum": 0, "maximum": 55 }
+      }
+    },
+
+    "priority": { "enum": ["P1", "P2", "P3", "EXCLU"] },
+    "exclusion_reason": { "type": ["string", "null"] },
+
+    "notes": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date" }
+  }
+}

@@ -1,0 +1,4182 @@
+{
+  "banks": [
+    {
+      "name": "MAIB",
+      "country": "MD",
+      "priority": "P3",
+      "bankPages": [
+        {
+          "url": "https://www.maib.md/en/business/factoring/",
+          "title": "maib",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "",
+              "href": "https://t.me/maibsupportbot"
+            },
+            {
+              "txt": "Download",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "Download",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/"
+            },
+            {
+              "txt": "En",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "Ro",
+              "href": "https://www.maib.md/ro/business/factoring"
+            },
+            {
+              "txt": "Ru",
+              "href": "https://www.maib.md/ru/business/factoring"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://maibank.maib.md/"
+            },
+            {
+              "txt": "maib business app",
+              "href": "https://www.maib.md/maib-business-app-download"
+            },
+            {
+              "txt": "internet banking - individuals",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "new internet banking - maib business",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "internet Banking - BankFlex",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "private banking\n                                                                maib private banking",
+              "href": "https://www.maib.md/en/private-banking"
+            },
+            {
+              "txt": "electronic statements\n                                                                estatements.maib.md",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "maib pay\n                                                                maibpay.md",
+              "href": "https://maibpay.md/"
+            },
+            {
+              "txt": "exchange rates\n                                                                maib.md/curs-valutar",
+              "href": "https://www.maib.md/en/curs-valutar"
+            },
+            {
+              "txt": "branch and ATM network\n                                                                maib.md/retea-unitati",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "new maib business",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "internet banking - PJ",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/ru/servicii-pentru-cetatenii-ucraineni"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/ru/servicii-pentru-cetatenii-ucraineni"
+            },
+            {
+              "txt": "personal",
+              "href": "https://www.maib.md/en/persoane-fizice"
+            },
+            {
+              "txt": "business",
+              "href": "https://www.maib.md/en/persoane-juridice"
+            },
+            {
+              "txt": "corporate",
+              "href": "https://www.maib.md/en/corporate"
+            },
+            {
+              "txt": "alto ↗",
+              "href": "https://alto.md/ro"
+            },
+            {
+              "txt": "private",
+              "href": "https://www.maib.md/en/private-banking"
+            },
+            {
+              "txt": "investor ↗",
+              "href": "https://ir.maib.md/"
+            },
+            {
+              "txt": "maib",
+              "href": "https://www.maib.md/en/maib"
+            },
+            {
+              "txt": "online loans",
+              "href": "https://www.maib.md/en/persoane-fizice/credite-online"
+            },
+            {
+              "txt": "espresso consumer loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credit-Espresso"
+            },
+            {
+              "txt": "refinance loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credite-refinance"
+            },
+            {
+              "txt": "credit de consum cu gaj",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/credit-de-consum-cu-gaj"
+            },
+            {
+              "txt": "Condiţiile de acordare a creditelor pentru consumatori ↗",
+              "href": "https://www.maib.md/storage/publication/1014/Informatie%20privind%20conditiile%20de%20acordare%20a%20creditelor%20pentru%20consumatori%2024.12.2025.signed.pdf"
+            },
+            {
+              "txt": "mortgage",
+              "href": "https://www.maib.md/en/persoane-fizice/ipoteca"
+            },
+            {
+              "txt": "new card design",
+              "href": "https://www.maib.md/en/carduri"
+            },
+            {
+              "txt": "digital cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-digitale"
+            },
+            {
+              "txt": "debit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-debit"
+            },
+            {
+              "txt": "credit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-credit"
+            },
+            {
+              "txt": "salary cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-salariale"
+            },
+            {
+              "txt": "social cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-sociale"
+            },
+            {
+              "txt": "premium cards",
+              "href": "https://alto.md/ro/alto/pachete-de-carduri"
+            },
+            {
+              "txt": "current accounts",
+              "href": "https://www.maib.md/en/persoane-fizice/conturi-curente"
+            },
+            {
+              "txt": "Activate my card and set up my PIN",
+              "href": "https://www.maib.md/en/persoane-fizice/pin-by-sms"
+            },
+            {
+              "txt": "card commission fees ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/tarife-pentru-carduri-in-vigoare"
+            },
+            {
+              "txt": "general information cards ↗",
+              "href": "https://www.maib.md/en/conditii-generale-bancare"
+            },
+            {
+              "txt": "card delivery service ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/serviciul-livrare-card"
+            },
+            {
+              "txt": "cards general information ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/informatie-generala-carduri"
+            },
+            {
+              "txt": "BC ”Maib” SA is a member of the Deposit Guarantee Scheme of the Republic of Moldova ↗",
+              "href": "https://fgdsb.md/"
+            },
+            {
+              "txt": "Terms and conditions ApplePay, Google Pay and Garmin Pay ↗",
+              "href": "https://www.maib.md/files/file/registru-tarife-pj/termeni_si_conditii/Termeni_si_conditii_Apple_PayGoogle_PayGarmin_Pay.pdf"
+            },
+            {
+              "txt": "deposit",
+              "href": "https://www.maib.md/en/persoane-fizice/depozite"
+            },
+            {
+              "txt": "bonds",
+              "href": "https://www.maib.md/ro/persoane-fizice/obligatiuni"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://www.maib.md/en/persoane-fizice/maib-digital/maibank"
+            },
+            {
+              "txt": "quick transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/transferuri-rapide"
+            },
+            {
+              "txt": "international transfer via SWIFT",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transfer-international-swift"
+            },
+            {
+              "txt": "international transfer via SEPA",
+              "href": "https://www.maib.md/en/transfer-international-sepa"
+            },
+            {
+              "txt": "quick transfers in national currency",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transferuri-rapide-in-moneda-nationala"
+            },
+            {
+              "txt": "P2P service   🡥",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/p2p"
+            },
+            {
+              "txt": "other payments and transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/alte-plati-si-transferuri"
+            },
+            {
+              "txt": "condiții generale",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/conditii-generale"
+            },
+            {
+              "txt": "Payment orders receipt schedule",
+              "href": "https://www.maib.md/en/persoane-fizice/graficul-de-primire-a-ordinelor-de-plata"
+            },
+            {
+              "txt": "plăți VS/MDL neprocesate/restituite",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "+373 22 022 495 - plăți/încasări VS/MDL în așteptare, solicitare documente/clarificari",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "insurance",
+              "href": "https://www.maib.md/en/persoane-fizice/asigurari"
+            },
+            {
+              "txt": "tariffs and general conditions",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale"
+            },
+            {
+              "txt": "services on the capital market",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-pe-piata-de-capital"
+            },
+            {
+              "txt": "state securities operations",
+              "href": "https://www.maib.md/en/persoane-fizice/operatiuni-cu-valori-mobiliare-de-stat"
+            },
+            {
+              "txt": "Servicii digitale",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale"
+            },
+            {
+              "txt": "IBAN calculator",
+              "href": "https://www.maib.md/en/calculator-iban"
+            },
+            {
+              "txt": "maib leasing ↗",
+              "href": "https://leasing.md/"
+            },
+            {
+              "txt": "turnichete în parcuri",
+              "href": "https://www.maib.md/en/turnichete-in-parcuri"
+            },
+            {
+              "txt": "transport public",
+              "href": "https://www.maib.md/ro/transport-public"
+            },
+            {
+              "txt": "online loans",
+              "href": "https://www.maib.md/en/persoane-fizice/credite-online"
+            },
+            {
+              "txt": "espresso consumer loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credit-Espresso"
+            },
+            {
+              "txt": "refinance loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credite-refinance"
+            },
+            {
+              "txt": "credit de consum cu gaj",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/credit-de-consum-cu-gaj"
+            },
+            {
+              "txt": "Condiţiile de acordare a creditelor pentru consumatori ↗",
+              "href": "https://www.maib.md/storage/publication/1014/Informatie%20privind%20conditiile%20de%20acordare%20a%20creditelor%20pentru%20consumatori%2024.12.2025.signed.pdf"
+            },
+            {
+              "txt": "new card design",
+              "href": "https://www.maib.md/en/carduri"
+            },
+            {
+              "txt": "digital cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-digitale"
+            },
+            {
+              "txt": "debit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-debit"
+            },
+            {
+              "txt": "credit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-credit"
+            },
+            {
+              "txt": "salary cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-salariale"
+            },
+            {
+              "txt": "social cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-sociale"
+            },
+            {
+              "txt": "premium cards",
+              "href": "https://alto.md/ro/alto/pachete-de-carduri"
+            },
+            {
+              "txt": "current accounts",
+              "href": "https://www.maib.md/en/persoane-fizice/conturi-curente"
+            },
+            {
+              "txt": "Activate my card and set up my PIN",
+              "href": "https://www.maib.md/en/persoane-fizice/pin-by-sms"
+            },
+            {
+              "txt": "card commission fees ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/tarife-pentru-carduri-in-vigoare"
+            },
+            {
+              "txt": "general information cards ↗",
+              "href": "https://www.maib.md/en/conditii-generale-bancare"
+            },
+            {
+              "txt": "card delivery service ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/serviciul-livrare-card"
+            },
+            {
+              "txt": "cards general information ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/informatie-generala-carduri"
+            },
+            {
+              "txt": "BC ”Maib” SA is a member of the Deposit Guarantee Scheme of the Republic of Moldova ↗",
+              "href": "https://fgdsb.md/"
+            },
+            {
+              "txt": "Terms and conditions ApplePay, Google Pay and Garmin Pay ↗",
+              "href": "https://www.maib.md/files/file/registru-tarife-pj/termeni_si_conditii/Termeni_si_conditii_Apple_PayGoogle_PayGarmin_Pay.pdf"
+            },
+            {
+              "txt": "quick transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/transferuri-rapide"
+            },
+            {
+              "txt": "international transfer via SWIFT",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transfer-international-swift"
+            },
+            {
+              "txt": "international transfer via SEPA",
+              "href": "https://www.maib.md/en/transfer-international-sepa"
+            },
+            {
+              "txt": "quick transfers in national currency",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transferuri-rapide-in-moneda-nationala"
+            },
+            {
+              "txt": "P2P service   🡥",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/p2p"
+            },
+            {
+              "txt": "other payments and transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/alte-plati-si-transferuri"
+            },
+            {
+              "txt": "condiții generale",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/conditii-generale"
+            },
+            {
+              "txt": "Payment orders receipt schedule",
+              "href": "https://www.maib.md/en/persoane-fizice/graficul-de-primire-a-ordinelor-de-plata"
+            },
+            {
+              "txt": "plăți VS/MDL neprocesate/restituite",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "+373 22 022 495 - plăți/încasări VS/MDL în așteptare, solicitare documente/clarificari",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "services on the capital market",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-pe-piata-de-capital"
+            },
+            {
+              "txt": "state securities operations",
+              "href": "https://www.maib.md/en/persoane-fizice/operatiuni-cu-valori-mobiliare-de-stat"
+            },
+            {
+              "txt": "Servicii digitale",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale"
+            },
+            {
+              "txt": "IBAN calculator",
+              "href": "https://www.maib.md/en/calculator-iban"
+            },
+            {
+              "txt": "maib leasing ↗",
+              "href": "https://leasing.md/"
+            },
+            {
+              "txt": "turnichete în parcuri",
+              "href": "https://www.maib.md/en/turnichete-in-parcuri"
+            },
+            {
+              "txt": "transport public",
+              "href": "https://www.maib.md/ro/transport-public"
+            },
+            {
+              "txt": "contact us",
+              "href": "https://www.maib.md/en/contacte"
+            },
+            {
+              "txt": "branch and ATM network",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "Ok",
+              "href": "https://www.maib.md/en/business/factoring#"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://www.maib.md/en/business/factoring#tab-data-1"
+            },
+            {
+              "txt": "legal entities",
+              "href": "https://www.maib.md/en/business/factoring#tab-data-2"
+            },
+            {
+              "txt": "instructions and template documents",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/internet-banking#documents"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://www.maib.md/maibank-download"
+            },
+            {
+              "txt": "internet banking",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "electronic statements",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "maib pay",
+              "href": "https://maibpay.md/"
+            },
+            {
+              "txt": "instructions and template documents",
+              "href": "https://www.maib.md/ro/persoane-juridice/maib-365/internet-banking-persoane-juridice#documents/"
+            },
+            {
+              "txt": "internet banking",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "the new internet banking (web)",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "mobile app maib business",
+              "href": "https://www.maib.md/maib-business-app-download"
+            },
+            {
+              "txt": "electronic statements",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/business/factoring#"
+            }
+          ]
+        },
+        {
+          "url": "https://www.maib.md/en/media/press-releases/",
+          "title": "maib",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "",
+              "href": "https://t.me/maibsupportbot"
+            },
+            {
+              "txt": "Download",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "Download",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/"
+            },
+            {
+              "txt": "En",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "Ro",
+              "href": "https://www.maib.md/ro/media/press-releases"
+            },
+            {
+              "txt": "Ru",
+              "href": "https://www.maib.md/ru/media/press-releases"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://maibank.maib.md/"
+            },
+            {
+              "txt": "maib business app",
+              "href": "https://www.maib.md/maib-business-app-download"
+            },
+            {
+              "txt": "internet banking - individuals",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "new internet banking - maib business",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "internet Banking - BankFlex",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "private banking\n                                                                maib private banking",
+              "href": "https://www.maib.md/en/private-banking"
+            },
+            {
+              "txt": "electronic statements\n                                                                estatements.maib.md",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "maib pay\n                                                                maibpay.md",
+              "href": "https://maibpay.md/"
+            },
+            {
+              "txt": "exchange rates\n                                                                maib.md/curs-valutar",
+              "href": "https://www.maib.md/en/curs-valutar"
+            },
+            {
+              "txt": "branch and ATM network\n                                                                maib.md/retea-unitati",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "new maib business",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "internet banking - PJ",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/ru/servicii-pentru-cetatenii-ucraineni"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/ru/servicii-pentru-cetatenii-ucraineni"
+            },
+            {
+              "txt": "personal",
+              "href": "https://www.maib.md/en/persoane-fizice"
+            },
+            {
+              "txt": "business",
+              "href": "https://www.maib.md/en/persoane-juridice"
+            },
+            {
+              "txt": "corporate",
+              "href": "https://www.maib.md/en/corporate"
+            },
+            {
+              "txt": "alto ↗",
+              "href": "https://alto.md/ro"
+            },
+            {
+              "txt": "private",
+              "href": "https://www.maib.md/en/private-banking"
+            },
+            {
+              "txt": "investor ↗",
+              "href": "https://ir.maib.md/"
+            },
+            {
+              "txt": "maib",
+              "href": "https://www.maib.md/en/maib"
+            },
+            {
+              "txt": "online loans",
+              "href": "https://www.maib.md/en/persoane-fizice/credite-online"
+            },
+            {
+              "txt": "espresso consumer loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credit-Espresso"
+            },
+            {
+              "txt": "refinance loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credite-refinance"
+            },
+            {
+              "txt": "credit de consum cu gaj",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/credit-de-consum-cu-gaj"
+            },
+            {
+              "txt": "Condiţiile de acordare a creditelor pentru consumatori ↗",
+              "href": "https://www.maib.md/storage/publication/1014/Informatie%20privind%20conditiile%20de%20acordare%20a%20creditelor%20pentru%20consumatori%2024.12.2025.signed.pdf"
+            },
+            {
+              "txt": "mortgage",
+              "href": "https://www.maib.md/en/persoane-fizice/ipoteca"
+            },
+            {
+              "txt": "new card design",
+              "href": "https://www.maib.md/en/carduri"
+            },
+            {
+              "txt": "digital cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-digitale"
+            },
+            {
+              "txt": "debit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-debit"
+            },
+            {
+              "txt": "credit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-credit"
+            },
+            {
+              "txt": "salary cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-salariale"
+            },
+            {
+              "txt": "social cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-sociale"
+            },
+            {
+              "txt": "premium cards",
+              "href": "https://alto.md/ro/alto/pachete-de-carduri"
+            },
+            {
+              "txt": "current accounts",
+              "href": "https://www.maib.md/en/persoane-fizice/conturi-curente"
+            },
+            {
+              "txt": "Activate my card and set up my PIN",
+              "href": "https://www.maib.md/en/persoane-fizice/pin-by-sms"
+            },
+            {
+              "txt": "card commission fees ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/tarife-pentru-carduri-in-vigoare"
+            },
+            {
+              "txt": "general information cards ↗",
+              "href": "https://www.maib.md/en/conditii-generale-bancare"
+            },
+            {
+              "txt": "card delivery service ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/serviciul-livrare-card"
+            },
+            {
+              "txt": "cards general information ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/informatie-generala-carduri"
+            },
+            {
+              "txt": "BC ”Maib” SA is a member of the Deposit Guarantee Scheme of the Republic of Moldova ↗",
+              "href": "https://fgdsb.md/"
+            },
+            {
+              "txt": "Terms and conditions ApplePay, Google Pay and Garmin Pay ↗",
+              "href": "https://www.maib.md/files/file/registru-tarife-pj/termeni_si_conditii/Termeni_si_conditii_Apple_PayGoogle_PayGarmin_Pay.pdf"
+            },
+            {
+              "txt": "deposit",
+              "href": "https://www.maib.md/en/persoane-fizice/depozite"
+            },
+            {
+              "txt": "bonds",
+              "href": "https://www.maib.md/ro/persoane-fizice/obligatiuni"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://www.maib.md/en/persoane-fizice/maib-digital/maibank"
+            },
+            {
+              "txt": "quick transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/transferuri-rapide"
+            },
+            {
+              "txt": "international transfer via SWIFT",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transfer-international-swift"
+            },
+            {
+              "txt": "international transfer via SEPA",
+              "href": "https://www.maib.md/en/transfer-international-sepa"
+            },
+            {
+              "txt": "quick transfers in national currency",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transferuri-rapide-in-moneda-nationala"
+            },
+            {
+              "txt": "P2P service   🡥",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/p2p"
+            },
+            {
+              "txt": "other payments and transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/alte-plati-si-transferuri"
+            },
+            {
+              "txt": "condiții generale",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/conditii-generale"
+            },
+            {
+              "txt": "Payment orders receipt schedule",
+              "href": "https://www.maib.md/en/persoane-fizice/graficul-de-primire-a-ordinelor-de-plata"
+            },
+            {
+              "txt": "plăți VS/MDL neprocesate/restituite",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "+373 22 022 495 - plăți/încasări VS/MDL în așteptare, solicitare documente/clarificari",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "insurance",
+              "href": "https://www.maib.md/en/persoane-fizice/asigurari"
+            },
+            {
+              "txt": "tariffs and general conditions",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale"
+            },
+            {
+              "txt": "services on the capital market",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-pe-piata-de-capital"
+            },
+            {
+              "txt": "state securities operations",
+              "href": "https://www.maib.md/en/persoane-fizice/operatiuni-cu-valori-mobiliare-de-stat"
+            },
+            {
+              "txt": "Servicii digitale",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale"
+            },
+            {
+              "txt": "IBAN calculator",
+              "href": "https://www.maib.md/en/calculator-iban"
+            },
+            {
+              "txt": "maib leasing ↗",
+              "href": "https://leasing.md/"
+            },
+            {
+              "txt": "turnichete în parcuri",
+              "href": "https://www.maib.md/en/turnichete-in-parcuri"
+            },
+            {
+              "txt": "transport public",
+              "href": "https://www.maib.md/ro/transport-public"
+            },
+            {
+              "txt": "online loans",
+              "href": "https://www.maib.md/en/persoane-fizice/credite-online"
+            },
+            {
+              "txt": "espresso consumer loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credit-Espresso"
+            },
+            {
+              "txt": "refinance loan",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/Credite-refinance"
+            },
+            {
+              "txt": "credit de consum cu gaj",
+              "href": "https://www.maib.md/en/persoane-fizice/credite/credit-de-consum-cu-gaj"
+            },
+            {
+              "txt": "Condiţiile de acordare a creditelor pentru consumatori ↗",
+              "href": "https://www.maib.md/storage/publication/1014/Informatie%20privind%20conditiile%20de%20acordare%20a%20creditelor%20pentru%20consumatori%2024.12.2025.signed.pdf"
+            },
+            {
+              "txt": "new card design",
+              "href": "https://www.maib.md/en/carduri"
+            },
+            {
+              "txt": "digital cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-digitale"
+            },
+            {
+              "txt": "debit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-debit"
+            },
+            {
+              "txt": "credit cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-de-credit"
+            },
+            {
+              "txt": "salary cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-salariale"
+            },
+            {
+              "txt": "social cards",
+              "href": "https://www.maib.md/en/persoane-fizice/carduri-sociale"
+            },
+            {
+              "txt": "premium cards",
+              "href": "https://alto.md/ro/alto/pachete-de-carduri"
+            },
+            {
+              "txt": "current accounts",
+              "href": "https://www.maib.md/en/persoane-fizice/conturi-curente"
+            },
+            {
+              "txt": "Activate my card and set up my PIN",
+              "href": "https://www.maib.md/en/persoane-fizice/pin-by-sms"
+            },
+            {
+              "txt": "card commission fees ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/tarife-pentru-carduri-in-vigoare"
+            },
+            {
+              "txt": "general information cards ↗",
+              "href": "https://www.maib.md/en/conditii-generale-bancare"
+            },
+            {
+              "txt": "card delivery service ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/serviciul-livrare-card"
+            },
+            {
+              "txt": "cards general information ↗",
+              "href": "https://www.maib.md/en/persoane-fizice/informatie-generala-carduri"
+            },
+            {
+              "txt": "BC ”Maib” SA is a member of the Deposit Guarantee Scheme of the Republic of Moldova ↗",
+              "href": "https://fgdsb.md/"
+            },
+            {
+              "txt": "Terms and conditions ApplePay, Google Pay and Garmin Pay ↗",
+              "href": "https://www.maib.md/files/file/registru-tarife-pj/termeni_si_conditii/Termeni_si_conditii_Apple_PayGoogle_PayGarmin_Pay.pdf"
+            },
+            {
+              "txt": "quick transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/transferuri-rapide"
+            },
+            {
+              "txt": "international transfer via SWIFT",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transfer-international-swift"
+            },
+            {
+              "txt": "international transfer via SEPA",
+              "href": "https://www.maib.md/en/transfer-international-sepa"
+            },
+            {
+              "txt": "quick transfers in national currency",
+              "href": "https://www.maib.md/en/persoane-fizice/plati-si-transferuri/transferuri-rapide-in-moneda-nationala"
+            },
+            {
+              "txt": "P2P service   🡥",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/p2p"
+            },
+            {
+              "txt": "other payments and transfers",
+              "href": "https://www.maib.md/en/persoane-fizice/alte-plati-si-transferuri"
+            },
+            {
+              "txt": "condiții generale",
+              "href": "https://www.maib.md/en/persoane-fizice/tarife-si-conditii-generale/conditii-generale"
+            },
+            {
+              "txt": "Payment orders receipt schedule",
+              "href": "https://www.maib.md/en/persoane-fizice/graficul-de-primire-a-ordinelor-de-plata"
+            },
+            {
+              "txt": "plăți VS/MDL neprocesate/restituite",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "+373 22 022 495 - plăți/încasări VS/MDL în așteptare, solicitare documente/clarificari",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "services on the capital market",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-pe-piata-de-capital"
+            },
+            {
+              "txt": "state securities operations",
+              "href": "https://www.maib.md/en/persoane-fizice/operatiuni-cu-valori-mobiliare-de-stat"
+            },
+            {
+              "txt": "Servicii digitale",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale"
+            },
+            {
+              "txt": "IBAN calculator",
+              "href": "https://www.maib.md/en/calculator-iban"
+            },
+            {
+              "txt": "maib leasing ↗",
+              "href": "https://leasing.md/"
+            },
+            {
+              "txt": "turnichete în parcuri",
+              "href": "https://www.maib.md/en/turnichete-in-parcuri"
+            },
+            {
+              "txt": "transport public",
+              "href": "https://www.maib.md/ro/transport-public"
+            },
+            {
+              "txt": "contact us",
+              "href": "https://www.maib.md/en/contacte"
+            },
+            {
+              "txt": "branch and ATM network",
+              "href": "https://www.maib.md/en/retea-unitati"
+            },
+            {
+              "txt": "Ok",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            },
+            {
+              "txt": "individuals",
+              "href": "https://www.maib.md/en/media/press-releases#tab-data-1"
+            },
+            {
+              "txt": "legal entities",
+              "href": "https://www.maib.md/en/media/press-releases#tab-data-2"
+            },
+            {
+              "txt": "instructions and template documents",
+              "href": "https://www.maib.md/en/persoane-fizice/servicii-digitale/internet-banking#documents"
+            },
+            {
+              "txt": "maibank",
+              "href": "https://www.maib.md/maibank-download"
+            },
+            {
+              "txt": "internet banking",
+              "href": "https://personal.maib.md/BankFlexPB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "electronic statements",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "maib pay",
+              "href": "https://maibpay.md/"
+            },
+            {
+              "txt": "instructions and template documents",
+              "href": "https://www.maib.md/ro/persoane-juridice/maib-365/internet-banking-persoane-juridice#documents/"
+            },
+            {
+              "txt": "internet banking",
+              "href": "https://corporate.maib.md/BankFlexCB/Login.aspx?locale=en-EN"
+            },
+            {
+              "txt": "the new internet banking (web)",
+              "href": "https://business.maib.md/IBMAIB/"
+            },
+            {
+              "txt": "mobile app maib business",
+              "href": "https://www.maib.md/maib-business-app-download"
+            },
+            {
+              "txt": "electronic statements",
+              "href": "https://estatements.maib.md/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.maib.md/en/media/press-releases#"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.maib.md/en/media/press-releases/",
+          "title": "maib",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "MAIB Moldova factoring reverse factoring 2025",
+          "url": "https://www.gtreview.com/?s=MAIB%20Moldova%20factoring%20reverse%20factoring%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "MAIB Moldova factoring reverse factoring 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=MAIB%20Moldova%20factoring%20reverse%20factoring%202025",
+          "kwCount": 12,
+          "keywords": [
+            {
+              "keyword": "reverse factoring",
+              "context": "ird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fi"
+            },
+            {
+              "keyword": "factoring",
+              "context": "endors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables"
+            },
+            {
+              "keyword": "factoring",
+              "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agric"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "lt for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ure of protection Alexander Klepp 30 Apr 2026 5 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read Articles Commodity Trading The supply chain of… Doğa Usanma"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+            },
+            {
+              "keyword": "export credit",
+              "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read Articles Commodity Trading The supply chain of… Doğa Usanmaz 24 Apr 2026 21 min read 1 2 3 4 . . . 69"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "MAIB Moldova factoring reverse factoring 2025",
+          "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=MAIB%20Moldova%20factoring%20reverse%20factoring%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "reverse factoring",
+          "context": "ird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fi"
+        },
+        {
+          "keyword": "factoring",
+          "context": "endors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables"
+        },
+        {
+          "keyword": "factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agric"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "lt for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ure of protection Alexander Klepp 30 Apr 2026 5 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read Articles Commodity Trading The supply chain of… Doğa Usanma"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+        },
+        {
+          "keyword": "export credit",
+          "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read Articles Commodity Trading The supply chain of… Doğa Usanmaz 24 Apr 2026 21 min read 1 2 3 4 . . . 69"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "endors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Trade Finance Global Search Result for \"MAIB Moldova factoring reverse factoring 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 14 hits (8 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "Liberty_Bank_GE",
+      "country": "GE",
+      "priority": "P3",
+      "bankPages": [
+        {
+          "url": "https://www.libertybank.ge/en/business/trade-finance",
+          "title": "404 Error - Page Not Found",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://www.libertybank.ge/"
+            },
+            {
+              "txt": "მთავარ გვერდზე",
+              "href": "https://www.libertybank.ge/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.libertybank.ge/en/about/press-releases",
+          "title": "404 Error - Page Not Found",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "",
+              "href": "https://www.libertybank.ge/"
+            },
+            {
+              "txt": "მთავარ გვერდზე",
+              "href": "https://www.libertybank.ge/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.libertybank.ge/en/about/press-releases",
+          "title": "404 Error - Page Not Found",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "Liberty Bank Georgia FCI factoring 2025",
+          "url": "https://www.gtreview.com/?s=Liberty%20Bank%20Georgia%20FCI%20factoring%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "Liberty Bank Georgia FCI factoring 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=Liberty%20Bank%20Georgia%20FCI%20factoring%202025",
+          "kwCount": 3,
+          "keywords": [
+            {
+              "keyword": "factoring",
+              "context": "d party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "(1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "d party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "Liberty Bank Georgia FCI factoring 2025",
+          "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=Liberty%20Bank%20Georgia%20FCI%20factoring%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "factoring",
+          "context": "d party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "(1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "d party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Trade Finance Global Search Result for \"Liberty Bank Georgia FCI factoring 2025\" Date"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 5 hits (5 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "PASHA_Bank",
+      "country": "AZ",
+      "priority": "P3",
+      "bankPages": [
+        {
+          "url": "https://www.pashabank.az/en/factoring/",
+          "title": "404 ::: PAŞA Bank ::: Korporativ bank, Müxbir banklar, İxrac və Eksport əməliyyatlarının maliyyələşməsi, Kredit, Kreditlər, Dollar ilə kredit, İnternet bankçılıq, Valyuta məzənnəsi, Valyuta məzənnələri, Kənd təsərrüfatı kreditləri, Pos terminallar",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Yüklə",
+              "href": "https://me-qr.com/2f0ydPi"
+            },
+            {
+              "txt": "",
+              "href": "https://www.pashabank.az/lang,az/"
+            },
+            {
+              "txt": "Müştəri olun",
+              "href": "https://onboarding.pashabank.digital/"
+            },
+            {
+              "txt": "Hüquqi şəxslər və fərdi sahibkarlar",
+              "href": "https://pashabank.digital/login#/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.pashabank.az/en/factoring/#"
+            },
+            {
+              "txt": "PAŞA Bank “Caspian Agro Week” və “InterFood Azerbaijan” sərgilərinin rəsmi bank tərəfdaşı olub",
+              "href": "https://www.pashabank.az/press_centre,2191/lang,az/"
+            },
+            {
+              "txt": "Daha ətraflı",
+              "href": "https://www.pashabank.az/press_centre,2191/lang,az/"
+            },
+            {
+              "txt": "Daha ətraflı",
+              "href": "https://www.pashabank.az/contacts,735/lang,az/"
+            },
+            {
+              "txt": "Daha ətraflı",
+              "href": "https://www.pashabank.az/online_services/lang,az/"
+            },
+            {
+              "txt": "Daha ətraflı",
+              "href": "https://www.pashabank.az/private_banking/lang,az/"
+            },
+            {
+              "txt": "Daha ətraflı",
+              "href": "https://www.pashabank.az/static,96/lang,az/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.pashabank.az/en/press-center/",
+          "title": "Attention Required! | Cloudflare",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Cloudflare",
+              "href": "https://www.cloudflare.com/5xx-error-landing"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.pashabank.az/en/press-center/press-releases/",
+          "title": "Attention Required! | Cloudflare",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "PASHA Bank Azerbaijan factoring export 2025",
+          "url": "https://www.gtreview.com/?s=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "PASHA Bank Azerbaijan factoring export 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025",
+          "kwCount": 11,
+          "keywords": [
+            {
+              "keyword": "factoring",
+              "context": "hird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Keny"
+            },
+            {
+              "keyword": "factoring",
+              "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "7) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricul"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "sult for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ure of protection Alexander Klepp 30 Apr 2026 5 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Customs India and New Zealand sign “once-in-a-generation” free trade agreement Mahika Ravi Shankar 27 Apr 2026 2 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeri"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+            },
+            {
+              "keyword": "export credit",
+              "context": "a-generation” free trade agreement Mahika Ravi Shankar 27 Apr 2026 2 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "hird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Keny"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "PASHA Bank Azerbaijan factoring export 2025",
+          "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=PASHA%20Bank%20Azerbaijan%20factoring%20export%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "factoring",
+          "context": "hird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Keny"
+        },
+        {
+          "keyword": "factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "7) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricul"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "sult for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ure of protection Alexander Klepp 30 Apr 2026 5 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Customs India and New Zealand sign “once-in-a-generation” free trade agreement Mahika Ravi Shankar 27 Apr 2026 2 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeri"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+        },
+        {
+          "keyword": "export credit",
+          "context": "a-generation” free trade agreement Mahika Ravi Shankar 27 Apr 2026 2 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "hird party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Trade Finance Global Search Result for \"PASHA Bank Azerbaijan factoring export 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Keny"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 13 hits (7 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "AikBank_Serbia",
+      "country": "RS",
+      "priority": "P3",
+      "bankPages": [
+        {
+          "url": "https://www.aikbank.rs/privreda/korporativno-bankarstvo/",
+          "title": "Page not found",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Vratite se na početnu",
+              "href": "https://www.aikbank.rs/"
+            },
+            {
+              "txt": "Online keš kredit\n\nNe čekajte – rešite online.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/online-kes-kredit/"
+            },
+            {
+              "txt": "Stambeni kredit\n\nNe odlažite važne odluke.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/stambeni-kredit/"
+            },
+            {
+              "txt": "Keš kredit\n\nDugo priželjkujete. Brzo ostvarujemo",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/kes-kredit/"
+            },
+            {
+              "txt": "Online keš kredit\n\nNe čekajte – rešite online.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/online-kes-kredit/"
+            },
+            {
+              "txt": "Stambeni kredit\n\nNe odlažite važne odluke.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/stambeni-kredit/"
+            },
+            {
+              "txt": "Pogledajte kredite",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/"
+            },
+            {
+              "txt": "Dodatne informacije",
+              "href": "https://www.aikbank.rs/politika-privatnosti/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        },
+        {
+          "url": "https://www.aikbank.rs/medija/",
+          "title": "Page not found",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Vratite se na početnu",
+              "href": "https://www.aikbank.rs/"
+            },
+            {
+              "txt": "Online keš kredit\n\nNe čekajte – rešite online.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/online-kes-kredit/"
+            },
+            {
+              "txt": "Stambeni kredit\n\nNe odlažite važne odluke.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/stambeni-kredit/"
+            },
+            {
+              "txt": "Keš kredit\n\nDugo priželjkujete. Brzo ostvarujemo",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/kes-kredit/"
+            },
+            {
+              "txt": "Online keš kredit\n\nNe čekajte – rešite online.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/online-kes-kredit/"
+            },
+            {
+              "txt": "Stambeni kredit\n\nNe odlažite važne odluke.",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/stambeni-kredit/"
+            },
+            {
+              "txt": "Pogledajte kredite",
+              "href": "https://www.aikbank.rs/stanovnistvo/krediti/"
+            },
+            {
+              "txt": "Dodatne informacije",
+              "href": "https://www.aikbank.rs/politika-privatnosti/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.onetrust.com/products/cookie-consent/"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.aikbank.rs/medija/",
+          "title": "Page not found",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "AIK Bank Serbia trade finance 2025",
+          "url": "https://www.gtreview.com/?s=AIK%20Bank%20Serbia%20trade%20finance%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=AIK%20Bank%20Serbia%20trade%20finance%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "AIK Bank Serbia trade finance 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=AIK%20Bank%20Serbia%20trade%20finance%202025",
+          "kwCount": 10,
+          "keywords": [
+            {
+              "keyword": "factoring",
+              "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"AIK Bank Serbia trade finance 2025\" Trade Finance Global Search Result for \"AIK Bank Serbia trade finance 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packa"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "Search Result for \"AIK Bank Serbia trade finance 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ODCAST | As risks multiply, insurers rethink the architecture of protection Alexander Klepp 30 Apr 2026 5 min read News Trade Finance Standard Chartered and IFC launch $300mn risk-sharing facility for African trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read Ne"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+            },
+            {
+              "keyword": "export credit",
+              "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+            },
+            {
+              "keyword": "Factoring",
+              "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "AIK Bank Serbia trade finance 2025",
+          "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=AIK%20Bank%20Serbia%20trade%20finance%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"AIK Bank Serbia trade finance 2025\" Trade Finance Global Search Result for \"AIK Bank Serbia trade finance 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packa"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "Search Result for \"AIK Bank Serbia trade finance 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ODCAST | As risks multiply, insurers rethink the architecture of protection Alexander Klepp 30 Apr 2026 5 min read News Trade Finance Standard Chartered and IFC launch $300mn risk-sharing facility for African trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read Ne"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+        },
+        {
+          "keyword": "export credit",
+          "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 118"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 12 hits (7 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    },
+    {
+      "name": "LHV_Pank",
+      "country": "EE",
+      "priority": "P3",
+      "bankPages": [
+        {
+          "url": "https://www.lhv.ee/en/business/factoring",
+          "title": "404 · LHV",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Liigu edasi põhisisu juurde",
+              "href": "https://www.lhv.ee/en/business/factoring#content"
+            },
+            {
+              "txt": "Ligipääsetavus",
+              "href": "https://www.lhv.ee/ligipaasetavus"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/et/"
+            },
+            {
+              "txt": "Finantsportaal",
+              "href": "https://fp.lhv.ee/"
+            },
+            {
+              "txt": "Investor",
+              "href": "https://investor.lhv.ee/et/"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "SISENE",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Ava konto",
+              "href": "https://www.lhv.ee/ibank/customer/management/registration/user-registration"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Sisene",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "Välju",
+              "href": "https://www.lhv.ee/auth/logout?goto=/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "Sisene",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Välju",
+              "href": "https://www.lhv.ee/auth/logout?goto=/"
+            },
+            {
+              "txt": "Internetipank",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Ülevaade igapäevapangandusest",
+              "href": "https://www.lhv.ee/et/igapaevapangandus"
+            },
+            {
+              "txt": "Eraklient",
+              "href": "https://www.lhv.ee/et/eraklient"
+            },
+            {
+              "txt": "Premium klient",
+              "href": "https://www.lhv.ee/et/premium"
+            },
+            {
+              "txt": "Noortepank",
+              "href": "https://www.lhv.ee/et/noortepank"
+            },
+            {
+              "txt": "Lapsekonto",
+              "href": "https://www.lhv.ee/et/lapsekonto"
+            },
+            {
+              "txt": "Privaatpangandus",
+              "href": "https://www.lhv.ee/et/privaatpangandus"
+            },
+            {
+              "txt": "Mitteresident",
+              "href": "https://www.lhv.ee/et/mitteresidendid"
+            },
+            {
+              "txt": "Äriklient",
+              "href": "https://www.lhv.ee/et/ariklient"
+            },
+            {
+              "txt": "Alustav ettevõte",
+              "href": "https://www.lhv.ee/et/alustav-ettevote"
+            },
+            {
+              "txt": "Korteriühistu",
+              "href": "https://www.lhv.ee/et/korteriuhistule"
+            },
+            {
+              "txt": "Maksed",
+              "href": "https://www.lhv.ee/et/maksed"
+            },
+            {
+              "txt": "E-arved",
+              "href": "https://www.lhv.ee/et/e-arved"
+            },
+            {
+              "txt": "Maksete kogumine",
+              "href": "https://www.lhv.ee/et/maksete-kogumine"
+            },
+            {
+              "txt": "Palgamakse",
+              "href": "https://www.lhv.ee/et/palgamakse"
+            },
+            {
+              "txt": "Connect",
+              "href": "https://www.lhv.ee/et/connect"
+            },
+            {
+              "txt": "Open banking",
+              "href": "https://www.lhv.ee/et/open-banking"
+            },
+            {
+              "txt": "Ettevõtluskonto",
+              "href": "https://www.lhv.ee/et/ettevotluskonto"
+            },
+            {
+              "txt": "Kontsernikonto",
+              "href": "https://www.lhv.ee/et/kontsernikonto"
+            },
+            {
+              "txt": "Valuutakalkulaator",
+              "href": "https://www.lhv.ee/et/valuuta-kalkulaator"
+            },
+            {
+              "txt": "Sularahateenused",
+              "href": "https://www.lhv.ee/et/sularahavedu"
+            },
+            {
+              "txt": "Erakliendi kaardid",
+              "href": "https://www.lhv.ee/et/erakaardid"
+            },
+            {
+              "txt": "Ärikliendi kaardid",
+              "href": "https://www.lhv.ee/et/arikaardid"
+            },
+            {
+              "txt": "Virtuaalkaart",
+              "href": "https://www.lhv.ee/et/virtuaalkaart"
+            },
+            {
+              "txt": "Mikroannetus",
+              "href": "https://www.lhv.ee/et/mikroannetus"
+            },
+            {
+              "txt": "Mobiiliäpp",
+              "href": "https://www.lhv.ee/et/mobiiliapp"
+            },
+            {
+              "txt": "Kontorid",
+              "href": "https://www.lhv.ee/et/kus-asub#kontorid"
+            },
+            {
+              "txt": "Sularahaautomaadid",
+              "href": "https://www.lhv.ee/et/kus-asub#sularahaautomaadid"
+            },
+            {
+              "txt": "Eraklient",
+              "href": "https://www.lhv.ee/et/eraklient"
+            },
+            {
+              "txt": "Premium klient",
+              "href": "https://www.lhv.ee/et/premium"
+            },
+            {
+              "txt": "Noortepank",
+              "href": "https://www.lhv.ee/et/noortepank"
+            },
+            {
+              "txt": "Lapsekonto",
+              "href": "https://www.lhv.ee/et/lapsekonto"
+            },
+            {
+              "txt": "Privaatpangandus",
+              "href": "https://www.lhv.ee/et/privaatpangandus"
+            },
+            {
+              "txt": "Mitteresident",
+              "href": "https://www.lhv.ee/et/mitteresidendid"
+            },
+            {
+              "txt": "Äriklient",
+              "href": "https://www.lhv.ee/et/ariklient"
+            },
+            {
+              "txt": "Alustav ettevõte",
+              "href": "https://www.lhv.ee/et/alustav-ettevote"
+            },
+            {
+              "txt": "Korteriühistu",
+              "href": "https://www.lhv.ee/et/korteriuhistule"
+            },
+            {
+              "txt": "Maksed",
+              "href": "https://www.lhv.ee/et/maksed"
+            },
+            {
+              "txt": "E-arved",
+              "href": "https://www.lhv.ee/et/e-arved"
+            },
+            {
+              "txt": "Maksete kogumine",
+              "href": "https://www.lhv.ee/et/maksete-kogumine"
+            },
+            {
+              "txt": "Palgamakse",
+              "href": "https://www.lhv.ee/et/palgamakse"
+            },
+            {
+              "txt": "Connect",
+              "href": "https://www.lhv.ee/et/connect"
+            },
+            {
+              "txt": "Open banking",
+              "href": "https://www.lhv.ee/et/open-banking"
+            },
+            {
+              "txt": "Ettevõtluskonto",
+              "href": "https://www.lhv.ee/et/ettevotluskonto"
+            },
+            {
+              "txt": "Kontsernikonto",
+              "href": "https://www.lhv.ee/et/kontsernikonto"
+            },
+            {
+              "txt": "Valuutakalkulaator",
+              "href": "https://www.lhv.ee/et/valuuta-kalkulaator"
+            },
+            {
+              "txt": "Sularahateenused",
+              "href": "https://www.lhv.ee/et/sularahavedu"
+            },
+            {
+              "txt": "Erakliendi kaardid",
+              "href": "https://www.lhv.ee/et/erakaardid"
+            },
+            {
+              "txt": "Ärikliendi kaardid",
+              "href": "https://www.lhv.ee/et/arikaardid"
+            },
+            {
+              "txt": "Virtuaalkaart",
+              "href": "https://www.lhv.ee/et/virtuaalkaart"
+            },
+            {
+              "txt": "Mikroannetus",
+              "href": "https://www.lhv.ee/et/mikroannetus"
+            },
+            {
+              "txt": "Mobiiliäpp",
+              "href": "https://www.lhv.ee/et/mobiiliapp"
+            },
+            {
+              "txt": "Kontorid",
+              "href": "https://www.lhv.ee/et/kus-asub#kontorid"
+            },
+            {
+              "txt": "Sularahaautomaadid",
+              "href": "https://www.lhv.ee/et/kus-asub#sularahaautomaadid"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Tähtajaline hoius",
+              "href": "https://www.lhv.ee/et/tahtajaline-hoius"
+            },
+            {
+              "txt": "Kogumiskonto",
+              "href": "https://www.lhv.ee/et/kogumiskonto"
+            },
+            {
+              "txt": "Nõudmiseni hoius",
+              "href": "https://www.lhv.ee/et/noudmiseni-hoius"
+            },
+            {
+              "txt": "Kasvukonto",
+              "href": "https://www.lhv.ee/et/kasvukonto"
+            },
+            {
+              "txt": "Väärtpaberikonto",
+              "href": "https://www.lhv.ee/et/vaartpaberikonto"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Krüptovarad",
+              "href": "https://www.lhv.ee/et/krypto"
+            },
+            {
+              "txt": "Trader",
+              "href": "https://www.lhv.ee/et/trader"
+            },
+            {
+              "txt": "Portfellihaldus",
+              "href": "https://www.lhv.ee/et/portfellihaldus"
+            },
+            {
+              "txt": "LHV Investeerimisfondid",
+              "href": "https://www.lhv.ee/et/investeerimisfondid"
+            },
+            {
+              "txt": "Investeerimise ABC",
+              "href": "https://www.lhv.ee/et/investeerimise-abc"
+            },
+            {
+              "txt": "Investeerimiskool",
+              "href": "https://news.fp.lhv.ee/investeerimiskool"
+            },
+            {
+              "txt": "Virtuaalkonto",
+              "href": "https://www.lhv.ee/et/virtuaalkonto"
+            },
+            {
+              "txt": "Börsihai",
+              "href": "https://www.lhv.ee/et/hai"
+            },
+            {
+              "txt": "Alustava investori baaskursus",
+              "href": "https://www.lhv.ee/et/kursus"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Institutsionaalne maakleritegevus",
+              "href": "https://www.lhv.ee/et/institutsionaalne-maakleritegevus"
+            },
+            {
+              "txt": "Valuutariski maandamine",
+              "href": "https://www.lhv.ee/et/valuutariski-maandamine"
+            },
+            {
+              "txt": "Intressiriski maandamine",
+              "href": "https://www.lhv.ee/et/intressiriski-maandamine"
+            },
+            {
+              "txt": "Teenused emitentidele",
+              "href": "https://www.lhv.ee/et/teenused-emitentidele"
+            },
+            {
+              "txt": "LEI-kood",
+              "href": "https://www.lhv.ee/et/lei"
+            },
+            {
+              "txt": "Valuutavahetus",
+              "href": "https://www.lhv.ee/ibank/foreign-exchange/trade-offer-insert"
+            },
+            {
+              "txt": "Kinkekaart",
+              "href": "https://www.lhv.ee/et/kinkekaart"
+            },
+            {
+              "txt": "Tähtajaline hoius",
+              "href": "https://www.lhv.ee/et/tahtajaline-hoius"
+            },
+            {
+              "txt": "Kogumiskonto",
+              "href": "https://www.lhv.ee/et/kogumiskonto"
+            },
+            {
+              "txt": "Nõudmiseni hoius",
+              "href": "https://www.lhv.ee/et/noudmiseni-hoius"
+            },
+            {
+              "txt": "Kasvukonto",
+              "href": "https://www.lhv.ee/et/kasvukonto"
+            },
+            {
+              "txt": "Väärtpaberikonto",
+              "href": "https://www.lhv.ee/et/vaartpaberikonto"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Krüptovarad",
+              "href": "https://www.lhv.ee/et/krypto"
+            },
+            {
+              "txt": "Trader",
+              "href": "https://www.lhv.ee/et/trader"
+            },
+            {
+              "txt": "Portfellihaldus",
+              "href": "https://www.lhv.ee/et/portfellihaldus"
+            },
+            {
+              "txt": "LHV Investeerimisfondid",
+              "href": "https://www.lhv.ee/et/investeerimisfondid"
+            },
+            {
+              "txt": "Investeerimise ABC",
+              "href": "https://www.lhv.ee/et/investeerimise-abc"
+            },
+            {
+              "txt": "Investeerimiskool",
+              "href": "https://news.fp.lhv.ee/investeerimiskool"
+            },
+            {
+              "txt": "Virtuaalkonto",
+              "href": "https://www.lhv.ee/et/virtuaalkonto"
+            },
+            {
+              "txt": "Börsihai",
+              "href": "https://www.lhv.ee/et/hai"
+            },
+            {
+              "txt": "Alustava investori baaskursus",
+              "href": "https://www.lhv.ee/et/kursus"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Institutsionaalne maakleritegevus",
+              "href": "https://www.lhv.ee/et/institutsionaalne-maakleritegevus"
+            },
+            {
+              "txt": "Valuutariski maandamine",
+              "href": "https://www.lhv.ee/et/valuutariski-maandamine"
+            },
+            {
+              "txt": "Intressiriski maandamine",
+              "href": "https://www.lhv.ee/et/intressiriski-maandamine"
+            },
+            {
+              "txt": "Teenused emitentidele",
+              "href": "https://www.lhv.ee/et/teenused-emitentidele"
+            },
+            {
+              "txt": "LEI-kood",
+              "href": "https://www.lhv.ee/et/lei"
+            },
+            {
+              "txt": "Valuutavahetus",
+              "href": "https://www.lhv.ee/ibank/foreign-exchange/trade-offer-insert"
+            },
+            {
+              "txt": "Kinkekaart",
+              "href": "https://www.lhv.ee/et/kinkekaart"
+            },
+            {
+              "txt": "Ülevaade laenudest ja liisingust",
+              "href": "https://www.lhv.ee/et/laen-ja-liising"
+            },
+            {
+              "txt": "Kodulaen",
+              "href": "https://www.lhv.ee/et/kodulaen"
+            },
+            {
+              "txt": "Eralaen",
+              "href": "https://www.lhv.ee/et/eralaen"
+            },
+            {
+              "txt": "Õppelaen",
+              "href": "https://www.lhv.ee/et/oppelaen"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Väikelaen",
+              "href": "https://www.lhv.ee/et/vaikelaen"
+            },
+            {
+              "txt": "Autolaen",
+              "href": "https://www.lhv.ee/et/autolaen"
+            },
+            {
+              "txt": "Remondilaen",
+              "href": "https://www.lhv.ee/et/remondilaen"
+            },
+            {
+              "txt": "Refinantseerimislaen",
+              "href": "https://www.lhv.ee/et/refinantseerimislaen"
+            },
+            {
+              "txt": "Järelmaks",
+              "href": "https://www.lhv.ee/et/jarelmaks"
+            },
+            {
+              "txt": "Mikrolaen",
+              "href": "https://www.lhv.ee/et/mikrolaen"
+            },
+            {
+              "txt": "Arvelduslaen",
+              "href": "https://www.lhv.ee/et/arvelduslaen"
+            },
+            {
+              "txt": "Käibekapitalilaen",
+              "href": "https://www.lhv.ee/et/kaibekapitalilaen"
+            },
+            {
+              "txt": "Investeerimislaen",
+              "href": "https://www.lhv.ee/et/investeerimislaen"
+            },
+            {
+              "txt": "Ettevõtete omandamise rahastamine",
+              "href": "https://www.lhv.ee/et/ettevotete-omandamise-rahastamine"
+            },
+            {
+              "txt": "Korteriühistu laen",
+              "href": "https://www.lhv.ee/et/korteriyhistu-laen"
+            },
+            {
+              "txt": "Liising",
+              "href": "https://www.lhv.ee/et/liising"
+            },
+            {
+              "txt": "Garantiid",
+              "href": "https://www.lhv.ee/et/garantiid"
+            },
+            {
+              "txt": "Akreditiivid",
+              "href": "https://www.lhv.ee/et/akreditiiv"
+            },
+            {
+              "txt": "Dokumentaalinkasso",
+              "href": "https://www.lhv.ee/et/dokumentaalinkasso"
+            },
+            {
+              "txt": "Faktooring",
+              "href": "https://www.lhv.ee/et/faktooring"
+            },
+            {
+              "txt": "Kodulaen",
+              "href": "https://www.lhv.ee/et/kodulaen"
+            },
+            {
+              "txt": "Eralaen",
+              "href": "https://www.lhv.ee/et/eralaen"
+            },
+            {
+              "txt": "Õppelaen",
+              "href": "https://www.lhv.ee/et/oppelaen"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Väikelaen",
+              "href": "https://www.lhv.ee/et/vaikelaen"
+            },
+            {
+              "txt": "Autolaen",
+              "href": "https://www.lhv.ee/et/autolaen"
+            },
+            {
+              "txt": "Remondilaen",
+              "href": "https://www.lhv.ee/et/remondilaen"
+            },
+            {
+              "txt": "Refinantseerimislaen",
+              "href": "https://www.lhv.ee/et/refinantseerimislaen"
+            },
+            {
+              "txt": "Järelmaks",
+              "href": "https://www.lhv.ee/et/jarelmaks"
+            },
+            {
+              "txt": "Mikrolaen",
+              "href": "https://www.lhv.ee/et/mikrolaen"
+            },
+            {
+              "txt": "Arvelduslaen",
+              "href": "https://www.lhv.ee/et/arvelduslaen"
+            },
+            {
+              "txt": "Käibekapitalilaen",
+              "href": "https://www.lhv.ee/et/kaibekapitalilaen"
+            },
+            {
+              "txt": "Investeerimislaen",
+              "href": "https://www.lhv.ee/et/investeerimislaen"
+            },
+            {
+              "txt": "Ettevõtete omandamise rahastamine",
+              "href": "https://www.lhv.ee/et/ettevotete-omandamise-rahastamine"
+            },
+            {
+              "txt": "Korteriühistu laen",
+              "href": "https://www.lhv.ee/et/korteriyhistu-laen"
+            },
+            {
+              "txt": "Liising",
+              "href": "https://www.lhv.ee/et/liising"
+            },
+            {
+              "txt": "Garantiid",
+              "href": "https://www.lhv.ee/et/garantiid"
+            },
+            {
+              "txt": "Akreditiivid",
+              "href": "https://www.lhv.ee/et/akreditiiv"
+            },
+            {
+              "txt": "Dokumentaalinkasso",
+              "href": "https://www.lhv.ee/et/dokumentaalinkasso"
+            },
+            {
+              "txt": "Faktooring",
+              "href": "https://www.lhv.ee/et/faktooring"
+            },
+            {
+              "txt": "Ülevaade kindlustusest",
+              "href": "https://www.lhv.ee/et/kindlustus"
+            },
+            {
+              "txt": "Kodukindlustus",
+              "href": "https://www.lhv.ee/et/kodukindlustus"
+            },
+            {
+              "txt": "Kaskokindlustus",
+              "href": "https://www.lhv.ee/et/kaskokindlustus"
+            },
+            {
+              "txt": "Liikluskindlustus",
+              "href": "https://www.lhv.ee/et/liikluskindlustus"
+            },
+            {
+              "txt": "Reisikindlustus",
+              "href": "https://www.lhv.ee/et/reisikindlustus"
+            },
+            {
+              "txt": "Seadmekindlustus",
+              "href": "https://www.lhv.ee/et/seadmekindlustus"
+            },
+            {
+              "txt": "Seadme pikendatud garantii kindlustus",
+              "href": "https://www.lhv.ee/et/seadme-pikendatud-garantiikindlustus"
+            },
+            {
+              "txt": "Sõiduki garantiikindlustus",
+              "href": "https://www.lhv.ee/et/soiduki-garantiikindlustus"
+            },
+            {
+              "txt": "Korteriühistukindlustus",
+              "href": "https://www.lhv.ee/et/ky-kindlustus"
+            },
+            {
+              "txt": "Ettevõttekindlustus",
+              "href": "https://www.lhv.ee/et/ettevottekindlustus"
+            },
+            {
+              "txt": "Masinakindlustus",
+              "href": "https://www.lhv.ee/et/masinakindlustus"
+            },
+            {
+              "txt": "Tervisekindlustus",
+              "href": "https://www.lhv.ee/et/tervisekindlustus"
+            },
+            {
+              "txt": "Laenumaksekindlustus",
+              "href": "https://www.lhv.ee/et/laenumaksekindlustus"
+            },
+            {
+              "txt": "Teata kahjust",
+              "href": "https://www.lhv.ee/et/kahjud#teata-kahjust"
+            },
+            {
+              "txt": "Koduabi",
+              "href": "https://www.lhv.ee/et/kahjud#koduabi"
+            },
+            {
+              "txt": "Reisiabi",
+              "href": "https://www.lhv.ee/et/kahjud#reisiabi"
+            },
+            {
+              "txt": "Autoabi",
+              "href": "https://www.lhv.ee/et/kahjud#autoabi"
+            },
+            {
+              "txt": "Kodukindlustus",
+              "href": "https://www.lhv.ee/et/kodukindlustus"
+            },
+            {
+              "txt": "Kaskokindlustus",
+              "href": "https://www.lhv.ee/et/kaskokindlustus"
+            },
+            {
+              "txt": "Liikluskindlustus",
+              "href": "https://www.lhv.ee/et/liikluskindlustus"
+            },
+            {
+              "txt": "Reisikindlustus",
+              "href": "https://www.lhv.ee/et/reisikindlustus"
+            },
+            {
+              "txt": "Seadmekindlustus",
+              "href": "https://www.lhv.ee/et/seadmekindlustus"
+            },
+            {
+              "txt": "Seadme pikendatud garantii kindlustus",
+              "href": "https://www.lhv.ee/et/seadme-pikendatud-garantiikindlustus"
+            },
+            {
+              "txt": "Sõiduki garantiikindlustus",
+              "href": "https://www.lhv.ee/et/soiduki-garantiikindlustus"
+            },
+            {
+              "txt": "Korteriühistukindlustus",
+              "href": "https://www.lhv.ee/et/ky-kindlustus"
+            },
+            {
+              "txt": "Ettevõttekindlustus",
+              "href": "https://www.lhv.ee/et/ettevottekindlustus"
+            },
+            {
+              "txt": "Masinakindlustus",
+              "href": "https://www.lhv.ee/et/masinakindlustus"
+            },
+            {
+              "txt": "Tervisekindlustus",
+              "href": "https://www.lhv.ee/et/tervisekindlustus"
+            },
+            {
+              "txt": "Laenumaksekindlustus",
+              "href": "https://www.lhv.ee/et/laenumaksekindlustus"
+            },
+            {
+              "txt": "Teata kahjust",
+              "href": "https://www.lhv.ee/et/kahjud#teata-kahjust"
+            },
+            {
+              "txt": "Koduabi",
+              "href": "https://www.lhv.ee/et/kahjud#koduabi"
+            },
+            {
+              "txt": "Reisiabi",
+              "href": "https://www.lhv.ee/et/kahjud#reisiabi"
+            },
+            {
+              "txt": "Autoabi",
+              "href": "https://www.lhv.ee/et/kahjud#autoabi"
+            },
+            {
+              "txt": "Ülevaade pensionist",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Minu II sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-pension"
+            },
+            {
+              "txt": "Suurendan II samba sissemakseid 2%, 4%, 6%",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-contribution-rate"
+            },
+            {
+              "txt": "Minu III sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-pension"
+            },
+            {
+              "txt": "Sõlmin III samba püsimakse",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-payment"
+            },
+            {
+              "txt": "Pensioni prognoos",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=calculator"
+            },
+            {
+              "txt": "II samba fondid",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Info alustajale",
+              "href": "https://www.lhv.ee/et/pension/iii-samba-info-alustajale"
+            },
+            {
+              "txt": "III samba fondid",
+              "href": "https://www.lhv.ee/et/pension/iii"
+            },
+            {
+              "txt": "Info väljamaksetest",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed"
+            },
+            {
+              "txt": "Väljamaksed pensioniealistele",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed-pensioniealistele"
+            },
+            {
+              "txt": "Fondipension",
+              "href": "https://www.lhv.ee/et/pension/fondipension"
+            },
+            {
+              "txt": "Pensioni pärimine",
+              "href": "https://www.lhv.ee/et/pension/pensioni-parimine"
+            },
+            {
+              "txt": "Pensioni uudised",
+              "href": "https://www.lhv.ee/et/pension/uudised"
+            },
+            {
+              "txt": "Pensionireform",
+              "href": "https://www.lhv.ee/et/pensionireform"
+            },
+            {
+              "txt": "Pensionifondide juhtimine",
+              "href": "https://www.lhv.ee/et/pension/fondide-juhtimine"
+            },
+            {
+              "txt": "KKK",
+              "href": "https://www.lhv.ee/et/kkk/pension"
+            },
+            {
+              "txt": "Minu II sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-pension"
+            },
+            {
+              "txt": "Suurendan II samba sissemakseid 2%, 4%, 6%",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-contribution-rate"
+            },
+            {
+              "txt": "Minu III sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-pension"
+            },
+            {
+              "txt": "Sõlmin III samba püsimakse",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-payment"
+            },
+            {
+              "txt": "Pensioni prognoos",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=calculator"
+            },
+            {
+              "txt": "II samba fondid",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Info alustajale",
+              "href": "https://www.lhv.ee/et/pension/iii-samba-info-alustajale"
+            },
+            {
+              "txt": "III samba fondid",
+              "href": "https://www.lhv.ee/et/pension/iii"
+            },
+            {
+              "txt": "Info väljamaksetest",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed"
+            },
+            {
+              "txt": "Väljamaksed pensioniealistele",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed-pensioniealistele"
+            },
+            {
+              "txt": "Fondipension",
+              "href": "https://www.lhv.ee/et/pension/fondipension"
+            },
+            {
+              "txt": "Pensioni pärimine",
+              "href": "https://www.lhv.ee/et/pension/pensioni-parimine"
+            },
+            {
+              "txt": "Pensioni uudised",
+              "href": "https://www.lhv.ee/et/pension/uudised"
+            },
+            {
+              "txt": "Pensionireform",
+              "href": "https://www.lhv.ee/et/pensionireform"
+            },
+            {
+              "txt": "Pensionifondide juhtimine",
+              "href": "https://www.lhv.ee/et/pension/fondide-juhtimine"
+            },
+            {
+              "txt": "KKK",
+              "href": "https://www.lhv.ee/et/kkk/pension"
+            },
+            {
+              "txt": "Avalehele",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "Главная страница",
+              "href": "https://www.lhv.ee/ru"
+            },
+            {
+              "txt": "Go to homepage",
+              "href": "https://www.lhv.ee/en"
+            },
+            {
+              "txt": "ET",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "EN",
+              "href": "https://www.lhv.ee/en"
+            },
+            {
+              "txt": "RU",
+              "href": "https://www.lhv.ee/ru"
+            },
+            {
+              "txt": "LHV",
+              "href": "https://www.lhv.ee/et/kontakt/klienditugi"
+            },
+            {
+              "txt": "küpsiste kasutamise tingimustest",
+              "href": "https://www.lhv.ee/et/kupsised"
+            },
+            {
+              "txt": "kliendiandmete töötlemise põhimõtetega",
+              "href": "https://www.lhv.ee/et/kliendiandmete-tootlemise-pohimotted"
+            },
+            {
+              "txt": "küpsiste kasutamise tingimustest",
+              "href": "https://www.lhv.ee/et/kupsised"
+            }
+          ]
+        },
+        {
+          "url": "https://www.lhv.ee/en/investor-relations/news",
+          "title": "404 · LHV",
+          "kwCount": 0,
+          "keywords": [],
+          "error": "",
+          "links": [
+            {
+              "txt": "Liigu edasi põhisisu juurde",
+              "href": "https://www.lhv.ee/en/investor-relations/news#content"
+            },
+            {
+              "txt": "Ligipääsetavus",
+              "href": "https://www.lhv.ee/ligipaasetavus"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/et/"
+            },
+            {
+              "txt": "Finantsportaal",
+              "href": "https://fp.lhv.ee/"
+            },
+            {
+              "txt": "Investor",
+              "href": "https://investor.lhv.ee/et/"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "SISENE",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Ava konto",
+              "href": "https://www.lhv.ee/ibank/customer/management/registration/user-registration"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Sisene",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "Välju",
+              "href": "https://www.lhv.ee/auth/logout?goto=/"
+            },
+            {
+              "txt": "",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "en",
+              "href": "https://www.lhv.ee/en/404"
+            },
+            {
+              "txt": "ru",
+              "href": "https://www.lhv.ee/ru/404"
+            },
+            {
+              "txt": "Sisene",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Välju",
+              "href": "https://www.lhv.ee/auth/logout?goto=/"
+            },
+            {
+              "txt": "Internetipank",
+              "href": "https://www.lhv.ee/ibank"
+            },
+            {
+              "txt": "Ülevaade igapäevapangandusest",
+              "href": "https://www.lhv.ee/et/igapaevapangandus"
+            },
+            {
+              "txt": "Eraklient",
+              "href": "https://www.lhv.ee/et/eraklient"
+            },
+            {
+              "txt": "Premium klient",
+              "href": "https://www.lhv.ee/et/premium"
+            },
+            {
+              "txt": "Noortepank",
+              "href": "https://www.lhv.ee/et/noortepank"
+            },
+            {
+              "txt": "Lapsekonto",
+              "href": "https://www.lhv.ee/et/lapsekonto"
+            },
+            {
+              "txt": "Privaatpangandus",
+              "href": "https://www.lhv.ee/et/privaatpangandus"
+            },
+            {
+              "txt": "Mitteresident",
+              "href": "https://www.lhv.ee/et/mitteresidendid"
+            },
+            {
+              "txt": "Äriklient",
+              "href": "https://www.lhv.ee/et/ariklient"
+            },
+            {
+              "txt": "Alustav ettevõte",
+              "href": "https://www.lhv.ee/et/alustav-ettevote"
+            },
+            {
+              "txt": "Korteriühistu",
+              "href": "https://www.lhv.ee/et/korteriuhistule"
+            },
+            {
+              "txt": "Maksed",
+              "href": "https://www.lhv.ee/et/maksed"
+            },
+            {
+              "txt": "E-arved",
+              "href": "https://www.lhv.ee/et/e-arved"
+            },
+            {
+              "txt": "Maksete kogumine",
+              "href": "https://www.lhv.ee/et/maksete-kogumine"
+            },
+            {
+              "txt": "Palgamakse",
+              "href": "https://www.lhv.ee/et/palgamakse"
+            },
+            {
+              "txt": "Connect",
+              "href": "https://www.lhv.ee/et/connect"
+            },
+            {
+              "txt": "Open banking",
+              "href": "https://www.lhv.ee/et/open-banking"
+            },
+            {
+              "txt": "Ettevõtluskonto",
+              "href": "https://www.lhv.ee/et/ettevotluskonto"
+            },
+            {
+              "txt": "Kontsernikonto",
+              "href": "https://www.lhv.ee/et/kontsernikonto"
+            },
+            {
+              "txt": "Valuutakalkulaator",
+              "href": "https://www.lhv.ee/et/valuuta-kalkulaator"
+            },
+            {
+              "txt": "Sularahateenused",
+              "href": "https://www.lhv.ee/et/sularahavedu"
+            },
+            {
+              "txt": "Erakliendi kaardid",
+              "href": "https://www.lhv.ee/et/erakaardid"
+            },
+            {
+              "txt": "Ärikliendi kaardid",
+              "href": "https://www.lhv.ee/et/arikaardid"
+            },
+            {
+              "txt": "Virtuaalkaart",
+              "href": "https://www.lhv.ee/et/virtuaalkaart"
+            },
+            {
+              "txt": "Mikroannetus",
+              "href": "https://www.lhv.ee/et/mikroannetus"
+            },
+            {
+              "txt": "Mobiiliäpp",
+              "href": "https://www.lhv.ee/et/mobiiliapp"
+            },
+            {
+              "txt": "Kontorid",
+              "href": "https://www.lhv.ee/et/kus-asub#kontorid"
+            },
+            {
+              "txt": "Sularahaautomaadid",
+              "href": "https://www.lhv.ee/et/kus-asub#sularahaautomaadid"
+            },
+            {
+              "txt": "Eraklient",
+              "href": "https://www.lhv.ee/et/eraklient"
+            },
+            {
+              "txt": "Premium klient",
+              "href": "https://www.lhv.ee/et/premium"
+            },
+            {
+              "txt": "Noortepank",
+              "href": "https://www.lhv.ee/et/noortepank"
+            },
+            {
+              "txt": "Lapsekonto",
+              "href": "https://www.lhv.ee/et/lapsekonto"
+            },
+            {
+              "txt": "Privaatpangandus",
+              "href": "https://www.lhv.ee/et/privaatpangandus"
+            },
+            {
+              "txt": "Mitteresident",
+              "href": "https://www.lhv.ee/et/mitteresidendid"
+            },
+            {
+              "txt": "Äriklient",
+              "href": "https://www.lhv.ee/et/ariklient"
+            },
+            {
+              "txt": "Alustav ettevõte",
+              "href": "https://www.lhv.ee/et/alustav-ettevote"
+            },
+            {
+              "txt": "Korteriühistu",
+              "href": "https://www.lhv.ee/et/korteriuhistule"
+            },
+            {
+              "txt": "Maksed",
+              "href": "https://www.lhv.ee/et/maksed"
+            },
+            {
+              "txt": "E-arved",
+              "href": "https://www.lhv.ee/et/e-arved"
+            },
+            {
+              "txt": "Maksete kogumine",
+              "href": "https://www.lhv.ee/et/maksete-kogumine"
+            },
+            {
+              "txt": "Palgamakse",
+              "href": "https://www.lhv.ee/et/palgamakse"
+            },
+            {
+              "txt": "Connect",
+              "href": "https://www.lhv.ee/et/connect"
+            },
+            {
+              "txt": "Open banking",
+              "href": "https://www.lhv.ee/et/open-banking"
+            },
+            {
+              "txt": "Ettevõtluskonto",
+              "href": "https://www.lhv.ee/et/ettevotluskonto"
+            },
+            {
+              "txt": "Kontsernikonto",
+              "href": "https://www.lhv.ee/et/kontsernikonto"
+            },
+            {
+              "txt": "Valuutakalkulaator",
+              "href": "https://www.lhv.ee/et/valuuta-kalkulaator"
+            },
+            {
+              "txt": "Sularahateenused",
+              "href": "https://www.lhv.ee/et/sularahavedu"
+            },
+            {
+              "txt": "Erakliendi kaardid",
+              "href": "https://www.lhv.ee/et/erakaardid"
+            },
+            {
+              "txt": "Ärikliendi kaardid",
+              "href": "https://www.lhv.ee/et/arikaardid"
+            },
+            {
+              "txt": "Virtuaalkaart",
+              "href": "https://www.lhv.ee/et/virtuaalkaart"
+            },
+            {
+              "txt": "Mikroannetus",
+              "href": "https://www.lhv.ee/et/mikroannetus"
+            },
+            {
+              "txt": "Mobiiliäpp",
+              "href": "https://www.lhv.ee/et/mobiiliapp"
+            },
+            {
+              "txt": "Kontorid",
+              "href": "https://www.lhv.ee/et/kus-asub#kontorid"
+            },
+            {
+              "txt": "Sularahaautomaadid",
+              "href": "https://www.lhv.ee/et/kus-asub#sularahaautomaadid"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Tähtajaline hoius",
+              "href": "https://www.lhv.ee/et/tahtajaline-hoius"
+            },
+            {
+              "txt": "Kogumiskonto",
+              "href": "https://www.lhv.ee/et/kogumiskonto"
+            },
+            {
+              "txt": "Nõudmiseni hoius",
+              "href": "https://www.lhv.ee/et/noudmiseni-hoius"
+            },
+            {
+              "txt": "Kasvukonto",
+              "href": "https://www.lhv.ee/et/kasvukonto"
+            },
+            {
+              "txt": "Väärtpaberikonto",
+              "href": "https://www.lhv.ee/et/vaartpaberikonto"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Krüptovarad",
+              "href": "https://www.lhv.ee/et/krypto"
+            },
+            {
+              "txt": "Trader",
+              "href": "https://www.lhv.ee/et/trader"
+            },
+            {
+              "txt": "Portfellihaldus",
+              "href": "https://www.lhv.ee/et/portfellihaldus"
+            },
+            {
+              "txt": "LHV Investeerimisfondid",
+              "href": "https://www.lhv.ee/et/investeerimisfondid"
+            },
+            {
+              "txt": "Investeerimise ABC",
+              "href": "https://www.lhv.ee/et/investeerimise-abc"
+            },
+            {
+              "txt": "Investeerimiskool",
+              "href": "https://news.fp.lhv.ee/investeerimiskool"
+            },
+            {
+              "txt": "Virtuaalkonto",
+              "href": "https://www.lhv.ee/et/virtuaalkonto"
+            },
+            {
+              "txt": "Börsihai",
+              "href": "https://www.lhv.ee/et/hai"
+            },
+            {
+              "txt": "Alustava investori baaskursus",
+              "href": "https://www.lhv.ee/et/kursus"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Institutsionaalne maakleritegevus",
+              "href": "https://www.lhv.ee/et/institutsionaalne-maakleritegevus"
+            },
+            {
+              "txt": "Valuutariski maandamine",
+              "href": "https://www.lhv.ee/et/valuutariski-maandamine"
+            },
+            {
+              "txt": "Intressiriski maandamine",
+              "href": "https://www.lhv.ee/et/intressiriski-maandamine"
+            },
+            {
+              "txt": "Teenused emitentidele",
+              "href": "https://www.lhv.ee/et/teenused-emitentidele"
+            },
+            {
+              "txt": "LEI-kood",
+              "href": "https://www.lhv.ee/et/lei"
+            },
+            {
+              "txt": "Valuutavahetus",
+              "href": "https://www.lhv.ee/ibank/foreign-exchange/trade-offer-insert"
+            },
+            {
+              "txt": "Kinkekaart",
+              "href": "https://www.lhv.ee/et/kinkekaart"
+            },
+            {
+              "txt": "Tähtajaline hoius",
+              "href": "https://www.lhv.ee/et/tahtajaline-hoius"
+            },
+            {
+              "txt": "Kogumiskonto",
+              "href": "https://www.lhv.ee/et/kogumiskonto"
+            },
+            {
+              "txt": "Nõudmiseni hoius",
+              "href": "https://www.lhv.ee/et/noudmiseni-hoius"
+            },
+            {
+              "txt": "Kasvukonto",
+              "href": "https://www.lhv.ee/et/kasvukonto"
+            },
+            {
+              "txt": "Väärtpaberikonto",
+              "href": "https://www.lhv.ee/et/vaartpaberikonto"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Krüptovarad",
+              "href": "https://www.lhv.ee/et/krypto"
+            },
+            {
+              "txt": "Trader",
+              "href": "https://www.lhv.ee/et/trader"
+            },
+            {
+              "txt": "Portfellihaldus",
+              "href": "https://www.lhv.ee/et/portfellihaldus"
+            },
+            {
+              "txt": "LHV Investeerimisfondid",
+              "href": "https://www.lhv.ee/et/investeerimisfondid"
+            },
+            {
+              "txt": "Investeerimise ABC",
+              "href": "https://www.lhv.ee/et/investeerimise-abc"
+            },
+            {
+              "txt": "Investeerimiskool",
+              "href": "https://news.fp.lhv.ee/investeerimiskool"
+            },
+            {
+              "txt": "Virtuaalkonto",
+              "href": "https://www.lhv.ee/et/virtuaalkonto"
+            },
+            {
+              "txt": "Börsihai",
+              "href": "https://www.lhv.ee/et/hai"
+            },
+            {
+              "txt": "Alustava investori baaskursus",
+              "href": "https://www.lhv.ee/et/kursus"
+            },
+            {
+              "txt": "Raha kasvatamine",
+              "href": "https://www.lhv.ee/et/raha-kasvatamine"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Institutsionaalne maakleritegevus",
+              "href": "https://www.lhv.ee/et/institutsionaalne-maakleritegevus"
+            },
+            {
+              "txt": "Valuutariski maandamine",
+              "href": "https://www.lhv.ee/et/valuutariski-maandamine"
+            },
+            {
+              "txt": "Intressiriski maandamine",
+              "href": "https://www.lhv.ee/et/intressiriski-maandamine"
+            },
+            {
+              "txt": "Teenused emitentidele",
+              "href": "https://www.lhv.ee/et/teenused-emitentidele"
+            },
+            {
+              "txt": "LEI-kood",
+              "href": "https://www.lhv.ee/et/lei"
+            },
+            {
+              "txt": "Valuutavahetus",
+              "href": "https://www.lhv.ee/ibank/foreign-exchange/trade-offer-insert"
+            },
+            {
+              "txt": "Kinkekaart",
+              "href": "https://www.lhv.ee/et/kinkekaart"
+            },
+            {
+              "txt": "Ülevaade laenudest ja liisingust",
+              "href": "https://www.lhv.ee/et/laen-ja-liising"
+            },
+            {
+              "txt": "Kodulaen",
+              "href": "https://www.lhv.ee/et/kodulaen"
+            },
+            {
+              "txt": "Eralaen",
+              "href": "https://www.lhv.ee/et/eralaen"
+            },
+            {
+              "txt": "Õppelaen",
+              "href": "https://www.lhv.ee/et/oppelaen"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Väikelaen",
+              "href": "https://www.lhv.ee/et/vaikelaen"
+            },
+            {
+              "txt": "Autolaen",
+              "href": "https://www.lhv.ee/et/autolaen"
+            },
+            {
+              "txt": "Remondilaen",
+              "href": "https://www.lhv.ee/et/remondilaen"
+            },
+            {
+              "txt": "Refinantseerimislaen",
+              "href": "https://www.lhv.ee/et/refinantseerimislaen"
+            },
+            {
+              "txt": "Järelmaks",
+              "href": "https://www.lhv.ee/et/jarelmaks"
+            },
+            {
+              "txt": "Mikrolaen",
+              "href": "https://www.lhv.ee/et/mikrolaen"
+            },
+            {
+              "txt": "Arvelduslaen",
+              "href": "https://www.lhv.ee/et/arvelduslaen"
+            },
+            {
+              "txt": "Käibekapitalilaen",
+              "href": "https://www.lhv.ee/et/kaibekapitalilaen"
+            },
+            {
+              "txt": "Investeerimislaen",
+              "href": "https://www.lhv.ee/et/investeerimislaen"
+            },
+            {
+              "txt": "Ettevõtete omandamise rahastamine",
+              "href": "https://www.lhv.ee/et/ettevotete-omandamise-rahastamine"
+            },
+            {
+              "txt": "Korteriühistu laen",
+              "href": "https://www.lhv.ee/et/korteriyhistu-laen"
+            },
+            {
+              "txt": "Liising",
+              "href": "https://www.lhv.ee/et/liising"
+            },
+            {
+              "txt": "Garantiid",
+              "href": "https://www.lhv.ee/et/garantiid"
+            },
+            {
+              "txt": "Akreditiivid",
+              "href": "https://www.lhv.ee/et/akreditiiv"
+            },
+            {
+              "txt": "Dokumentaalinkasso",
+              "href": "https://www.lhv.ee/et/dokumentaalinkasso"
+            },
+            {
+              "txt": "Faktooring",
+              "href": "https://www.lhv.ee/et/faktooring"
+            },
+            {
+              "txt": "Kodulaen",
+              "href": "https://www.lhv.ee/et/kodulaen"
+            },
+            {
+              "txt": "Eralaen",
+              "href": "https://www.lhv.ee/et/eralaen"
+            },
+            {
+              "txt": "Õppelaen",
+              "href": "https://www.lhv.ee/et/oppelaen"
+            },
+            {
+              "txt": "Võimenduslaen",
+              "href": "https://www.lhv.ee/et/voimenduslaen"
+            },
+            {
+              "txt": "Väikelaen",
+              "href": "https://www.lhv.ee/et/vaikelaen"
+            },
+            {
+              "txt": "Autolaen",
+              "href": "https://www.lhv.ee/et/autolaen"
+            },
+            {
+              "txt": "Remondilaen",
+              "href": "https://www.lhv.ee/et/remondilaen"
+            },
+            {
+              "txt": "Refinantseerimislaen",
+              "href": "https://www.lhv.ee/et/refinantseerimislaen"
+            },
+            {
+              "txt": "Järelmaks",
+              "href": "https://www.lhv.ee/et/jarelmaks"
+            },
+            {
+              "txt": "Mikrolaen",
+              "href": "https://www.lhv.ee/et/mikrolaen"
+            },
+            {
+              "txt": "Arvelduslaen",
+              "href": "https://www.lhv.ee/et/arvelduslaen"
+            },
+            {
+              "txt": "Käibekapitalilaen",
+              "href": "https://www.lhv.ee/et/kaibekapitalilaen"
+            },
+            {
+              "txt": "Investeerimislaen",
+              "href": "https://www.lhv.ee/et/investeerimislaen"
+            },
+            {
+              "txt": "Ettevõtete omandamise rahastamine",
+              "href": "https://www.lhv.ee/et/ettevotete-omandamise-rahastamine"
+            },
+            {
+              "txt": "Korteriühistu laen",
+              "href": "https://www.lhv.ee/et/korteriyhistu-laen"
+            },
+            {
+              "txt": "Liising",
+              "href": "https://www.lhv.ee/et/liising"
+            },
+            {
+              "txt": "Garantiid",
+              "href": "https://www.lhv.ee/et/garantiid"
+            },
+            {
+              "txt": "Akreditiivid",
+              "href": "https://www.lhv.ee/et/akreditiiv"
+            },
+            {
+              "txt": "Dokumentaalinkasso",
+              "href": "https://www.lhv.ee/et/dokumentaalinkasso"
+            },
+            {
+              "txt": "Faktooring",
+              "href": "https://www.lhv.ee/et/faktooring"
+            },
+            {
+              "txt": "Ülevaade kindlustusest",
+              "href": "https://www.lhv.ee/et/kindlustus"
+            },
+            {
+              "txt": "Kodukindlustus",
+              "href": "https://www.lhv.ee/et/kodukindlustus"
+            },
+            {
+              "txt": "Kaskokindlustus",
+              "href": "https://www.lhv.ee/et/kaskokindlustus"
+            },
+            {
+              "txt": "Liikluskindlustus",
+              "href": "https://www.lhv.ee/et/liikluskindlustus"
+            },
+            {
+              "txt": "Reisikindlustus",
+              "href": "https://www.lhv.ee/et/reisikindlustus"
+            },
+            {
+              "txt": "Seadmekindlustus",
+              "href": "https://www.lhv.ee/et/seadmekindlustus"
+            },
+            {
+              "txt": "Seadme pikendatud garantii kindlustus",
+              "href": "https://www.lhv.ee/et/seadme-pikendatud-garantiikindlustus"
+            },
+            {
+              "txt": "Sõiduki garantiikindlustus",
+              "href": "https://www.lhv.ee/et/soiduki-garantiikindlustus"
+            },
+            {
+              "txt": "Korteriühistukindlustus",
+              "href": "https://www.lhv.ee/et/ky-kindlustus"
+            },
+            {
+              "txt": "Ettevõttekindlustus",
+              "href": "https://www.lhv.ee/et/ettevottekindlustus"
+            },
+            {
+              "txt": "Masinakindlustus",
+              "href": "https://www.lhv.ee/et/masinakindlustus"
+            },
+            {
+              "txt": "Tervisekindlustus",
+              "href": "https://www.lhv.ee/et/tervisekindlustus"
+            },
+            {
+              "txt": "Laenumaksekindlustus",
+              "href": "https://www.lhv.ee/et/laenumaksekindlustus"
+            },
+            {
+              "txt": "Teata kahjust",
+              "href": "https://www.lhv.ee/et/kahjud#teata-kahjust"
+            },
+            {
+              "txt": "Koduabi",
+              "href": "https://www.lhv.ee/et/kahjud#koduabi"
+            },
+            {
+              "txt": "Reisiabi",
+              "href": "https://www.lhv.ee/et/kahjud#reisiabi"
+            },
+            {
+              "txt": "Autoabi",
+              "href": "https://www.lhv.ee/et/kahjud#autoabi"
+            },
+            {
+              "txt": "Kodukindlustus",
+              "href": "https://www.lhv.ee/et/kodukindlustus"
+            },
+            {
+              "txt": "Kaskokindlustus",
+              "href": "https://www.lhv.ee/et/kaskokindlustus"
+            },
+            {
+              "txt": "Liikluskindlustus",
+              "href": "https://www.lhv.ee/et/liikluskindlustus"
+            },
+            {
+              "txt": "Reisikindlustus",
+              "href": "https://www.lhv.ee/et/reisikindlustus"
+            },
+            {
+              "txt": "Seadmekindlustus",
+              "href": "https://www.lhv.ee/et/seadmekindlustus"
+            },
+            {
+              "txt": "Seadme pikendatud garantii kindlustus",
+              "href": "https://www.lhv.ee/et/seadme-pikendatud-garantiikindlustus"
+            },
+            {
+              "txt": "Sõiduki garantiikindlustus",
+              "href": "https://www.lhv.ee/et/soiduki-garantiikindlustus"
+            },
+            {
+              "txt": "Korteriühistukindlustus",
+              "href": "https://www.lhv.ee/et/ky-kindlustus"
+            },
+            {
+              "txt": "Ettevõttekindlustus",
+              "href": "https://www.lhv.ee/et/ettevottekindlustus"
+            },
+            {
+              "txt": "Masinakindlustus",
+              "href": "https://www.lhv.ee/et/masinakindlustus"
+            },
+            {
+              "txt": "Tervisekindlustus",
+              "href": "https://www.lhv.ee/et/tervisekindlustus"
+            },
+            {
+              "txt": "Laenumaksekindlustus",
+              "href": "https://www.lhv.ee/et/laenumaksekindlustus"
+            },
+            {
+              "txt": "Teata kahjust",
+              "href": "https://www.lhv.ee/et/kahjud#teata-kahjust"
+            },
+            {
+              "txt": "Koduabi",
+              "href": "https://www.lhv.ee/et/kahjud#koduabi"
+            },
+            {
+              "txt": "Reisiabi",
+              "href": "https://www.lhv.ee/et/kahjud#reisiabi"
+            },
+            {
+              "txt": "Autoabi",
+              "href": "https://www.lhv.ee/et/kahjud#autoabi"
+            },
+            {
+              "txt": "Ülevaade pensionist",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Minu II sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-pension"
+            },
+            {
+              "txt": "Suurendan II samba sissemakseid 2%, 4%, 6%",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-contribution-rate"
+            },
+            {
+              "txt": "Minu III sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-pension"
+            },
+            {
+              "txt": "Sõlmin III samba püsimakse",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-payment"
+            },
+            {
+              "txt": "Pensioni prognoos",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=calculator"
+            },
+            {
+              "txt": "II samba fondid",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Info alustajale",
+              "href": "https://www.lhv.ee/et/pension/iii-samba-info-alustajale"
+            },
+            {
+              "txt": "III samba fondid",
+              "href": "https://www.lhv.ee/et/pension/iii"
+            },
+            {
+              "txt": "Info väljamaksetest",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed"
+            },
+            {
+              "txt": "Väljamaksed pensioniealistele",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed-pensioniealistele"
+            },
+            {
+              "txt": "Fondipension",
+              "href": "https://www.lhv.ee/et/pension/fondipension"
+            },
+            {
+              "txt": "Pensioni pärimine",
+              "href": "https://www.lhv.ee/et/pension/pensioni-parimine"
+            },
+            {
+              "txt": "Pensioni uudised",
+              "href": "https://www.lhv.ee/et/pension/uudised"
+            },
+            {
+              "txt": "Pensionireform",
+              "href": "https://www.lhv.ee/et/pensionireform"
+            },
+            {
+              "txt": "Pensionifondide juhtimine",
+              "href": "https://www.lhv.ee/et/pension/fondide-juhtimine"
+            },
+            {
+              "txt": "KKK",
+              "href": "https://www.lhv.ee/et/kkk/pension"
+            },
+            {
+              "txt": "Minu II sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-pension"
+            },
+            {
+              "txt": "Suurendan II samba sissemakseid 2%, 4%, 6%",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=ii-contribution-rate"
+            },
+            {
+              "txt": "Minu III sammas",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-pension"
+            },
+            {
+              "txt": "Sõlmin III samba püsimakse",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=iii-payment"
+            },
+            {
+              "txt": "Pensioni prognoos",
+              "href": "https://www.lhv.ee/et/pension/uus-kodu?type=calculator"
+            },
+            {
+              "txt": "II samba fondid",
+              "href": "https://www.lhv.ee/et/teine-sammas"
+            },
+            {
+              "txt": "Pensioni investeerimiskonto",
+              "href": "https://www.lhv.ee/et/pik"
+            },
+            {
+              "txt": "Info alustajale",
+              "href": "https://www.lhv.ee/et/pension/iii-samba-info-alustajale"
+            },
+            {
+              "txt": "III samba fondid",
+              "href": "https://www.lhv.ee/et/pension/iii"
+            },
+            {
+              "txt": "Info väljamaksetest",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed"
+            },
+            {
+              "txt": "Väljamaksed pensioniealistele",
+              "href": "https://www.lhv.ee/et/pension/valjamaksed-pensioniealistele"
+            },
+            {
+              "txt": "Fondipension",
+              "href": "https://www.lhv.ee/et/pension/fondipension"
+            },
+            {
+              "txt": "Pensioni pärimine",
+              "href": "https://www.lhv.ee/et/pension/pensioni-parimine"
+            },
+            {
+              "txt": "Pensioni uudised",
+              "href": "https://www.lhv.ee/et/pension/uudised"
+            },
+            {
+              "txt": "Pensionireform",
+              "href": "https://www.lhv.ee/et/pensionireform"
+            },
+            {
+              "txt": "Pensionifondide juhtimine",
+              "href": "https://www.lhv.ee/et/pension/fondide-juhtimine"
+            },
+            {
+              "txt": "KKK",
+              "href": "https://www.lhv.ee/et/kkk/pension"
+            },
+            {
+              "txt": "Avalehele",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "Главная страница",
+              "href": "https://www.lhv.ee/ru"
+            },
+            {
+              "txt": "Go to homepage",
+              "href": "https://www.lhv.ee/en"
+            },
+            {
+              "txt": "ET",
+              "href": "https://www.lhv.ee/et"
+            },
+            {
+              "txt": "EN",
+              "href": "https://www.lhv.ee/en"
+            },
+            {
+              "txt": "RU",
+              "href": "https://www.lhv.ee/ru"
+            },
+            {
+              "txt": "LHV",
+              "href": "https://www.lhv.ee/et/kontakt/klienditugi"
+            },
+            {
+              "txt": "küpsiste kasutamise tingimustest",
+              "href": "https://www.lhv.ee/et/kupsised"
+            },
+            {
+              "txt": "kliendiandmete töötlemise põhimõtetega",
+              "href": "https://www.lhv.ee/et/kliendiandmete-tootlemise-pohimotted"
+            },
+            {
+              "txt": "küpsiste kasutamise tingimustest",
+              "href": "https://www.lhv.ee/et/kupsised"
+            }
+          ]
+        }
+      ],
+      "pressPages": [
+        {
+          "url": "https://www.lhv.ee/en/investor-relations/news",
+          "title": "404 · LHV",
+          "kwCount": 0,
+          "keywords": []
+        }
+      ],
+      "annualReport": null,
+      "pressSearch": {
+        "GTR (Global Trade Review)": {
+          "query": "LHV Pank factoring trade finance Estonia 2025",
+          "url": "https://www.gtreview.com/?s=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025",
+          "kwCount": 0,
+          "keywords": [],
+          "articles": [
+            {
+              "title": "Skip to content",
+              "url": "https://www.gtreview.com/?s=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#wp--skip-link--target"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/?s="
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            },
+            {
+              "title": "",
+              "url": "https://www.gtreview.com/"
+            }
+          ]
+        },
+        "Trade Finance Global": {
+          "query": "LHV Pank factoring trade finance Estonia 2025",
+          "url": "https://www.tradefinanceglobal.com/?s=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025",
+          "kwCount": 12,
+          "keywords": [
+            {
+              "keyword": "factoring",
+              "context": "8 Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Trade Finance Global Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receiva"
+            },
+            {
+              "keyword": "factoring",
+              "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Trade Finance Global Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance K"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "lt for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "ODCAST | As risks multiply, insurers rethink the architecture of protection Alexander Klepp 30 Apr 2026 5 min read News Trade Finance Standard Chartered and IFC launch $300mn risk-sharing facility for African trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read Ne"
+            },
+            {
+              "keyword": "trade finance",
+              "context": "trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 112"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+            },
+            {
+              "keyword": "receivables finance",
+              "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+            },
+            {
+              "keyword": "export credit",
+              "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 112"
+            }
+          ],
+          "articles": [
+            {
+              "title": "",
+              "url": "https://www.tradefinanceglobal.com/"
+            },
+            {
+              "title": "Topics",
+              "url": "https://www.tradefinanceglobal.com/?s=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "Themes",
+              "url": "https://www.tradefinanceglobal.com/?s=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "Trade",
+              "url": "https://www.tradefinanceglobal.com/trade-finance/"
+            },
+            {
+              "title": "Treasury",
+              "url": "https://www.tradefinanceglobal.com/treasury-management/"
+            }
+          ]
+        },
+        "TXF News": {
+          "query": "LHV Pank factoring trade finance Estonia 2025",
+          "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025",
+          "kwCount": 2,
+          "keywords": [
+            {
+              "keyword": "letter of credit",
+              "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+            },
+            {
+              "keyword": "structured trade",
+              "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+            }
+          ],
+          "articles": [
+            {
+              "title": "Certified green",
+              "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "ESG-tied debt",
+              "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "Export & Agency",
+              "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "Impact Investment",
+              "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            },
+            {
+              "title": "Infra funds",
+              "url": "https://www.txfnews.com/search?q=LHV%20Pank%20factoring%20trade%20finance%20Estonia%202025#"
+            }
+          ]
+        }
+      },
+      "jobSignals": [
+        "Director-level TF position detected"
+      ],
+      "allKeywords": [
+        {
+          "keyword": "factoring",
+          "context": "8 Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Trade Finance Global Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receiva"
+        },
+        {
+          "keyword": "factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Trade Finance Global Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance K"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "lt for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK mea"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "financing facility to build critical mineral supply chains across Asia-Pacific Doğa Usanmaz 5 May 2026 3 min read News Trade Finance TFG Weekly Trade Briefing, 4 May 2026 Mahika Ravi Shankar 4 May 2026 9 min read News Shipping & Logistics Pakistan opens road transit to Iran, allowing third-country access amid Hormuz disruption Doğa Usanmaz 1 May 2026 5 min read Podcasts Risk and"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "ODCAST | As risks multiply, insurers rethink the architecture of protection Alexander Klepp 30 Apr 2026 5 min read News Trade Finance Standard Chartered and IFC launch $300mn risk-sharing facility for African trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read Ne"
+        },
+        {
+          "keyword": "trade finance",
+          "context": "trade finance Mahika Ravi Shankar 30 Apr 2026 3 min read Articles Tradetech Why AI agents still can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 112"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "ws Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receivables Finance Kenyan fintech packages agricultural loans into rated debt instrument, channelling capital to African farmers Mahika Ravi Shankar 7 May 2026 2 min read News Commodity Trading UK meat imports surge amid warnings cautioning against food insecurity Doğ"
+        },
+        {
+          "keyword": "receivables finance",
+          "context": "Trading UK meat imports surge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Har"
+        },
+        {
+          "keyword": "export credit",
+          "context": "l can’t finish the job in trade finance Norman Wooding 28 Apr 2026 8 min read News Commodity Trading The US expands its Export Credit Guarantee Program for Nigeria, boosting agricultural trade Doğa Usanmaz 27 Apr 2026 3 min read 1 2 3 4 . . . 112"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "8 Vendors Third party vendors (1007) Reject All Save My Preferences Accept All Powered by Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Trade Finance Global Search Result for \"LHV Pank factoring trade finance Estonia 2025\" Date News Tradetech National Bank of Greece joins Komgo’s global trade finance network Doğa Usanmaz 8 May 2026 2 min read News Receiva"
+        },
+        {
+          "keyword": "Factoring",
+          "context": "rge amid warnings cautioning against food insecurity Doğa Usanmaz 6 May 2026 4 min read News Receivables Finance Global factoring industry breaks €4tn with surge driven by Americas, FCI finds Mahika Ravi Shankar 5 May 2026 3 min read Articles Tradetech Inventory finance in the age of AI: What it actually means for South-East Asia’s cross-border SMEs Vishal Harishchandra 5 May"
+        },
+        {
+          "keyword": "letter of credit",
+          "context": "tors of Yeochun NCC, a major producer of ethylene products in South Korea, have raised the upper limit of the company's letter of credit to $300 million, to help... News 07 May 2026 in Infrastructure Dajani joins Cooley to co-chair new group Mona Dajani has joined Cooley as a partner in New York and co-chair of its newly launched infrastructure, energy and real estate group. Dajani"
+        },
+        {
+          "keyword": "structured trade",
+          "context": "raders. VIDEO 05 May 2026 Trade waits for no-one: Nexent Bank on navigating volatility Selim Caydamli, global head of structured trade & commodity finance at Nexent Bank, joins the TXF In-Depth podcast to discuss geopolitical turmoil and the importance of tailored solutions in times of crisis. Events Conference May 11 - May 13, 2026 TXF Amsterdam 2026: Global Natural Resources & C"
+        }
+      ],
+      "pdfKeywords": [],
+      "summary": "Web: 14 hits (7 unique terms) | PDF: 0 hits | Jobs: Director-level TF position detected"
+    }
+  ],
+  "associations": []
+}

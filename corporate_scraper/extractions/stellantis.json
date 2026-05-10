@@ -1,0 +1,109 @@
+{
+  "corporate_id": "stellantis",
+  "corporate_name": "Stellantis",
+  "country": "NL",
+  "sector": "Automotive",
+  "revenue_eur_bn": 157,
+  "extracted_at": "2026-05-10",
+  "year_of_report": 2024,
+  "_note": "MOCK — schema v2. Replace by running engine/extractor.js with DEEPINFRA_API_KEY.",
+
+  "payables_programs": {
+    "reverse_factoring": { "mentioned": true, "verbatim": "Reverse factoring arrangements with our suppliers, primarily through European banking partners. EUR 2.8 bn outstanding as of December 31, 2024", "volume_eur": 2800000000 },
+    "confirming": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "dynamic_discounting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "supplier_finance_program": { "mentioned": true, "verbatim": "Multi-bank supplier finance program covering EUR 2.8 bn of trade payables", "volume_eur": 2800000000 },
+    "early_payment_program": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "trade_payables_financing": { "mentioned": true, "verbatim": "Trade payables financing arrangements with selected European banks", "volume_eur": null }
+  },
+
+  "receivables_programs": {
+    "factoring_with_recourse": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "factoring_without_recourse": { "mentioned": true, "verbatim": "Without-recourse factoring arrangements with selected European banks for an aggregate amount of EUR 1.4 bn", "volume_eur": 1400000000 },
+    "invoice_discounting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "receivables_securitization": { "mentioned": true, "verbatim": "Trade receivables securitization program with European banking partners", "volume_eur": null },
+    "sale_of_receivables": { "mentioned": true, "verbatim": "The timing of Industrial free cash flows may be affected by the timing of monetization of receivables, factoring and the payment of accounts payables", "volume_eur": null },
+    "vendor_finance_program": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "documentary_trade": {
+    "letters_of_credit": { "mentioned": true, "verbatim": "Letters of credit and bank guarantees issued in the ordinary course of business", "volume_eur": null },
+    "bank_guarantees": { "mentioned": true, "verbatim": "Bank guarantees issued by relationship banks for performance and customs", "volume_eur": null },
+    "standby_letters_of_credit": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "forfaiting": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "structured_trade_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "pre_shipment_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "purchase_order_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "export_finance": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "title_inventory_arrangements": {
+    "inventory_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "floor_planning": { "mentioned": true, "verbatim": "Floor plan financing for our dealer network across Europe and North America", "volume_eur": null },
+    "consignment_stock": { "mentioned": false, "verbatim": null },
+    "title_transfer_arrangement": { "mentioned": false, "verbatim": null },
+    "raw_material_financing": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "distributor_finance": { "mentioned": true, "verbatim": "Distributor finance solutions for our dealer network", "volume_eur": null },
+    "channel_finance": { "mentioned": false, "verbatim": null, "volume_eur": null },
+    "tradeco_or_spv_structure": { "mentioned": false, "verbatim": null, "name": null }
+  },
+
+  "working_capital_facilities": {
+    "bank_facilities_for_wc": { "mentioned": true, "verbatim": "Committed and uncommitted bank facilities for working capital purposes", "volume_eur": null },
+    "revolving_credit_facility": { "mentioned": true, "verbatim": "EUR 12 bn syndicated revolving credit facility", "volume_eur": 12000000000 },
+    "overdraft_facility": { "mentioned": false, "verbatim": null, "volume_eur": null }
+  },
+
+  "tech_signals": {
+    "erp_systems_mentioned": ["SAP"],
+    "multi_bank_platform": { "mentioned": true, "verbatim": "Multi-bank supply chain finance platform across our European footprint" },
+    "white_label_program": { "mentioned": false, "verbatim": null },
+    "cross_border_program": { "mentioned": true, "verbatim": "Cross-border supplier financing for tier-1 suppliers in Italy, Poland, Czech Republic, and Romania" },
+    "esg_or_sustainability_linked": { "mentioned": false, "verbatim": null },
+    "api_or_digital_integration": { "mentioned": false, "verbatim": null }
+  },
+
+  "platform_provider_mentioned": {
+    "found": false,
+    "name": null,
+    "verbatim": null
+  },
+
+  "trade_credit_insurance_providers": [
+    { "name": "Allianz Trade", "verbatim": "Trade credit insurance coverage primarily through Allianz Trade and Coface" },
+    { "name": "Coface", "verbatim": "Trade credit insurance coverage primarily through Allianz Trade and Coface" }
+  ],
+
+  "banks_in_working_capital_context": [
+    { "bank_name": "BNP Paribas", "country_if_specified": "FR", "role": "lead", "product_category": "payables", "context": "BNP Paribas serves as lead bank for our European supply chain finance program" },
+    { "bank_name": "BPER Banca", "country_if_specified": "IT", "role": "local_partner", "product_category": "payables", "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively" },
+    { "bank_name": "Banca Transilvania", "country_if_specified": "RO", "role": "local_partner", "product_category": "payables", "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively" },
+    { "bank_name": "Komerční banka", "country_if_specified": "CZ", "role": "factor", "product_category": "receivables", "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers" },
+    { "bank_name": "Bank Millennium", "country_if_specified": "PL", "role": "participant", "product_category": "payables", "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement" },
+    { "bank_name": "Citi Handlowy", "country_if_specified": "PL", "role": "participant", "product_category": "payables", "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement" },
+    { "bank_name": "BPER Banca", "country_if_specified": "IT", "role": "factor", "product_category": "receivables", "context": "BPER Banca acts as factor for selected Italian receivables under our without-recourse factoring program" },
+    { "bank_name": "BNP Paribas", "country_if_specified": "FR", "role": "issuing_bank", "product_category": "documentary", "context": "Letters of credit issued by BNP Paribas for our raw material imports" }
+  ],
+
+  "geographic_footprint": {
+    "supplier_countries_mentioned": ["IT", "FR", "ES", "PL", "CZ", "SK", "RO", "HU", "DE", "NL"],
+    "manufacturing_countries_mentioned": ["IT", "FR", "ES", "PL", "DE", "TR"],
+    "verbatim_corridors": "Suppliers concentrated in Italy, France, Spain, Poland, Czech Republic, Slovakia, Romania, Hungary, Germany, Netherlands"
+  },
+
+  "total_volumes": {
+    "total_payables_finance_eur": 2800000000,
+    "total_receivables_finance_eur": 1400000000,
+    "total_documentary_trade_eur": null,
+    "total_inventory_finance_eur": null,
+    "year_of_volume": 2024
+  },
+
+  "key_quotes_for_review": [
+    "Reverse factoring arrangements with our suppliers — EUR 2.8 bn outstanding as of December 31, 2024",
+    "Without-recourse factoring arrangements for an aggregate amount of EUR 1.4 bn",
+    "Multi-bank supply chain finance platform across our European footprint",
+    "Trade credit insurance coverage primarily through Allianz Trade and Coface",
+    "EUR 12 bn syndicated revolving credit facility with international banking syndicate"
+  ]
+}

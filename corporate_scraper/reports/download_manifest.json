@@ -1,0 +1,62 @@
+[
+  {
+    "id": "nestle",
+    "status": "FAIL",
+    "reason": "no_pdf_found_on_ir_page"
+  },
+  {
+    "id": "volkswagen",
+    "status": "OK",
+    "pdfPath": "/home/user/creadable/corporate_scraper/pdfs/volkswagen_2026.pdf",
+    "txtPath": "/home/user/creadable/corporate_scraper/text/volkswagen_2026.txt",
+    "pdfBytes": 22309392,
+    "txtBytes": 1859677,
+    "sourceUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/v/OTC_VWAGY_2023.pdf"
+  },
+  {
+    "id": "stellantis",
+    "status": "OK",
+    "pdfPath": "/home/user/creadable/corporate_scraper/pdfs/stellantis_2026.pdf",
+    "txtPath": "/home/user/creadable/corporate_scraper/text/stellantis_2026.txt",
+    "pdfBytes": 4257616,
+    "txtBytes": 1812147,
+    "sourceUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_STLA_2023.pdf"
+  },
+  {
+    "id": "shell",
+    "status": "OK",
+    "pdfPath": "/home/user/creadable/corporate_scraper/pdfs/shell_2026.pdf",
+    "txtPath": "/home/user/creadable/corporate_scraper/text/shell_2026.txt",
+    "pdfBytes": 26118304,
+    "txtBytes": 3191756,
+    "sourceUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_SHEL_2025.pdf"
+  },
+  {
+    "id": "totalenergies",
+    "status": "FAIL",
+    "reason": "download_failed"
+  },
+  {
+    "id": "bp",
+    "status": "OK",
+    "pdfPath": "/home/user/creadable/corporate_scraper/pdfs/bp_2026.pdf",
+    "txtPath": "/home/user/creadable/corporate_scraper/text/bp_2026.txt",
+    "pdfBytes": 12304237,
+    "txtBytes": 3016748,
+    "sourceUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/b/LSE_BP_2023.pdf"
+  },
+  {
+    "id": "siemens",
+    "status": "OK",
+    "pdfPath": "/home/user/creadable/corporate_scraper/pdfs/siemens_2026.pdf",
+    "txtPath": "/home/user/creadable/corporate_scraper/text/siemens_2026.txt",
+    "pdfBytes": 16583933,
+    "txtBytes": 1104560,
+    "sourceUrl": "https://www.annualreports.com/HostedData/AnnualReportArchive/s/NYSE_SI_2023.pdf"
+  },
+  {
+    "id": "siemens-energy",
+    "status": "FAIL",
+    "reason": "no_pdf_found_on_ir_page"
+  }
+]

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CredAble Sweet-Spot Dashboard — 2026-05-10</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    margin: 0; padding: 0;
+    background: #f7f8fa; color: #1a1f36;
+    font-size: 14px; line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #6366f1 100%);
+    color: white; padding: 24px 32px;
+  }
+  header h1 { margin: 0 0 4px; font-size: 24px; font-weight: 600; }
+  header .meta { opacity: 0.85; font-size: 13px; }
+  nav {
+    background: white; border-bottom: 1px solid #e5e7eb;
+    padding: 0 32px; display: flex; gap: 0;
+  }
+  nav button {
+    background: none; border: none; padding: 14px 20px;
+    cursor: pointer; font-size: 14px; color: #6b7280;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s;
+  }
+  nav button:hover { color: #1e3a8a; }
+  nav button.active {
+    color: #1e3a8a; border-bottom-color: #6366f1;
+    font-weight: 600;
+  }
+  main { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
+  .tab { display: none; }
+  .tab.active { display: block; }
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px; margin-bottom: 24px;
+  }
+  .kpi {
+    background: white; padding: 18px; border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .kpi .value { font-size: 28px; font-weight: 700; color: #1e3a8a; line-height: 1; }
+  .kpi .label { font-size: 12px; color: #6b7280; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    background: white; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04); margin-bottom: 16px;
+  }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #f3f4f6; }
+  th {
+    background: #f9fafb; font-weight: 600; color: #4b5563;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+    cursor: pointer; user-select: none;
+  }
+  th:hover { background: #f3f4f6; }
+  th.numeric, td.numeric { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:hover { background: #f9fafb; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 600;
+  }
+  .badge-p1 { background: #dcfce7; color: #166534; }
+  .badge-p2 { background: #dbeafe; color: #1e40af; }
+  .badge-p3 { background: #fef3c7; color: #92400e; }
+  .badge-p4 { background: #f3f4f6; color: #6b7280; }
+  .badge-exclu { background: #fee2e2; color: #991b1b; }
+
+  .angle-saas_licence          { background: #ddd6fe; color: #5b21b6; }
+  .angle-classic_scf           { background: #bfdbfe; color: #1e40af; }
+  .angle-receivables_finance   { background: #fed7aa; color: #9a3412; }
+  .angle-flash_title_inventory { background: #fecdd3; color: #9f1239; }
+
+  .score-bar {
+    display: inline-block; width: 60px; height: 6px;
+    background: #e5e7eb; border-radius: 3px; overflow: hidden;
+    vertical-align: middle; margin-right: 6px;
+  }
+  .score-bar > div { height: 100%; background: #6366f1; }
+
+  .filter-row {
+    display: flex; gap: 12px; align-items: center; margin-bottom: 16px;
+    background: white; padding: 12px 16px; border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .filter-row input, .filter-row select {
+    padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 6px;
+    font-size: 13px; font-family: inherit;
+  }
+  .filter-row input { flex: 1; min-width: 200px; }
+
+  details { margin-bottom: 12px; }
+  details > summary {
+    cursor: pointer; padding: 12px 16px; background: white;
+    border-radius: 8px; font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  details > div { padding: 16px; background: white; margin-top: 4px; border-radius: 8px; }
+  blockquote {
+    border-left: 3px solid #6366f1; margin: 8px 0; padding: 4px 12px;
+    color: #4b5563; font-style: italic; background: #f9fafb;
+  }
+  .source-card {
+    background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    border-left: 4px solid #6366f1;
+  }
+  .source-card.included { border-left-color: #16a34a; }
+  .source-card.excluded { border-left-color: #dc2626; }
+  .source-card h3 { margin: 0 0 8px; font-size: 15px; }
+  .footer {
+    text-align: center; padding: 24px;
+    color: #6b7280; font-size: 12px;
+  }
+  code {
+    background: #f3f4f6; padding: 1px 6px; border-radius: 4px;
+    font-size: 12px; font-family: 'SF Mono', Monaco, monospace;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>CredAble Sweet-Spot Dashboard</h1>
+  <div class="meta">Généré le 2026-05-10 · 7 sweet-spots · 17 banques distinctes</div>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="summary">📊 Résumé</button>
+  <button class="tab-btn" data-tab="sweetspots">🎯 Sweet-spots</button>
+  <button class="tab-btn" data-tab="newbanks">🆕 Banques nouvelles</button>
+  <button class="tab-btn" data-tab="byangle">📐 Par angle</button>
+  <button class="tab-btn" data-tab="methodology">🔬 Méthodologie</button>
+</nav>
+
+<main>
+  <!-- TAB: SUMMARY -->
+  <section id="tab-summary" class="tab active">
+    <div class="kpi-row">
+      <div class="kpi"><div class="value">7</div><div class="label">Sweet-spots</div></div>
+      <div class="kpi"><div class="value">9</div><div class="label">Banques DB matched</div></div>
+      <div class="kpi"><div class="value">8</div><div class="label">Banques nouvelles</div></div>
+      <div class="kpi"><div class="value">2</div><div class="label">Corp. payables</div></div>
+      <div class="kpi"><div class="value">3</div><div class="label">Corp. receivables</div></div>
+      <div class="kpi"><div class="value">3</div><div class="label">Corp. documentary</div></div>
+      <div class="kpi"><div class="value">2</div><div class="label">Corp. inventory</div></div>
+    </div>
+
+    <h2>🏆 Top 10 cibles</h2>
+    <div id="top10"></div>
+
+    <h2>📐 Répartition par angle CredAble</h2>
+    <div id="byangle-summary"></div>
+
+    <h2>🌍 Concentration géographique</h2>
+    <div id="bycountry"></div>
+  </section>
+
+  <!-- TAB: SWEETSPOTS -->
+  <section id="tab-sweetspots" class="tab">
+    <div class="filter-row">
+      <input id="filter-text" placeholder="🔍 Filtrer par nom de banque ou pays..." />
+      <select id="filter-angle">
+        <option value="">Tous les angles</option>
+        <option value="saas_licence">SaaS / Licence</option>
+        <option value="classic_scf">Classic SCF</option>
+        <option value="receivables_finance">Receivables Finance</option>
+        <option value="flash_title_inventory">Flash Title / Inventory</option>
+      </select>
+      <select id="filter-priority">
+        <option value="">Toutes priorités V4</option>
+        <option value="P1">P1</option>
+        <option value="P2">P2</option>
+        <option value="P3">P3</option>
+        <option value="P4">P4</option>
+      </select>
+    </div>
+    <div id="sweetspots-table"></div>
+  </section>
+
+  <!-- TAB: NEW BANKS -->
+  <section id="tab-newbanks" class="tab">
+    <h2>🆕 Banques mentionnées par corporates mais absentes de la DB de prospection</h2>
+    <p>À évaluer manuellement avant ajout à <code>prospection/data/banks.json</code>.</p>
+    <div id="newbanks-table"></div>
+  </section>
+
+  <!-- TAB: BY ANGLE -->
+  <section id="tab-byangle" class="tab">
+    <div id="byangle-detail"></div>
+  </section>
+
+  <!-- TAB: METHODOLOGY -->
+  <section id="tab-methodology" class="tab">
+    <h2>🔬 Sources utilisées par le modèle DeepInfra</h2>
+
+    <div class="source-card included">
+      <h3>✅ Sources fournies au modèle (DeepSeek-V3)</h3>
+      <p><strong>Uniquement</strong> des extraits filtrés de rapports annuels corporates (PDF → texte → chunks par mots-clés).</p>
+      <ul>
+        <li>Source : sites Investor Relations officiels des corporates listés dans <code>catalog.json</code></li>
+        <li>Format : texte filtré par ~120 mots-clés multilingues (working capital, factoring, supplier finance, letter of credit, inventory, cession de créances, Akkreditiv, etc.)</li>
+        <li>Volume : ~25K tokens par corporate (vs ~500K tokens dans le PDF complet)</li>
+        <li>Modèle : DeepSeek-V3 via DeepInfra, température 0.0 (déterministe)</li>
+      </ul>
+    </div>
+
+    <div class="source-card excluded">
+      <h3>❌ Sources INTERDITES au modèle</h3>
+      <p>Le prompt système contient cette consigne stricte :</p>
+      <blockquote>"Only extract what is EXPLICITLY stated in the text. Never infer, assume, or hallucinate. Always provide the verbatim quote."</blockquote>
+      <ul>
+        <li>Pas d'accès web (DeepInfra n'expose pas cette capacité)</li>
+        <li>Pas de training data (interdit par consigne)</li>
+        <li>Pas de cross-reference entre corporates (chaque appel isolé)</li>
+        <li>Pas d'autres rapports / press / news</li>
+      </ul>
+      <p><strong>Garde-fou</strong> : chaque "fait" extrait est accompagné d'un <code>verbatim</code>. Tu peux vérifier en cherchant la phrase exacte dans <code>text/&lt;corp&gt;.txt</code>.</p>
+    </div>
+
+    <div class="source-card">
+      <h3>ℹ️ Sources externes utilisées par d'AUTRES modules (PAS par DeepInfra)</h3>
+      <p>L'écosystème complet utilise plusieurs sources, mais aucune n'est fournie au modèle pour l'extraction des rapports annuels :</p>
+      <ul>
+        <li><strong>prospection/</strong> : Aequitas Consultus, Allianz Trade Atlas 2026, Marsh PRR 2026, UN Comtrade, FCI</li>
+        <li><strong>prospection/trigger_engine/</strong> : RSS GTR, TFG, TXF, BAFT, FCI, EBRD, EIB, IFC</li>
+        <li><strong>scraper/</strong> : sites bancaires, salles de presse, recherches GTR/TFG/TXF</li>
+        <li><strong>corporate_scraper/</strong> (CE module) : <strong>uniquement</strong> les rapports annuels corporates filtrés</li>
+      </ul>
+    </div>
+
+    <div class="source-card">
+      <h3>📊 Statistiques du run</h3>
+      <p>Voir <code>reports/methodology.md</code> pour les chiffres précis (corporates analysés, tokens consommés, coverage gap).</p>
+    </div>
+
+    <div class="source-card">
+      <h3>⚠️ Limitations honnêtes</h3>
+      <ul>
+        <li>LLM peut halluciner malgré la consigne → vérification possible via grep</li>
+        <li>Pré-filtre keywords pas exhaustif → liste extensible</li>
+        <li>PDFs scannés non extraits (OCR à ajouter)</li>
+        <li>Anti-bot sur certains sites IR → workflow manuel possible</li>
+        <li>Corporates privés (Bosch, Ferrero) hors périmètre</li>
+        <li>Couverture multi-langue partielle pour HU/RO/CZ/PL</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<div class="footer">
+  Données : <code>reports/bank_evidence.json</code> · Régénérer : <code>cd corporate_scraper &amp;&amp; ./go.sh</code>
+</div>
+
+<script>
+const DATA = {"sweet_spots":[{"bank":{"id":"komercni-banka-cz","name":"Komerční banka","country":"CZ","country_name":"Tchéquie","country_risk":{"allianz_grade":"A2","allianz_level":2,"trade_implication":"MIXED"},"tf_signals":[{"source":"GTR","date":"2025-02-05","verbatim":"Orbian acquires Czech supply chain finance fintech Roger"},{"source":"Site corporate","verbatim":"Filiale Factoring KB proposant page Supply Chain Finance"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"GTR 2025-02-05","verbatim":"KB détenait 25% dans Roger via KB SmartSolutions, Orbian a acquis Roger en février 2025"}],"competitor_platform":null,"triggers":[{"type":"FINTECH_PARTNERSHIP_END","date":"2025-02-05","source":"GTR","description":"Orbian acquires Roger — KB perd son partenaire fintech SCF, vacance technologique"}],"interlocutors":[],"financials":{"balance_sheet_eur":60000000000,"year":2024},"trade_flows_in":[{"partner":"Germany","exports_usd":241700000000,"year":2022}],"notes":"Vacance technologique post-Roger. Cible idéale fenêtre 6 mois.","score":{"tf_strength":5,"scf_gap":4,"trigger_freshness":2,"country_flow":7,"interlocutor_access":0,"competitive_vacuum":5,"regulatory_tailwind":4,"total":27},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":2,"corporates":["Siemens AG","Stellantis"],"sectors_served":["Industrial","Automotive"],"product_categories":["payables","receivables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 2× + ERP signals + multibank approach + API/digital — pas de concurrent"},"classic_scf":{"score":6,"reasoning":"1 mention(s) côté payables + cross-border + ESG-linked "},"receivables_finance":{"score":6,"reasoning":"1 mention(s) côté receivables + rôle factor explicit "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":18}},{"bank":{"id":"bper-banca-it","name":"BPER Banca","country":"IT","country_name":"Italie","country_risk":{"allianz_grade":"A1","allianz_level":1,"trade_implication":"OPEN_ACCOUNT"},"tf_signals":[{"source":"Site corporate","date":"2026-05-10","verbatim":"Factoring e Reverse Factoring — gestione dei tuoi crediti commerciali e debiti di fornitura"},{"source":"Bank press release","date":"2023-05-30","verbatim":"Partenariat PlusAdvance: Confirming, Dynamic Discounting, Reverse Factoring"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"Assifact","verbatim":"Filiale BPER Factor + plateforme WIP (Webfactor Interactive Platform)"}],"competitor_platform":"PlusAdvance","triggers":[{"type":"M_AND_A","date":"2026-04-15","source":"Bank press release","description":"Acquisition Banca Popolare di Sondrio (BPS) finalisée — rationalisation plateformes SCF à venir"}],"interlocutors":[{"name":"Davide Vellani","role":"Direttore Imprese e Global Transaction","source":"PR 2023"},{"name":"Matteo Bigarelli","role":"Direttore BPER Factor","source":"Assifact"}],"financials":{"balance_sheet_eur":145000000000,"year":2024},"trade_flows_in":[{"partner":"EU multi-corridor","exports_usd":612000000000,"year":2023}],"notes":"Post-fusion BPS = fenêtre de rationalisation SCF. Concurrent PlusAdvance positionné mais petit.","score":{"tf_strength":4,"scf_gap":4,"trigger_freshness":10,"country_flow":7,"interlocutor_access":4,"competitive_vacuum":2,"regulatory_tailwind":4,"total":35},"priority":"P1","last_updated":"2026-05-10"},"evidence_count":2,"corporates":["Stellantis"],"sectors_served":["Automotive"],"product_categories":["payables","receivables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 2× + ERP signals + multibank approach — pas de concurrent"},"classic_scf":{"score":5,"reasoning":"1 mention(s) côté payables + cross-border "},"receivables_finance":{"score":6,"reasoning":"1 mention(s) côté receivables + rôle factor explicit "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":17}},{"bank":{"id":"bayernlb-de","name":"BayernLB","country":"DE","country_name":"Allemagne","country_risk":{"allianz_grade":"AA1","allianz_level":1,"trade_implication":"OPEN_ACCOUNT"},"tf_signals":[{"source":"Annual Report","date":"2025-03-31","verbatim":"working capital, capex and trade financing, project and export financing"},{"source":"GTR","date":"2019-09-15","verbatim":"ECA-backed financing, member Marco Polo"},{"source":"Site corporate","verbatim":"Supply chain financing — multibank concept, without recourse"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"Site BayernLB","verbatim":"Page dédiée concept multibank, plateforme client digitale non documentée"}],"competitor_platform":null,"triggers":[],"interlocutors":[{"name":"Florian Seitz","role":"Head of Trade & Export Finance","source":"TradeFinanceGlobal"}],"financials":{"balance_sheet_eur":320000000000,"year":2024},"trade_flows_in":[{"partner":"Global","exports_usd":1635000000000,"year":2021}],"notes":"Concept SCF mature mais plateforme digitale absente. Opportunité de plateforme white-label.","score":{"tf_strength":8,"scf_gap":4,"trigger_freshness":0,"country_flow":8,"interlocutor_access":2,"competitive_vacuum":5,"regulatory_tailwind":4,"total":31},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":1,"corporates":["Siemens AG"],"sectors_served":["Industrial"],"product_categories":["payables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 1× + ERP signals + multibank approach + API/digital — pas de concurrent"},"classic_scf":{"score":6,"reasoning":"1 mention(s) côté payables + cross-border + ESG-linked "},"receivables_finance":{"score":0,"reasoning":"0 mention(s) côté receivables "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":12}},{"bank":{"id":"helaba-de","name":"Helaba","country":"DE","country_name":"Allemagne","country_risk":{"allianz_grade":"AA1","allianz_level":1,"trade_implication":"OPEN_ACCOUNT"},"tf_signals":[{"source":"Annual Report","date":"2024-12-31","verbatim":"Main partner for the international documentary business"},{"source":"Site corporate","verbatim":"International trade finance — country risks and tailored solutions"}],"scf_level":"BASIQUE","scf_evidence":[{"source":"Annual Report","verbatim":"Expanded collaboration with supply chain finance platforms"}],"competitor_platform":null,"triggers":[],"interlocutors":[],"financials":{"balance_sheet_eur":210000000000,"year":2024},"trade_flows_in":[{"partner":"Global","exports_usd":1635000000000,"year":2021}],"notes":"Pas de produit SCF propre. Partenaire externe non identifié — opportunité white-label.","score":{"tf_strength":5,"scf_gap":7,"trigger_freshness":0,"country_flow":8,"interlocutor_access":0,"competitive_vacuum":5,"regulatory_tailwind":4,"total":29},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":1,"corporates":["Siemens AG"],"sectors_served":["Industrial"],"product_categories":["payables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 1× + ERP signals + multibank approach + API/digital — pas de concurrent"},"classic_scf":{"score":6,"reasoning":"1 mention(s) côté payables + cross-border + ESG-linked "},"receivables_finance":{"score":0,"reasoning":"0 mention(s) côté receivables "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":12}},{"bank":{"id":"citi-handlowy-pl","name":"Citi Handlowy","country":"PL","country_name":"Pologne","country_risk":{"allianz_grade":"A2","allianz_level":2,"trade_implication":"MIXED"},"tf_signals":[{"source":"Bank press release","date":"2025-05-27","verbatim":"Nous avons une position forte dans le SCF — pilier stratégique post-cession retail"},{"source":"TFG","verbatim":"Receivables finance + trade finance + factoring confirmés"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"PR 2025-05-27","verbatim":"SCF identifié comme l'un des 4 piliers de croissance"}],"competitor_platform":null,"triggers":[{"type":"CEO_STATEMENT","date":"2025-05-27","source":"Bank press release","description":"Pivot stratégique — recentrage corporate avec SCF comme pilier 2025"}],"interlocutors":[],"financials":{"balance_sheet_eur":18000000000,"year":2024},"trade_flows_in":[{"partner":"Germany + EU","exports_usd":381900000000,"year":2023}],"notes":"Pivot stratégique récent. Capital backing Citi global réseau. Décision potentiellement Varsovie ou New York.","score":{"tf_strength":4,"scf_gap":4,"trigger_freshness":4,"country_flow":7,"interlocutor_access":0,"competitive_vacuum":5,"regulatory_tailwind":4,"total":28},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":2,"corporates":["Siemens AG","Stellantis"],"sectors_served":["Industrial","Automotive"],"product_categories":["payables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 2× + ERP signals + multibank approach + API/digital — pas de concurrent"},"classic_scf":{"score":6,"reasoning":"2 mention(s) côté payables + cross-border + ESG-linked "},"receivables_finance":{"score":0,"reasoning":"0 mention(s) côté receivables "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":12}},{"bank":{"id":"banca-transilvania-ro","name":"Banca Transilvania","country":"RO","country_name":"Roumanie","country_risk":{"allianz_grade":"B1","allianz_level":2,"trade_implication":"MIXED"},"tf_signals":[{"source":"EBRD press release","date":"2024-10-15","verbatim":"EBRD partners with Banca Transilvania for EUR 20M SCF program — first SCF EBRD transaction in Romania"},{"source":"LinkedIn","verbatim":"Manager Trade Finance Sales — supply-side receivables purchase"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"EBRD 2024","verbatim":"Programme SCF Profi Rom Food avec EBRD prenant 50% du risque"}],"competitor_platform":null,"triggers":[{"type":"EBRD_PROGRAM","date":"2024-10-15","source":"EBRD","description":"Première transaction SCF EBRD en Roumanie — apprentissage actif, besoin d'industrialisation"}],"interlocutors":[{"name":"Cosmin Călin","role":"Executive Director Large Corporate Division","source":"PR EBRD 2024"},{"name":"Mihai Andreescu","role":"Manager Trade Finance Sales","source":"LinkedIn"}],"financials":{"balance_sheet_eur":35000000000,"year":2024},"trade_flows_in":[{"partner":"Germany","exports_usd":21000000000,"year":2022}],"notes":"Apprentissage SCF en cours via EBRD. Deuxième transaction = porte d'entrée plateforme.","score":{"tf_strength":4,"scf_gap":4,"trigger_freshness":0,"country_flow":4,"interlocutor_access":4,"competitive_vacuum":5,"regulatory_tailwind":5,"total":26},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":1,"corporates":["Stellantis"],"sectors_served":["Automotive"],"product_categories":["payables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 1× + ERP signals + multibank approach — pas de concurrent"},"classic_scf":{"score":5,"reasoning":"1 mention(s) côté payables + cross-border "},"receivables_finance":{"score":0,"reasoning":"0 mention(s) côté receivables "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":11}},{"bank":{"id":"bank-millennium-pl","name":"Bank Millennium","country":"PL","country_name":"Pologne","country_risk":{"allianz_grade":"A2","allianz_level":2,"trade_implication":"MIXED"},"tf_signals":[{"source":"Global Finance","date":"2025-01-15","verbatim":"Best Trade Finance Services in Poland 2025"},{"source":"LinkedIn","date":"2025-09-01","verbatim":"Atelier interne SCF — płynność, bezpieczeństwo i przewaga w jednym rozwiązaniu"}],"scf_level":"INTERMEDIAIRE","scf_evidence":[{"source":"LinkedIn Ewelina Zielonka","verbatim":"Formation interne SCF en cours"}],"competitor_platform":null,"triggers":[{"type":"PROFESSIONAL_PRESS","date":"2025-01-15","source":"Global Finance","description":"Best TF Services Poland 2025 — momentum externe + interne SCF"}],"interlocutors":[],"financials":{"balance_sheet_eur":28000000000,"year":2024},"trade_flows_in":[{"partner":"Germany + EU","exports_usd":381900000000,"year":2023}],"notes":"Banque BCP-owned, autonomie locale. Momentum SCF identifiable. RFP probable 2026.","score":{"tf_strength":6,"scf_gap":4,"trigger_freshness":1,"country_flow":7,"interlocutor_access":0,"competitive_vacuum":5,"regulatory_tailwind":4,"total":27},"priority":"P2","last_updated":"2026-05-10"},"evidence_count":1,"corporates":["Stellantis"],"sectors_served":["Automotive"],"product_categories":["payables"],"credable":{"angles":{"saas_licence":{"score":6,"reasoning":"Banque citée 1× + ERP signals + multibank approach — pas de concurrent"},"classic_scf":{"score":5,"reasoning":"1 mention(s) côté payables + cross-border "},"receivables_finance":{"score":0,"reasoning":"0 mention(s) côté receivables "},"flash_title_inventory":{"score":0,"reasoning":"0 mention(s) documentary + 0 mention(s) inventory "}},"recommended_primary_angle":"saas_licence","recommended_primary_score":6,"total_credable_fit":11}}],"unmatched":[{"key":"hsbc","canonical_name":"HSBC","inferred_country":"UK","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"lead","product_category":"documentary","context":"HSBC acts as lead bank for our trade finance facilities including letters of credit","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false}]},{"key":"standardchartered","canonical_name":"Standard Chartered","inferred_country":"UK","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"issuing_bank","product_category":"documentary","context":"Standard Chartered issues letters of credit and bank guarantees for our Asian trading operations","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false}]},{"key":"ing","canonical_name":"ING","inferred_country":"NL","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"participant","product_category":"documentary","context":"ING participates in our European structured trade finance arrangements","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false}]},{"key":"socitgnrale","canonical_name":"Société Générale","inferred_country":"FR","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"lead","product_category":"inventory","context":"Société Générale leads our raw material and crude inventory financing arrangements","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false}]},{"key":"bnpparibas","canonical_name":"BNP Paribas","inferred_country":"FR","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"participant","product_category":"inventory","context":"BNP Paribas participates in inventory financing for refined products","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false},{"corporate":"Stellantis","corporate_country":"NL","corporate_sector":"Automotive","role":"lead","product_category":"payables","context":"BNP Paribas serves as lead bank for our European supply chain finance program","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":false,"flag_api":false},{"corporate":"Stellantis","corporate_country":"NL","corporate_sector":"Automotive","role":"issuing_bank","product_category":"documentary","context":"Letters of credit issued by BNP Paribas for our raw material imports","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":false,"flag_api":false}]},{"key":"crditagricole","canonical_name":"Crédit Agricole","inferred_country":"FR","evidence":[{"corporate":"Shell plc","corporate_country":"UK","corporate_sector":"Energy","role":"issuing_bank","product_category":"documentary","context":"Crédit Agricole issues bank guarantees and SBLCs for our African and Middle East trading","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP"],"flag_multibank":false,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":false}]},{"key":"deutsche","canonical_name":"Deutsche Bank","inferred_country":"DE","evidence":[{"corporate":"Siemens AG","corporate_country":"DE","corporate_sector":"Industrial","role":"lead","product_category":"payables","context":"Deutsche Bank serves as lead bank for our German supplier finance program","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP","SAP Ariba"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":true}]},{"key":"commerzbank","canonical_name":"Commerzbank","inferred_country":"DE","evidence":[{"corporate":"Siemens AG","corporate_country":"DE","corporate_sector":"Industrial","role":"participant","product_category":"payables","context":"Commerzbank participates in our German and CEE supplier finance program","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP","SAP Ariba"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":true}]},{"key":"otp","canonical_name":"OTP Bank","inferred_country":"HU","evidence":[{"corporate":"Siemens AG","corporate_country":"DE","corporate_sector":"Industrial","role":"local_partner","product_category":"payables","context":"OTP Bank participates in our Hungarian supplier finance arrangement","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP","SAP Ariba"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":true}]},{"key":"erste","canonical_name":"Erste Group","inferred_country":"AT","evidence":[{"corporate":"Siemens AG","corporate_country":"DE","corporate_sector":"Industrial","role":"local_partner","product_category":"payables","context":"Erste Group covers our Austrian and CEE supplier finance footprint","platform":null,"platform_is_major_competitor":false,"erp_systems":["SAP","SAP Ariba"],"flag_multibank":true,"flag_white_label":false,"flag_cross_border":true,"flag_esg":true,"flag_api":true}]}],"program_stats":{"payables":2,"receivables":3,"documentary":3,"inventory":2,"working_capital":3},"matched_count":9,"unmatched_count":8,"generated_at":"2026-05-10"};
+
+const ANGLE_LABEL = {
+  saas_licence: 'SaaS / Licence',
+  classic_scf: 'Classic SCF',
+  receivables_finance: 'Receivables',
+  flash_title_inventory: 'Flash title',
+};
+
+// ─────── Tab switching ───────
+document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', e => {
+  document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+}));
+
+// ─────── Helpers ───────
+function angleBadge(a) {
+  return `<span class="badge angle-${a}">${ANGLE_LABEL[a] || a}</span>`;
+}
+function priBadge(p) {
+  return `<span class="badge badge-${(p || 'p4').toLowerCase()}">${p || '?'}</span>`;
+}
+function scoreBar(score, max) {
+  const pct = Math.round(score / max * 100);
+  return `<span class="score-bar"><div style="width: ${pct}%"></div></span><span style="font-variant-numeric: tabular-nums">${score}/${max}</span>`;
+}
+
+// ─────── TAB: Summary ───────
+function renderSummary() {
+  const top = DATA.sweet_spots.slice(0, 10);
+  let html = '<table><thead><tr><th>#</th><th>Banque</th><th>Pays</th><th>V4 Pri</th><th>Angle reco</th><th class="numeric">Score angle</th><th class="numeric">Total fit</th></tr></thead><tbody>';
+  top.forEach((s, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td><strong>${s.bank.name}</strong></td>
+      <td>${s.bank.country}</td>
+      <td>${priBadge(s.bank.priority)}</td>
+      <td>${angleBadge(s.credable.recommended_primary_angle)}</td>
+      <td class="numeric">${scoreBar(s.credable.recommended_primary_score, 10)}</td>
+      <td class="numeric">${s.credable.total_credable_fit}/40</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  document.getElementById('top10').innerHTML = html;
+
+  // by angle
+  const byAngle = {};
+  DATA.sweet_spots.forEach(s => {
+    const a = s.credable.recommended_primary_angle;
+    byAngle[a] = (byAngle[a] || 0) + 1;
+  });
+  let angHtml = '<div class="kpi-row">';
+  Object.entries(byAngle).sort((a,b) => b[1]-a[1]).forEach(([a, n]) => {
+    angHtml += `<div class="kpi"><div class="value">${n}</div><div class="label">${ANGLE_LABEL[a]}</div></div>`;
+  });
+  angHtml += '</div>';
+  document.getElementById('byangle-summary').innerHTML = angHtml;
+
+  // by country
+  const byCountry = {};
+  DATA.sweet_spots.forEach(s => byCountry[s.bank.country] = (byCountry[s.bank.country] || 0) + 1);
+  let cHtml = '<div class="kpi-row">';
+  Object.entries(byCountry).sort((a,b) => b[1]-a[1]).slice(0, 8).forEach(([c, n]) => {
+    cHtml += `<div class="kpi"><div class="value">${n}</div><div class="label">${c}</div></div>`;
+  });
+  cHtml += '</div>';
+  document.getElementById('bycountry').innerHTML = cHtml;
+}
+
+// ─────── TAB: Sweet-spots (filterable) ───────
+function renderSweetspots() {
+  const text = document.getElementById('filter-text').value.toLowerCase();
+  const angle = document.getElementById('filter-angle').value;
+  const priority = document.getElementById('filter-priority').value;
+
+  const filtered = DATA.sweet_spots.filter(s => {
+    if (text && !(`${s.bank.name} ${s.bank.country}`.toLowerCase().includes(text))) return false;
+    if (angle && s.credable.recommended_primary_angle !== angle) return false;
+    if (priority && s.bank.priority !== priority) return false;
+    return true;
+  });
+
+  let html = `<div style="margin-bottom: 12px; color: #6b7280; font-size: 12px;">${filtered.length} résultat(s)</div>`;
+  filtered.forEach(s => {
+    const a = s.credable.angles;
+    html += `<details>
+      <summary>
+        <strong>${s.bank.name}</strong> (${s.bank.country}) ·
+        ${priBadge(s.bank.priority)} ·
+        ${angleBadge(s.credable.recommended_primary_angle)} ·
+        Total fit ${s.credable.total_credable_fit}/40 ·
+        ${s.evidence_count} mention(s)
+      </summary>
+      <div>
+        <h4>4-angle scoring</h4>
+        <table>
+          <tr><td>SaaS / Licence</td><td class="numeric">${scoreBar(a.saas_licence.score, 10)}</td><td>${a.saas_licence.reasoning}</td></tr>
+          <tr><td>Classic SCF</td><td class="numeric">${scoreBar(a.classic_scf.score, 10)}</td><td>${a.classic_scf.reasoning}</td></tr>
+          <tr><td>Receivables</td><td class="numeric">${scoreBar(a.receivables_finance.score, 10)}</td><td>${a.receivables_finance.reasoning}</td></tr>
+          <tr><td>Flash title</td><td class="numeric">${scoreBar(a.flash_title_inventory.score, 10)}</td><td>${a.flash_title_inventory.reasoning}</td></tr>
+        </table>
+        <h4>Catégories produits & secteurs</h4>
+        <p>Catégories : ${(s.product_categories || []).join(', ') || '-'} · Secteurs : ${(s.sectors_served || []).join(', ') || '-'}</p>
+      </div>
+    </details>`;
+  });
+  document.getElementById('sweetspots-table').innerHTML = html;
+}
+
+['filter-text', 'filter-angle', 'filter-priority'].forEach(id =>
+  document.getElementById(id).addEventListener('input', renderSweetspots)
+);
+
+// ─────── TAB: New banks ───────
+function renderNewBanks() {
+  let html = '<table><thead><tr><th>Banque</th><th>Pays</th><th class="numeric"># mentions</th><th>Corporates citants</th></tr></thead><tbody>';
+  DATA.unmatched.slice(0, 50).forEach(u => {
+    const corps = [...new Set((u.evidence || []).map(e => e.corporate))].join(', ');
+    html += `<tr>
+      <td><strong>${u.canonical_name}</strong></td>
+      <td>${u.inferred_country || '?'}</td>
+      <td class="numeric">${(u.evidence || []).length}</td>
+      <td>${corps || '-'}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  document.getElementById('newbanks-table').innerHTML = html;
+}
+
+// ─────── TAB: By angle ───────
+function renderByAngle() {
+  const groups = {};
+  DATA.sweet_spots.forEach(s => {
+    const a = s.credable.recommended_primary_angle;
+    if (!groups[a]) groups[a] = [];
+    groups[a].push(s);
+  });
+
+  let html = '';
+  ['saas_licence', 'classic_scf', 'receivables_finance', 'flash_title_inventory'].forEach(a => {
+    const banks = groups[a] || [];
+    html += `<h2>${angleBadge(a)} <span style="color: #6b7280; font-weight: normal">— ${banks.length} banques</span></h2>`;
+    if (banks.length === 0) {
+      html += '<p style="color: #6b7280">Aucune banque dans cet angle pour ce run.</p>';
+      return;
+    }
+    html += '<table><thead><tr><th>Banque</th><th>Pays</th><th>V4</th><th class="numeric">Score angle</th><th class="numeric">Total fit</th><th class="numeric">Mentions</th></tr></thead><tbody>';
+    banks.forEach(s => {
+      html += `<tr>
+        <td><strong>${s.bank.name}</strong></td>
+        <td>${s.bank.country}</td>
+        <td>${priBadge(s.bank.priority)}</td>
+        <td class="numeric">${scoreBar(s.credable.angles[a].score, 10)}</td>
+        <td class="numeric">${s.credable.total_credable_fit}/40</td>
+        <td class="numeric">${s.evidence_count}</td>
+      </tr>`;
+    });
+    html += '</tbody></table>';
+  });
+  document.getElementById('byangle-detail').innerHTML = html;
+}
+
+// ─────── Init ───────
+renderSummary();
+renderSweetspots();
+renderNewBanks();
+renderByAngle();
+</script>
+</body>
+</html>

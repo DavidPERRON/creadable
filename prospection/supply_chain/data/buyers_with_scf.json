@@ -1,0 +1,134 @@
+[
+  {
+    "id": "schneider-electric",
+    "name": "Schneider Electric",
+    "country_hq": "FR",
+    "sector": "Industrial / Energy management",
+    "scf_program": { "platform": "PrimeRevenue", "since": 2014, "verified_source": "PrimeRevenue case study" },
+    "supplier_concentration_zones": ["FR", "PL", "CZ", "HU", "RO", "BG", "TN", "MA"],
+    "annual_purchases_eur_bn": 17,
+    "tier1_supplier_count": 8000,
+    "notes": "Pionnier SCF européen. Couverture déjà établie. Mais leur réseau de fournisseurs CEE = banques locales à équiper."
+  },
+  {
+    "id": "loreal",
+    "name": "L'Oréal",
+    "country_hq": "FR",
+    "sector": "Consumer goods / Beauty",
+    "scf_program": { "platform": "Greensill (defunct) → Demica (post-2021)", "since": 2010, "verified_source": "Public M&A history" },
+    "supplier_concentration_zones": ["FR", "IT", "ES", "DE", "PL", "CZ"],
+    "annual_purchases_eur_bn": 12,
+    "tier1_supplier_count": 5500,
+    "notes": "Migration post-Greensill = signal de désorientation possible. Programme stable depuis Demica."
+  },
+  {
+    "id": "stellantis",
+    "name": "Stellantis",
+    "country_hq": "NL",
+    "sector": "Automotive",
+    "scf_program": { "platform": "Mixed (Demica + bilateral bank programs)", "since": 2021, "verified_source": "Annual reports" },
+    "supplier_concentration_zones": ["IT", "FR", "ES", "PL", "CZ", "SK", "RO", "HU", "DE"],
+    "annual_purchases_eur_bn": 45,
+    "tier1_supplier_count": 12000,
+    "notes": "Issu fusion FCA-PSA. Réseau fournisseurs CEE massif (PL, CZ, SK, RO). Banques locales = cibles SCF directes."
+  },
+  {
+    "id": "inditex",
+    "name": "Inditex (Zara)",
+    "country_hq": "ES",
+    "sector": "Apparel / Fast fashion",
+    "scf_program": { "platform": "Bilateral with CaixaBank, Banco Sabadell", "since": 2015, "verified_source": "Industry sources" },
+    "supplier_concentration_zones": ["ES", "PT", "MA", "TR", "BG", "RO"],
+    "annual_purchases_eur_bn": 18,
+    "tier1_supplier_count": 1800,
+    "notes": "Programme bilatéral via banques espagnoles. Fournisseurs PT, MA, TR, BG, RO = banques locales sous-équipées SCF."
+  },
+  {
+    "id": "carrefour",
+    "name": "Carrefour",
+    "country_hq": "FR",
+    "sector": "Retail / Grocery",
+    "scf_program": { "platform": "BNP Paribas SCF (in-house bank platform)", "since": 2013, "verified_source": "BNP press" },
+    "supplier_concentration_zones": ["FR", "ES", "IT", "PL", "RO", "BR", "AR"],
+    "annual_purchases_eur_bn": 70,
+    "tier1_supplier_count": 30000,
+    "notes": "BNP captive. Profi Rom Food Roumanie ⊂ EBRD/Banca Transilvania = exemple parallèle de réseau retail × SCF local."
+  },
+  {
+    "id": "ahold-delhaize",
+    "name": "Ahold Delhaize",
+    "country_hq": "NL",
+    "sector": "Retail / Grocery",
+    "scf_program": { "platform": "Taulia (since 2018)", "since": 2018, "verified_source": "Taulia case studies" },
+    "supplier_concentration_zones": ["NL", "BE", "DE", "CZ", "RO", "RS", "GR"],
+    "annual_purchases_eur_bn": 65,
+    "tier1_supplier_count": 25000,
+    "notes": "Réseau CEE substantiel (CZ, RO, RS). Mega Image RO = filiale = lien vers banques RO."
+  },
+  {
+    "id": "siemens",
+    "name": "Siemens AG",
+    "country_hq": "DE",
+    "sector": "Industrial",
+    "scf_program": { "platform": "Siemens Financial Services (captive)", "since": 2010, "verified_source": "SFS site" },
+    "supplier_concentration_zones": ["DE", "AT", "CZ", "PL", "HU", "IT", "FR"],
+    "annual_purchases_eur_bn": 50,
+    "tier1_supplier_count": 90000,
+    "notes": "Captive. Mais 90,000 tier-1 = écosystème massif où banques locales jouent rôle critique."
+  },
+  {
+    "id": "volkswagen",
+    "name": "Volkswagen Group",
+    "country_hq": "DE",
+    "sector": "Automotive",
+    "scf_program": { "platform": "Volkswagen Financial Services + bilateral", "since": 2008, "verified_source": "VW FS reports" },
+    "supplier_concentration_zones": ["DE", "CZ", "SK", "PL", "HU", "ES", "PT"],
+    "annual_purchases_eur_bn": 110,
+    "tier1_supplier_count": 40000,
+    "notes": "Plus gros réseau CEE-fournisseurs d'Europe. ŠKODA (CZ), SEAT (ES), Audi Hungary, etc. = banques locales en aval."
+  },
+  {
+    "id": "danone",
+    "name": "Danone",
+    "country_hq": "FR",
+    "sector": "FMCG / Food",
+    "scf_program": { "platform": "C2FO (dynamic discounting)", "since": 2017, "verified_source": "C2FO press" },
+    "supplier_concentration_zones": ["FR", "ES", "PL", "RO", "MX", "CN"],
+    "annual_purchases_eur_bn": 20,
+    "tier1_supplier_count": 7000,
+    "notes": "Dynamic discounting C2FO = différent du reverse factoring. Fournisseurs PL, RO sous-utilisent."
+  },
+  {
+    "id": "nestle",
+    "name": "Nestlé",
+    "country_hq": "CH",
+    "sector": "FMCG / Food",
+    "scf_program": { "platform": "Reverse factoring multi-bank", "since": 2012, "verified_source": "Industry reports" },
+    "supplier_concentration_zones": ["CH", "FR", "DE", "IT", "PL", "RO", "TR"],
+    "annual_purchases_eur_bn": 95,
+    "tier1_supplier_count": 165000,
+    "notes": "Multi-bank approach. Fournisseurs balkans + caucase peu adressés."
+  },
+  {
+    "id": "michelin",
+    "name": "Michelin",
+    "country_hq": "FR",
+    "sector": "Industrial / Tires",
+    "scf_program": { "platform": "Bilateral with BNP Paribas, Société Générale", "since": 2016, "verified_source": "Industry data" },
+    "supplier_concentration_zones": ["FR", "ES", "PL", "RO", "RS", "TH"],
+    "annual_purchases_eur_bn": 14,
+    "tier1_supplier_count": 5000,
+    "notes": "Usine Serbie (Pirot) = lien vers banques serbes."
+  },
+  {
+    "id": "ikea",
+    "name": "IKEA / Inter IKEA",
+    "country_hq": "NL",
+    "sector": "Retail / Furniture",
+    "scf_program": { "platform": "Internal supplier finance program", "since": 2015, "verified_source": "IKEA sustainability reports" },
+    "supplier_concentration_zones": ["PL", "RO", "LV", "LT", "RS", "BG", "HR"],
+    "annual_purchases_eur_bn": 30,
+    "tier1_supplier_count": 1300,
+    "notes": "Hyper-concentration CEE (forêts → meubles). Fournisseurs PL, RO, LV, LT, RS = banques locales pivots SCF."
+  }
+]

@@ -1,0 +1,291 @@
+{
+  "_meta": {
+    "description": "Competitive intelligence on SCF/WC platform vendors — sourced from direct website visits (May 2026). Distinguishes white-label-to-banks from direct-to-corporate SaaS, which is the critical axis for CredAble positioning.",
+    "research_method": "Direct website scraping of vendor product pages (May 2026) + historical press records. NOT training-data inference.",
+    "last_updated": "2026-05-10",
+    "key_axis": "WHITE-LABEL (bank resells vendor platform under own brand) vs DIRECT-SaaS (vendor sells direct to corporates, banks are funders only)"
+  },
+
+  "white_label_competitors": {
+    "_note": "These directly compete with CredAble's core model: they sell technology infrastructure TO BANKS who then deploy to corporates under their own brand.",
+    "platforms": [
+      {
+        "id": "fis-demica",
+        "name": "FIS Supply Chain Finance Suite (formerly Demica)",
+        "url": "https://www.fisglobal.com/products/supply-chain-finance",
+        "status": "active",
+        "acquisition_history": "Demica acquired by FIS Global (acquired ~2022); legacy Demica Finance Limited FCA-authorized entity maintained (FRN 728209)",
+        "white_label_confirmed": true,
+        "white_label_verbatim": "Enables financial institutions to 'act as a single source for comprehensive supply chain finance solutions by streamlining operations.' Banks deliver complete SCF products while leveraging third-party technology providers.",
+        "products": [
+          "Receivables Finance (cloud-native)",
+          "Trade Receivables Securitization",
+          "Supply Chain Finance (buyer-led)",
+          "Global network of 250+ funders"
+        ],
+        "delivery_model": "Cloud-native SaaS, bank-facing API",
+        "target_customers": "Banks and financial institutions (primary), Corporate CFOs (secondary via bank)",
+        "geographic_focus": "Global",
+        "credable_threat_level": "HIGH",
+        "credable_notes": "Most direct competitor. Same model: white-label SCF platform to banks. FIS distribution advantage (installed in many bank cores). CredAble differentiator: faster deployment, TCI integration, Finastra synergy."
+      },
+      {
+        "id": "kyriba",
+        "name": "Kyriba",
+        "url": "https://www.kyriba.com",
+        "status": "active",
+        "white_label_confirmed": true,
+        "white_label_verbatim": "Website lists 'Banks' under 'By Business' with explicit link to white-label solution page. Confirmed SaaS architecture.",
+        "products": [
+          "Treasury Management",
+          "Working Capital (Supplier & receivables financing)",
+          "Payments",
+          "FX / Risk Management",
+          "White-label for Banks (specific product page confirmed)"
+        ],
+        "delivery_model": "100% SaaS, API-first, cloud",
+        "target_customers": "Enterprise corporates + Banks (via white-label)",
+        "geographic_focus": "Global",
+        "credable_threat_level": "MEDIUM-HIGH",
+        "credable_notes": "Primarily treasury / TMS focused; SCF is a secondary product. White-label confirmed but core strength is treasury, not SCF depth. CredAble advantage: deeper SCF/TF product breadth, TCI integration."
+      },
+      {
+        "id": "trade-ledger",
+        "name": "Trade Ledger",
+        "url": "https://tradeledger.io",
+        "status": "active",
+        "white_label_confirmed": true,
+        "white_label_verbatim": "Banks implement Trade Ledger as end-to-end digital business credit management platform. Named bank clients: Barclays, HSBC.",
+        "products": [
+          "Working Capital Lending (99% of products supported)",
+          "Receivables Finance",
+          "Multi-product credit facilities",
+          "AI-powered origination and management"
+        ],
+        "delivery_model": "Composable SaaS, API + event-based architecture, AWS/Azure",
+        "target_customers": "Banks (primary) — sold to FIs who deploy to business borrowers",
+        "geographic_focus": "UK-focused, expanding",
+        "credable_threat_level": "MEDIUM",
+        "credable_notes": "Strong in lending origination (LOS) — overlaps CredAble's LOS product. Weaker on structured trade, TCI integration, Flash Title. CredAble advantage: broader SCF product suite, TCI integration."
+      }
+    ]
+  },
+
+  "direct_to_corporate_saas": {
+    "_note": "These sell DIRECTLY to corporates (buyers/anchors). Banks participate as funders/liquidity providers only, with NO white-label branding. Different competitive dynamic: CredAble must position vs these at the bank level (bank's own program vs bank-backed fintech program).",
+    "platforms": [
+      {
+        "id": "taulia-sap",
+        "name": "Taulia (SAP)",
+        "url": "https://taulia.com",
+        "status": "active",
+        "parent": "SAP (acquired March 2022)",
+        "white_label_confirmed": false,
+        "white_label_verbatim": "Website presents Taulia as direct service provider. No white-label offering to banks described. Banks participate as funding providers to Taulia-branded programs only.",
+        "products": [
+          "Supply Chain Finance (buyer-led, Taulia-branded)",
+          "Dynamic Discounting",
+          "Virtual Cards",
+          "Receivables Finance for SMEs",
+          "Inventory Management",
+          "Sustainable Supplier Finance (ESG-linked)"
+        ],
+        "delivery_model": "Cloud SaaS, SAP-integrated (SAP ERP / S4/HANA native)",
+        "target_customers": "Large corporates and enterprises (Airbus, T-Mobile, REWE, Saudi Aramco cited)",
+        "bank_role": "Funding providers only — banks provide liquidity but Taulia is the branded platform",
+        "geographic_focus": "Global",
+        "credable_threat_level": "HIGH (at corporate anchor level)",
+        "credable_notes": "Not a white-label threat to CredAble's bank business. Taulia competes at the ANCHOR level — if a bank's corporate client already uses Taulia, the bank loses the program to Taulia's branded platform. CredAble pitch: bank keeps program ownership, relationship, and revenue vs delegating to Taulia.",
+        "post_greensill_context": "Post-SAP acquisition (2022), Taulia expanded aggressively into corporate SCF — but as DIRECT provider, NOT as bank white-label. Banks using Taulia lose program control."
+      },
+      {
+        "id": "c2fo",
+        "name": "C2FO",
+        "url": "https://c2fo.com",
+        "status": "active",
+        "white_label_confirmed": false,
+        "white_label_verbatim": "Platform presented as marketplace. No bank white-label described.",
+        "products": [
+          "C2FO Early Pay (early payment on approved invoices)",
+          "Dynamic Discounting",
+          "Dynamic Supply Chain Finance",
+          "C2FO FinanceIQ (AR analytics)",
+          "Lending Connections (third-party lenders)"
+        ],
+        "delivery_model": "Marketplace SaaS, 17+ year network intelligence",
+        "target_customers": "Large enterprises and their supplier networks",
+        "bank_role": "Third-party lenders via 'Lending Connections' — not platform partners",
+        "geographic_focus": "Global",
+        "credable_threat_level": "LOW-MEDIUM",
+        "credable_notes": "Marketplace model. Banks are peripheral. CredAble's bank-owned program model is structurally different."
+      },
+      {
+        "id": "primerevenue",
+        "name": "PrimeRevenue",
+        "url": "https://primerevenue.com",
+        "status": "active",
+        "white_label_confirmed": false,
+        "white_label_verbatim": "No white-label bank program described. Mentions 'Funding Network' but structure unclear.",
+        "products": [
+          "Supply Chain Finance",
+          "Payments-as-a-Service",
+          "Dynamic Discounting",
+          "Receivables Finance",
+          "Supply Chain Analytics"
+        ],
+        "delivery_model": "Centralized SaaS platform (Supply Chain Financial Portal)",
+        "target_customers": "30,000+ clients in 90+ countries — buyer + supplier sides",
+        "bank_role": "Funding network participants",
+        "geographic_focus": "Global",
+        "credable_threat_level": "LOW-MEDIUM",
+        "credable_notes": "SCF-focused but operates as neutral marketplace. Banks are funders. CredAble pitch: bank owns the program vs feeding PrimeRevenue's network."
+      },
+      {
+        "id": "orbian",
+        "name": "Orbian",
+        "url": "https://www.orbian.com",
+        "status": "active",
+        "white_label_confirmed": false,
+        "white_label_verbatim": "Uses 'proprietary Bank Pool funding structure' — banks fund Orbian programs but Orbian is branded. No white-label model to banks.",
+        "products": [
+          "Supply Chain Finance (buyers pay Orbian back; Orbian pays suppliers early)",
+          "Payment with Terms (buyers get extended terms; suppliers paid on due date)"
+        ],
+        "delivery_model": "Platform + trustee-protected bank-pool structure",
+        "target_customers": "Global 500 companies",
+        "bank_role": "Bank Pool funders — competitive, anonymous funding via trustee",
+        "geographic_focus": "Global (large corporates)",
+        "credable_threat_level": "LOW",
+        "credable_notes": "Focused exclusively on largest global corporates (Fortune 500). Not competing in mid-market bank-white-label space."
+      }
+    ]
+  },
+
+  "bank_consortia_and_infra": {
+    "_note": "These provide infrastructure TO banks — documentary trade, network connectivity, KYC. Not SCF white-label per se but relevant for CredAble's documentary trade products.",
+    "platforms": [
+      {
+        "id": "komgo",
+        "name": "komgo",
+        "url": "https://komgo.io",
+        "status": "active_2026",
+        "white_label_confirmed": false,
+        "products": [
+          "Konsole (trade finance operations)",
+          "Digital Instrument Certificate (guarantees digitization)",
+          "Market (deal platform)",
+          "Check (KYC/CDD)",
+          "Trakk (document trail)",
+          "Global Trade Konnect/GTK (corporate-facing)"
+        ],
+        "delivery_model": "API-driven, ICC-Swift API Standards",
+        "notable_2025": "MUFG, ING Deutschland, Standard Chartered integrations 2025; acquired GlobalTrade Corporation",
+        "target_customers": "Banks, corporates, insurers",
+        "credable_threat_level": "LOW (different product focus)",
+        "credable_notes": "Focused on trade documentation and KYC, not SCF/working-capital white-label. Complementary rather than competitive."
+      },
+      {
+        "id": "surecomp-rivo",
+        "name": "Surecomp (RIVO)",
+        "url": "https://www.surecomp.com",
+        "status": "active",
+        "white_label_confirmed": false,
+        "products": [
+          "RIVO (cloud-based collaborative trade finance platform)",
+          "Back-office trade finance processing",
+          "Supply chain finance processing",
+          "Trade Finance-as-a-Service",
+          "Corporate Trade Finance Management",
+          "Duplicate invoice fraud prevention"
+        ],
+        "delivery_model": "Cloud SaaS or on-premise, AWS, ISO 27001, SOC 2, SWIFT certified",
+        "target_customers": "Banks, corporates, fintechs",
+        "credable_threat_level": "LOW-MEDIUM",
+        "credable_notes": "Trade finance ops platform. Overlaps on documentary trade but not SCF/WC white-label at same scope."
+      },
+      {
+        "id": "tradeshift-semfi",
+        "name": "Tradeshift / Semfi by HSBC",
+        "url": "https://tradeshift.com",
+        "status": "active",
+        "white_label_confirmed": false,
+        "white_label_verbatim": "Tradeshift established JV with HSBC ('Semfi by HSBC') — HSBC-specific, not a general bank white-label offering.",
+        "products": [
+          "AP Automation Platform",
+          "E-Invoicing Compliance (70 countries)",
+          "Procure-to-Pay",
+          "Virtual Credit Cards",
+          "B2B Marketplace",
+          "B2B EDI Integration (Babelway)"
+        ],
+        "delivery_model": "Enterprise SaaS, e-invoicing + AP automation focus",
+        "target_customers": "Large enterprises (Air France, Schaeffler, Société Générale, DHL cited)",
+        "notable": "HSBC majority stake JV 'Semfi by HSBC' announced Feb 2024",
+        "credable_threat_level": "LOW (different product angle)",
+        "credable_notes": "Primarily AP/e-invoicing automation. SCF via embedded HSBC funding. Not a general white-label bank platform. HSBC is effectively removed from prospect pool via this JV."
+      }
+    ]
+  },
+
+  "defunct_historical": {
+    "_note": "Collapsed or pivoted platforms. Historical context for the Replacement Gap pitch argument.",
+    "platforms": [
+      {
+        "id": "greensill",
+        "name": "Greensill Capital",
+        "status": "BANKRUPT",
+        "date": "2021-03-08",
+        "notes": "Supply chain finance lender, balance-sheet model with insurance backing. Collapsed when Tokio Marine withdrew insurance cover. USD 10bn Credit Suisse SCF funds frozen. 3-4 year gap in market.",
+        "credable_implication": "THE primary pitch argument — the Replacement Gap. Banks that lost SCF programs waited 3-4 years for market to consolidate."
+      },
+      {
+        "id": "we-trade",
+        "name": "we.trade",
+        "status": "SHUTDOWN",
+        "date": "2022-06-01",
+        "founding_banks": ["Deutsche Bank", "HSBC", "KBC", "Nordea", "Rabobank", "Santander", "Société Générale", "UBS", "UniCredit"],
+        "notes": "Blockchain-based open account trade platform. Failed to achieve corporate adoption. 12 founding banks lost JV investment.",
+        "credable_implication": "Banks now skeptical of blockchain/consortium SCF — more receptive to proven white-label alternatives. KBC still seeking replacement."
+      },
+      {
+        "id": "marco-polo",
+        "name": "Marco Polo Network",
+        "status": "BANKRUPT",
+        "date": "2022-03-15",
+        "notes": "Blockchain trade finance network. Filed for insolvency after burning through VC funding.",
+        "credable_implication": "Commerzbank and others orphaned for documentary trade tech."
+      },
+      {
+        "id": "fundthrough",
+        "name": "FundThrough",
+        "status": "PIVOTED",
+        "date": "2023-09-01",
+        "notes": "Pivoted from B2B bank partnerships to direct invoice factoring for SMEs. Reduced white-label competition.",
+        "credable_implication": "Smaller pool of bank white-label competitors post-pivot."
+      }
+    ]
+  },
+
+  "jpmorgan_clarification": {
+    "name": "JPMorgan Chase",
+    "status": "NOT currently in SCF white-label or SCF-as-a-service business",
+    "source": "User correction (David Perron, May 2026): 'JPMorgan n'est plus dans ce business'",
+    "historical_context": "JPMorgan had participated in some post-Greensill corporate SCF programs 2024-2025 as a direct bank funder (not white-label provider). They serve their own corporate clients with bespoke treasury/working capital solutions but are NOT a platform vendor or white-label SCF provider.",
+    "action_taken": "Removed 'jpmorgan scf' from MAJOR_COMPETITOR_PLATFORMS in extraction_schema.js. Corrected fintech_failures.json Greensill entry.",
+    "current_scf_products": "JPMorgan offers SCF to their own corporate banking clients as part of their wholesale banking suite — but this is proprietary bank lending, not a white-label technology platform."
+  },
+
+  "competitive_map_summary": {
+    "direct_white_label_threat": ["FIS/Demica", "Kyriba (working capital module)", "Trade Ledger"],
+    "corporate_platform_competitors": ["Taulia (SAP)", "C2FO", "PrimeRevenue", "Orbian"],
+    "infrastructure_documentary": ["komgo", "Surecomp/RIVO"],
+    "bank_captive_jv": ["Semfi by HSBC (Tradeshift JV)"],
+    "credable_differentiation": {
+      "vs_fis_demica": "CredAble: faster deployment (3-6 months vs longer), TCI integration native, Finastra pre-integration, Flash Title/TradeCo Hub model",
+      "vs_kyriba": "CredAble: deeper SCF product breadth, not treasury-centric, stronger in emerging markets",
+      "vs_taulia": "CredAble: bank OWNS the program (vs Taulia takes program ownership). Bank keeps P&L, relationship, data.",
+      "vs_primerevenue_c2fo": "CredAble: bank-branded, bank-controlled, not a neutral marketplace",
+      "vs_trade_ledger": "CredAble: broader product suite (SCF + receivables + TCI + Flash Title), not lending-only"
+    }
+  }
+}

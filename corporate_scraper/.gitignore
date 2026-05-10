@@ -1,0 +1,5 @@
+# PDFs are large (5-25 MB each, ~10 GB total) — re-downloadable via `make bootstrap`
+pdfs/*.pdf
+
+# Keep .gitkeep if present
+!pdfs/.gitkeep
