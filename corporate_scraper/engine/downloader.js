@@ -26,7 +26,8 @@ const ROOT = path.join(__dirname, '..');
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8'));
 const PDF_DIR = path.join(ROOT, 'pdfs');
 const TXT_DIR = path.join(ROOT, 'text');
-const CHROME = '/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome';
+// Auto-detect Chrome: use PUPPETEER_EXECUTABLE_PATH env var, or let Puppeteer find it
+const CHROME = process.env.PUPPETEER_EXECUTABLE_PATH || null;
 
 const PDF_LINK_HINTS = /annual.?report|registration document|integrated report|financial report|geschaftsbericht|geschäftsbericht|rapport annuel|rapport.financ|relazione|informe.anual/i;
 
@@ -261,11 +262,12 @@ async function main() {
   fs.mkdirSync(PDF_DIR, { recursive: true });
   fs.mkdirSync(TXT_DIR, { recursive: true });
 
-  const browser = await puppeteer.launch({
+  const launchOpts = {
     headless: true,
-    executablePath: CHROME,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--ignore-certificate-errors', '--disable-gpu'],
-  });
+  };
+  if (CHROME) launchOpts.executablePath = CHROME;
+  const browser = await puppeteer.launch(launchOpts);
 
   const results = [];
   for (const corp of list) {

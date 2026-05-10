@@ -22,7 +22,8 @@ const puppeteer = require('puppeteer');
 
 const ROOT = path.join(__dirname, '..');
 const CATALOG_PATH = path.join(ROOT, 'catalog.json');
-const CHROME = '/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome';
+// Auto-detect Chrome: use PUPPETEER_EXECUTABLE_PATH env var, or let Puppeteer find it
+const CHROME = process.env.PUPPETEER_EXECUTABLE_PATH || null;
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -133,11 +134,12 @@ async function main() {
 
   console.log(`[discover] Processing ${list.length} corporates lacking direct_pdf_url...`);
 
-  const browser = await puppeteer.launch({
+  const launchOpts = {
     headless: true,
-    executablePath: CHROME,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--ignore-certificate-errors'],
-  });
+  };
+  if (CHROME) launchOpts.executablePath = CHROME;
+  const browser = await puppeteer.launch(launchOpts);
 
   let found = 0;
   for (const corp of list) {
