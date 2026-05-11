@@ -266,7 +266,9 @@ async function main() {
 
     try {
       const userPrompt = USER_PROMPT_TEMPLATE(corp.name, corp.country, corp.sector, chunk);
-      const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt);
+      const t0 = Date.now();
+      const ticker = setInterval(() => process.stdout.write(`[${Math.round((Date.now()-t0)/1000)}s]`), 15000);
+      const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));
       const parsed = parseExtraction(content, corp);
       if (!parsed) { console.log('FAIL parse'); failed++; continue; }
 
