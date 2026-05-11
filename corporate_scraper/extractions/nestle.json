@@ -1,0 +1,34 @@
+{
+  "corporate_id": "nestle",
+  "corporate_name": "Nestlé S.A.",
+  "country": "CH",
+  "sector": "FMCG",
+  "revenue_eur_bn": 91,
+  "extracted_at": "2026-05-11",
+  "payables_programs": {},
+  "receivables_programs": {},
+  "asset_distribution": {},
+  "documentary_trade": {},
+  "title_inventory_arrangements": {},
+  "working_capital_facilities": {},
+  "lending_origination": {},
+  "embedded_finance": {},
+  "risk_analytics_signals": {},
+  "tech_signals": {
+    "erp_systems_mentioned": []
+  },
+  "platform_provider_mentioned": {
+    "found": false,
+    "name": null,
+    "verbatim": null,
+    "is_major_competitor": false
+  },
+  "trade_credit_insurance_providers": [],
+  "banks_in_working_capital_context": [],
+  "geographic_footprint": {
+    "supplier_countries_mentioned": [],
+    "manufacturing_countries_mentioned": []
+  },
+  "total_volumes": {},
+  "key_quotes_for_review": []
+}
