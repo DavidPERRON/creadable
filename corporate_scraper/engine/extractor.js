@@ -149,6 +149,14 @@ async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
   });
 
   return new Promise((resolve, reject) => {
+    let settled = false;
+    const done = (fn, val) => { if (!settled) { settled = true; clearTimeout(timer); fn(val); } };
+
+    const timer = setTimeout(() => {
+      req.destroy();
+      done(reject, new Error(`timeout after ${timeoutMs}ms`));
+    }, timeoutMs);
+
     const req = https.request(API_URL, {
       method: 'POST',
       headers: {
@@ -156,22 +164,19 @@ async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
         'Authorization': `Bearer ${API_KEY}`,
         'Content-Length': Buffer.byteLength(payload),
       },
-      timeout: timeoutMs,
     }, (res) => {
       let data = '';
       res.on('data', d => data += d);
+      res.on('error', e => done(reject, e));
       res.on('end', () => {
-        if (res.statusCode !== 200) return reject(new Error(`API ${res.statusCode}: ${data.slice(0, 300)}`));
+        if (res.statusCode !== 200) return done(reject, new Error(`API ${res.statusCode}: ${data.slice(0, 300)}`));
         try {
           const json = JSON.parse(data);
-          const content = json.choices?.[0]?.message?.content;
-          const usage = json.usage || {};
-          resolve({ content, usage });
-        } catch (e) { reject(e); }
+          done(resolve, { content: json.choices?.[0]?.message?.content, usage: json.usage || {} });
+        } catch (e) { done(reject, e); }
       });
     });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    req.on('error', e => done(reject, e));
     req.write(payload);
     req.end();
   });

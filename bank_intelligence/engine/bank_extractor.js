@@ -188,6 +188,14 @@ async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
   });
 
   return new Promise((resolve, reject) => {
+    let settled = false;
+    const done = (fn, val) => { if (!settled) { settled = true; clearTimeout(timer); fn(val); } };
+
+    const timer = setTimeout(() => {
+      req.destroy();
+      done(reject, new Error(`timeout after ${timeoutMs}ms`));
+    }, timeoutMs);
+
     const req = https.request(API_URL, {
       method: 'POST',
       headers: {
@@ -195,36 +203,38 @@ async function callDeepInfra(systemPrompt, userPrompt, timeoutMs = 150000) {
         'Authorization': `Bearer ${API_KEY}`,
         'Content-Length': Buffer.byteLength(payload),
       },
-      timeout: timeoutMs,
     }, (res) => {
       let data = '';
       res.on('data', d => data += d);
+      res.on('error', e => done(reject, e));
       res.on('end', () => {
-        if (res.statusCode !== 200) return reject(new Error(`API ${res.statusCode}: ${data.slice(0, 300)}`));
+        if (res.statusCode !== 200) return done(reject, new Error(`API ${res.statusCode}: ${data.slice(0, 300)}`));
         try {
           const json = JSON.parse(data);
-          resolve({ content: json.choices?.[0]?.message?.content, usage: json.usage || {} });
-        } catch (e) { reject(e); }
+          done(resolve, { content: json.choices?.[0]?.message?.content, usage: json.usage || {} });
+        } catch (e) { done(reject, e); }
       });
     });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+    req.on('error', e => done(reject, e));
     req.write(payload);
     req.end();
   });
 }
 
 function findBankTextFile(bankId, bankName) {
-  // Look in scraper/pdfs/ for <Name>_annual_report.txt or similar
-  if (fs.existsSync(SCRAPER_PDF_DIR)) {
-    const files = fs.readdirSync(SCRAPER_PDF_DIR).filter(f => f.endsWith('.txt'));
-    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const target = norm(bankName);
-    for (const f of files) {
-      if (norm(f).includes(target.slice(0, 6))) {
-        return path.join(SCRAPER_PDF_DIR, f);
-      }
-    }
+  if (!fs.existsSync(SCRAPER_PDF_DIR)) return null;
+  const files = fs.readdirSync(SCRAPER_PDF_DIR).filter(f => f.endsWith('.txt'));
+
+  // Exact match by bank_id prefix (most reliable — files are named {bank_id}_annual_report.txt)
+  for (const f of files) {
+    if (f.startsWith(bankId + '_')) return path.join(SCRAPER_PDF_DIR, f);
+  }
+
+  // Fuzzy fallback by bank name (first 6 normalised chars)
+  const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const target = norm(bankName);
+  for (const f of files) {
+    if (norm(f).includes(target.slice(0, 6))) return path.join(SCRAPER_PDF_DIR, f);
   }
   return null;
 }
