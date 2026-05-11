@@ -110,20 +110,25 @@ function normName(name) {
 //          manual processes, SCF without platform)
 // ─────────────────────────────────────────────────────────────────
 function scoreCapabilityGap(bank, ext, ts) {
-  if (!ext) {
-    // Fallback to techstack-based proxy
-    if (!ts) return 0;
-    if (ts.tf_scf_platform === null) return 6;     // pas de plateforme = gap clair
-    if (ts.tf_scf_platform?.toLowerCase().includes('orphan')) return 9; // orphan
-    return 3;
-  }
-  const cap = ext.capability_gap_signals || {};
   let score = 0;
-  if (cap.scf_mentioned_without_platform?.found) score += 4;
-  if (cap.factoring_volume_growth_pct?.value > 20) score += 3;
-  if (cap.factoring_volume_growth_pct?.value > 35) score += 2; // additional bonus
-  if (cap.manual_paper_processes_mentioned?.found) score += 2;
-  if (cap.vague_scf_vocabulary?.found) score += 1;
+
+  // Techstack base — always applied regardless of extraction
+  if (ts) {
+    const plat = (ts.tf_scf_platform || '').toLowerCase();
+    if (plat.includes('orphan'))  score += 5; // lost platform = explicit gap
+    else if (!ts.tf_scf_platform) score += 3; // no platform at all
+  }
+
+  // Extraction signals — additive on top of techstack
+  if (ext) {
+    const cap = ext.capability_gap_signals || {};
+    if (cap.scf_mentioned_without_platform?.found)    score += 4;
+    if ((cap.factoring_volume_growth_pct?.value || 0) > 20) score += 2;
+    if ((cap.factoring_volume_growth_pct?.value || 0) > 35) score += 1;
+    if (cap.manual_paper_processes_mentioned?.found)  score += 2;
+    if (cap.vague_scf_vocabulary?.found)              score += 1;
+  }
+
   return Math.min(10, score);
 }
 
@@ -134,34 +139,41 @@ function scoreCapabilityGap(bank, ext, ts) {
 // ─────────────────────────────────────────────────────────────────
 function scoreStrategicIntent(bank, ext, v4, jobs) {
   let score = 0;
+
+  // Extraction signals from annual report
   if (ext) {
     const s = ext.strategic_intent_signals || {};
-    if (s.ceo_statement_on_transaction_banking?.found) score += 3;
-    if (s.digital_transformation_priority?.found) score += 2;
-    if (s.investor_day_scf_mention?.found) score += 2;
-    if (s.new_tf_scf_executive_hired?.found) score += 3;
-    // News signals from bank_news.js
+    if (s.ceo_statement_on_transaction_banking?.found)  score += 3;
+    if (s.digital_transformation_priority?.found)       score += 2;
+    if (s.investor_day_scf_mention?.found)              score += 2;
+    if (s.new_tf_scf_executive_hired?.found)            score += 3;
+    if (s.roadmap_includes_api_or_platform?.found)      score += 1;
+    // News signals (always additive — independent source)
     const ns = ext.news_signals || {};
-    if (ns.ceo_or_exec_change?.found) score += 1;
+    if (ns.ceo_or_exec_change?.found)         score += 1;
     if (ns.platform_or_tech_announced?.found) score += 2;
-    if (ns.digital_initiative_public?.found) score += 1;
-    if (ns.fintech_partnership?.found) score += 2;
+    if (ns.digital_initiative_public?.found)  score += 1;
+    if (ns.fintech_partnership?.found)        score += 2;
+    if (ns.merger_or_acquisition?.found)      score += 1;
   }
-  // V4 triggers fallback
+
+  // V4 triggers — always applied (independent of extraction)
   if (v4?.triggers) {
     const recent = v4.triggers.filter(t => {
       const days = (TODAY - new Date(t.date)) / 86400000;
       return days < 540 && days >= 0;
     });
-    if (recent.some(t => t.type === 'RECRUITMENT')) score += 2;
+    if (recent.some(t => t.type === 'RECRUITMENT'))   score += 2;
     if (recent.some(t => t.type === 'CEO_STATEMENT')) score += 2;
   }
-  // Job postings signal (Tier 2) — active hiring = revealed intent
+
+  // Job postings (Tier 2) — always applied
   if (jobs) {
     if (jobs.hiring_intent === 'VERY_HIGH') score += 3;
     else if (jobs.hiring_intent === 'HIGH') score += 2;
     else if (jobs.hiring_intent === 'MEDIUM') score += 1;
   }
+
   return Math.min(10, score);
 }
 
