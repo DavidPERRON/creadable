@@ -13,6 +13,9 @@ report: bis
 news:
 	node engine/bank_news.js
 
+jobs:
+	node engine/bank_jobs.js
+
 extract:
 	@if [ -z "$$DEEPINFRA_API_KEY" ]; then echo "ERROR: set DEEPINFRA_API_KEY"; exit 1; fi
 	node engine/bank_extractor.js

@@ -302,7 +302,7 @@ async function processOne(bank, opts, counters) {
   const chunk = extractRelevantChunks(fullText);
   if (!chunk) { console.log(`  ${label} no_relevant_content`); counters.skipped++; return; }
 
-  // Load news snippets if available
+  // Load news full text if available
   let newsSnippets = null;
   const newsPath = path.join(NEWS_DIR, `${bank.bank_id}.json`);
   if (fs.existsSync(newsPath)) {
@@ -310,8 +310,13 @@ async function processOne(bank, opts, counters) {
       const newsData = JSON.parse(fs.readFileSync(newsPath, 'utf8'));
       if (newsData.articles?.length > 0) {
         newsSnippets = newsData.articles
-          .map(a => `• ${a.title} — ${a.snippet}`.slice(0, 200))
-          .join('\n');
+          .filter(a => a.title)
+          .map(a => {
+            const body = a.full_text || a.snippet || '';
+            return `### ${a.title}\n${body.slice(0, 1500)}`;
+          })
+          .join('\n\n---\n\n')
+          .slice(0, 8000); // cap total news at 8k chars across all articles
       }
     } catch (e) {}
   }

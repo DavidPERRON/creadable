@@ -42,6 +42,7 @@ const PATHS = {
   failures:         path.join(ROOT, 'data', 'fintech_failures.json'),
   bank_extractions: path.join(ROOT, 'extractions'),
   corp_evidence:    path.join(REPO, 'corporate_scraper', 'reports', 'bank_evidence.json'),
+  jobs_dir:         path.join(ROOT, 'jobs'),
   out_scores:       path.join(ROOT, 'reports', 'bis_scores.json'),
 };
 
@@ -79,7 +80,19 @@ function loadAll() {
       extractions[ext.bank_id] = ext;
     });
   }
-  return { v4, techstack, failures, extractions, corp };
+
+  // Job postings (Tier 2 signal)
+  const jobs = {};
+  if (fs.existsSync(PATHS.jobs_dir)) {
+    fs.readdirSync(PATHS.jobs_dir).filter(f => f.endsWith('.json')).forEach(f => {
+      try {
+        const j = JSON.parse(fs.readFileSync(path.join(PATHS.jobs_dir, f), 'utf8'));
+        if (j.bank_id) jobs[j.bank_id] = j;
+      } catch (e) {}
+    });
+  }
+
+  return { v4, techstack, failures, extractions, corp, jobs };
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -119,7 +132,7 @@ function scoreCapabilityGap(bank, ext, ts) {
 // Sources: bank_extractor (CEO statements, transformation, hiring)
 // + V4 triggers (RECRUITMENT, CEO_STATEMENT)
 // ─────────────────────────────────────────────────────────────────
-function scoreStrategicIntent(bank, ext, v4) {
+function scoreStrategicIntent(bank, ext, v4, jobs) {
   let score = 0;
   if (ext) {
     const s = ext.strategic_intent_signals || {};
@@ -127,6 +140,12 @@ function scoreStrategicIntent(bank, ext, v4) {
     if (s.digital_transformation_priority?.found) score += 2;
     if (s.investor_day_scf_mention?.found) score += 2;
     if (s.new_tf_scf_executive_hired?.found) score += 3;
+    // News signals from bank_news.js
+    const ns = ext.news_signals || {};
+    if (ns.ceo_or_exec_change?.found) score += 1;
+    if (ns.platform_or_tech_announced?.found) score += 2;
+    if (ns.digital_initiative_public?.found) score += 1;
+    if (ns.fintech_partnership?.found) score += 2;
   }
   // V4 triggers fallback
   if (v4?.triggers) {
@@ -136,6 +155,12 @@ function scoreStrategicIntent(bank, ext, v4) {
     });
     if (recent.some(t => t.type === 'RECRUITMENT')) score += 2;
     if (recent.some(t => t.type === 'CEO_STATEMENT')) score += 2;
+  }
+  // Job postings signal (Tier 2) — active hiring = revealed intent
+  if (jobs) {
+    if (jobs.hiring_intent === 'VERY_HIGH') score += 3;
+    else if (jobs.hiring_intent === 'HIGH') score += 2;
+    else if (jobs.hiring_intent === 'MEDIUM') score += 1;
   }
   return Math.min(10, score);
 }
@@ -271,10 +296,10 @@ function scoreStressSignals(ext) {
 // ─────────────────────────────────────────────────────────────────
 // Aggregate BIS
 // ─────────────────────────────────────────────────────────────────
-function calculateBis(bank, v4, ts, ext, failures, corpData, v4_all) {
+function calculateBis(bank, v4, ts, ext, failures, corpData, v4_all, jobs) {
   const sig = {
     capability_gap:     scoreCapabilityGap(bank, ext, ts),
-    strategic_intent:   scoreStrategicIntent(bank, ext, v4),
+    strategic_intent:   scoreStrategicIntent(bank, ext, v4, jobs),
     competitor_failure: scoreCompetitorFailure(bank, failures),
     peer_pressure:      scorePeerPressure(bank, v4_all),
     corporate_demand:   scoreCorporateDemand(bank, corpData),
@@ -352,8 +377,8 @@ function buildPitchArgument(sig, orphanEvent) {
 // Main
 // ─────────────────────────────────────────────────────────────────
 function main() {
-  const { v4, techstack, failures, extractions, corp } = loadAll();
-  console.log(`[bis] Loaded: V4=${v4.length} banks, techstack=${techstack.length}, failures=${failures.length}, extractions=${Object.keys(extractions).length}`);
+  const { v4, techstack, failures, extractions, corp, jobs } = loadAll();
+  console.log(`[bis] Loaded: V4=${v4.length} banks, techstack=${techstack.length}, failures=${failures.length}, extractions=${Object.keys(extractions).length}, jobs=${Object.keys(jobs).length}`);
 
   const v4Index = {};
   v4.forEach(b => { v4Index[b.id] = b; });
@@ -371,7 +396,8 @@ function main() {
     const bank = v4Bank || { id, name: ts?.name, country: ts?.country };
     if (!bank.name) return null;
 
-    const bis = calculateBis(bank, v4Bank, ts, ext, failures, corp, v4);
+    const jobData = jobs[id] || null;
+    const bis = calculateBis(bank, v4Bank, ts, ext, failures, corp, v4, jobData);
     return {
       bank_id: bank.id,
       bank_name: bank.name,
