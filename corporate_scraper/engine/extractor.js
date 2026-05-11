@@ -33,7 +33,7 @@ const TXT_DIR = path.join(ROOT, 'text');
 const OUT_DIR = path.join(ROOT, 'extractions');
 
 const API_URL = 'https://api.deepinfra.com/v1/openai/chat/completions';
-const MODEL = process.env.DEEPINFRA_MODEL || 'meta-llama/Llama-3.3-70B-Instruct';
+const MODEL = process.env.DEEPINFRA_MODEL || 'meta-llama/Meta-Llama-3.1-405B-Instruct';
 const API_KEY = process.env.DEEPINFRA_API_KEY;
 
 // ─────────────────────────────────────────────────────────────────
