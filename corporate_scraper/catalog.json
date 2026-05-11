@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "description": "European corporates with revenue >EUR 5bn — annual reports for SCF analysis",
+    "description": "European corporates — large + mid-cap, annual reports for SCF analysis",
     "scope": "EU + UK + CH + NO",
-    "criteria": "Revenue >= EUR 5bn (last filed FY)",
-    "last_updated": "2026-05-10",
+    "criteria": "Revenue >= EUR 1bn (mid-cap expansion May 2026)",
+    "last_updated": "2026-05-11",
     "_note": "URLs may break — auto-discovery fallback in downloader.js. Some corporates use 10-K/Universal Registration Document instead of Annual Report."
   },
   "corporates": [
@@ -1587,6 +1587,591 @@
       "ir_url": "https://www.richter.hu/en-US/investors/Financial-Reports",
       "direct_pdf_url": "https://www.gedeonrichter.com/-/media/sites/hq/documents/investors/financial-reports/annual-report/en/2024/annual-report-2024-nonofficial.pdf",
       "direct_pdf_source": "exa_search"
+    },
+    {
+      "id": "schaeffler",
+      "name": "Schaeffler AG",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.schaeffler.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "knorr-bremse",
+      "name": "Knorr-Bremse AG",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://ir.knorr-bremse.com",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "faurecia",
+      "name": "FORVIA Faurecia",
+      "country": "FR",
+      "sector": "Automotive",
+      "revenue_eur_bn": 24,
+      "ir_url": "https://www.forvia.com/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "valeo",
+      "name": "Valeo SE",
+      "country": "FR",
+      "sector": "Automotive",
+      "revenue_eur_bn": 22,
+      "ir_url": "https://www.valeo.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "brembo",
+      "name": "Brembo S.p.A.",
+      "country": "IT",
+      "sector": "Automotive",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.brembo.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "elringklinger",
+      "name": "ElringKlinger AG",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.elringklinger.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "plastic-omnium",
+      "name": "Plastic Omnium",
+      "country": "FR",
+      "sector": "Automotive",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.plasticomnium.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "hella",
+      "name": "HELLA GmbH (Forvia)",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.hella.com/hella-com/en/investors.html",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "mahle",
+      "name": "MAHLE GmbH",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 12,
+      "ir_url": "https://www.mahle.com/en/about-mahle/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "gkn-melrose",
+      "name": "Melrose Industries / GKN",
+      "country": "UK",
+      "sector": "Automotive",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.melroseplc.net/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "evonik",
+      "name": "Evonik Industries AG",
+      "country": "DE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 15,
+      "ir_url": "https://corporate.evonik.com/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "wacker-chemie",
+      "name": "Wacker Chemie AG",
+      "country": "DE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.wacker.com/cms/en-us/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "lanxess",
+      "name": "LANXESS AG",
+      "country": "DE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://investor.lanxess.com",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "arkema",
+      "name": "Arkema S.A.",
+      "country": "FR",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.arkema.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "clariant",
+      "name": "Clariant AG",
+      "country": "CH",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.clariant.com/en/Corporate/Investor-Relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "covestro",
+      "name": "Covestro AG",
+      "country": "DE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 14,
+      "ir_url": "https://investor.covestro.com",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "koninklijke-dsm",
+      "name": "Syensqo SA (Solvay spin-off)",
+      "country": "BE",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.syensqo.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "legrand",
+      "name": "Legrand SA",
+      "country": "FR",
+      "sector": "Industrial",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.legrandgroup.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "nexans",
+      "name": "Nexans SA",
+      "country": "FR",
+      "sector": "Industrial",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.nexans.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "rexel",
+      "name": "Rexel SA",
+      "country": "FR",
+      "sector": "Industrial",
+      "revenue_eur_bn": 19,
+      "ir_url": "https://www.rexel.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "krones",
+      "name": "Krones AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.krones.com/en/company/investor-relations.php",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "gea-group",
+      "name": "GEA Group AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.gea.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "wartsila",
+      "name": "Wärtsilä Corporation",
+      "country": "FI",
+      "sector": "Industrial",
+      "revenue_eur_bn": 6,
+      "ir_url": "https://www.wartsila.com/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "metso",
+      "name": "Metso Corporation",
+      "country": "FI",
+      "sector": "Industrial",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.metso.com/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "sulzer",
+      "name": "Sulzer AG",
+      "country": "CH",
+      "sector": "Industrial",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.sulzer.com/en/shared/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "rheinmetall",
+      "name": "Rheinmetall AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 9,
+      "ir_url": "https://www.rheinmetall.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "traton",
+      "name": "Traton Group SE",
+      "country": "DE",
+      "sector": "Automotive",
+      "revenue_eur_bn": 43,
+      "ir_url": "https://www.traton.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "man-energy",
+      "name": "MAN Energy Solutions",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.man-es.com/company/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "salzgitter",
+      "name": "Salzgitter AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.salzgitter-ag.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "kloeckner",
+      "name": "Klöckner & Co SE",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.kloeckner.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "aperam",
+      "name": "Aperam S.A.",
+      "country": "LU",
+      "sector": "Industrial",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://www.aperam.com/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "acerinox",
+      "name": "Acerinox S.A.",
+      "country": "ES",
+      "sector": "Industrial",
+      "revenue_eur_bn": 6,
+      "ir_url": "https://www.acerinox.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "outokumpu",
+      "name": "Outokumpu Oyj",
+      "country": "FI",
+      "sector": "Industrial",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://investors.outokumpu.com",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "aurubis",
+      "name": "Aurubis AG",
+      "country": "DE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 18,
+      "ir_url": "https://www.aurubis.com/en/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "wienerberger",
+      "name": "Wienerberger AG",
+      "country": "AT",
+      "sector": "Construction",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.wienerberger.com/en/investors.html",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "amag",
+      "name": "AMAG Austria Metall",
+      "country": "AT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.amag.at/investor-relations.html",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "ebro-foods",
+      "name": "Ebro Foods S.A.",
+      "country": "ES",
+      "sector": "FMCG",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.ebrofoods.es/en/inversores-y-accionistas/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "viscofan",
+      "name": "Viscofan S.A.",
+      "country": "ES",
+      "sector": "FMCG",
+      "revenue_eur_bn": 1,
+      "ir_url": "https://www.viscofan.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "bonduelle",
+      "name": "Bonduelle SCA",
+      "country": "FR",
+      "sector": "FMCG",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.bonduelle.com/en/group/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "savencia",
+      "name": "Savencia Fromage & Dairy",
+      "country": "FR",
+      "sector": "FMCG",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.savencia-fb.com/en/finance/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "oci-nl",
+      "name": "OCI Global N.V.",
+      "country": "NL",
+      "sector": "Chemicals",
+      "revenue_eur_bn": 6,
+      "ir_url": "https://www.oci.nl/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "kerry-group",
+      "name": "Kerry Group plc",
+      "country": "IE",
+      "sector": "FMCG",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.kerry.com/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "arla-foods",
+      "name": "Arla Foods amba",
+      "country": "DK",
+      "sector": "FMCG",
+      "revenue_eur_bn": 13,
+      "ir_url": "https://www.arla.com/company/investor-relations/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "nutreco",
+      "name": "Nutreco N.V. (SHV Holdings)",
+      "country": "NL",
+      "sector": "Agribusiness",
+      "revenue_eur_bn": 7,
+      "ir_url": "https://www.nutreco.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "strabag",
+      "name": "STRABAG SE",
+      "country": "AT",
+      "sector": "Construction",
+      "revenue_eur_bn": 16,
+      "ir_url": "https://www.strabag.com/databases/internet/_public/content.nsf/web/en-strabag-investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "webuild",
+      "name": "Webuild S.p.A.",
+      "country": "IT",
+      "sector": "Construction",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.webuildgroup.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "eiffage",
+      "name": "Eiffage SA",
+      "country": "FR",
+      "sector": "Construction",
+      "revenue_eur_bn": 20,
+      "ir_url": "https://www.eiffage.com/en/finance/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "vicat",
+      "name": "Vicat Group",
+      "country": "FR",
+      "sector": "Construction",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.vicat.com/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "cementir",
+      "name": "Cementir Holding",
+      "country": "IT",
+      "sector": "Construction",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.cementirholding.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "buzzi",
+      "name": "Buzzi S.p.A.",
+      "country": "IT",
+      "sector": "Construction",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.buzzi.com/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "smurfit-kappa",
+      "name": "Smurfit Westrock",
+      "country": "IE",
+      "sector": "Industrial",
+      "revenue_eur_bn": 11,
+      "ir_url": "https://www.smurfitkappa.com/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "mondi",
+      "name": "Mondi plc",
+      "country": "AT",
+      "sector": "Industrial",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.mondigroup.com/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "ds-smith",
+      "name": "DS Smith plc",
+      "country": "UK",
+      "sector": "Industrial",
+      "revenue_eur_bn": 8,
+      "ir_url": "https://www.dssmith.com/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "huhtamaki",
+      "name": "Huhtamäki Oyj",
+      "country": "FI",
+      "sector": "Industrial",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.huhtamaki.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "colruyt",
+      "name": "Colruyt Group",
+      "country": "BE",
+      "sector": "Retail",
+      "revenue_eur_bn": 10,
+      "ir_url": "https://www.colruytgroup.com/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "metro-ag",
+      "name": "Metro AG",
+      "country": "DE",
+      "sector": "Retail",
+      "revenue_eur_bn": 25,
+      "ir_url": "https://www.metroag.de/en/investor-relations",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "dino-pl",
+      "name": "Dino Polska S.A.",
+      "country": "PL",
+      "sector": "Retail",
+      "revenue_eur_bn": 5,
+      "ir_url": "https://relacjeinwestorskie.dino.pl/en/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "emperia",
+      "name": "Emperia Holding S.A.",
+      "country": "PL",
+      "sector": "Retail",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.emperia.pl/relacje-inwestorskie",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "ipsen",
+      "name": "Ipsen S.A.",
+      "country": "FR",
+      "sector": "Pharma",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.ipsen.com/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "recordati",
+      "name": "Recordati S.p.A.",
+      "country": "IT",
+      "sector": "Pharma",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.recordati.com/en/investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "almirall",
+      "name": "Almirall S.A.",
+      "country": "ES",
+      "sector": "Pharma",
+      "revenue_eur_bn": 1,
+      "ir_url": "https://www.almirall.com/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "menarini",
+      "name": "Menarini Group",
+      "country": "IT",
+      "sector": "Pharma",
+      "revenue_eur_bn": 4,
+      "ir_url": "https://www.menarini.com/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "enagas",
+      "name": "Enagas S.A.",
+      "country": "ES",
+      "sector": "Utilities",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.enagas.es/en/shareholders-and-investors/",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "terna",
+      "name": "Terna S.p.A.",
+      "country": "IT",
+      "sector": "Utilities",
+      "revenue_eur_bn": 3,
+      "ir_url": "https://www.terna.it/en/investors",
+      "direct_pdf_url": null
+    },
+    {
+      "id": "fluxys",
+      "name": "Fluxys Belgium",
+      "country": "BE",
+      "sector": "Utilities",
+      "revenue_eur_bn": 2,
+      "ir_url": "https://www.fluxys.com/en/about-fluxys/investors",
+      "direct_pdf_url": null
     }
   ]
 }
