@@ -19,7 +19,7 @@
  * Cost estimate:
  *   ~25k tokens per corporate (filtered chunks ~15k tokens + ~10k output)
  *   Llama-3.3-70B via DeepInfra: ~$0.0001/1k tokens input, ~$0.0002/1k output
- *   159 corporates × $0.005 ≈ $0.80 for the full run
+ *   224 corporates × $0.005 ≈ $1.12 for the full run
  */
 
 const fs = require('fs');
