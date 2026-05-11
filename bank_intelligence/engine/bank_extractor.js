@@ -269,6 +269,40 @@ function parseArgs() {
   return opts;
 }
 
+async function processOne(bank, opts, counters) {
+  const label = bank.name.padEnd(30);
+  const txtFile = findBankTextFile(bank.bank_id, bank.name);
+  const outPath = path.join(OUT_DIR, `${bank.bank_id}.json`);
+
+  if (fs.existsSync(outPath)) { console.log(`  ${label} CACHED`); counters.skipped++; return; }
+  if (!txtFile)                { console.log(`  ${label} no_text_available`); counters.skipped++; return; }
+
+  const fullText = fs.readFileSync(txtFile, 'utf8');
+  const chunk = extractRelevantChunks(fullText);
+  if (!chunk) { console.log(`  ${label} no_relevant_content`); counters.skipped++; return; }
+
+  console.log(`  ${label} ${chunk.length} chars → calling API…`);
+  if (opts.dryRun) { counters.skipped++; return; }
+
+  try {
+    const userPrompt = USER_PROMPT_TEMPLATE(bank.name, bank.country, chunk);
+    const t0 = Date.now();
+    const ticker = setInterval(() => console.log(`  ${label} [${Math.round((Date.now()-t0)/1000)}s]…`), 15000);
+    const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));
+    const parsed = parseExtraction(content, bank);
+    if (!parsed) { console.log(`  ${label} FAIL parse`); counters.failed++; return; }
+
+    fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
+    counters.tokIn  += usage.prompt_tokens || 0;
+    counters.tokOut += usage.completion_tokens || 0;
+    console.log(`  ${label} OK (${usage.prompt_tokens}/${usage.completion_tokens} tok, ${Math.round((Date.now()-t0)/1000)}s)`);
+    counters.processed++;
+  } catch (e) {
+    console.log(`  ${label} FAIL — ${e.message.slice(0, 80)}`);
+    counters.failed++;
+  }
+}
+
 async function main() {
   const opts = parseArgs();
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -277,54 +311,22 @@ async function main() {
   let banks = techstack.banks;
   if (opts.id) banks = banks.filter(b => b.bank_id === opts.id);
 
-  let processed = 0, skipped = 0, failed = 0, totalTokens = { in: 0, out: 0 };
+  const CONCURRENCY = opts.id ? 1 : 4;
+  console.log(`[bank_extractor] Processing ${banks.length} banks (concurrency=${CONCURRENCY})…`);
 
-  for (const bank of banks) {
-    const txtFile = findBankTextFile(bank.bank_id, bank.name);
-    const outPath = path.join(OUT_DIR, `${bank.bank_id}.json`);
-
-    if (fs.existsSync(outPath)) {
-      console.log(`  ${bank.name.padEnd(30)} CACHED`);
-      skipped++; continue;
+  const counters = { processed: 0, skipped: 0, failed: 0, tokIn: 0, tokOut: 0 };
+  let idx = 0;
+  async function worker() {
+    while (idx < banks.length) {
+      const bank = banks[idx++];
+      await processOne(bank, opts, counters);
     }
-    if (!txtFile) {
-      console.log(`  ${bank.name.padEnd(30)} no_text_available`);
-      skipped++; continue;
-    }
-
-    const fullText = fs.readFileSync(txtFile, 'utf8');
-    const chunk = extractRelevantChunks(fullText);
-    if (!chunk) {
-      console.log(`  ${bank.name.padEnd(30)} no_relevant_content`);
-      skipped++; continue;
-    }
-
-    process.stdout.write(`  ${bank.name.padEnd(30)} ${chunk.length} chars → `);
-    if (opts.dryRun) { console.log('(dry-run)'); continue; }
-
-    try {
-      const userPrompt = USER_PROMPT_TEMPLATE(bank.name, bank.country, chunk);
-      const t0 = Date.now();
-      const ticker = setInterval(() => process.stdout.write(`[${Math.round((Date.now()-t0)/1000)}s]`), 15000);
-      const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));
-      const parsed = parseExtraction(content, bank);
-      if (!parsed) { console.log('FAIL parse'); failed++; continue; }
-
-      fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
-      totalTokens.in += usage.prompt_tokens || 0;
-      totalTokens.out += usage.completion_tokens || 0;
-      console.log(`OK (${usage.prompt_tokens}/${usage.completion_tokens} tok)`);
-      processed++;
-    } catch (e) {
-      console.log(`FAIL — ${e.message.slice(0, 80)}`);
-      failed++;
-    }
-    await new Promise(r => setTimeout(r, 500));
   }
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
-  console.log(`\n[bank_extractor] processed=${processed} skipped=${skipped} failed=${failed}`);
-  console.log(`[bank_extractor] tokens in=${totalTokens.in} out=${totalTokens.out}`);
-  const cost = (totalTokens.in * 0.0001 + totalTokens.out * 0.0002) / 1000;
+  console.log(`\n[bank_extractor] processed=${counters.processed} skipped=${counters.skipped} failed=${counters.failed}`);
+  console.log(`[bank_extractor] tokens in=${counters.tokIn} out=${counters.tokOut}`);
+  const cost = (counters.tokIn * 0.0001 + counters.tokOut * 0.0002) / 1000;
   console.log(`[bank_extractor] estimated cost: $${cost.toFixed(4)}`);
 }
 

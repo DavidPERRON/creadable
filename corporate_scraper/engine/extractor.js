@@ -216,6 +216,50 @@ function parseArgs() {
   return opts;
 }
 
+async function processOne(corp, opts, counters) {
+  const year = new Date().getFullYear();
+  const txtPath = path.join(TXT_DIR, `${corp.id}_${year}.txt`);
+  const outPath = path.join(OUT_DIR, `${corp.id}.json`);
+  const label = corp.id.padEnd(28);
+
+  if (!fs.existsSync(txtPath)) { console.log(`  ${label} SKIP — no txt available`); counters.skipped++; return; }
+  if (fs.existsSync(outPath))  { console.log(`  ${label} CACHED`); counters.skipped++; return; }
+
+  const fullText = fs.readFileSync(txtPath, 'utf8');
+  const chunk = extractRelevantChunks(fullText);
+  if (!chunk) {
+    console.log(`  ${label} no_relevant_content`);
+    const empty = { corporate_id: corp.id, corporate_name: corp.name, country: corp.country,
+                    sector: corp.sector, revenue_eur_bn: corp.revenue_eur_bn,
+                    extracted_at: new Date().toISOString().slice(0,10), ...EMPTY_EXTRACTION };
+    fs.writeFileSync(outPath, JSON.stringify(empty, null, 2));
+    counters.processed++; return;
+  }
+
+  console.log(`  ${label} ${chunk.length} chars → calling API…`);
+  if (opts.dryRun) { counters.skipped++; return; }
+
+  try {
+    const userPrompt = USER_PROMPT_TEMPLATE(corp.name, corp.country, corp.sector, chunk);
+    const t0 = Date.now();
+    const ticker = setInterval(() => console.log(`  ${label} [${Math.round((Date.now()-t0)/1000)}s]…`), 15000);
+    const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));
+    const parsed = parseExtraction(content, corp);
+    if (!parsed) { console.log(`  ${label} FAIL parse`); counters.failed++; return; }
+
+    fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
+    counters.tokIn  += usage.prompt_tokens || 0;
+    counters.tokOut += usage.completion_tokens || 0;
+    const banksFound = parsed.banks_mentioned_in_scf_or_trade_finance_context?.length || 0;
+    const platformFound = parsed.platform_provider_mentioned?.found ? '+platform' : '';
+    console.log(`  ${label} OK (${usage.prompt_tokens}/${usage.completion_tokens} tok, ${Math.round((Date.now()-t0)/1000)}s, ${banksFound} banks${platformFound})`);
+    counters.processed++;
+  } catch (e) {
+    console.log(`  ${label} FAIL — ${e.message.slice(0, 80)}`);
+    counters.failed++;
+  }
+}
+
 async function main() {
   const opts = parseArgs();
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -224,73 +268,22 @@ async function main() {
   if (opts.id)    list = list.filter(c => c.id === opts.id);
   if (opts.limit) list = list.slice(0, opts.limit);
 
-  let processed = 0, skipped = 0, failed = 0, totalTokens = { in: 0, out: 0 };
+  const CONCURRENCY = opts.id ? 1 : 4;
+  console.log(`[extractor] Processing ${list.length} corporates (concurrency=${CONCURRENCY})…`);
 
-  for (const corp of list) {
-    const year = new Date().getFullYear();
-    const txtPath = path.join(TXT_DIR, `${corp.id}_${year}.txt`);
-    const outPath = path.join(OUT_DIR, `${corp.id}.json`);
-
-    if (!fs.existsSync(txtPath)) {
-      console.log(`  ${corp.id.padEnd(28)} SKIP — no txt available`);
-      skipped++;
-      continue;
+  const counters = { processed: 0, skipped: 0, failed: 0, tokIn: 0, tokOut: 0 };
+  let idx = 0;
+  async function worker() {
+    while (idx < list.length) {
+      const corp = list[idx++];
+      await processOne(corp, opts, counters);
     }
-
-    if (fs.existsSync(outPath)) {
-      console.log(`  ${corp.id.padEnd(28)} CACHED`);
-      skipped++;
-      continue;
-    }
-
-    const fullText = fs.readFileSync(txtPath, 'utf8');
-    const chunk = extractRelevantChunks(fullText);
-    if (!chunk) {
-      console.log(`  ${corp.id.padEnd(28)} no_relevant_content`);
-      // Persist empty extraction so we don't retry
-      const empty = { corporate_id: corp.id, corporate_name: corp.name, country: corp.country,
-                      sector: corp.sector, revenue_eur_bn: corp.revenue_eur_bn,
-                      extracted_at: new Date().toISOString().slice(0,10),
-                      ...EMPTY_EXTRACTION };
-      fs.writeFileSync(outPath, JSON.stringify(empty, null, 2));
-      processed++;
-      continue;
-    }
-
-    process.stdout.write(`  ${corp.id.padEnd(28)} ${chunk.length} chars → `);
-
-    if (opts.dryRun) {
-      console.log(`(dry-run, would call API)`);
-      continue;
-    }
-
-    try {
-      const userPrompt = USER_PROMPT_TEMPLATE(corp.name, corp.country, corp.sector, chunk);
-      const t0 = Date.now();
-      const ticker = setInterval(() => process.stdout.write(`[${Math.round((Date.now()-t0)/1000)}s]`), 15000);
-      const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));
-      const parsed = parseExtraction(content, corp);
-      if (!parsed) { console.log('FAIL parse'); failed++; continue; }
-
-      fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
-      totalTokens.in  += usage.prompt_tokens || 0;
-      totalTokens.out += usage.completion_tokens || 0;
-      const banksFound = parsed.banks_mentioned_in_scf_or_trade_finance_context?.length || 0;
-      const platformFound = parsed.platform_provider_mentioned?.found ? '+platform' : '';
-      console.log(`OK (${usage.prompt_tokens}/${usage.completion_tokens} tok, ${banksFound} banks${platformFound})`);
-      processed++;
-    } catch (e) {
-      console.log(`FAIL — ${e.message.slice(0, 80)}`);
-      failed++;
-    }
-
-    // Polite throttling
-    await new Promise(r => setTimeout(r, 500));
   }
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
-  console.log(`\n[extractor] processed=${processed} skipped=${skipped} failed=${failed}`);
-  console.log(`[extractor] tokens in=${totalTokens.in} out=${totalTokens.out}`);
-  const cost = (totalTokens.in * 0.0001 + totalTokens.out * 0.0002) / 1000;
+  console.log(`\n[extractor] processed=${counters.processed} skipped=${counters.skipped} failed=${counters.failed}`);
+  console.log(`[extractor] tokens in=${counters.tokIn} out=${counters.tokOut}`);
+  const cost = (counters.tokIn * 0.0001 + counters.tokOut * 0.0002) / 1000;
   console.log(`[extractor] estimated cost: $${cost.toFixed(4)}`);
 }
 
