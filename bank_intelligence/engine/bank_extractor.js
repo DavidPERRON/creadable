@@ -30,6 +30,7 @@ const REPO_ROOT = path.join(ROOT, '..');
 const SCRAPER_PDF_DIR = path.join(REPO_ROOT, 'scraper', 'pdfs');
 const CORP_TEXT_DIR = path.join(REPO_ROOT, 'corporate_scraper', 'text');
 const OUT_DIR = path.join(ROOT, 'extractions');
+const NEWS_DIR = path.join(ROOT, 'news');
 const TECHSTACK_PATH = path.join(ROOT, 'data', 'bank_techstack.json');
 
 const API_URL = 'https://api.deepinfra.com/v1/openai/chat/completions';
@@ -39,24 +40,30 @@ const API_KEY = process.env.DEEPINFRA_API_KEY;
 // ─────────────────────────────────────────────────────────────────
 // SYSTEM PROMPT — for BANK reports (not corporate reports)
 // ─────────────────────────────────────────────────────────────────
-const SYSTEM_PROMPT = `You analyze BANK annual reports to identify capability gaps and buying intent signals for a B2B software vendor (CredAble) that sells white-label working-capital infrastructure.
+const SYSTEM_PROMPT = `You analyze BANK annual reports and recent news to identify capability gaps and buying intent signals for a B2B software vendor (CredAble) that sells white-label working-capital infrastructure.
 
-Your job is to find evidence in a bank's own report that signals:
+Your job is to find evidence that signals:
 1. The bank is ACTIVE in trade/working capital BUT lacks a sophisticated platform (capability gap)
 2. The bank has STRATEGIC INTENT to develop these areas (CEO statements, board priorities, transformation initiatives)
 3. The bank uses specific tech stacks (Finastra, Temenos, T24) — relevant for pre-integration
 4. The bank has TCI partnerships (Coface, Allianz Trade, Atradius)
 5. The bank has stress signals (rising NPL, RWA pressure, capital optimization needs)
 
-EXTRACTION RULES:
-- Always provide verbatim quotes for facts
-- Mark inference vs facts vs general_knowledge
-- For volumes: extract numbers in original currency, year of figure
+STRICT EXTRACTION RULES — READ CAREFULLY:
+- ONLY extract what is EXPLICITLY stated in the provided text. Never infer, guess, or extrapolate.
+- If a signal is not mentioned, set found:false and verbatim:null. Do NOT assume a large bank has SCF capabilities.
+- verbatim MUST be a direct quote from the text. If you cannot find the exact quote, set verbatim:null.
+- confidence:"fact" = direct quote with specific data. "inference" = implied but not stated. "general_knowledge" = industry norm, NOT from the text — use sparingly.
+- For news signals: only flag if the article explicitly names the bank and the signal. Do not generalize.
+- When in doubt, output null. A null is better than a hallucinated value.
 - Output VALID JSON only`;
 
-const USER_PROMPT_TEMPLATE = (bankName, country, textChunk) => `Bank: ${bankName} (${country})
+const USER_PROMPT_TEMPLATE = (bankName, country, textChunk, newsSnippets = null) => `Bank: ${bankName} (${country})
 
-Extract capability gap and buying intent signals from this BANK annual report excerpt. Output JSON:
+Extract capability gap and buying intent signals from the annual report excerpt${newsSnippets ? ' and recent news headlines' : ''} below.
+REMINDER: Only extract what is explicitly stated. Do not infer capabilities a large bank "must have". Null is better than a guess.
+
+Output JSON:
 
 {
   "year_of_report": <integer or null>,
@@ -110,15 +117,29 @@ Extract capability gap and buying intent signals from this BANK annual report ex
     "marketplace_partnerships":   { "found": <bool>, "verbatim": <string|null> }
   },
 
-  "key_quotes_for_review": [<up to 5 most actionable verbatim quotes>],
-  "_extraction_notes": <string|null — overall capability assessment>
+  "news_signals": {
+    "ceo_or_exec_change":        { "found": <bool>, "name": <string|null>, "role": <string|null>, "date": <string|null>, "source_headline": <string|null> },
+    "platform_or_tech_announced":{ "found": <bool>, "detail": <string|null>, "source_headline": <string|null> },
+    "digital_initiative_public": { "found": <bool>, "detail": <string|null>, "source_headline": <string|null> },
+    "merger_or_acquisition":     { "found": <bool>, "detail": <string|null>, "source_headline": <string|null> },
+    "fintech_partnership":       { "found": <bool>, "partner": <string|null>, "source_headline": <string|null> },
+    "regulatory_pressure":       { "found": <bool>, "detail": <string|null>, "source_headline": <string|null> }
+  },
+
+  "key_quotes_for_review": [<up to 5 most actionable verbatim quotes — from report only, not news>],
+  "_extraction_notes": <string|null — 2 sentences max, factual summary only, no speculation>
 }
 
 Bank annual report excerpt:
 ---
 ${textChunk}
 ---
-
+${newsSnippets ? `
+Recent news headlines and snippets (last 12 months):
+---
+${newsSnippets}
+---
+For news_signals: only set found:true if the headline explicitly names this bank and the signal. Do not generalize from industry news.` : ''}
 Output the JSON object now:`;
 
 // Pre-filter keywords for bank-side signals (broader than corporate-side)
@@ -281,11 +302,26 @@ async function processOne(bank, opts, counters) {
   const chunk = extractRelevantChunks(fullText);
   if (!chunk) { console.log(`  ${label} no_relevant_content`); counters.skipped++; return; }
 
-  console.log(`  ${label} ${chunk.length} chars → calling API…`);
+  // Load news snippets if available
+  let newsSnippets = null;
+  const newsPath = path.join(NEWS_DIR, `${bank.bank_id}.json`);
+  if (fs.existsSync(newsPath)) {
+    try {
+      const newsData = JSON.parse(fs.readFileSync(newsPath, 'utf8'));
+      if (newsData.articles?.length > 0) {
+        newsSnippets = newsData.articles
+          .map(a => `• ${a.title} — ${a.snippet}`.slice(0, 200))
+          .join('\n');
+      }
+    } catch (e) {}
+  }
+
+  const newsTag = newsSnippets ? ' +news' : '';
+  console.log(`  ${label} ${chunk.length} chars${newsTag} → calling API…`);
   if (opts.dryRun) { counters.skipped++; return; }
 
   try {
-    const userPrompt = USER_PROMPT_TEMPLATE(bank.name, bank.country, chunk);
+    const userPrompt = USER_PROMPT_TEMPLATE(bank.name, bank.country, chunk, newsSnippets);
     const t0 = Date.now();
     const ticker = setInterval(() => console.log(`  ${label} [${Math.round((Date.now()-t0)/1000)}s]…`), 15000);
     const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));

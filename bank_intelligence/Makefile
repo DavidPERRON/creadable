@@ -1,4 +1,4 @@
-.PHONY: all bis report extract clean stats
+.PHONY: all bis report extract news clean stats
 
 all: bis report
 
@@ -9,6 +9,9 @@ report: bis
 	node engine/bis_report.js
 	@echo ""
 	@echo "Dashboard: reports/bis_dashboard.html — open in browser"
+
+news:
+	node engine/bank_news.js
 
 extract:
 	@if [ -z "$$DEEPINFRA_API_KEY" ]; then echo "ERROR: set DEEPINFRA_API_KEY"; exit 1; fi
