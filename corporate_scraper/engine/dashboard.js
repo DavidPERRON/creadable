@@ -292,7 +292,7 @@ const DATA = ${JSON.stringify({
   matched_count: data.matched_count,
   unmatched_count: data.unmatched_count,
   generated_at: data.generated_at,
-}, null, 0)};
+}, null, 0).replace(/<\/script>/gi, '<\\/script>')};
 
 const ANGLE_LABEL = {
   saas_licence: 'SaaS / Licence',

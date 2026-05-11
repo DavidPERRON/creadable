@@ -42,6 +42,7 @@ const PATHS = {
   failures:         path.join(ROOT, 'data', 'fintech_failures.json'),
   bank_extractions: path.join(ROOT, 'extractions'),
   corp_evidence:    path.join(REPO, 'corporate_scraper', 'reports', 'bank_evidence.json'),
+  jobs_dir:         path.join(ROOT, 'jobs'),
   out_scores:       path.join(ROOT, 'reports', 'bis_scores.json'),
 };
 
@@ -79,7 +80,19 @@ function loadAll() {
       extractions[ext.bank_id] = ext;
     });
   }
-  return { v4, techstack, failures, extractions, corp };
+
+  // Job postings (Tier 2 signal)
+  const jobs = {};
+  if (fs.existsSync(PATHS.jobs_dir)) {
+    fs.readdirSync(PATHS.jobs_dir).filter(f => f.endsWith('.json')).forEach(f => {
+      try {
+        const j = JSON.parse(fs.readFileSync(path.join(PATHS.jobs_dir, f), 'utf8'));
+        if (j.bank_id) jobs[j.bank_id] = j;
+      } catch (e) {}
+    });
+  }
+
+  return { v4, techstack, failures, extractions, corp, jobs };
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -97,20 +110,25 @@ function normName(name) {
 //          manual processes, SCF without platform)
 // ─────────────────────────────────────────────────────────────────
 function scoreCapabilityGap(bank, ext, ts) {
-  if (!ext) {
-    // Fallback to techstack-based proxy
-    if (!ts) return 0;
-    if (ts.tf_scf_platform === null) return 6;     // pas de plateforme = gap clair
-    if (ts.tf_scf_platform?.toLowerCase().includes('orphan')) return 9; // orphan
-    return 3;
-  }
-  const cap = ext.capability_gap_signals || {};
   let score = 0;
-  if (cap.scf_mentioned_without_platform?.found) score += 4;
-  if (cap.factoring_volume_growth_pct?.value > 20) score += 3;
-  if (cap.factoring_volume_growth_pct?.value > 35) score += 2; // additional bonus
-  if (cap.manual_paper_processes_mentioned?.found) score += 2;
-  if (cap.vague_scf_vocabulary?.found) score += 1;
+
+  // Techstack base — always applied regardless of extraction
+  if (ts) {
+    const plat = (ts.tf_scf_platform || '').toLowerCase();
+    if (plat.includes('orphan'))  score += 5; // lost platform = explicit gap
+    else if (!ts.tf_scf_platform) score += 3; // no platform at all
+  }
+
+  // Extraction signals — additive on top of techstack
+  if (ext) {
+    const cap = ext.capability_gap_signals || {};
+    if (cap.scf_mentioned_without_platform?.found)    score += 4;
+    if ((cap.factoring_volume_growth_pct?.value || 0) > 20) score += 2;
+    if ((cap.factoring_volume_growth_pct?.value || 0) > 35) score += 1;
+    if (cap.manual_paper_processes_mentioned?.found)  score += 2;
+    if (cap.vague_scf_vocabulary?.found)              score += 1;
+  }
+
   return Math.min(10, score);
 }
 
@@ -119,24 +137,43 @@ function scoreCapabilityGap(bank, ext, ts) {
 // Sources: bank_extractor (CEO statements, transformation, hiring)
 // + V4 triggers (RECRUITMENT, CEO_STATEMENT)
 // ─────────────────────────────────────────────────────────────────
-function scoreStrategicIntent(bank, ext, v4) {
+function scoreStrategicIntent(bank, ext, v4, jobs) {
   let score = 0;
+
+  // Extraction signals from annual report
   if (ext) {
     const s = ext.strategic_intent_signals || {};
-    if (s.ceo_statement_on_transaction_banking?.found) score += 3;
-    if (s.digital_transformation_priority?.found) score += 2;
-    if (s.investor_day_scf_mention?.found) score += 2;
-    if (s.new_tf_scf_executive_hired?.found) score += 3;
+    if (s.ceo_statement_on_transaction_banking?.found)  score += 3;
+    if (s.digital_transformation_priority?.found)       score += 2;
+    if (s.investor_day_scf_mention?.found)              score += 2;
+    if (s.new_tf_scf_executive_hired?.found)            score += 3;
+    if (s.roadmap_includes_api_or_platform?.found)      score += 1;
+    // News signals (always additive — independent source)
+    const ns = ext.news_signals || {};
+    if (ns.ceo_or_exec_change?.found)         score += 1;
+    if (ns.platform_or_tech_announced?.found) score += 2;
+    if (ns.digital_initiative_public?.found)  score += 1;
+    if (ns.fintech_partnership?.found)        score += 2;
+    if (ns.merger_or_acquisition?.found)      score += 1;
   }
-  // V4 triggers fallback
+
+  // V4 triggers — always applied (independent of extraction)
   if (v4?.triggers) {
     const recent = v4.triggers.filter(t => {
       const days = (TODAY - new Date(t.date)) / 86400000;
       return days < 540 && days >= 0;
     });
-    if (recent.some(t => t.type === 'RECRUITMENT')) score += 2;
+    if (recent.some(t => t.type === 'RECRUITMENT'))   score += 2;
     if (recent.some(t => t.type === 'CEO_STATEMENT')) score += 2;
   }
+
+  // Job postings (Tier 2) — always applied
+  if (jobs) {
+    if (jobs.hiring_intent === 'VERY_HIGH') score += 3;
+    else if (jobs.hiring_intent === 'HIGH') score += 2;
+    else if (jobs.hiring_intent === 'MEDIUM') score += 1;
+  }
+
   return Math.min(10, score);
 }
 
@@ -271,10 +308,10 @@ function scoreStressSignals(ext) {
 // ─────────────────────────────────────────────────────────────────
 // Aggregate BIS
 // ─────────────────────────────────────────────────────────────────
-function calculateBis(bank, v4, ts, ext, failures, corpData, v4_all) {
+function calculateBis(bank, v4, ts, ext, failures, corpData, v4_all, jobs) {
   const sig = {
     capability_gap:     scoreCapabilityGap(bank, ext, ts),
-    strategic_intent:   scoreStrategicIntent(bank, ext, v4),
+    strategic_intent:   scoreStrategicIntent(bank, ext, v4, jobs),
     competitor_failure: scoreCompetitorFailure(bank, failures),
     peer_pressure:      scorePeerPressure(bank, v4_all),
     corporate_demand:   scoreCorporateDemand(bank, corpData),
@@ -352,8 +389,8 @@ function buildPitchArgument(sig, orphanEvent) {
 // Main
 // ─────────────────────────────────────────────────────────────────
 function main() {
-  const { v4, techstack, failures, extractions, corp } = loadAll();
-  console.log(`[bis] Loaded: V4=${v4.length} banks, techstack=${techstack.length}, failures=${failures.length}, extractions=${Object.keys(extractions).length}`);
+  const { v4, techstack, failures, extractions, corp, jobs } = loadAll();
+  console.log(`[bis] Loaded: V4=${v4.length} banks, techstack=${techstack.length}, failures=${failures.length}, extractions=${Object.keys(extractions).length}, jobs=${Object.keys(jobs).length}`);
 
   const v4Index = {};
   v4.forEach(b => { v4Index[b.id] = b; });
@@ -371,7 +408,8 @@ function main() {
     const bank = v4Bank || { id, name: ts?.name, country: ts?.country };
     if (!bank.name) return null;
 
-    const bis = calculateBis(bank, v4Bank, ts, ext, failures, corp, v4);
+    const jobData = jobs[id] || null;
+    const bis = calculateBis(bank, v4Bank, ts, ext, failures, corp, v4, jobData);
     return {
       bank_id: bank.id,
       bank_name: bank.name,

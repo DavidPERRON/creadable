@@ -350,7 +350,7 @@ const html = `<!DOCTYPE html>
 </div>
 
 <script>
-const DATA = ${JSON.stringify({ banks }, null, 0)};
+const DATA = ${JSON.stringify({ banks }, null, 0).replace(/<\/script>/gi, '<\\/script>')};
 
 // Tab switching
 document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => {

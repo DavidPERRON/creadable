@@ -162,6 +162,7 @@ const COMMANDS = {
   // Bank intelligence
   'bi:download':      { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_downloader.js'] },
   'bi:news':          { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_news.js'] },
+  'bi:jobs':          { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_jobs.js'] },
   'bi:extract':       { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_extractor.js'] },
   'bi:bis':           { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bis_calculator.js'] },
   'bi:report':        { cwd: 'bank_intelligence', cmd: 'make', args: ['report'] },
