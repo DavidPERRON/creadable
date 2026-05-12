@@ -35,6 +35,11 @@ git pull origin claude/european-banks-business-case-ayKhq --quiet 2>/dev/null \
 
 echo ""
 
+# ── Tuer l'ancienne instance si elle tourne ─────────────────────
+echo "[start] Arrêt de l'ancienne instance si présente..."
+pkill -f "node ui/server.js" 2>/dev/null
+sleep 1
+
 # ── Dépendances npm ─────────────────────────────────────────────
 echo "[npm] Vérification des dépendances..."
 npm install --quiet 2>/dev/null
