@@ -280,7 +280,7 @@
 <header>
   <h1>CredAble Intelligence</h1>
   <span class="badge">MODEL 2 · MPS</span>
-  <a class="model1-link" href="/"> ← Model 1 (BIS)</a>
+  <a class="model1-link" href="/" target="_parent" onclick="if(window.parent!==window){event.preventDefault();window.parent.location.href='/'}"> ← Model 1 (BIS)</a>
 </header>
 
 <!-- Info panel overlay (shared) -->
@@ -980,9 +980,34 @@ function renderPitch() {
     <div class="pitch-panel">
       <div class="pitch-panel-header"><h3>🔗 Signaux d'extraction corporate</h3></div>
       ${r.extraction_signals.map(s => `
-        <div style="margin-bottom:8px; padding:8px; background:var(--surface); border-radius:6px; border:1px solid var(--border);">
-          <strong style="font-size:12px">${escHtml(s.corp)}</strong> — mentionne cette banque dans le contexte capital circulant:
-          <div style="margin-top:4px">${(s.banks_mentioned || []).map(b => `<span class="tag" style="border-color:var(--accent);color:var(--accent)">${escHtml(b)}</span>`).join(' ')}</div>
+        <div style="margin-bottom:10px; padding:10px; background:var(--surface); border-radius:6px; border:1px solid var(--border);">
+          <div style="font-size:12px;margin-bottom:6px;"><strong>${escHtml(s.corp)}</strong> <span style="color:var(--muted)">— cite cette banque dans son programme SCF :</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;">
+          ${(s.banks_mentioned || []).filter(b => {
+            const name = typeof b === 'string' ? b : b.bank_name || '';
+            return name.toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase()) ||
+                   (r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
+          }).concat(
+            (s.banks_mentioned || []).filter(b => {
+              const name = typeof b === 'string' ? b : b.bank_name || '';
+              return !name.toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase()) &&
+                     !(r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
+            })
+          ).slice(0, 8).map(b => {
+            if (typeof b === 'string') return \`<span class="tag">\${escHtml(b)}</span>\`;
+            const isTarget = (b.bank_name||'').toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase());
+            const roleColor = { lead: 'var(--green)', participant: 'var(--accent)', local_partner: 'var(--orange)' }[b.role] || 'var(--muted)';
+            return \`<span title="\${escHtml(b.context||'')}" style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;font-size:11px;border:1px solid \${isTarget ? 'var(--purple)' : 'var(--border)'};background:\${isTarget ? '#bc8cff15' : 'var(--surface2)'}">
+              <span style="font-weight:\${isTarget ? '700' : '400'};color:\${isTarget ? 'var(--purple)' : 'var(--text)'}">\${escHtml(b.bank_name)}</span>
+              <span style="font-size:9px;color:\${roleColor}">\${b.role || ''}</span>
+              \${b.product_category ? \`<span style="font-size:9px;color:var(--muted)">\${b.product_category}</span>\` : ''}
+            </span>\`;
+          }).join('')}
+          </div>
+          ${(s.banks_mentioned || []).find(b => {
+            const name = typeof b === 'string' ? b : b.bank_name || '';
+            return (r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
+          }) ? `<div style="margin-top:6px;font-size:11px;color:var(--muted);font-style:italic">"${escHtml(((s.banks_mentioned||[]).find(b => (r.bank_name||'').toLowerCase().includes((typeof b==='string'?b:b.bank_name||'').toLowerCase().split(' ')[0].toLowerCase())) || {}).context || '')}"</div>` : ''}
         </div>`).join('')}
     </div>` : ''}
 
