@@ -893,11 +893,25 @@ function applyBisThreshold(val) {
   val = parseInt(val, 10);
   document.getElementById('bis-threshold-val').textContent = val;
   if (document.getElementById('bis-threshold')) document.getElementById('bis-threshold').value = val;
-  const banks = _bisAllBanks.filter(b => (b.bis_score || 0) >= val);
+
+  // Normalize fields — bis_scores.json stores score inside b.bis.bis_total
+  const normalize = b => ({
+    bank_id:      b.bank_id,
+    bank_name:    b.bank_name || b.name,
+    country:      b.country || '',
+    bis_score:    b.bis_score ?? b.bis?.bis_total ?? 0,
+    bucket:       b.bucket   ?? b.bis?.bis_bucket ?? '',
+    window_months: b.window_months ?? b.bis?.estimated_window_months ?? null,
+    friction:     b.friction ?? b.tech_stack?.credable_friction ?? '',
+    top_signals:  b.top_signals ?? (b.bis?.pitch_argument ? [b.bis.pitch_argument.slice(0, 80)] : []),
+  });
+
+  const normalized = _bisAllBanks.map(normalize);
+  const banks = normalized.filter(b => b.bis_score >= val);
   const countLine = document.getElementById('bis-count-line');
   if (countLine) countLine.textContent = `${banks.length} banque${banks.length > 1 ? 's' : ''} avec BIS ≥ ${val} (sur ${_bisAllBanks.length} total)`;
   const tbody = document.getElementById('bis-table-body');
-  if (!banks.length) { tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Aucune banque avec BIS ≥ ${val}. Baissez le seuil.</td></tr>`; return; }
+  if (!banks.length) { tbody.innerHTML = `<tr><td colspan="11" class="empty-state">Aucune banque avec BIS ≥ ${val}. Baissez le seuil.</td></tr>`; return; }
   const showPredict = isPredictEnabled();
   tbody.innerHTML = banks.map((b, i) => {
     const pred = _predictionsMap[b.bank_id] || {};
@@ -906,8 +920,8 @@ function applyBisThreshold(val) {
     const trig = pred.top_trigger ? `<span style="font-size:11px;color:var(--muted)">${pred.top_trigger}</span>` : '—';
     return `<tr>
       <td style="color:var(--muted)">${i+1}</td>
-      <td style="font-weight:500">${b.bank_name || b.name}</td>
-      <td>${b.country || ''}</td>
+      <td style="font-weight:500">${b.bank_name}</td>
+      <td>${b.country}</td>
       <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
       <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
       <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
@@ -915,7 +929,7 @@ function applyBisThreshold(val) {
       <td class="predict-col" style="display:${showPredict?'':'none'}">${p6}</td>
       <td class="predict-col" style="display:${showPredict?'':'none'}">${p12}</td>
       <td class="predict-col" style="display:${showPredict?'':'none'};max-width:180px">${trig}</td>
-      <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${b.top_signals.slice(0,3).join(', ')}</td>
     </tr>`;
   }).join('');
 }
