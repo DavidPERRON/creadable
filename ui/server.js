@@ -269,6 +269,17 @@ app.use('/reports/bis', express.static(path.join(ROOT, 'bank_intelligence/report
 app.use('/reports/corporate', express.static(path.join(ROOT, 'corporate_scraper/reports')));
 
 // ─── Model 2 (MPS) — served at /model2 to avoid Safari port issues ──
+// Explicit routes before static to avoid Safari 301 redirect issue
+app.get('/model2', (req, res) => {
+  const fp = path.join(ROOT, 'model2/public/index.html');
+  if (fs.existsSync(fp)) return res.sendFile(fp);
+  res.status(503).send('<h2>Model 2 non disponible — lancez: git pull && npm run ui</h2>');
+});
+app.get('/model2/', (req, res) => {
+  const fp = path.join(ROOT, 'model2/public/index.html');
+  if (fs.existsSync(fp)) return res.sendFile(fp);
+  res.status(503).send('<h2>Model 2 non disponible — lancez: git pull && npm run ui</h2>');
+});
 app.use('/model2', express.static(path.join(ROOT, 'model2/public')));
 
 app.get('/model2/api/mps', (req, res) => {
