@@ -203,6 +203,41 @@ async function downloadPdf(url, dest, referer = '') {
   } catch (e) { return false; }
 }
 
+async function downloadPdfViaPuppeteer(page, url, dest) {
+  try {
+    const client = await page.createCDPSession();
+    await client.send('Page.setDownloadBehavior', {
+      behavior: 'allow',
+      downloadPath: path.dirname(dest),
+    });
+    // Navigate to the PDF URL — if browser triggers download, wait for file
+    const tmpName = path.basename(dest);
+    const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => null);
+    if (response) {
+      const ct = (response.headers()['content-type'] || '');
+      if (/pdf|octet-stream/i.test(ct)) {
+        const buf = await response.buffer().catch(() => null);
+        if (buf && buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
+          fs.writeFileSync(dest, buf);
+          await client.detach().catch(() => {});
+          return true;
+        }
+      }
+    }
+    // Wait up to 15s for a file to appear (download triggered)
+    const start = Date.now();
+    while (Date.now() - start < 15000) {
+      await sleep(500);
+      if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) {
+        await client.detach().catch(() => {});
+        return true;
+      }
+    }
+    await client.detach().catch(() => {});
+    return false;
+  } catch (e) { return false; }
+}
+
 async function extractText(pdf, txt) {
   try {
     execFileSync('pdftotext', ['-layout', '-enc', 'UTF-8', pdf, txt], {
@@ -283,7 +318,10 @@ async function processBank(bank, browser, attempt = 1) {
     if (!pdfUrl) {
       result.reason = 'no_pdf_found';
     } else {
-      const ok = await downloadPdf(pdfUrl, pdfPath, referer);
+      process.stdout.write(`[url: ${pdfUrl.slice(0, 80)}] `);
+      let ok = await downloadPdf(pdfUrl, pdfPath, referer);
+      // Fallback: download via Puppeteer session (preserves cookies/auth)
+      if (!ok) ok = await downloadPdfViaPuppeteer(page, pdfUrl, pdfPath);
       if (!ok) {
         if (attempt < 3) {
           await page.close();
