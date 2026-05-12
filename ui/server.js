@@ -85,6 +85,7 @@ const DATA_FILES = {
   fintech_failures:        'bank_intelligence/data/fintech_failures.json',
   competitor_intelligence: 'bank_intelligence/data/competitor_intelligence.json',
   bis_scores:              'bank_intelligence/reports/bis_scores.json',
+  mps_scores:              'bank_intelligence/reports/mps_scores.json',
   predictions:             'bank_intelligence/reports/predictions.json',
   demand_signals:          'corporate_scraper/reports/demand_signals.json',
   catalog:                 'corporate_scraper/catalog.json',
@@ -175,6 +176,7 @@ const COMMANDS = {
   'bi:all':           { cwd: 'bank_intelligence', cmd: 'make', args: ['all'] },
   'bi:full':          { cwd: 'bank_intelligence', cmd: 'make', args: ['full'] },
   'bi:predict':       { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/predictor.js'] },
+  'bi:mps':           { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/mps_calculator.js'] },
 };
 
 app.post('/api/run/:cmd', (req, res) => {
