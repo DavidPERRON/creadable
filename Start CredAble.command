@@ -3,10 +3,32 @@
 # Gère automatiquement les conflits git et les rebases en cours.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+
+# Localiser le repo creadable (fonctionne depuis n'importe quel dossier)
+find_repo() {
+  if [ -f "$SCRIPT_DIR/ui/server.js" ]; then
+    echo "$SCRIPT_DIR"; return
+  fi
+  local sibling="$(dirname "$SCRIPT_DIR")/creadable"
+  if [ -f "$sibling/ui/server.js" ]; then
+    echo "$(cd "$sibling" && pwd)"; return
+  fi
+  if [ -f "$HOME/Desktop/creadable/ui/server.js" ]; then
+    echo "$HOME/Desktop/creadable"; return
+  fi
+  echo ""
+}
+REPO="$(find_repo)"
+if [ -z "$REPO" ]; then
+  echo "❌ Dossier 'creadable' introuvable. Cherché dans: $SCRIPT_DIR, voisin, ~/Desktop/creadable"
+  read -rp "Appuyez sur Entrée pour quitter..."
+  exit 1
+fi
+cd "$REPO"
 
 echo "────────────────────────────────────────"
 echo "  CredAble Intelligence — Control Panel"
+echo "  Repo : $REPO"
 echo "────────────────────────────────────────"
 echo ""
 
@@ -30,7 +52,7 @@ git config pull.rebase true 2>/dev/null
 
 # Récupérer les dernières modifications
 echo "[git] Mise à jour..."
-git pull origin claude/european-banks-business-case-ayKhq --quiet 2>/dev/null \
+git pull origin main --quiet 2>/dev/null \
   && echo "[git] À jour." \
   || echo "[git] Pas de connexion — utilisation de la version locale."
 
