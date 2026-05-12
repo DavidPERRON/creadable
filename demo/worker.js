@@ -260,6 +260,206 @@ const FLAG = {DE:'🇩🇪',FR:'🇫🇷',UK:'🇬🇧',IT:'🇮🇹',CH:'🇨�
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
+const BROWSER_SCRIPT = `
+let _sc='score',_sa=false;
+
+function nav(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.getElementById('nav-'+id).classList.add('active');
+  if(id==='ranking')renderRanking();
+  if(id==='matrix')renderMatrix();
+  if(id==='markets')renderMarkets();
+  if(id==='sectors')renderSectors();
+  if(id==='corps')renderCorps();
+}
+
+function scoreClass(s){return s>=70?'#3fb950':s>=50?'#ffa657':s>=35?'#d29922':'#8b949e';}
+
+function renderRanking(){
+  const bkt=document.getElementById('fBucket').value;
+  const scf=document.getElementById('fSCF').value;
+  let rows=BANKS.filter(b=>(!bkt||b.tier===bkt)&&(!scf||b.scf===scf));
+  rows=rows.sort((a,b)=>_sa?(a[_sc]>b[_sc]?1:-1):(a[_sc]<b[_sc]?1:-1));
+  const mB=Math.max(...BANKS.map(b=>b.bis)),mM=Math.max(...BANKS.map(b=>b.mps)),mS=Math.max(...BANKS.map(b=>b.score));
+  const si=c=>c===_sc?(_sa?' ↑':' ↓'):'';
+  const th=(c,l)=>\`<th onclick="sort('$\{c}')" class="$\{_sc===c?'sorted':''}">$\{l}$\{si(c)}</th>\`;
+  document.getElementById('rankingTable').innerHTML=\`<table><thead><tr>\$\{th('n','Bank')}<th>Country</th>\$\{th('score','Combined')}\$\{th('mps','MPS')}\$\{th('bis','BIS')}<th>Tier</th><th>SCF Level</th><th>Corporates</th><th>Revenue</th><th>Window</th></tr></thead><tbody>
+  $\{rows.map((b,i)=>\`<tr>
+    <td><strong style="cursor:pointer;color:var(--a)" onclick="openPitch('$\{b.id}')">$\{esc(b.n)}</strong></td>
+    <td>$\{FLAG[b.c]||''} $\{b.c}</td>
+    <td><div class="sbar"><span style="font-size:16px;font-weight:700;color:$\{scoreClass(b.score)}">$\{b.score}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.score/mS*100)}%;background:$\{scoreClass(b.score)}"></div></div></div></td>
+    <td><div class="sbar"><span style="min-width:24px;color:var(--p)">$\{b.mps}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.mps/mM*100)}%;background:var(--p)"></div></div></div></td>
+    <td><div class="sbar"><span style="min-width:24px;color:var(--a)">$\{b.bis}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.bis/mB*100)}%;background:var(--a)"></div></div></div></td>
+    <td><span class="bb b$\{b.tier}">$\{b.tier}</span></td>
+    <td style="color:var(--m)">$\{b.scf}</td>
+    <td style="text-align:center">$\{b.mkt.corps}</td>
+    <td style="color:var(--o)">$\{b.mkt.rev}Bn€</td>
+    <td style="color:var(--m)">$\{b.window}mo</td>
+  </tr>\`).join('')}
+  </tbody></table><div style="margin-top:8px;font-size:11px;color:var(--m)">$\{rows.length} banks shown — <span style="color:var(--a)">$\{META.banks} analyzed in full system</span></div>\`;
+}
+
+function sort(c){if(_sc===c)_sa=!_sa;else{_sc=c;_sa=false;}renderRanking();}
+
+function openPitch(id){nav('pitch');setTimeout(()=>{document.getElementById('pitchSel').value=id;renderPitch();},50);}
+
+function renderMatrix(){
+  const bv=BANKS.map(b=>b.bis).sort((a,b)=>a-b),mv=BANKS.map(b=>b.mps).sort((a,b)=>a-b);
+  const bm=bv[Math.floor(bv.length/2)],mm=mv[Math.floor(mv.length/2)];
+  const hh=BANKS.filter(b=>b.bis>=bm&&b.mps>=mm).sort((a,b)=>b.score-a.score);
+  const lh=BANKS.filter(b=>b.bis<bm&&b.mps>=mm).sort((a,b)=>b.score-a.score);
+  const hl=BANKS.filter(b=>b.bis>=bm&&b.mps<mm).sort((a,b)=>b.score-a.score);
+  const ll=BANKS.filter(b=>b.bis<bm&&b.mps<mm).sort((a,b)=>b.score-a.score);
+  const chips=list=>list.map(b=>{
+    const d=JSON.stringify({n:b.n,c:b.c,s:b.score,bis:b.bis,mps:b.mps,t:b.tier,corps:b.mkt.corps,rev:b.mkt.rev,scf:b.scf}).replace(/"/g,'&quot;');
+    return \`<div class="chip" onmouseenter="showHCard(this,'$\{d}')" onmouseleave="hideHCard()" onclick="openPitch('$\{b.id}')"><span>$\{esc(b.n)}</span><span class="chip-s">$\{b.score}</span></div>\`;
+  }).join('');
+  const q=(cls,icon,title,sub,count,list)=>\`<div class="quadrant $\{cls}"><div class="q-hd"><div><div class="q-ht">$\{icon} $\{title}</div><div class="q-sub">$\{sub}</div></div><span class="q-cnt">$\{count}</span></div><div class="q-banks">$\{list}</div></div>\`;
+  document.getElementById('qGrid').innerHTML=
+    q('qTL','📊','Market Pull',\`MPS ≥ $\{mm} · BIS < $\{bm}\`,lh.length,chips(lh))+
+    q('qTR','⭐','Top Priority',\`MPS ≥ $\{mm} · BIS ≥ $\{bm}\`,hh.length,chips(hh))+
+    q('qLL','💤','Pipeline',\`MPS < $\{mm} · BIS < $\{bm}\`,ll.length,chips(ll))+
+    q('qBR','🎯','Bank Ready',\`MPS < $\{mm} · BIS ≥ $\{bm}\`,hl.length,chips(hl));
+}
+
+function showHCard(el,ds){
+  const d=JSON.parse(ds.replace(/&quot;/g,'"'));
+  const c=document.getElementById('hcard');
+  c.innerHTML=\`<strong>$\{esc(d.n)}</strong> ($\{d.c})<br><span style="color:var(--g)">Combined: <strong>$\{d.s}</strong></span> · <span style="color:var(--a)">BIS: $\{d.bis}</span> · <span style="color:var(--p)">MPS: $\{d.mps}</span><br>SCF: <strong>$\{d.scf}</strong> · <span class="bb b$\{d.t}">$\{d.t}</span><br>$\{d.corps} corporates · <span style="color:var(--o)">$\{d.rev}Bn€</span><br><span style="font-size:10px;color:var(--m)">Click to open in Pitch Builder →</span>\`;
+  const r=el.getBoundingClientRect();
+  c.style.left=Math.min(r.right+8,window.innerWidth-275)+'px';
+  c.style.top=Math.min(r.top,window.innerHeight-160)+'px';
+  c.classList.add('on');
+}
+function hideHCard(){document.getElementById('hcard').classList.remove('on');}
+
+function renderMarkets(){
+  const bc={};CORPS.forEach(c=>{if(!bc[c.c])bc[c.c]={n:0,rev:0,sec:{}};bc[c.c].n++;bc[c.c].rev+=c.rev;bc[c.c].sec[c.sector]=(bc[c.c].sec[c.sector]||0)+1;});
+  const sorted=Object.entries(bc).sort((a,b)=>b[1].n-a[1].n);
+  const mr=Math.max(...sorted.map(([,v])=>v.rev));
+  const bb={};BANKS.forEach(b=>{bb[b.c]=(bb[b.c]||0)+1;});
+  document.getElementById('mktContent').innerHTML=\`
+  <div class="card"><h3>Corporate Coverage by Country</h3>
+  $\{sorted.map(([ct,d])=>{const ts=Object.entries(d.sec).sort((a,b)=>b[1]-a[1])[0];return \`<div class="crow"><span style="font-size:16px">$\{FLAG[ct]||'🌐'}</span><div class="ci"><div style="font-size:12px"><strong>$\{ct}</strong> — $\{d.n} corporate$\{d.n>1?'s':''} · $\{bb[ct]||0} bank$\{(bb[ct]||0)>1?'s':''} tracked</div><div style="font-size:10px;color:var(--m)">Top sector: $\{ts?.[0]||'—'} ($\{ts?.[1]||0})</div></div><span style="color:var(--o);font-weight:600">$\{Math.round(d.rev)}Bn€</span></div>\`;}).join('')}
+  </div>
+  <div class="card"><h3>Addressable Revenue by Country (€Bn)</h3>
+  $\{sorted.map(([ct,d])=>\`<div class="srow"><div class="sn">$\{FLAG[ct]||'🌐'} $\{ct}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(d.rev/mr*100)}%;background:var(--o)"></div></div><div class="sv">$\{Math.round(d.rev)}Bn</div></div>\`).join('')}
+  </div>\`;
+}
+
+function renderSectors(){
+  const bs={};CORPS.forEach(c=>{if(!bs[c.sector])bs[c.sector]={n:0,rev:0};bs[c.sector].n++;bs[c.sector].rev+=c.rev;});
+  const sorted=Object.entries(bs).sort((a,b)=>b[1].n-a[1].n);
+  const mn=Math.max(...sorted.map(([,v])=>v.n));
+  const iSorted=Object.entries(SW).sort((a,b)=>b[1]-a[1]);
+  const wc=w=>w>=0.85?'var(--g)':w>=0.65?'var(--o)':w>=0.45?'var(--y)':'var(--m)';
+  document.getElementById('secContent').innerHTML=\`
+  <div class="card"><h3>Corporate Distribution by Sector</h3>
+  $\{sorted.map(([s,d])=>\`<div class="srow"><div class="sn">$\{s}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(d.n/mn*100)}%;background:var(--p)"></div></div><div class="sv">$\{d.n}</div></div>\`).join('')}
+  </div>
+  <div class="card"><h3>SCF Demand Intensity by Sector</h3>
+  <p style="font-size:11px;color:var(--m);margin-bottom:12px">Coefficient applied in MPS calculation — represents the probability that a corporate in this sector will push its bank to adopt an SCF solution.</p>
+  $\{iSorted.map(([s,w])=>\`<div class="srow"><div class="sn">$\{s}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(w*100)}%;background:$\{wc(w)}"></div></div><div class="sv" style="color:$\{wc(w)}">$\{Math.round(w*100)}%</div></div>\`).join('')}
+  </div>\`;
+}
+
+function renderPitch(){
+  const id=document.getElementById('pitchSel').value;
+  if(!id){document.getElementById('pitchContent').innerHTML='';return;}
+  const b=BANKS.find(x=>x.id===id);
+  if(!b)return;
+  const bg=b.bis<=20?'🔴':b.bis<=40?'🟡':'🟢';
+  const mg=b.mps<=30?'🔴':b.mps<=55?'🟡':'🟢';
+  const cc=(l,v,m,c,desc)=>\`<div class="cc"><div class="cc-lbl">$\{l} (/$\{m})</div><div class="cc-val" style="color:$\{c}">$\{v}</div><div class="bar-t" style="margin-top:4px"><div class="bar-f" style="width:$\{m?Math.round(v/m*100):0}%;background:$\{c}"></div></div><div class="cc-desc">$\{desc}</div></div>\`;
+  const pl=b.pitch.map((p,i)=>\`<div class="pitch-line $\{i===0?'high':i===1?'mid':'low'}">$\{esc(p)}</div>\`).join('');
+  let sigs='';
+  if(b.sigs&&b.sigs.length){
+    sigs='<div class="panel"><div class="panel-h"><h3>🔗 Corporate Extraction Signals</h3></div>';
+    b.sigs.forEach(s=>{
+      sigs+=\`<div style="margin-bottom:10px;padding:10px;background:var(--s);border-radius:6px;border:1px solid var(--bd)"><div style="font-size:12px;margin-bottom:6px"><strong>$\{esc(s.corp)}</strong> <span style="color:var(--m)">— references this bank in SCF program disclosures:</span></div><div style="display:flex;flex-wrap:wrap;gap:5px">\`;
+      s.mentions.forEach(m=>{
+        const isT=m.n.toLowerCase().includes(b.n.toLowerCase().split(' ')[0].toLowerCase());
+        sigs+=\`<span class="$\{isT?'sig-match':'sig-other'}" title="$\{esc(m.ctx)}"><span style="font-weight:$\{isT?700:400};color:$\{isT?'var(--p)':'var(--t)'}">$\{esc(m.n)}</span><span class="role-$\{m.role}">$\{m.role}</span><span style="font-size:9px;color:var(--m)">$\{m.prod}</span></span>\`;
+      });
+      const tm=s.mentions.find(m=>m.n.toLowerCase().includes(b.n.toLowerCase().split(' ')[0].toLowerCase()));
+      sigs+=\`</div>$\{tm?\`<div style="margin-top:6px;font-size:11px;color:var(--m);font-style:italic">"$\{esc(tm.ctx)}"</div>\`:''}</div>\`;
+    });
+    sigs+='</div>';
+  }
+  document.getElementById('pitchContent').innerHTML=\`
+  <div class="panel">
+    <div class="panel-h"><h3>📊 Combined Score</h3></div>
+    <div style="display:flex;gap:24px;margin-bottom:14px;flex-wrap:wrap">
+      <div><div style="font-size:11px;color:var(--m)">Combined Score</div><div style="font-size:32px;font-weight:700;color:$\{scoreClass(b.score)}">$\{b.score}</div><div style="font-size:10px;color:var(--m)">√(BIS × MPS)</div></div>
+      <div><div style="font-size:11px;color:var(--m)">$\{bg} BIS</div><div style="font-size:22px;font-weight:600;color:var(--a)">$\{b.bis}<span style="font-size:12px;color:var(--m)">/100</span></div><div style="font-size:10px;color:var(--m)">Bank buying signal</div></div>
+      <div><div style="font-size:11px;color:var(--m)">$\{mg} MPS</div><div style="font-size:22px;font-weight:600;color:var(--p)">$\{b.mps}<span style="font-size:12px;color:var(--m)">/100</span></div><div style="font-size:10px;color:var(--m)">Market pressure</div></div>
+      <div><div style="font-size:11px;color:var(--m)">Tier</div><div style="margin-top:4px"><span class="bb b$\{b.tier}">$\{b.tier}</span></div></div>
+      <div><div style="font-size:11px;color:var(--m)">Action Window</div><div style="font-size:18px;font-weight:600;color:var(--y)">$\{b.window}mo</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      $\{cc('Geo Score',b.comp.geo,40,'var(--a)','Corporate density in same country and EU region.')}
+      $\{cc('Sector Score',b.comp.sector,25,'var(--p)','SCF intensity of sectors in the direct market.')}
+      $\{cc('SCF Gap',b.comp.gap,25,'var(--o)','Gap between current SCF level and maximum (ABSENT=25pts).')}
+      $\{cc('BIS Boost',b.comp.sig,10,'var(--g)','Signal carryover from Model 1 buying intent score.')}
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-h"><h3>🌍 Market Context</h3></div>
+    <p style="font-size:12px;line-height:1.7;color:var(--t);margin-bottom:12px">$\{esc(b.ctx)}</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px">
+      <div><div style="font-size:10px;color:var(--m)">Direct Corporates</div><div style="font-size:20px;font-weight:700">$\{b.mkt.corps}</div></div>
+      <div><div style="font-size:10px;color:var(--m)">Direct Revenue</div><div style="font-size:20px;font-weight:700;color:var(--o)">$\{b.mkt.rev}Bn€</div></div>
+      <div><div style="font-size:10px;color:var(--m)">Regional Pipeline</div><div style="font-size:20px;font-weight:700;color:var(--y)">$\{b.mkt.reg_rev}Bn€</div></div>
+      <div><div style="font-size:10px;color:var(--m)">Region</div><div style="font-size:14px;font-weight:600">$\{b.region}</div></div>
+      <div><div style="font-size:10px;color:var(--m)">Tech Stack</div><div style="font-size:12px;font-weight:500">$\{b.stack.core}</div><div style="font-size:10px;color:var(--m)">$\{b.stack.platform}</div></div>
+    </div>
+    <div>$\{b.mkt.sectors.map(s=>\`<span class="tag">$\{s}</span>\`).join(' ')}</div>
+  </div>
+  $\{sigs}
+  <div class="panel">
+    <div class="panel-h"><h3>💬 Recommended Approach</h3></div>
+    <p style="font-size:12px;color:var(--m);margin-bottom:10px"><strong>SCF Level:</strong> $\{b.scf} &nbsp;·&nbsp; <strong>Priority:</strong> $\{b.priority} &nbsp;·&nbsp; <strong>Stack friction:</strong> $\{b.stack.friction}</p>
+    $\{pl}
+  </div>
+  <div class="cta-bar">
+    <h3>Full system: $\{META.banks} banks × $\{META.corps} corporates</h3>
+    <p>This preview shows 10 banks from our live intelligence platform. The full system covers all EU-27 markets with $\{META.extractions.toLocaleString()} LLM-powered document extractions, real-time news signals, and predictive scoring updated monthly.</p>
+    <a class="cta-btn" href="mailto:david.perron@gmx.fr?subject=CredAble%20Intelligence%20Platform%20Access">Request Full Access</a>
+  </div>\`;
+}
+
+function renderCorps(){
+  const sc={Automotive:1.0,Industrial:0.95,FMCG:0.90,Chemicals:0.90,Retail:0.85,Pharma:0.80,Agribusiness:0.80,Logistics:0.70,Energy:0.75};
+  const ic=w=>w>=0.90?'var(--g)':w>=0.80?'var(--o)':w>=0.65?'var(--y)':'var(--m)';
+  document.getElementById('corpContent').innerHTML=CORPS.map(c=>\`
+  <div class="panel">
+    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:10px">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span style="font-size:15px;font-weight:700">$\{esc(c.n)}</span>
+          <span style="color:var(--m);font-size:12px">$\{FLAG[c.c]||''} $\{c.c}</span>
+          <span class="tag" style="color:var(--p);border-color:var(--p)">$\{c.sector}</span>
+        </div>
+        <div style="font-size:12px;color:var(--m);line-height:1.7;margin-bottom:8px">$\{esc(c.desc)}</div>
+        <div style="font-size:11px;color:var(--m);padding:8px;background:var(--s);border-radius:6px;border-left:3px solid $\{ic(c.intensity)}"><strong style="color:$\{ic(c.intensity)}">Why it scores high:</strong> $\{esc(c.why)}</div>
+      </div>
+      <div style="flex-shrink:0;text-align:right">
+        <div style="font-size:10px;color:var(--m)">Revenue</div>
+        <div style="font-size:20px;font-weight:700;color:var(--o)">€$\{c.rev}Bn</div>
+        <div style="font-size:10px;color:var(--m);margin-top:4px">SCF Intensity</div>
+        <div style="font-size:18px;font-weight:700;color:$\{ic(c.intensity)}">$\{Math.round(c.intensity*100)}%</div>
+        <div style="font-size:10px;color:var(--m);margin-top:4px">Employees</div>
+        <div style="font-size:13px;font-weight:600">$\{c.employees.toLocaleString()}</div>
+      </div>
+    </div>
+  </div>\`).join('');
+}
+
+nav('ranking');
+`;
+
 function buildHtml() {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -500,208 +700,14 @@ tbody td{padding:7px 10px;vertical-align:middle;}
 </main>
 </div>
 
+
 <script>
 const BANKS=${JSON.stringify(BANKS)};
 const CORPS=${JSON.stringify(CORPS)};
 const FLAG=${JSON.stringify(FLAG)};
 const SW=${JSON.stringify(SECTOR_WEIGHTS)};
-let _sc='score',_sa=false;
-
-function nav(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  document.getElementById('nav-'+id).classList.add('active');
-  if(id==='ranking')renderRanking();
-  if(id==='matrix')renderMatrix();
-  if(id==='markets')renderMarkets();
-  if(id==='sectors')renderSectors();
-  if(id==='corps')renderCorps();
-}
-
-function scoreClass(s){return s>=70?'#3fb950':s>=50?'#ffa657':s>=35?'#d29922':'#8b949e';}
-
-function renderRanking(){
-  const bkt=document.getElementById('fBucket').value;
-  const scf=document.getElementById('fSCF').value;
-  let rows=BANKS.filter(b=>(!bkt||b.tier===bkt)&&(!scf||b.scf===scf));
-  rows=rows.sort((a,b)=>_sa?(a[_sc]>b[_sc]?1:-1):(a[_sc]<b[_sc]?1:-1));
-  const mB=Math.max(...BANKS.map(b=>b.bis)),mM=Math.max(...BANKS.map(b=>b.mps)),mS=Math.max(...BANKS.map(b=>b.score));
-  const si=c=>c===_sc?(_sa?' ↑':' ↓'):'';
-  const th=(c,l)=>\`<th onclick="sort('$\{c}')" class="$\{_sc===c?'sorted':''}">${l}$\{si(c)}</th>\`;
-  document.getElementById('rankingTable').innerHTML=\`<table><thead><tr>\${th('n','Bank')}<th>Country</th>\${th('score','Combined')}\${th('mps','MPS')}\${th('bis','BIS')}<th>Tier</th><th>SCF Level</th><th>Corporates</th><th>Revenue</th><th>Window</th></tr></thead><tbody>
-  $\{rows.map((b,i)=>\`<tr>
-    <td><strong style="cursor:pointer;color:var(--a)" onclick="openPitch('$\{b.id}')">${esc(b.n)}</strong></td>
-    <td>$\{FLAG[b.c]||''} $\{b.c}</td>
-    <td><div class="sbar"><span style="font-size:16px;font-weight:700;color:$\{scoreClass(b.score)}">${b.score}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.score/mS*100)}%;background:$\{scoreClass(b.score)}"></div></div></div></td>
-    <td><div class="sbar"><span style="min-width:24px;color:var(--p)">${b.mps}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.mps/mM*100)}%;background:var(--p)"></div></div></div></td>
-    <td><div class="sbar"><span style="min-width:24px;color:var(--a)">${b.bis}</span><div class="bar-t"><div class="bar-f" style="width:$\{Math.round(b.bis/mB*100)}%;background:var(--a)"></div></div></div></td>
-    <td><span class="bb b$\{b.tier}">${b.tier}</span></td>
-    <td style="color:var(--m)">${b.scf}</td>
-    <td style="text-align:center">${b.mkt.corps}</td>
-    <td style="color:var(--o)">${b.mkt.rev}Bn€</td>
-    <td style="color:var(--m)">${b.window}mo</td>
-  </tr>\`).join('')}
-  </tbody></table><div style="margin-top:8px;font-size:11px;color:var(--m)">${rows.length} banks shown — <span style="color:var(--a)">${META.banks} analyzed in full system</span></div>\`;
-}
-
-function sort(c){if(_sc===c)_sa=!_sa;else{_sc=c;_sa=false;}renderRanking();}
-
-function openPitch(id){nav('pitch');setTimeout(()=>{document.getElementById('pitchSel').value=id;renderPitch();},50);}
-
-function renderMatrix(){
-  const bv=BANKS.map(b=>b.bis).sort((a,b)=>a-b),mv=BANKS.map(b=>b.mps).sort((a,b)=>a-b);
-  const bm=bv[Math.floor(bv.length/2)],mm=mv[Math.floor(mv.length/2)];
-  const hh=BANKS.filter(b=>b.bis>=bm&&b.mps>=mm).sort((a,b)=>b.score-a.score);
-  const lh=BANKS.filter(b=>b.bis<bm&&b.mps>=mm).sort((a,b)=>b.score-a.score);
-  const hl=BANKS.filter(b=>b.bis>=bm&&b.mps<mm).sort((a,b)=>b.score-a.score);
-  const ll=BANKS.filter(b=>b.bis<bm&&b.mps<mm).sort((a,b)=>b.score-a.score);
-  const chips=list=>list.map(b=>{
-    const d=JSON.stringify({n:b.n,c:b.c,s:b.score,bis:b.bis,mps:b.mps,t:b.tier,corps:b.mkt.corps,rev:b.mkt.rev,scf:b.scf}).replace(/"/g,'&quot;');
-    return \`<div class="chip" onmouseenter="showHCard(this,'$\{d}')" onmouseleave="hideHCard()" onclick="openPitch('$\{b.id}')"><span>${esc(b.n)}</span><span class="chip-s">${b.score}</span></div>\`;
-  }).join('');
-  const q=(cls,icon,title,sub,count,list)=>\`<div class="quadrant $\{cls}"><div class="q-hd"><div><div class="q-ht">$\{icon} $\{title}</div><div class="q-sub">$\{sub}</div></div><span class="q-cnt">$\{count}</span></div><div class="q-banks">$\{list}</div></div>\`;
-  document.getElementById('qGrid').innerHTML=
-    q('qTL','📊','Market Pull',\`MPS ≥ $\{mm} · BIS < $\{bm}\`,lh.length,chips(lh))+
-    q('qTR','⭐','Top Priority',\`MPS ≥ $\{mm} · BIS ≥ $\{bm}\`,hh.length,chips(hh))+
-    q('qLL','💤','Pipeline',\`MPS < $\{mm} · BIS < $\{bm}\`,ll.length,chips(ll))+
-    q('qBR','🎯','Bank Ready',\`MPS < $\{mm} · BIS ≥ $\{bm}\`,hl.length,chips(hl));
-}
-
-function showHCard(el,ds){
-  const d=JSON.parse(ds.replace(/&quot;/g,'"'));
-  const c=document.getElementById('hcard');
-  c.innerHTML=\`<strong>${esc(d.n)}</strong> ($\{d.c})<br><span style="color:var(--g)">Combined: <strong>$\{d.s}</strong></span> · <span style="color:var(--a)">BIS: $\{d.bis}</span> · <span style="color:var(--p)">MPS: $\{d.mps}</span><br>SCF: <strong>$\{d.scf}</strong> · <span class="bb b$\{d.t}">$\{d.t}</span><br>$\{d.corps} corporates · <span style="color:var(--o)">$\{d.rev}Bn€</span><br><span style="font-size:10px;color:var(--m)">Click to open in Pitch Builder →</span>\`;
-  const r=el.getBoundingClientRect();
-  c.style.left=Math.min(r.right+8,window.innerWidth-275)+'px';
-  c.style.top=Math.min(r.top,window.innerHeight-160)+'px';
-  c.classList.add('on');
-}
-function hideHCard(){document.getElementById('hcard').classList.remove('on');}
-
-function renderMarkets(){
-  const bc={};CORPS.forEach(c=>{if(!bc[c.c])bc[c.c]={n:0,rev:0,sec:{}};bc[c.c].n++;bc[c.c].rev+=c.rev;bc[c.c].sec[c.sector]=(bc[c.c].sec[c.sector]||0)+1;});
-  const sorted=Object.entries(bc).sort((a,b)=>b[1].n-a[1].n);
-  const mr=Math.max(...sorted.map(([,v])=>v.rev));
-  const bb={};BANKS.forEach(b=>{bb[b.c]=(bb[b.c]||0)+1;});
-  document.getElementById('mktContent').innerHTML=\`
-  <div class="card"><h3>Corporate Coverage by Country</h3>
-  $\{sorted.map(([ct,d])=>{const ts=Object.entries(d.sec).sort((a,b)=>b[1]-a[1])[0];return \`<div class="crow"><span style="font-size:16px">${FLAG[ct]||'🌐'}</span><div class="ci"><div style="font-size:12px"><strong>$\{ct}</strong> — $\{d.n} corporate$\{d.n>1?'s':''} · $\{bb[ct]||0} bank$\{(bb[ct]||0)>1?'s':''} tracked</div><div style="font-size:10px;color:var(--m)">Top sector: $\{ts?.[0]||'—'} ($\{ts?.[1]||0})</div></div><span style="color:var(--o);font-weight:600">${Math.round(d.rev)}Bn€</span></div>\`;}).join('')}
-  </div>
-  <div class="card"><h3>Addressable Revenue by Country (€Bn)</h3>
-  $\{sorted.map(([ct,d])=>\`<div class="srow"><div class="sn">${FLAG[ct]||'🌐'} $\{ct}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(d.rev/mr*100)}%;background:var(--o)"></div></div><div class="sv">${Math.round(d.rev)}Bn</div></div>\`).join('')}
-  </div>\`;
-}
-
-function renderSectors(){
-  const bs={};CORPS.forEach(c=>{if(!bs[c.sector])bs[c.sector]={n:0,rev:0};bs[c.sector].n++;bs[c.sector].rev+=c.rev;});
-  const sorted=Object.entries(bs).sort((a,b)=>b[1].n-a[1].n);
-  const mn=Math.max(...sorted.map(([,v])=>v.n));
-  const iSorted=Object.entries(SW).sort((a,b)=>b[1]-a[1]);
-  const wc=w=>w>=0.85?'var(--g)':w>=0.65?'var(--o)':w>=0.45?'var(--y)':'var(--m)';
-  document.getElementById('secContent').innerHTML=\`
-  <div class="card"><h3>Corporate Distribution by Sector</h3>
-  $\{sorted.map(([s,d])=>\`<div class="srow"><div class="sn">$\{s}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(d.n/mn*100)}%;background:var(--p)"></div></div><div class="sv">$\{d.n}</div></div>\`).join('')}
-  </div>
-  <div class="card"><h3>SCF Demand Intensity by Sector</h3>
-  <p style="font-size:11px;color:var(--m);margin-bottom:12px">Coefficient applied in MPS calculation — represents the probability that a corporate in this sector will push its bank to adopt an SCF solution.</p>
-  $\{iSorted.map(([s,w])=>\`<div class="srow"><div class="sn">$\{s}</div><div class="sbw"><div class="sb" style="width:$\{Math.round(w*100)}%;background:$\{wc(w)}"></div></div><div class="sv" style="color:$\{wc(w)}">${Math.round(w*100)}%</div></div>\`).join('')}
-  </div>\`;
-}
-
-function renderPitch(){
-  const id=document.getElementById('pitchSel').value;
-  if(!id){document.getElementById('pitchContent').innerHTML='';return;}
-  const b=BANKS.find(x=>x.id===id);
-  if(!b)return;
-  const bg=b.bis<=20?'🔴':b.bis<=40?'🟡':'🟢';
-  const mg=b.mps<=30?'🔴':b.mps<=55?'🟡':'🟢';
-  const cc=(l,v,m,c,desc)=>\`<div class="cc"><div class="cc-lbl">${l} (/${m})</div><div class="cc-val" style="color:$\{c}">${v}</div><div class="bar-t" style="margin-top:4px"><div class="bar-f" style="width:$\{m?Math.round(v/m*100):0}%;background:$\{c}"></div></div><div class="cc-desc">$\{desc}</div></div>\`;
-  const pl=b.pitch.map((p,i)=>\`<div class="pitch-line $\{i===0?'high':i===1?'mid':'low'}">$\{esc(p)}</div>\`).join('');
-  let sigs='';
-  if(b.sigs&&b.sigs.length){
-    sigs='<div class="panel"><div class="panel-h"><h3>🔗 Corporate Extraction Signals</h3></div>';
-    b.sigs.forEach(s=>{
-      sigs+=\`<div style="margin-bottom:10px;padding:10px;background:var(--s);border-radius:6px;border:1px solid var(--bd)"><div style="font-size:12px;margin-bottom:6px"><strong>$\{esc(s.corp)}</strong> <span style="color:var(--m)">— references this bank in SCF program disclosures:</span></div><div style="display:flex;flex-wrap:wrap;gap:5px">\`;
-      s.mentions.forEach(m=>{
-        const isT=m.n.toLowerCase().includes(b.n.toLowerCase().split(' ')[0].toLowerCase());
-        sigs+=\`<span class="$\{isT?'sig-match':'sig-other'}" title="$\{esc(m.ctx)}"><span style="font-weight:$\{isT?700:400};color:$\{isT?'var(--p)':'var(--t)'}">$\{esc(m.n)}</span><span class="role-$\{m.role}">$\{m.role}</span><span style="font-size:9px;color:var(--m)">$\{m.prod}</span></span>\`;
-      });
-      const tm=s.mentions.find(m=>m.n.toLowerCase().includes(b.n.toLowerCase().split(' ')[0].toLowerCase()));
-      sigs+=\`</div>$\{tm?\`<div style="margin-top:6px;font-size:11px;color:var(--m);font-style:italic">"$\{esc(tm.ctx)}"</div>\`:''}</div>\`;
-    });
-    sigs+='</div>';
-  }
-  document.getElementById('pitchContent').innerHTML=\`
-  <div class="panel">
-    <div class="panel-h"><h3>📊 Combined Score</h3></div>
-    <div style="display:flex;gap:24px;margin-bottom:14px;flex-wrap:wrap">
-      <div><div style="font-size:11px;color:var(--m)">Combined Score</div><div style="font-size:32px;font-weight:700;color:$\{scoreClass(b.score)}">${b.score}</div><div style="font-size:10px;color:var(--m)">√(BIS × MPS)</div></div>
-      <div><div style="font-size:11px;color:var(--m)">${bg} BIS</div><div style="font-size:22px;font-weight:600;color:var(--a)">${b.bis}<span style="font-size:12px;color:var(--m)">/100</span></div><div style="font-size:10px;color:var(--m)">Bank buying signal</div></div>
-      <div><div style="font-size:11px;color:var(--m)">${mg} MPS</div><div style="font-size:22px;font-weight:600;color:var(--p)">${b.mps}<span style="font-size:12px;color:var(--m)">/100</span></div><div style="font-size:10px;color:var(--m)">Market pressure</div></div>
-      <div><div style="font-size:11px;color:var(--m)">Tier</div><div style="margin-top:4px"><span class="bb b$\{b.tier}">${b.tier}</span></div></div>
-      <div><div style="font-size:11px;color:var(--m)">Action Window</div><div style="font-size:18px;font-weight:600;color:var(--y)">${b.window}mo</div></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
-      $\{cc('Geo Score',b.comp.geo,40,'var(--a)','Corporate density in same country and EU region.')}
-      $\{cc('Sector Score',b.comp.sector,25,'var(--p)','SCF intensity of sectors in the direct market.')}
-      $\{cc('SCF Gap',b.comp.gap,25,'var(--o)','Gap between current SCF level and maximum (ABSENT=25pts).')}
-      $\{cc('BIS Boost',b.comp.sig,10,'var(--g)','Signal carryover from Model 1 buying intent score.')}
-    </div>
-  </div>
-  <div class="panel">
-    <div class="panel-h"><h3>🌍 Market Context</h3></div>
-    <p style="font-size:12px;line-height:1.7;color:var(--t);margin-bottom:12px">${esc(b.ctx)}</p>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px">
-      <div><div style="font-size:10px;color:var(--m)">Direct Corporates</div><div style="font-size:20px;font-weight:700">${b.mkt.corps}</div></div>
-      <div><div style="font-size:10px;color:var(--m)">Direct Revenue</div><div style="font-size:20px;font-weight:700;color:var(--o)">${b.mkt.rev}Bn€</div></div>
-      <div><div style="font-size:10px;color:var(--m)">Regional Pipeline</div><div style="font-size:20px;font-weight:700;color:var(--y)">${b.mkt.reg_rev}Bn€</div></div>
-      <div><div style="font-size:10px;color:var(--m)">Region</div><div style="font-size:14px;font-weight:600">${b.region}</div></div>
-      <div><div style="font-size:10px;color:var(--m)">Tech Stack</div><div style="font-size:12px;font-weight:500">${b.stack.core}</div><div style="font-size:10px;color:var(--m)">${b.stack.platform}</div></div>
-    </div>
-    <div>${b.mkt.sectors.map(s=>\`<span class="tag">$\{s}</span>\`).join(' ')}</div>
-  </div>
-  $\{sigs}
-  <div class="panel">
-    <div class="panel-h"><h3>💬 Recommended Approach</h3></div>
-    <p style="font-size:12px;color:var(--m);margin-bottom:10px"><strong>SCF Level:</strong> $\{b.scf} &nbsp;·&nbsp; <strong>Priority:</strong> $\{b.priority} &nbsp;·&nbsp; <strong>Stack friction:</strong> $\{b.stack.friction}</p>
-    $\{pl}
-  </div>
-  <div class="cta-bar">
-    <h3>Full system: ${META.banks} banks × ${META.corps} corporates</h3>
-    <p>This preview shows 10 banks from our live intelligence platform. The full system covers all EU-27 markets with ${META.extractions.toLocaleString()} LLM-powered document extractions, real-time news signals, and predictive scoring updated monthly.</p>
-    <a class="cta-btn" href="mailto:david.perron@gmx.fr?subject=CredAble%20Intelligence%20Platform%20Access">Request Full Access</a>
-  </div>\`;
-}
-
-function renderCorps(){
-  const sc={Automotive:1.0,Industrial:0.95,FMCG:0.90,Chemicals:0.90,Retail:0.85,Pharma:0.80,Agribusiness:0.80,Logistics:0.70,Energy:0.75};
-  const ic=w=>w>=0.90?'var(--g)':w>=0.80?'var(--o)':w>=0.65?'var(--y)':'var(--m)';
-  document.getElementById('corpContent').innerHTML=CORPS.map(c=>\`
-  <div class="panel">
-    <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:10px">
-      <div style="flex:1">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <span style="font-size:15px;font-weight:700">${esc(c.n)}</span>
-          <span style="color:var(--m);font-size:12px">${FLAG[c.c]||''} $\{c.c}</span>
-          <span class="tag" style="color:var(--p);border-color:var(--p)">$\{c.sector}</span>
-        </div>
-        <div style="font-size:12px;color:var(--m);line-height:1.7;margin-bottom:8px">${esc(c.desc)}</div>
-        <div style="font-size:11px;color:var(--m);padding:8px;background:var(--s);border-radius:6px;border-left:3px solid $\{ic(c.intensity)}"><strong style="color:$\{ic(c.intensity)}">Why it scores high:</strong> ${esc(c.why)}</div>
-      </div>
-      <div style="flex-shrink:0;text-align:right">
-        <div style="font-size:10px;color:var(--m)">Revenue</div>
-        <div style="font-size:20px;font-weight:700;color:var(--o)">€$\{c.rev}Bn</div>
-        <div style="font-size:10px;color:var(--m);margin-top:4px">SCF Intensity</div>
-        <div style="font-size:18px;font-weight:700;color:$\{ic(c.intensity)}">${Math.round(c.intensity*100)}%</div>
-        <div style="font-size:10px;color:var(--m);margin-top:4px">Employees</div>
-        <div style="font-size:13px;font-weight:600">${c.employees.toLocaleString()}</div>
-      </div>
-    </div>
-  </div>\`).join('');
-}
-
-nav('ranking');
+const META=${JSON.stringify(META)};
+${BROWSER_SCRIPT}
 </script>
 </body>
 </html>`;
