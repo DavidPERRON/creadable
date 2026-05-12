@@ -234,7 +234,7 @@ tr:hover td { background: rgba(255,255,255,0.02); }
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
       Model 1 · BIS <span style="font-size:10px;margin-left:auto;background:var(--accent2);color:#fff;padding:1px 5px;border-radius:8px;">actif</span>
     </div>
-    <div class="nav-item" onclick="location.href='/model2'" style="cursor:pointer;">
+    <div class="nav-item" onclick="showModel2()" style="cursor:pointer;" id="nav-model2">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
       Model 2 · MPS <span style="font-size:10px;margin-left:auto;color:var(--muted);">→</span>
     </div>
@@ -682,6 +682,11 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   </div>
 </div>
 
+<!-- ── MODEL 2 (iframe intégré — pas de navigation externe) ───── -->
+<div class="page" id="page-model2" style="padding:0; height:calc(100vh - 0px);">
+  <iframe id="model2-frame" src="" style="width:100%;height:100%;border:none;display:block;" allow="same-origin"></iframe>
+</div>
+
 </div><!-- .main -->
 </div><!-- .layout -->
 
@@ -691,6 +696,19 @@ tr:hover td { background: rgba(255,255,255,0.02); }
 // ─────────────────────────────────────────────────────────────────
 let currentPage = 'dashboard';
 let currentDataTab = 'bank_techstack';
+
+function showModel2() {
+  // Load Model 2 in embedded iframe — no URL change, Safari HTTPS-only safe
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-model2').classList.add('active');
+  document.getElementById('nav-model2').classList.add('active');
+  const frame = document.getElementById('model2-frame');
+  if (!frame.src || frame.src === window.location.href) {
+    frame.src = '/model2?' + Date.now();
+  }
+  currentPage = 'model2';
+}
 
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
