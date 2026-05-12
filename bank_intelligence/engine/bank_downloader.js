@@ -205,10 +205,34 @@ async function downloadPdf(url, dest, referer = '', cookieStr = '') {
   } catch (e) { return false; }
 }
 
-async function downloadPdfViaPuppeteer(page, url, dest) {
-  // Strategy 1: fetch() from within page context (works for same-origin PDFs)
+async function downloadPdfViaPuppeteer(page, url, dest, irUrl = '') {
+  // Helper: intercept PDF response and save
+  const interceptAndSave = async (navigateFn, label) => {
+    process.stdout.write(`[${label}] `);
+    let saved = false;
+    const handler = async (response) => {
+      if (saved) return;
+      if (!/\.pdf/i.test(response.url())) return;
+      try {
+        const buf = await response.buffer();
+        if (buf && buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
+          fs.writeFileSync(dest, buf);
+          saved = true;
+        }
+      } catch (e) {}
+    };
+    page.on('response', handler);
+    try { await navigateFn(); } catch (e) {}
+    // Wait up to 15s for the response to arrive
+    const start = Date.now();
+    while (!saved && Date.now() - start < 15000) await sleep(400);
+    page.off('response', handler);
+    return saved;
+  };
+
+  // Strategy 1: fetch() from within page context (same-origin PDFs, no CORS issues)
   try {
-    process.stdout.write('[puppeteer-fetch] ');
+    process.stdout.write('[page-fetch] ');
     const result = await page.evaluate(async (pdfUrl) => {
       try {
         const resp = await fetch(pdfUrl, { credentials: 'include' });
@@ -224,46 +248,32 @@ async function downloadPdfViaPuppeteer(page, url, dest) {
         return true;
       }
     }
-    if (result && result.error) process.stdout.write(`[fetch-err:${result.error}] `);
-  } catch (e) { process.stdout.write(`[fetch-ex:${e.message.slice(0,40)}] `); }
+    if (result && result.error) process.stdout.write(`[${result.error}] `);
+  } catch (e) {}
 
-  // Strategy 2: CDP Fetch interception — intercepts at network level, bypasses CORS
-  try {
-    process.stdout.write('[cdp-intercept] ');
-    const client = await page.createCDPSession();
-    await client.send('Fetch.enable', {
-      patterns: [{ urlPattern: '*', requestStage: 'Response' }],
-    });
+  // Strategy 2: navigate directly to PDF URL — intercept the response stream
+  const ok2 = await interceptAndSave(
+    () => page.goto(url, { waitUntil: 'domcontentloaded', timeout: 40000 }),
+    'nav-direct'
+  );
+  if (ok2) return true;
 
-    let resolved = false;
-    const bodyPromise = new Promise((resolve) => {
-      client.on('Fetch.requestPaused', async (event) => {
-        try {
-          const reqUrl = event.request.url;
-          if (reqUrl === url || reqUrl.startsWith(url.replace(/\?.*/, ''))) {
-            const body = await client.send('Fetch.getResponseBody', { requestId: event.requestId }).catch(() => null);
-            await client.send('Fetch.continueRequest', { requestId: event.requestId }).catch(() => {});
-            if (body) { resolved = true; resolve(body); return; }
-          }
-          await client.send('Fetch.continueRequest', { requestId: event.requestId }).catch(() => {});
-        } catch (e) {}
-      });
-    });
-
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 40000 }).catch(() => {});
-    const body = await Promise.race([bodyPromise, sleep(20000).then(() => null)]);
-
-    await client.send('Fetch.disable').catch(() => {});
-    await client.detach().catch(() => {});
-
-    if (body && body.body) {
-      const buf = Buffer.from(body.body, body.base64Encoded ? 'base64' : 'utf8');
-      if (buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
-        fs.writeFileSync(dest, buf);
-        return true;
-      }
-    }
-  } catch (e) { process.stdout.write(`[cdp-ex:${e.message.slice(0,40)}] `); }
+  // Strategy 3: return to IR page, click the link — correct Referer defeats hotlink blocks
+  if (irUrl) {
+    try {
+      await page.goto(irUrl, { waitUntil: 'networkidle2', timeout: 35000 });
+      await dismissConsent(page);
+      await waitForPdfLinks(page, 5000);
+    } catch (e) {}
+    const ok3 = await interceptAndSave(async () => {
+      await page.evaluate((pdfUrl) => {
+        const link = [...document.querySelectorAll('a[href]')].find(a => a.href === pdfUrl);
+        if (link) link.click();
+        else window.open(pdfUrl, '_self');
+      }, url);
+    }, 'click-from-ir');
+    if (ok3) return true;
+  }
 
   return false;
 }
@@ -365,7 +375,7 @@ async function processBank(bank, browser, attempt = 1) {
       const cookieStr = cookies.map(c => `${c.name}=${c.value}`).join('; ');
       let ok = await downloadPdf(pdfUrl, pdfPath, referer, cookieStr);
       // Fallback: download via Puppeteer session (preserves cookies/auth)
-      if (!ok) ok = await downloadPdfViaPuppeteer(page, pdfUrl, pdfPath);
+      if (!ok) ok = await downloadPdfViaPuppeteer(page, pdfUrl, pdfPath, referer);
       if (!ok) {
         result.reason = 'download_failed';
       } else {
