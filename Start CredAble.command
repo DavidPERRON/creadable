@@ -47,7 +47,23 @@ npm install --quiet 2>/dev/null
 echo ""
 
 # ── Démarrage ───────────────────────────────────────────────────
-(sleep 2 && open http://localhost:3333) &
+# Ouvre dans Chrome (évite le blocage HTTPS-only de Safari)
+# Fallback Firefox, puis Safari en dernier recours
+open_browser() {
+  if [ -d "/Applications/Google Chrome.app" ]; then
+    open -a "Google Chrome" "$1"
+  elif [ -d "/Applications/Brave Browser.app" ]; then
+    open -a "Brave Browser" "$1"
+  elif [ -d "/Applications/Firefox.app" ]; then
+    open -a "Firefox" "$1"
+  elif [ -d "/Applications/Microsoft Edge.app" ]; then
+    open -a "Microsoft Edge" "$1"
+  else
+    # Safari : désactivez HTTPS-only dans Préférences → Avancé
+    open "$1"
+  fi
+}
+(sleep 2 && open_browser "http://localhost:3333") &
 
 echo "[start] Démarrage sur http://localhost:3333"
 echo "[start] Fermez cette fenêtre pour arrêter."

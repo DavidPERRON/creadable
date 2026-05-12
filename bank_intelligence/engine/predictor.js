@@ -30,7 +30,7 @@ const TIMEOUT = 60000;
 function sigmoid(x) { return 1 / (1 + Math.exp(-x)); }
 
 function predictAlgo(bank) {
-  const bis = bank.bis_total || 0;
+  const bis = bank.bis?.bis_total || 0;
   const sb  = bank.bis?.signal_breakdown || {};
   const urgency = Math.min(1,
     ((sb.competitor_failure?.score  || 0) / 10) * 0.35 +
@@ -134,12 +134,12 @@ async function predictBank(bank) {
       bank_id: bank.bank_id,
       bank_name: bank.bank_name,
       country: bank.country,
-      bis_score: bank.bis_total || 0,
+      bis_score: bank.bis?.bis_total || 0,
       ...base,
       optimal_window: base.p_buy_6m >= 40 ? 'Q1–Q2 2026' : base.p_buy_12m >= 35 ? 'H2 2026' : '2027',
       top_trigger: bank.bis?.pitch_argument?.slice(0, 100) || 'Surveiller actualités',
       pitch_angle: `Approche sur ${bank.tech_stack?.tf_scf_platform || 'gap plateforme'}`,
-      prediction_confidence: bank.bis_total >= 60 ? 'HIGH' : bank.bis_total >= 40 ? 'MEDIUM' : 'LOW',
+      prediction_confidence: (bank.bis?.bis_total || 0) >= 60 ? 'HIGH' : (bank.bis?.bis_total || 0) >= 40 ? 'MEDIUM' : 'LOW',
       method: 'algorithmic',
     };
   }
@@ -166,7 +166,7 @@ async function predictBank(bank) {
   } catch (e) {
     return {
       bank_id: bank.bank_id, bank_name: bank.bank_name, country: bank.country,
-      bis_score: bank.bis_total || 0, ...base, method: 'algo_fallback',
+      bis_score: bank.bis?.bis_total || 0, ...base, method: 'algo_fallback',
       top_trigger: 'LLM error — algorithmic fallback', pitch_angle: '', prediction_confidence: 'LOW',
     };
   }

@@ -6,19 +6,44 @@
 
 const express = require('express');
 const { spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
+const path    = require('path');
+const fs      = require('fs');
 
-const app = express();
+const app  = express();
 const PORT = process.env.PORT || 3333;
 const ROOT = path.join(__dirname, '..');
+const ENV_FILE = path.join(ROOT, '.env.local');
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ─── Persist/load API key ────────────────────────────────────────
+function loadEnv() {
+  try {
+    const lines = fs.readFileSync(ENV_FILE, 'utf8').split('\n');
+    for (const line of lines) {
+      const m = line.match(/^DEEPINFRA_API_KEY=(.+)$/);
+      if (m) return m[1].trim();
+    }
+  } catch {}
+  return '';
+}
+function saveEnv(key) {
+  try {
+    let content = '';
+    try { content = fs.readFileSync(ENV_FILE, 'utf8'); } catch {}
+    if (content.includes('DEEPINFRA_API_KEY=')) {
+      content = content.replace(/^DEEPINFRA_API_KEY=.*/m, `DEEPINFRA_API_KEY=${key}`);
+    } else {
+      content += `\nDEEPINFRA_API_KEY=${key}\n`;
+    }
+    fs.writeFileSync(ENV_FILE, content.trim() + '\n', 'utf8');
+  } catch (e) { console.error('[config] Cannot save .env.local:', e.message); }
+}
+
 // ─── In-memory state ────────────────────────────────────────────
-let apiKey = process.env.DEEPINFRA_API_KEY || '';
-let activeJobs = {};        // jobId → { proc, clients[], log[] }
+let apiKey    = process.env.DEEPINFRA_API_KEY || loadEnv();
+let activeJobs = {};
 let jobCounter = 0;
 
 // ─── SSE helper ─────────────────────────────────────────────────
@@ -42,7 +67,10 @@ app.get('/api/config', (req, res) => {
 
 app.post('/api/config', (req, res) => {
   const { api_key } = req.body;
-  if (api_key) apiKey = api_key.trim();
+  if (api_key) {
+    apiKey = api_key.trim();
+    saveEnv(apiKey);  // persist across restarts
+  }
   res.json({ ok: true });
 });
 
@@ -69,7 +97,7 @@ app.get('/api/stats', (req, res) => {
     banks: {
       techstack: techstack?.banks?.length ?? 0,
       bis_scored: bisScores?.banks?.length ?? 0,
-      bis_high: bisScores?.banks?.filter(b => b.bucket === 'HIGH')?.length ?? 0,
+      bis_high: bisScores?.banks?.filter(b => b.bis?.bis_bucket === 'HIGH')?.length ?? 0,
       bis_extractions: countFiles(path.join(ROOT, 'bank_intelligence/extractions'), '.json'),
     },
     reports: {
@@ -269,6 +297,17 @@ app.use('/reports/bis', express.static(path.join(ROOT, 'bank_intelligence/report
 app.use('/reports/corporate', express.static(path.join(ROOT, 'corporate_scraper/reports')));
 
 // ─── Model 2 (MPS) — served at /model2 to avoid Safari port issues ──
+// Explicit routes before static to avoid Safari 301 redirect issue
+app.get('/model2', (req, res) => {
+  const fp = path.join(ROOT, 'model2/public/index.html');
+  if (fs.existsSync(fp)) return res.sendFile(fp);
+  res.status(503).send('<h2>Model 2 non disponible — lancez: git pull && npm run ui</h2>');
+});
+app.get('/model2/', (req, res) => {
+  const fp = path.join(ROOT, 'model2/public/index.html');
+  if (fs.existsSync(fp)) return res.sendFile(fp);
+  res.status(503).send('<h2>Model 2 non disponible — lancez: git pull && npm run ui</h2>');
+});
 app.use('/model2', express.static(path.join(ROOT, 'model2/public')));
 
 app.get('/model2/api/mps', (req, res) => {

@@ -33,7 +33,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const REPO = path.join(ROOT, '..');
-const TODAY = new Date('2026-05-10');
+const TODAY = new Date();
 const TODAY_STR = TODAY.toISOString().slice(0, 10);
 
 const PATHS = {
