@@ -206,7 +206,7 @@ async function downloadPdf(url, dest, referer = '', cookieStr = '') {
 }
 
 async function downloadPdfViaPuppeteer(page, url, dest) {
-  // Strategy 1: fetch() from within the page context (has session cookies + same-origin rights)
+  // Strategy 1: fetch() from within page context (works for same-origin PDFs)
   try {
     process.stdout.write('[puppeteer-fetch] ');
     const result = await page.evaluate(async (pdfUrl) => {
@@ -227,28 +227,42 @@ async function downloadPdfViaPuppeteer(page, url, dest) {
     if (result && result.error) process.stdout.write(`[fetch-err:${result.error}] `);
   } catch (e) { process.stdout.write(`[fetch-ex:${e.message.slice(0,40)}] `); }
 
-  // Strategy 2: CDP Network.loadNetworkResource (Chrome 90+)
+  // Strategy 2: CDP Fetch interception — intercepts at network level, bypasses CORS
   try {
-    process.stdout.write('[cdp-load] ');
+    process.stdout.write('[cdp-intercept] ');
     const client = await page.createCDPSession();
-    const frame = page.mainFrame();
-    const frameId = frame._id || frame.id?.() || '';
-    const res = await client.send('Network.loadNetworkResource', {
-      url, frameId, options: { includeCredentials: true },
-    }).catch(e => null);
-    if (res && res.resource && res.resource.success) {
-      const r = await client.send('IO.read', { handle: res.resource.stream, size: 80 * 1024 * 1024 }).catch(() => null);
-      if (r && r.data) {
-        const buf = Buffer.from(r.data, r.base64Encoded ? 'base64' : 'utf8');
-        if (buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
-          fs.writeFileSync(dest, buf);
-          await client.send('IO.close', { handle: res.resource.stream }).catch(() => {});
-          await client.detach().catch(() => {});
-          return true;
-        }
+    await client.send('Fetch.enable', {
+      patterns: [{ urlPattern: '*', requestStage: 'Response' }],
+    });
+
+    let resolved = false;
+    const bodyPromise = new Promise((resolve) => {
+      client.on('Fetch.requestPaused', async (event) => {
+        try {
+          const reqUrl = event.request.url;
+          if (reqUrl === url || reqUrl.startsWith(url.replace(/\?.*/, ''))) {
+            const body = await client.send('Fetch.getResponseBody', { requestId: event.requestId }).catch(() => null);
+            await client.send('Fetch.continueRequest', { requestId: event.requestId }).catch(() => {});
+            if (body) { resolved = true; resolve(body); return; }
+          }
+          await client.send('Fetch.continueRequest', { requestId: event.requestId }).catch(() => {});
+        } catch (e) {}
+      });
+    });
+
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 40000 }).catch(() => {});
+    const body = await Promise.race([bodyPromise, sleep(20000).then(() => null)]);
+
+    await client.send('Fetch.disable').catch(() => {});
+    await client.detach().catch(() => {});
+
+    if (body && body.body) {
+      const buf = Buffer.from(body.body, body.base64Encoded ? 'base64' : 'utf8');
+      if (buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
+        fs.writeFileSync(dest, buf);
+        return true;
       }
     }
-    await client.detach().catch(() => {});
   } catch (e) { process.stdout.write(`[cdp-ex:${e.message.slice(0,40)}] `); }
 
   return false;
@@ -270,12 +284,22 @@ async function extractText(pdf, txt) {
 }
 
 async function searchDuckDuckGoForPdf(page, bank) {
+  const bankDomain = (bank.ir_url || '').replace(/https?:\/\/([^/]+).*/, '$1').toLowerCase();
+  const bankNameWords = bank.name.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+
+  const isPlausible = (href) => {
+    const h = href.toLowerCase();
+    if (bankDomain && h.includes(bankDomain)) return true;
+    if (bankNameWords.some(w => h.includes(w))) return true;
+    return false;
+  };
+
   const queries = [
     `"${bank.name}" annual report 2024 filetype:pdf`,
     `"${bank.name}" annual report 2023 filetype:pdf`,
     `"${bank.name}" rapport annuel 2024 filetype:pdf`,
     `"${bank.name}" jahresbericht 2024 filetype:pdf`,
-    `site:${(bank.ir_url || '').replace(/https?:\/\/([^/]+).*/, '$1')} annual report 2024 pdf`,
+    `site:${bankDomain} annual report 2024 pdf`,
   ];
   for (const q of queries) {
     try {
@@ -290,9 +314,10 @@ async function searchDuckDuckGoForPdf(page, bank) {
           if (m) href = decodeURIComponent(m[1]);
           if (/\.pdf(\?|#|$)/i.test(href)) out.push(href);
         });
-        return out.slice(0, 5);
+        return out.slice(0, 10);
       });
-      if (pdfs.length > 0) return pdfs[0];
+      const match = pdfs.find(isPlausible);
+      if (match) return match;
     } catch (e) {}
   }
   return null;
