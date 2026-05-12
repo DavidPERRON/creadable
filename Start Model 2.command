@@ -1,12 +1,38 @@
 #!/bin/bash
-# Double-cliquez sur ce fichier dans le Finder pour lancer le Model 2 (MPS).
+# Double-cliquez sur ce fichier dans le Finder pour lancer Model 2 (MPS).
+# Fonctionne depuis n'importe quel dossier — trouve le repo creadable automatiquement.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+
+# ── Localiser le repo creadable ──────────────────────────────────
+find_repo() {
+  if [ -f "$SCRIPT_DIR/ui/server.js" ]; then
+    echo "$SCRIPT_DIR"; return
+  fi
+  local sibling="$(dirname "$SCRIPT_DIR")/creadable"
+  if [ -f "$sibling/ui/server.js" ]; then
+    echo "$(cd "$sibling" && pwd)"; return
+  fi
+  if [ -f "$HOME/Desktop/creadable/ui/server.js" ]; then
+    echo "$HOME/Desktop/creadable"; return
+  fi
+  echo ""
+}
+
+REPO="$(find_repo)"
+if [ -z "$REPO" ]; then
+  echo "❌ Dossier 'creadable' introuvable."
+  echo "   Cherché dans : $SCRIPT_DIR, dossier voisin, ~/Desktop/creadable"
+  echo ""
+  read -rp "Appuyez sur Entrée pour quitter..."
+  exit 1
+fi
+cd "$REPO"
 
 echo "────────────────────────────────────────"
 echo "  CredAble Intelligence — Model 2 (MPS)"
 echo "────────────────────────────────────────"
+echo "  Repo : $REPO"
 echo ""
 
 # ── Nettoyer état git bloquant ───────────────────────────────────
@@ -18,49 +44,36 @@ if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; th
   git stash push -m "auto-stash $(date '+%Y-%m-%d %H:%M')" 2>/dev/null
 fi
 git config pull.rebase true 2>/dev/null
-
-echo "[git] Mise à jour..."
-git pull origin claude/european-banks-business-case-ayKhq 2>/dev/null \
+git pull origin main --quiet 2>/dev/null \
   && echo "[git] À jour." \
   || echo "[git] Pas de connexion — version locale."
-
 echo ""
-
-# ── Vérifier que model2/ existe ─────────────────────────────────
-if [ ! -f "$SCRIPT_DIR/model2/server.js" ]; then
-  echo "❌ model2/server.js introuvable."
-  echo ""
-  echo "Le Model 2 est intégré dans Model 1 depuis la v2."
-  echo "Lancez plutôt : Start CredAble.command"
-  echo "puis ouvrez   : http://localhost:3333/model2"
-  echo ""
-  echo "Appuyez sur Entrée pour ouvrir Model 2 via Model 1..."
-  read -r
-  # Démarrer Model 1 si pas actif
-  pkill -f "node ui/server.js" 2>/dev/null
-  sleep 1
-  npm install --quiet 2>/dev/null
-  (sleep 2 && open http://localhost:3333/model2) &
-  echo "[start] Démarrage Model 1+2 sur http://localhost:3333"
-  npm run ui
-  exit 0
-fi
 
 # ── Tuer l'ancienne instance ─────────────────────────────────────
 echo "[start] Arrêt de l'ancienne instance..."
-pkill -f "node model2/server.js" 2>/dev/null
 pkill -f "node ui/server.js" 2>/dev/null
 sleep 1
 
 # ── Dépendances ──────────────────────────────────────────────────
 echo "[npm] Vérification des dépendances..."
 npm install --quiet 2>/dev/null
-cd "$SCRIPT_DIR/model2" && npm install --quiet 2>/dev/null && cd "$SCRIPT_DIR"
 echo ""
 
-# ── Démarrage ────────────────────────────────────────────────────
-# Model 2 standalone sur 3334 + Model 1 sur 3333 (pour les logs SSE)
-(sleep 2 && open http://localhost:3333/model2) &
+# ── Ouvrir dans le bon navigateur ────────────────────────────────
+open_browser() {
+  if [ -d "/Applications/Google Chrome.app" ]; then
+    open -a "Google Chrome" "$1"
+  elif [ -d "/Applications/Brave Browser.app" ]; then
+    open -a "Brave Browser" "$1"
+  elif [ -d "/Applications/Firefox.app" ]; then
+    open -a "Firefox" "$1"
+  elif [ -d "/Applications/Microsoft Edge.app" ]; then
+    open -a "Microsoft Edge" "$1"
+  else
+    open "$1"
+  fi
+}
+(sleep 2 && open_browser "http://localhost:3333/model2") &
 
 echo "[start] Model 2 (MPS) → http://localhost:3333/model2"
 echo "[start] Model 1 (BIS) → http://localhost:3333"
