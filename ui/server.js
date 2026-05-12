@@ -85,6 +85,8 @@ const DATA_FILES = {
   fintech_failures:        'bank_intelligence/data/fintech_failures.json',
   competitor_intelligence: 'bank_intelligence/data/competitor_intelligence.json',
   bis_scores:              'bank_intelligence/reports/bis_scores.json',
+  predictions:             'bank_intelligence/reports/predictions.json',
+  demand_signals:          'corporate_scraper/reports/demand_signals.json',
   catalog:                 'corporate_scraper/catalog.json',
 };
 
@@ -158,6 +160,7 @@ const COMMANDS = {
   'cs:extract-dry':        { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js', '--dry-run'] },
   'cs:news':               { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/corp_news.js'] },
   'cs:crossref':           { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/crossref.js'] },
+  'cs:demand':             { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/demand_signal.js'] },
   'cs:aggregate':          { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/aggregator.js'] },
   'cs:summary':            { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/summary.js'] },
   'cs:dashboard':          { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/dashboard.js'] },
@@ -171,6 +174,7 @@ const COMMANDS = {
   'bi:report':        { cwd: 'bank_intelligence', cmd: 'make', args: ['report'] },
   'bi:all':           { cwd: 'bank_intelligence', cmd: 'make', args: ['all'] },
   'bi:full':          { cwd: 'bank_intelligence', cmd: 'make', args: ['full'] },
+  'bi:predict':       { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/predictor.js'] },
 };
 
 app.post('/api/run/:cmd', (req, res) => {

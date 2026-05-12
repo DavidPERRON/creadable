@@ -361,6 +361,13 @@ tr:hover td { background: rgba(255,255,255,0.02); }
             <span class="badge badge-blue" style="margin-left:6px">+contexte</span>
           </span>
         </label>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-demand" style="width:16px;height:16px;accent-color:var(--accent)" onchange="toggleDemandBtn()">
+          <span>
+            <strong>Signal de demande corporate</strong> — score P(push SCF) par corporate, basé sur les extractions
+            <span class="badge badge-blue" style="margin-left:6px">+prédiction</span>
+          </span>
+        </label>
         <div class="alert alert-info" style="margin-top:4px;padding:8px 12px;font-size:12px">
           ℹ️ <strong>Périmètre de l'extraction</strong> : rapports annuels officiels uniquement. Pas de cross-référence entre corporates (chaque appel LLM est isolé). Les enrichissements ci-dessus lèvent ces limites progressivement.
         </div>
@@ -508,6 +515,23 @@ tr:hover td { background: rgba(255,255,255,0.02); }
     </div>
   </div>
 
+  <div class="section" style="margin-bottom:16px">
+    <div class="section-header"><span class="section-title">Mode prédiction</span></div>
+    <div class="section-body">
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;margin-bottom:10px">
+        <input type="checkbox" id="predict-banks" style="width:16px;height:16px;accent-color:var(--accent)" onchange="togglePredictMode()">
+        <span>
+          <strong>Activer prédictions bancaires</strong> — P(achat) à 6/12/18 mois, fenêtre optimale, trigger à surveiller
+          <span class="badge badge-blue" style="margin-left:6px">LLM</span>
+        </span>
+      </label>
+      <div id="predict-actions" style="display:none;margin-top:8px">
+        <button class="btn btn-primary" onclick="runBiCmd('bi:predict')">Générer prédictions (LLM)</button>
+        <span style="font-size:12px;color:var(--muted);margin-left:10px">~$0.10 pour 94 banques</span>
+      </div>
+    </div>
+  </div>
+
   <div class="section" style="margin-bottom:20px">
     <div class="section-header"><span class="section-title">Calculer / Mettre à jour les BIS</span></div>
     <div class="section-body">
@@ -553,6 +577,9 @@ tr:hover td { background: rgba(255,255,255,0.02); }
             <tr>
               <th>#</th><th>Banque</th><th>Pays</th>
               <th>Score</th><th>Bucket</th><th>Fenêtre</th><th>Friction</th>
+              <th class="predict-col" style="display:none">P(6m)</th>
+              <th class="predict-col" style="display:none">P(12m)</th>
+              <th class="predict-col" style="display:none">Trigger</th>
               <th>Signaux forts</th>
             </tr>
           </thead>
@@ -871,8 +898,13 @@ function applyBisThreshold(val) {
   if (countLine) countLine.textContent = `${banks.length} banque${banks.length > 1 ? 's' : ''} avec BIS ≥ ${val} (sur ${_bisAllBanks.length} total)`;
   const tbody = document.getElementById('bis-table-body');
   if (!banks.length) { tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Aucune banque avec BIS ≥ ${val}. Baissez le seuil.</td></tr>`; return; }
-  tbody.innerHTML = banks.map((b, i) => `
-    <tr>
+  const showPredict = isPredictEnabled();
+  tbody.innerHTML = banks.map((b, i) => {
+    const pred = _predictionsMap[b.bank_id] || {};
+    const p6  = pred.p_buy_6m  != null ? `<span style="color:var(--accent);font-weight:600">${pred.p_buy_6m}%</span>`  : '—';
+    const p12 = pred.p_buy_12m != null ? `<span style="color:var(--green);font-weight:600">${pred.p_buy_12m}%</span>` : '—';
+    const trig = pred.top_trigger ? `<span style="font-size:11px;color:var(--muted)">${pred.top_trigger}</span>` : '—';
+    return `<tr>
       <td style="color:var(--muted)">${i+1}</td>
       <td style="font-weight:500">${b.bank_name || b.name}</td>
       <td>${b.country || ''}</td>
@@ -880,8 +912,12 @@ function applyBisThreshold(val) {
       <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
       <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
       <td>${frictionBadge(b.friction)}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'}">${p6}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'}">${p12}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'};max-width:180px">${trig}</td>
       <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 function frictionBadge(f) {
@@ -996,6 +1032,7 @@ async function viewExtraction(type, id) {
 // ─────────────────────────────────────────────────────────────────
 function isNewsEnabled()     { return document.getElementById('enrich-news')?.checked; }
 function isCrossrefEnabled() { return document.getElementById('enrich-crossref')?.checked; }
+function isPredictEnabled()  { return document.getElementById('predict-banks')?.checked; }
 
 function runCsNewsIfEnabled() {
   if (isNewsEnabled()) runCmd('cs:news');
@@ -1010,6 +1047,30 @@ function runCsExtractWithOptions() {
 function runCsPostExtract() {
   if (isCrossrefEnabled()) runCmd('cs:crossref');
   else alert('Cochez "Cross-référence" pour activer ce module.');
+}
+
+function toggleDemandBtn() {
+  // future: show demand signal table
+}
+
+function togglePredictMode() {
+  const on = isPredictEnabled();
+  document.getElementById('predict-actions').style.display = on ? 'block' : 'none';
+  document.querySelectorAll('.predict-col').forEach(el => el.style.display = on ? '' : 'none');
+  if (on && _bisAllBanks.length) applyBisThreshold(document.getElementById('bis-threshold')?.value || 0);
+}
+
+let _predictionsMap = {};
+
+async function loadPredictions() {
+  try {
+    const r = await fetch('/api/data/predictions');
+    if (!r.ok) return;
+    const d = await r.json();
+    const data = JSON.parse(d.content);
+    _predictionsMap = {};
+    (data.predictions || []).forEach(p => { _predictionsMap[p.bank_id] = p; });
+  } catch(e) {}
 }
 
 // ─────────────────────────────────────────────────────────────────
