@@ -344,6 +344,31 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   </div>
 
   <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Enrichissements</span></div>
+    <div class="section-body">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-news" style="width:16px;height:16px;accent-color:var(--accent)">
+          <span>
+            <strong>Actualités web</strong> — fetche les news DuckDuckGo avant l'extraction (supply chain, trade finance, partenariats)
+            <span class="badge badge-blue" style="margin-left:6px">+précision</span>
+          </span>
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-crossref" style="width:16px;height:16px;accent-color:var(--accent)">
+          <span>
+            <strong>Cross-référence</strong> — après extraction, agrège les banques citées par plusieurs corporates (signal de demande)
+            <span class="badge badge-blue" style="margin-left:6px">+contexte</span>
+          </span>
+        </label>
+        <div class="alert alert-info" style="margin-top:4px;padding:8px 12px;font-size:12px">
+          ℹ️ <strong>Périmètre de l'extraction</strong> : rapports annuels officiels uniquement. Pas de cross-référence entre corporates (chaque appel LLM est isolé). Les enrichissements ci-dessus lèvent ces limites progressivement.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
     <div class="section-header"><span class="section-title">Étapes individuelles</span></div>
     <div class="section-body">
       <div class="pipeline-group">
@@ -358,12 +383,22 @@ tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="padding-top:22px;color:var(--muted)">→</div>
         <div class="pipeline-step">
-          <div class="step-label">3 — Extract (LLM)</div>
-          <button class="btn btn-primary" onclick="runCmd('cs:extract')">Extract</button>
+          <div class="step-label">2b — News (opt.)</div>
+          <button class="btn btn-secondary" onclick="runCsNewsIfEnabled()">Fetch News</button>
         </div>
         <div style="padding-top:22px;color:var(--muted)">→</div>
         <div class="pipeline-step">
-          <div class="step-label">4 — Aggregate</div>
+          <div class="step-label">3 — Extract (LLM)</div>
+          <button class="btn btn-primary" onclick="runCsExtractWithOptions()">Extract</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">4 — Cross-ref (opt.)</div>
+          <button class="btn btn-secondary" onclick="runCsPostExtract()">Cross-ref</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">5 — Aggregate</div>
           <button class="btn btn-secondary" onclick="runCmd('cs:aggregate')">Aggregate</button>
         </div>
       </div>
@@ -954,6 +989,27 @@ async function viewExtraction(type, id) {
   const raw = JSON.parse(d.content);
   document.getElementById('extraction-content').value = JSON.stringify(raw, null, 2);
   viewer.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Enrichment helpers
+// ─────────────────────────────────────────────────────────────────
+function isNewsEnabled()     { return document.getElementById('enrich-news')?.checked; }
+function isCrossrefEnabled() { return document.getElementById('enrich-crossref')?.checked; }
+
+function runCsNewsIfEnabled() {
+  if (isNewsEnabled()) runCmd('cs:news');
+  else alert('Cochez "Actualités web" pour activer le fetch de news.');
+}
+
+function runCsExtractWithOptions() {
+  const cmd = isNewsEnabled() ? 'cs:extract-with-news' : 'cs:extract';
+  runCmd(cmd);
+}
+
+function runCsPostExtract() {
+  if (isCrossrefEnabled()) runCmd('cs:crossref');
+  else alert('Cochez "Cross-référence" pour activer ce module.');
 }
 
 // ─────────────────────────────────────────────────────────────────
