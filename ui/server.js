@@ -268,7 +268,75 @@ app.get('/api/logs/:jobId', (req, res) => {
 app.use('/reports/bis', express.static(path.join(ROOT, 'bank_intelligence/reports')));
 app.use('/reports/corporate', express.static(path.join(ROOT, 'corporate_scraper/reports')));
 
+// ─── Model 2 (MPS) — served at /model2 to avoid Safari port issues ──
+app.use('/model2', express.static(path.join(ROOT, 'model2/public')));
+
+app.get('/model2/api/mps', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'bank_intelligence/reports/mps_scores.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'mps_scores.json not found — run MPS first' }); }
+});
+
+app.get('/model2/api/bis', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'bank_intelligence/reports/bis_scores.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'bis_scores.json not found' }); }
+});
+
+app.get('/model2/api/catalog', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'corporate_scraper/catalog.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'catalog.json not found' }); }
+});
+
+app.get('/model2/api/extraction/:id', (req, res) => {
+  try {
+    const fp = path.join(ROOT, 'corporate_scraper/extractions', req.params.id + '.json');
+    res.json(JSON.parse(fs.readFileSync(fp, 'utf8')));
+  } catch { res.status(404).json({ error: 'not found' }); }
+});
+
+app.get('/model2/api/stats', (req, res) => {
+  const readJson = (p) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8')); } catch { return null; } };
+  const countFiles = (dir, ext) => { try { return fs.readdirSync(path.join(ROOT, dir)).filter(f => f.endsWith(ext)).length; } catch { return 0; } };
+  const mps = readJson('bank_intelligence/reports/mps_scores.json');
+  const bis = readJson('bank_intelligence/reports/bis_scores.json');
+  const cat = readJson('corporate_scraper/catalog.json');
+  res.json({
+    mps_scored:     mps?.banks_scored ?? 0,
+    bis_scored:     bis?.banks?.length ?? 0,
+    corporates:     cat?.corporates?.length ?? 0,
+    extractions:    countFiles('corporate_scraper/extractions', '.json'),
+    mps_generated:  mps?.generated_at ?? null,
+    bucket_dist:    mps?.bucket_distribution ?? {},
+    bis_max:        bis?.banks ? Math.max(...bis.banks.map(b => b.bis?.bis_total || 0)) : 0,
+  });
+});
+
+app.post('/model2/api/run/mps', (req, res) => {
+  const jobId = ++jobCounter;
+  const proc  = spawn('node', ['engine/mps_calculator.js'], {
+    cwd: path.join(ROOT, 'bank_intelligence'),
+    env: process.env,
+    shell: true,
+  });
+  activeJobs[jobId] = { proc, clients: [], log: [], done: false, exitCode: null };
+  const broadcast = (event, data) => {
+    activeJobs[jobId].log.push({ event, data });
+    activeJobs[jobId].clients.forEach(c => sseWrite(c, event, data));
+  };
+  proc.stdout.on('data', d => broadcast('stdout', d.toString()));
+  proc.stderr.on('data', d => broadcast('stderr', d.toString()));
+  proc.on('close', code => {
+    activeJobs[jobId].done = true; activeJobs[jobId].exitCode = code;
+    broadcast('done', { code });
+    setTimeout(() => delete activeJobs[jobId], 300000);
+  });
+  res.json({ jobId });
+});
+
 app.listen(PORT, () => {
   console.log(`\n  CredAble Intelligence Control Panel`);
-  console.log(`  → http://localhost:${PORT}\n`);
+  console.log(`  → http://localhost:${PORT}`);
+  console.log(`  → http://localhost:${PORT}/model2  (Model 2 — MPS)\n`);
 });

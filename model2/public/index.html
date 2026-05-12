@@ -311,7 +311,7 @@ async function init() {
 
 async function loadStats() {
   try {
-    const r = await fetch('/api/stats').then(r => r.json());
+    const r = await fetch('/model2/api/stats').then(r => r.json());
     document.getElementById('statBanks').textContent     = r.mps_scored || '—';
     document.getElementById('statCorps').textContent     = r.corporates || '—';
     document.getElementById('statGenerated').textContent = r.mps_generated ? 'Généré ' + r.mps_generated : 'Non généré';
@@ -321,7 +321,7 @@ async function loadStats() {
 
 async function loadMPS() {
   try {
-    const r = await fetch('/api/mps');
+    const r = await fetch('/model2/api/mps');
     if (!r.ok) { showEmpty(); return; }
     _mps = await r.json();
     populateCountryFilter();
@@ -332,7 +332,7 @@ async function loadMPS() {
 
 async function loadCatalog() {
   try {
-    const r = await fetch('/api/catalog').then(r => r.json());
+    const r = await fetch('/model2/api/catalog').then(r => r.json());
     _catalog = (r.corporates || r || []);
   } catch {}
 }
@@ -769,7 +769,7 @@ async function runMPS() {
   status.textContent = '';
 
   try {
-    const r = await fetch('/api/run/mps', { method: 'POST' }).then(r => r.json());
+    const r = await fetch('/model2/api/run/mps', { method: 'POST' }).then(r => r.json());
     if (r.error) { status.textContent = '❌ ' + r.error; btn.disabled = false; btn.textContent = '▶ Recalculer MPS'; return; }
 
     const es = new EventSource('/api/logs/' + r.jobId);
