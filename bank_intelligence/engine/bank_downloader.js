@@ -206,38 +206,52 @@ async function downloadPdf(url, dest, referer = '', cookieStr = '') {
 }
 
 async function downloadPdfViaPuppeteer(page, url, dest) {
+  // Strategy 1: fetch() from within the page context (has session cookies + same-origin rights)
   try {
+    process.stdout.write('[puppeteer-fetch] ');
+    const result = await page.evaluate(async (pdfUrl) => {
+      try {
+        const resp = await fetch(pdfUrl, { credentials: 'include' });
+        if (!resp.ok) return { error: resp.status };
+        const buf = await resp.arrayBuffer();
+        return { data: Array.from(new Uint8Array(buf)) };
+      } catch (e) { return { error: String(e) }; }
+    }, url);
+    if (result && result.data) {
+      const buf = Buffer.from(result.data);
+      if (buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
+        fs.writeFileSync(dest, buf);
+        return true;
+      }
+    }
+    if (result && result.error) process.stdout.write(`[fetch-err:${result.error}] `);
+  } catch (e) { process.stdout.write(`[fetch-ex:${e.message.slice(0,40)}] `); }
+
+  // Strategy 2: CDP Network.loadNetworkResource (Chrome 90+)
+  try {
+    process.stdout.write('[cdp-load] ');
     const client = await page.createCDPSession();
-    await client.send('Page.setDownloadBehavior', {
-      behavior: 'allow',
-      downloadPath: path.dirname(dest),
-    });
-    // Navigate to the PDF URL — if browser triggers download, wait for file
-    const tmpName = path.basename(dest);
-    const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => null);
-    if (response) {
-      const ct = (response.headers()['content-type'] || '');
-      if (/pdf|octet-stream/i.test(ct)) {
-        const buf = await response.buffer().catch(() => null);
-        if (buf && buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
+    const frame = page.mainFrame();
+    const frameId = frame._id || frame.id?.() || '';
+    const res = await client.send('Network.loadNetworkResource', {
+      url, frameId, options: { includeCredentials: true },
+    }).catch(e => null);
+    if (res && res.resource && res.resource.success) {
+      const r = await client.send('IO.read', { handle: res.resource.stream, size: 80 * 1024 * 1024 }).catch(() => null);
+      if (r && r.data) {
+        const buf = Buffer.from(r.data, r.base64Encoded ? 'base64' : 'utf8');
+        if (buf.length > 10000 && buf.slice(0, 4).toString() === '%PDF') {
           fs.writeFileSync(dest, buf);
+          await client.send('IO.close', { handle: res.resource.stream }).catch(() => {});
           await client.detach().catch(() => {});
           return true;
         }
       }
     }
-    // Wait up to 15s for a file to appear (download triggered)
-    const start = Date.now();
-    while (Date.now() - start < 15000) {
-      await sleep(500);
-      if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) {
-        await client.detach().catch(() => {});
-        return true;
-      }
-    }
     await client.detach().catch(() => {});
-    return false;
-  } catch (e) { return false; }
+  } catch (e) { process.stdout.write(`[cdp-ex:${e.message.slice(0,40)}] `); }
+
+  return false;
 }
 
 async function extractText(pdf, txt) {
