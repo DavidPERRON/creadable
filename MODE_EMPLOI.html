@@ -3,275 +3,496 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; margin: 2.5cm; color: #1a1a1a; line-height: 1.5; }
-  h1 { font-size: 22pt; color: #1a3a6e; border-bottom: 3px solid #1a3a6e; padding-bottom: 8px; margin-top: 0; }
-  h2 { font-size: 15pt; color: #1a3a6e; border-bottom: 1px solid #c0cce0; padding-bottom: 4px; margin-top: 28px; }
-  h3 { font-size: 12pt; color: #2a5298; margin-top: 20px; }
-  .cover { text-align: center; margin-bottom: 60px; }
-  .cover h1 { border: none; font-size: 28pt; margin-bottom: 8px; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; margin: 2.5cm; color: #1a1a1a; line-height: 1.6; }
+  h1 { font-size: 22pt; color: #1a3a6e; border-bottom: 3px solid #1a3a6e; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 14pt; color: #1a3a6e; border-bottom: 1px solid #c0cce0; padding-bottom: 4px; margin-top: 24px; }
+  h3 { font-size: 12pt; color: #2a5298; margin-top: 18px; }
+  .cover { text-align: center; margin-bottom: 60px; padding-top: 40px; }
+  .cover h1 { border: none; font-size: 30pt; margin-bottom: 8px; }
   .cover .sub { font-size: 14pt; color: #555; }
-  .cover .date { font-size: 10pt; color: #888; margin-top: 40px; }
-  .tip { background: #eef4ff; border-left: 4px solid #2a5298; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  .tip  { background: #eef4ff; border-left: 4px solid #2a5298; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
   .warn { background: #fff8e6; border-left: 4px solid #e6a817; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
-  .ok { background: #efffef; border-left: 4px solid #28a745; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  .ok   { background: #efffef; border-left: 4px solid #28a745; padding: 10px 14px; margin: 12px 0; border-radius: 3px; }
+  .concept { background: #f0f4ff; border: 1px solid #c0cce0; padding: 16px 20px; margin: 16px 0; border-radius: 6px; }
   code { font-family: Courier New, monospace; background: #f4f4f4; padding: 1px 5px; border-radius: 3px; font-size: 10pt; }
-  pre { font-family: Courier New, monospace; background: #f4f4f4; padding: 12px 16px; border-radius: 5px; font-size: 10pt; border: 1px solid #ddd; }
+  pre  { font-family: Courier New, monospace; background: #f4f4f4; padding: 12px 16px; border-radius: 5px; font-size: 10pt; border: 1px solid #ddd; }
   table { border-collapse: collapse; width: 100%; margin: 12px 0; }
   th { background: #1a3a6e; color: white; padding: 8px 12px; text-align: left; font-size: 10pt; }
-  td { padding: 7px 12px; border-bottom: 1px solid #e0e0e0; font-size: 10pt; }
+  td { padding: 7px 12px; border-bottom: 1px solid #e0e0e0; font-size: 10pt; vertical-align: top; }
   tr:nth-child(even) td { background: #f8f9fb; }
-  .step-num { display: inline-block; background: #1a3a6e; color: white; border-radius: 50%; width: 22px; height: 22px; text-align: center; line-height: 22px; font-size: 11pt; font-weight: bold; margin-right: 6px; }
-  ul li, ol li { margin-bottom: 4px; }
-  .page-break { page-break-before: always; }
+  .badge-green  { background: #d4edda; color: #155724; padding: 2px 8px; border-radius: 10px; font-size: 9pt; font-weight: bold; }
+  .badge-blue   { background: #d0e4ff; color: #004085; padding: 2px 8px; border-radius: 10px; font-size: 9pt; font-weight: bold; }
+  .badge-orange { background: #fff3cd; color: #856404; padding: 2px 8px; border-radius: 10px; font-size: 9pt; font-weight: bold; }
+  .badge-gray   { background: #e2e3e5; color: #383d41; padding: 2px 8px; border-radius: 10px; font-size: 9pt; }
+  ul li, ol li { margin-bottom: 5px; }
+  .page-break { page-break-before: always; margin-top: 0; }
+  .toc a { color: #1a3a6e; text-decoration: none; }
+  .toc li { margin-bottom: 3px; }
+  .pipeline-flow { display: flex; align-items: center; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .pf-step { background: #1a3a6e; color: white; padding: 6px 14px; border-radius: 4px; font-size: 10pt; white-space: nowrap; }
+  .pf-arrow { color: #888; font-size: 14pt; }
+  .pf-opt { background: #6c7a99; }
 </style>
 </head>
 <body>
 
+<!-- ═══════════════════ COUVERTURE ═══════════════════ -->
 <div class="cover">
   <h1>CredAble Intelligence</h1>
-  <div class="sub">Control Panel — Mode d'emploi complet</div>
+  <div class="sub">Plateforme de Sales Intelligence — Mode d'emploi complet</div>
   <br><br>
-  <table style="width:60%;margin:auto;font-size:10pt">
-    <tr><td style="color:#888">Version</td><td>1.0</td></tr>
+  <table style="width:55%;margin:auto;font-size:10pt">
+    <tr><td style="color:#888;width:40%">Version</td><td><strong>2.0</strong></td></tr>
     <tr><td style="color:#888">Date</td><td>Mai 2026</td></tr>
-    <tr><td style="color:#888">Auteur</td><td>CredAble Europe</td></tr>
-    <tr><td style="color:#888">Accès</td><td>http://localhost:3333</td></tr>
+    <tr><td style="color:#888">Univers</td><td>224 corporates EU · 94 banques EU</td></tr>
+    <tr><td style="color:#888">LLM</td><td>Llama 3.1 — 405 milliards de paramètres</td></tr>
+    <tr><td style="color:#888">Accès local</td><td><code>http://localhost:3333</code></td></tr>
   </table>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<h1>1. Vue d'ensemble</h1>
-
-<p>CredAble Intelligence est une plateforme d'analyse automatisée qui :</p>
-<ul>
-  <li><strong>Télécharge</strong> les rapports annuels des 159 plus grandes entreprises européennes (>5 Md€ CA)</li>
-  <li><strong>Extrait</strong> via LLM les signaux trade finance / supply chain finance (factoring, confirming, lettres de crédit, plateformes SCF…)</li>
-  <li><strong>Score</strong> 51 banques européennes sur 8 signaux (BIS — Buying Intent Score)</li>
-  <li><strong>Génère</strong> des dashboards interactifs pour cibler les prospects prioritaires</li>
-</ul>
-
-<div class="tip">
-  <strong>Principe :</strong> Le rapport annuel est <em>une source parmi d'autres</em>. Les données tech stack banques, les signaux fintech failures, l'intelligence concurrentielle et le scoring BIS restent inchangés — le LLM enrichit la couche corporate.
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<h1>2. Démarrage de l'application</h1>
-
-<h2>2.1 Démarrage normal (double-clic)</h2>
-<p><strong>Finder → Bureau → dossier <code>creadable</code> → double-clic sur <code>Start CredAble.command</code></strong></p>
-<p>Le script fait automatiquement :</p>
-<ol>
-  <li>Mise à jour du code depuis Git</li>
-  <li>Installation / vérification des dépendances npm</li>
-  <li>Ouverture du navigateur sur <code>http://localhost:3333</code></li>
-  <li>Démarrage du serveur</li>
+<!-- ═══════════════════ TABLE DES MATIÈRES ═══════════════════ -->
+<h1 style="margin-top:0">Table des matières</h1>
+<ol class="toc">
+  <li><a href="#concept">Concept et objectif</a></li>
+  <li><a href="#demarrage">Démarrage</a></li>
+  <li><a href="#config">Configuration</a></li>
+  <li><a href="#corporate">Pipeline Corporate (224 sociétés)</a></li>
+  <li><a href="#banques">Pipeline Banques (94 banques)</a></li>
+  <li><a href="#bis">Scores BIS — Buying Intent Score</a></li>
+  <li><a href="#enrichissements">Enrichissements optionnels</a></li>
+  <li><a href="#prediction">Mode Prédiction</a></li>
+  <li><a href="#dashboards">Dashboards interactifs</a></li>
+  <li><a href="#donnees">Données et configuration avancée</a></li>
+  <li><a href="#depannage">Dépannage</a></li>
+  <li><a href="#workflow">Flux de travail recommandé</a></li>
 </ol>
-
-<div class="warn">
-  <strong>Premier lancement :</strong> macOS peut bloquer le fichier. Si un message "impossible d'ouvrir" s'affiche → clic droit → <strong>Ouvrir</strong> → confirmer.
-</div>
-
-<h2>2.2 Démarrage depuis le terminal (alternative)</h2>
-<pre>cd ~/Desktop/creadable
-npm run ui</pre>
-<p>Laisser cette fenêtre ouverte. Le serveur tourne tant qu'elle est ouverte.</p>
-
-<h2>2.3 Accès dans le navigateur</h2>
-<div class="warn">
-  <strong>Toujours utiliser Safari</strong> et taper manuellement <code>http://localhost:3333</code> (pas https). Si Safari force HTTPS : <strong>Safari → Réglages → Avancé</strong> → décocher "Utiliser automatiquement HTTPS".
-</div>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
 <div class="page-break"></div>
-<h1>3. Configuration initiale</h1>
+<h1 id="concept">1. Concept et objectif</h1>
+
+<div class="concept">
+  <strong>Problème :</strong> Identifier parmi 94 banques européennes lesquelles sont prêtes à acheter une solution de Supply Chain Finance / Trade Finance dans les 6 à 18 prochains mois — sans équipe de recherche de 10 personnes.<br><br>
+  <strong>Solution :</strong> CredAble Intelligence automatise la due diligence sur deux axes :
+  <ol style="margin-top:8px">
+    <li><strong>Côté corporate (demande)</strong> — Analyser les rapports annuels de 224 grandes entreprises européennes pour extraire leurs usages SCF, leurs banques partenaires et leurs signaux de besoin.</li>
+    <li><strong>Côté banque (offre)</strong> — Scorer 94 banques sur 8 signaux d'achat (tech stack, signaux stratégiques, failures fintech, pression concurrentielle…) pour produire un classement de priorité.</li>
+  </ol>
+</div>
+
+<h2>1.1 Le moteur de scoring — BIS (Buying Intent Score)</h2>
+<p>Le BIS est un score composite 0–100 calculé pour chaque banque :</p>
+<table>
+  <tr><th>#</th><th>Signal</th><th>Poids</th><th>Source</th></tr>
+  <tr><td>1</td><td>Capability gap SCF</td><td>20%</td><td>Rapport annuel banque (LLM)</td></tr>
+  <tr><td>2</td><td>Strategic intent digital/fintech</td><td>15%</td><td>Rapport annuel + news (LLM)</td></tr>
+  <tr><td>3</td><td>Fintech failure / plateforme orpheline</td><td>20%</td><td><code>fintech_failures.json</code></td></tr>
+  <tr><td>4</td><td>Pression concurrentielle pairs</td><td>10%</td><td><code>competitor_intelligence.json</code></td></tr>
+  <tr><td>5</td><td>Demande corporate mesurée</td><td>10%</td><td>Extractions corporates (LLM)</td></tr>
+  <tr><td>6</td><td>Pré-intégration ERP/SAP</td><td>15%</td><td>Tech stack + extractions</td></tr>
+  <tr><td>7</td><td>Partenariat TCI (assurance-crédit)</td><td>5%</td><td>Tech stack</td></tr>
+  <tr><td>8</td><td>Signaux de stress financier</td><td>5%</td><td>Rapport annuel (LLM)</td></tr>
+</table>
+
+<h2>1.2 Univers cible</h2>
+<table>
+  <tr><th>Périmètre</th><th>Nombre</th><th>Critères</th></tr>
+  <tr><td>Corporates analysés</td><td><strong>224</strong></td><td>EU, €1–25bn+ CA, industrie/manufacturing (pas de services)</td></tr>
+  <tr><td>Banques scorées</td><td><strong>94</strong></td><td>EU — banques faisant du trade finance</td></tr>
+  <tr><td>Dont trade finance confirmé</td><td>49</td><td>Signal TF extrait des rapports annuels</td></tr>
+  <tr><td>Dont friction déploiement LOW</td><td>26</td><td>Quick wins CredAble</td></tr>
+</table>
+
+<h2>1.3 Périmètre de l'extraction LLM</h2>
+<div class="tip">
+  Le LLM analyse <strong>uniquement les passages pertinents</strong> des rapports annuels officiels (PDF → texte → chunks filtrés par mots-clés SCF). Il s'appuie sur sa connaissance générale pour contextualiser — mais ne fabrique aucun chiffre ou fait non présent dans le document.
+</div>
+<table>
+  <tr><th>Inclus par défaut</th><th>Optionnel (enrichissements)</th></tr>
+  <tr><td>Rapport annuel officiel (texte brut)</td><td>Actualités web (DuckDuckGo full-text)</td></tr>
+  <tr><td>Connaissance générale du LLM</td><td>Cross-référence entre corporates</td></tr>
+  <tr><td>Tech stack curé (94 banques)</td><td>Offres d'emploi (signal recrutement)</td></tr>
+  <tr><td>Signaux V4 (failures, concurrents)</td><td>Prédictions LLM P(achat)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="demarrage">2. Démarrage</h1>
+
+<h2>2.1 Démarrage normal</h2>
+<p><strong>Finder → Bureau → dossier <code>creadable</code> → double-clic sur <code>Start CredAble.command</code></strong></p>
+<p>Le script fait automatiquement : mise à jour Git, vérification npm, démarrage serveur, ouverture navigateur.</p>
+<div class="warn"><strong>Premier lancement :</strong> macOS peut bloquer le fichier. Clic droit → <strong>Ouvrir</strong> → confirmer.</div>
+
+<h2>2.2 Démarrage depuis le terminal</h2>
+<pre>cd ~/Desktop/creadable
+git pull
+npm run ui</pre>
+
+<h2>2.3 Redémarrage propre</h2>
+<pre>pkill -f "node ui/server.js"
+git pull
+npm run ui</pre>
+
+<div class="warn"><strong>Navigateur :</strong> Toujours utiliser <code>http://localhost:3333</code> (pas https). Si Safari force HTTPS : Safari → Réglages → Avancé → décocher "Utiliser automatiquement HTTPS".</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1 id="config">3. Configuration</h1>
 
 <h2>3.1 Clé API DeepInfra</h2>
-<p>L'étape d'extraction LLM nécessite une clé API DeepInfra.</p>
-<ol>
-  <li>Dans la sidebar → <strong>Configuration</strong></li>
-  <li>Coller la clé dans le champ <em>DEEPINFRA_API_KEY</em></li>
-  <li>Cliquer <strong>Enregistrer</strong></li>
-  <li>Le témoin en bas à gauche passe au <span style="color:green">●</span> vert</li>
-</ol>
-<div class="ok">La clé est stockée en mémoire serveur uniquement (non persistée sur disque). Elle doit être re-saisie à chaque redémarrage du serveur.</div>
+<p>Sidebar → <strong>Configuration</strong> → coller la clé dans le champ <em>DEEPINFRA_API_KEY</em> → <strong>Enregistrer</strong>.<br>
+Le témoin en bas à gauche passe au <span style="color:green">●</span> vert.</p>
+<div class="ok">La clé est stockée en mémoire uniquement. Elle doit être re-saisie à chaque redémarrage du serveur.</div>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<h1>4. Pipeline Corporate Scraper</h1>
-<p>Le pipeline comporte 4 étapes séquentielles. On peut les lancer individuellement ou d'un seul clic.</p>
-
-<table>
-  <tr><th>Étape</th><th>Bouton UI</th><th>Durée estimée</th><th>Description</th></tr>
-  <tr><td>1 — Discover</td><td>Discover URLs</td><td>5–10 min</td><td>Remplit les URLs directes des rapports PDF dans le catalogue</td></tr>
-  <tr><td>2 — Download</td><td>Download PDFs</td><td>30–60 min</td><td>Télécharge les PDFs + extrait le texte brut</td></tr>
-  <tr><td>3 — Extract</td><td>Extract (LLM)</td><td>60–120 min</td><td>Envoie les passages SCF au LLM pour extraction structurée</td></tr>
-  <tr><td>4 — Aggregate</td><td>Aggregate</td><td>2–5 min</td><td>Compile les résultats, génère summary + dashboard</td></tr>
-</table>
-
-<h2>4.1 Pipeline complet (recommandé)</h2>
-<p>Sidebar → <strong>Pipeline</strong> → bouton <strong>"Lancer pipeline complet"</strong> — enchaîne les 4 étapes automatiquement.</p>
-
-<h2>4.2 Étapes individuelles</h2>
-<p>Les boutons individuels sont utiles pour relancer une étape sans repartir de zéro. Chaque étape est idempotente : elle saute les fichiers déjà traités.</p>
-
-<h2>4.3 Extraction par corporate</h2>
-<p>Pour analyser un seul corporate :</p>
-<ol>
-  <li>Saisir l'ID dans le champ (ex: <code>volkswagen</code>, <code>nestle</code>, <code>total-energies</code>)</li>
-  <li>Cliquer <strong>"Extraire ce corporate"</strong></li>
-  <li>Les logs s'affichent en temps réel</li>
-</ol>
-
-<h2>4.4 Logs en temps réel</h2>
-<p>La fenêtre "Logs en temps réel" affiche la sortie du processus en direct :</p>
-<ul>
-  <li><span style="color:#94a3b8">Texte gris</span> = stdout normal</li>
-  <li><span style="color:#f59e0b">Texte orange</span> = stderr / avertissements</li>
-  <li><span style="color:#22c55e">✓ Terminé avec succès</span> = exit 0</li>
-  <li><span style="color:#ef4444">✗ Terminé avec erreur</span> = problème à investiguer</li>
-</ul>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<div class="page-break"></div>
-<h1>5. Résultats d'extraction LLM</h1>
-
-<h2>5.1 Consulter les extractions</h2>
-<p>Sidebar → <strong>Corporate Scraper → Extractions</strong></p>
-<ul>
-  <li>Liste de tous les fichiers extraits, triés par date</li>
-  <li><strong>Voir</strong> → affiche le JSON structuré complet</li>
-  <li><strong>Re-extraire</strong> → relance l'analyse LLM pour ce corporate</li>
-</ul>
-
-<h2>5.2 Structure d'une extraction</h2>
-<p>Chaque extraction JSON contient :</p>
-<table>
-  <tr><th>Champ</th><th>Description</th></tr>
-  <tr><td><code>scf_program_confirmed</code></td><td>Présence confirmée d'un programme SCF (boolean)</td></tr>
-  <tr><td><code>scf_program_details</code></td><td>Détails textuels du programme détecté</td></tr>
-  <tr><td><code>factoring_or_receivables</code></td><td>Signaux côté receivables (cession, affacturage…)</td></tr>
-  <tr><td><code>trade_finance_instruments</code></td><td>L/C, garanties, documentary trade</td></tr>
-  <tr><td><code>platform_provider_mentioned</code></td><td>Présence d'un concurrent (Taulia, C2FO, Orbian…)</td></tr>
-  <tr><td><code>banks_mentioned_in_scf_or_trade_finance_context</code></td><td>Banques citées dans le contexte SCF</td></tr>
-  <tr><td><code>working_capital_kpis</code></td><td>DPO, DSO, DIO si mentionnés</td></tr>
-  <tr><td><code>sweet_spot_score</code></td><td>Score 0–10 indiquant l'attractivité pour CredAble</td></tr>
-  <tr><td><code>sweet_spot_rationale</code></td><td>Justification du score</td></tr>
-</table>
-
-<h2>5.3 Dashboard Corporate</h2>
-<p>Sidebar → <strong>Corporate Scraper → Dashboard</strong> — rapport HTML interactif après l'étape Aggregate. Inclut le classement sweet-spot, les signaux détectés, la méthodologie.</p>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<h1>6. Bank Intelligence — Scores BIS</h1>
-
-<h2>6.1 Qu'est-ce que le BIS ?</h2>
-<p>Le <strong>Buying Intent Score</strong> agrège 8 signaux pondérés pour estimer la probabilité qu'une banque achète une solution CredAble dans les 12 mois :</p>
-<table>
-  <tr><th>Signal</th><th>Poids</th><th>Source</th></tr>
-  <tr><td>Capability gap SCF</td><td>25%</td><td>Rapport annuel banque (LLM)</td></tr>
-  <tr><td>Strategic intent</td><td>20%</td><td>Rapport annuel banque (LLM)</td></tr>
-  <tr><td>Tech stack legacy</td><td>15%</td><td>Données curées bank_techstack.json</td></tr>
-  <tr><td>Fintech failure orpheline</td><td>15%</td><td>fintech_failures.json</td></tr>
-  <tr><td>Concurrent absent</td><td>10%</td><td>competitor_intelligence.json</td></tr>
-  <tr><td>Fenêtre budgétaire</td><td>8%</td><td>bank_techstack.json</td></tr>
-  <tr><td>Friction CredAble</td><td>4%</td><td>bank_techstack.json</td></tr>
-  <tr><td>Signaux corporate</td><td>3%</td><td>Extractions corporate (LLM)</td></tr>
-</table>
-
-<h2>6.2 Buckets BIS</h2>
-<table>
-  <tr><th>Bucket</th><th>Score</th><th>Priorité</th></tr>
-  <tr><td>HIGH</td><td>≥ 70</td><td>Prospection immédiate</td></tr>
-  <tr><td>MEDIUM-HIGH</td><td>50–69</td><td>Pipeline Q2/Q3</td></tr>
-  <tr><td>MEDIUM</td><td>30–49</td><td>Nurturing</td></tr>
-  <tr><td>LOW / VERY LOW</td><td>&lt; 30</td><td>Déprioritiser</td></tr>
-</table>
-
-<h2>6.3 Recalculer les scores</h2>
-<p>Sidebar → <strong>Bank Intelligence → BIS Scores</strong> → bouton <strong>"Recalculer BIS + rapport"</strong></p>
-<ul>
-  <li>Lit les extractions banques + données curées</li>
-  <li>Recalcule tous les scores</li>
-  <li>Génère le BIS Dashboard HTML</li>
-</ul>
-
-<h2>6.4 Extraire les rapports banques</h2>
-<p>Même principe que pour les corporates — bouton <strong>"Extraire rapports banques (LLM)"</strong> ou extraction par ID banque (ex: <code>kb-cz</code>, <code>bnp-fr</code>).</p>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<div class="page-break"></div>
-<h1>7. Données et configuration avancée</h1>
-
-<h2>7.1 Édition des fichiers JSON</h2>
-<p>Sidebar → <strong>Données → Fichiers JSON</strong> — éditeur direct des 4 fichiers de configuration :</p>
-<table>
-  <tr><th>Fichier</th><th>Contenu</th></tr>
-  <tr><td>Tech Stack Banques</td><td>Core banking, plateforme SCF, fenêtre budgétaire, friction CredAble pour 51 banques</td></tr>
-  <tr><td>Fintech Failures</td><td>Faillites fintech et banques orphelines (Signal 3 BIS)</td></tr>
-  <tr><td>Concurrents</td><td>Intelligence concurrentielle vérifiée (Demica, Orbian, Taulia…)</td></tr>
-  <tr><td>Catalogue Corporates</td><td>159 corporates EU avec URLs des rapports annuels</td></tr>
-</table>
-<div class="warn">Cliquer <strong>Sauvegarder</strong> après chaque modification. Le JSON est validé avant sauvegarde.</div>
-
-<h2>7.2 Changer le modèle LLM</h2>
-<p>Par défaut : <code>meta-llama/Llama-3.3-70B-Instruct</code> via DeepInfra. Pour utiliser un autre modèle, définir la variable d'environnement avant de lancer le serveur :</p>
+<h2>3.2 Modèle LLM par défaut</h2>
+<p><code>meta-llama/Meta-Llama-3.1-405B-Instruct</code> — 405 milliards de paramètres.</p>
+<p>Pour changer de modèle avant démarrage :</p>
 <pre>DEEPINFRA_MODEL=deepseek-ai/DeepSeek-V3 npm run ui</pre>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<h1>8. Dépannage</h1>
+<div class="page-break"></div>
+<h1 id="corporate">4. Pipeline Corporate (224 sociétés)</h1>
+
+<p>Sidebar → <strong>Pipeline</strong></p>
+
+<h2>4.1 Indicateur de progression</h2>
+<p>En haut de la page, 4 cercles montrent l'état d'avancement :</p>
+<table>
+  <tr><th>Étape</th><th>Cercle vert ✓</th><th>Cercle bleu clignotant</th></tr>
+  <tr><td>1 — Download PDFs</td><td>PDFs téléchargés</td><td>À faire en premier</td></tr>
+  <tr><td>2 — Textes extraits</td><td>Textes bruts disponibles</td><td>Lancer Download d'abord</td></tr>
+  <tr><td>3 — Extract LLM</td><td>Extractions JSON prêtes</td><td>Lancer Extract</td></tr>
+  <tr><td>4 — Dashboard</td><td>Dashboard généré</td><td>Lancer Aggregate</td></tr>
+</table>
+
+<h2>4.2 Étapes du pipeline</h2>
+<div class="pipeline-flow">
+  <div class="pf-step">1. Download PDFs</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step pf-opt">2b. Fetch News ☑</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step">3. Extract (LLM)</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step pf-opt">4. Cross-ref ☑</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step">5. Aggregate</div>
+</div>
+<p style="font-size:9pt;color:#666">Les étapes en gris foncé sont optionnelles (enrichissements à activer par checkbox).</p>
 
 <table>
-  <tr><th>Problème</th><th>Solution</th></tr>
-  <tr>
-    <td>Safari force HTTPS sur localhost</td>
-    <td>Safari → Réglages → Avancé → décocher "Utiliser automatiquement HTTPS". Ou taper <code>http://localhost:3333</code> manuellement.</td>
-  </tr>
-  <tr>
-    <td><code>Start CredAble.command</code> ne s'ouvre pas</td>
-    <td>Clic droit → Ouvrir → Confirmer. Ou dans Terminal : <code>chmod +x ~/Desktop/creadable/Start\ CredAble.command</code></td>
-  </tr>
-  <tr>
-    <td>Extraction FAIL — timeout</td>
-    <td>Réseau lent ou modèle surchargé. Relancer l'extraction pour ce corporate depuis la page Extractions → Re-extraire.</td>
-  </tr>
-  <tr>
-    <td>SKIP — no txt available</td>
-    <td>Le PDF n'a pas été téléchargé. Lancer d'abord <strong>Download PDFs</strong>, puis <strong>Extract</strong>.</td>
-  </tr>
-  <tr>
-    <td>DEEPINFRA_API_KEY non configurée</td>
-    <td>Aller dans <strong>Configuration</strong> → saisir la clé → Enregistrer. Le témoin doit passer au vert.</td>
-  </tr>
-  <tr>
-    <td>Le serveur ne répond plus</td>
-    <td>Fermer la fenêtre <code>Start CredAble.command</code> et la rouvrir, ou <code>npm run ui</code> dans Terminal.</td>
-  </tr>
-  <tr>
-    <td>Dashboard non généré</td>
-    <td>Lancer l'étape <strong>Aggregate</strong> après les extractions. Le dashboard apparaît alors dans la sidebar.</td>
-  </tr>
+  <tr><th>Bouton</th><th>Durée</th><th>Description</th></tr>
+  <tr><td><strong>Download PDFs</strong></td><td>1–3h</td><td>Visite les pages IR avec Chromium, télécharge PDFs, extrait le texte brut via pdftotext</td></tr>
+  <tr><td><strong>Fetch News</strong> <span class="badge-orange">optionnel</span></td><td>30–60 min</td><td>3 requêtes DuckDuckGo par corporate, visite les articles, extrait le corps complet (~3000 chars/article)</td></tr>
+  <tr><td><strong>Extract (LLM)</strong></td><td>1–3h</td><td>Filtre les passages SCF-pertinents, envoie au LLM 405B, génère JSON structuré pour chaque corporate</td></tr>
+  <tr><td><strong>Cross-ref</strong> <span class="badge-orange">optionnel</span></td><td>1 min</td><td>Agrège toutes les extractions : banques citées par N corporates, plateformes détectées, taux SCF par secteur</td></tr>
+  <tr><td><strong>Aggregate</strong></td><td>2–5 min</td><td>Compile les résultats, génère summary.md + dashboard HTML</td></tr>
+</table>
+
+<h2>4.3 Enrichissements (checkboxes)</h2>
+<table>
+  <tr><th>Checkbox</th><th>Ce qu'elle active</th><th>Impact</th></tr>
+  <tr><td>☑ Actualités web</td><td>Fetch DuckDuckGo avant extraction — les news sont injectées dans le prompt LLM</td><td>Détecte les partenariats récents, annonces de transformation, nouvelles plateformes</td></tr>
+  <tr><td>☑ Cross-référence</td><td>Génère <code>crossref.json</code> après extraction</td><td>Identifie les banques citées par ≥3 corporates = signal de demande croisé</td></tr>
+  <tr><td>☑ Signal de demande</td><td>Lance <code>demand_signal.js</code> — score P(push SCF) par corporate</td><td>Classement des corporates par probabilité de pousser leur banque à adopter SCF</td></tr>
+</table>
+
+<h2>4.4 Extraction par corporate individuel</h2>
+<p>Saisir l'ID dans le champ (ex: <code>volkswagen</code>, <code>nestle</code>, <code>schneider-electric</code>) → <strong>Extraire ce corporate</strong>.</p>
+
+<h2>4.5 Coût LLM estimé</h2>
+<table>
+  <tr><th>Scope</th><th>Tokens estimés</th><th>Coût DeepInfra 405B</th></tr>
+  <tr><td>224 corporates (rapports annuels)</td><td>~5,6M tokens</td><td>~$1.10</td></tr>
+  <tr><td>224 corporates (avec news)</td><td>~7M tokens</td><td>~$1.40</td></tr>
+  <tr><td>94 banques (rapports annuels)</td><td>~1,9M tokens</td><td>~$0.38</td></tr>
+  <tr><td>Prédictions banques (LLM)</td><td>~300k tokens</td><td>~$0.10</td></tr>
+  <tr><td><strong>Total complet</strong></td><td><strong>~9,5M tokens</strong></td><td><strong>~$2.00</strong></td></tr>
 </table>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<h1>9. Flux de travail recommandé</h1>
+<div class="page-break"></div>
+<h1 id="banques">5. Pipeline Banques (94 banques)</h1>
 
+<p>Sidebar → <strong>Bank Intelligence → BIS Scores</strong></p>
+
+<h2>5.1 Indicateur de progression</h2>
+<p>4 cercles identiques au pipeline corporate (PDFs → News+Jobs → Extract LLM → BIS+Rapport).</p>
+
+<h2>5.2 Étapes du pipeline banques</h2>
+<div class="pipeline-flow">
+  <div class="pf-step">1. Télécharger PDFs</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step pf-opt">2. News + Jobs ☑</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step">3. Extraire (LLM)</div>
+  <div class="pf-arrow">→</div>
+  <div class="pf-step">4. Recalculer BIS</div>
+</div>
+
+<table>
+  <tr><th>Bouton</th><th>Durée</th><th>Description</th></tr>
+  <tr><td><strong>Télécharger PDFs banques</strong></td><td>30–60 min</td><td>Télécharge les rapports annuels des 94 banques. Certaines banques (rapport derrière login) affichent FAIL — elles sont quand même scorées via les autres signaux.</td></tr>
+  <tr><td><strong>Actualiser news banques</strong> <span class="badge-orange">enrichissement</span></td><td>30–60 min</td><td>3 requêtes DuckDuckGo par banque : digital transformation, fintech, CEO/M&A. Corps d'article complet injecté dans le prompt LLM.</td></tr>
+  <tr><td><strong>Scanner offres d'emploi</strong> <span class="badge-orange">enrichissement</span></td><td>15–30 min</td><td>Recherche les recrutements SCF/TF/factoring par banque. VERY_HIGH = +3 pts BIS, HIGH = +2, MEDIUM = +1.</td></tr>
+  <tr><td><strong>Extraire rapports banques (LLM)</strong></td><td>1–2h</td><td>Extraction structurée depuis les rapports annuels banques. Strictement anti-hallucination : null préféré à une supposition.</td></tr>
+  <tr><td><strong>Recalculer BIS + rapport</strong></td><td>30 sec</td><td>Recalcule <strong>toutes les banques</strong> (pas incrémental). Génère bis_scores.json + bis_dashboard.html.</td></tr>
+  <tr><td><strong>BIS seul</strong></td><td>10 sec</td><td>Recalcule uniquement les scores JSON (sans regénérer le dashboard HTML).</td></tr>
+</table>
+
+<h2>5.3 FAIL — download_failed</h2>
+<div class="ok">Normal pour ~20% des banques dont les PDFs sont derrière login. Ces banques sont scorées via : tech stack curé, signaux V4, news, offres d'emploi — sans extraction rapport.</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="bis">6. Scores BIS — Buying Intent Score</h1>
+
+<h2>6.1 Tableau de classement</h2>
+<p>Sidebar → <strong>Bank Intelligence → BIS Scores</strong> → bouton <strong>Actualiser</strong></p>
+
+<table>
+  <tr><th>Colonne</th><th>Description</th></tr>
+  <tr><td>Score</td><td>BIS total 0–100</td></tr>
+  <tr><td>Bucket</td><td>HIGH / MEDIUM-HIGH / MEDIUM / LOW / VERY LOW</td></tr>
+  <tr><td>Fenêtre</td><td>Délai estimé avant achat (mois)</td></tr>
+  <tr><td>Friction</td><td>★ LOW = déploiement facile · MEDIUM · HIGH</td></tr>
+  <tr><td>Signaux forts</td><td>Les 3 signaux les plus déterminants</td></tr>
+  <tr><td>P(6m) P(12m) <span class="badge-blue">mode prédiction</span></td><td>Probabilité d'achat à 6 et 12 mois (colonne visible si "Mode prédiction" activé)</td></tr>
+  <tr><td>Trigger <span class="badge-blue">mode prédiction</span></td><td>Événement déclencheur à surveiller</td></tr>
+</table>
+
+<h2>6.2 Curseur "Seuil minimum"</h2>
+<p>Au-dessus du tableau, un curseur <strong>0 → 100</strong> filtre les banques affichées :</p>
+<ul>
+  <li>0 (défaut) = toutes les banques visibles</li>
+  <li>40 = uniquement BIS ≥ 40</li>
+  <li>Un compteur indique en temps réel : <em>"X banques avec BIS ≥ N (sur 94 total)"</em></li>
+</ul>
+<div class="tip">Ce filtre est uniquement visuel — aucun score n'est modifié.</div>
+
+<h2>6.3 Buckets BIS</h2>
+<table>
+  <tr><th>Bucket</th><th>Score</th><th>Interprétation commerciale</th></tr>
+  <tr><td><span class="badge-green">HIGH</span></td><td>≥ 70</td><td>Prospection immédiate — fenêtre ouverte, ne pas attendre</td></tr>
+  <tr><td><span class="badge-blue">MEDIUM-HIGH</span></td><td>50–69</td><td>Pipeline Q2/Q3 — à contacter dans 3–6 mois</td></tr>
+  <tr><td><span class="badge-orange">MEDIUM</span></td><td>30–49</td><td>Nurturing — surveiller les déclencheurs</td></tr>
+  <tr><td><span class="badge-gray">LOW / VERY LOW</span></td><td>< 30</td><td>Déprioritiser — revenir dans 12–18 mois</td></tr>
+</table>
+
+<h2>6.4 Extraction par banque individuelle</h2>
+<p>Saisir l'ID dans le champ (ex: <code>kb-cz</code>, <code>kbc-be</code>, <code>lbbw-de</code>) → <strong>Extraire cette banque</strong>.<br>
+Puis <strong>Recalculer BIS + rapport</strong> pour intégrer le résultat.</p>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="enrichissements">7. Enrichissements optionnels</h1>
+
+<h2>7.1 Actualités web (news)</h2>
+<p>Le module news fetche 3 requêtes DuckDuckGo par entité (banque ou corporate) et visite chaque article pour en extraire le corps complet (~3000 caractères/article, jusqu'à 6 articles).</p>
+<p><strong>Requêtes pour les banques :</strong></p>
+<ul>
+  <li><code>"[Banque]" digital transformation trade finance 2025</code></li>
+  <li><code>"[Banque]" fintech SCF working capital platform</code></li>
+  <li><code>"[Banque]" CEO appointment merger acquisition fintech</code></li>
+</ul>
+<p><strong>Signaux détectés dans les articles :</strong> platform_or_tech, fintech_partnership, ceo_or_exec_change, digital_initiative, merger → chaque signal ajoute des points au score BIS strategic_intent.</p>
+<p><strong>Cache :</strong> 7 jours. Utiliser <code>--force</code> pour rafraîchir.</p>
+
+<h2>7.2 Offres d'emploi (jobs)</h2>
+<p>Recherche les recrutements SCF/TF pour chaque banque via DuckDuckGo.</p>
+<table>
+  <tr><th>Intent Level</th><th>Rôles détectés</th><th>Impact BIS</th></tr>
+  <tr><td>VERY_HIGH</td><td>Head of SCF, Director Trade Finance, VP Supply Chain Finance</td><td>+3 pts</td></tr>
+  <tr><td>HIGH</td><td>SCF Specialist, Trade Finance Analyst, Working Capital Manager</td><td>+2 pts</td></tr>
+  <tr><td>MEDIUM</td><td>Transaction Banking, Cash Management, Treasury</td><td>+1 pt</td></tr>
+</table>
+<p><strong>Cache :</strong> 3 jours (les offres changent plus vite que les news).</p>
+
+<h2>7.3 Cross-référence corporates</h2>
+<p>Après toutes les extractions corporates, <code>crossref.js</code> agrège :</p>
+<ul>
+  <li><strong>Top banques par nombre de citations</strong> — ex: "BNP Paribas cité par 18 corporates dans un contexte SCF" = signal de demande fort</li>
+  <li><strong>Plateformes détectées</strong> — Taulia, C2FO, Orbian… et leur fréquence</li>
+  <li><strong>Taux SCF par secteur</strong> — % de corporates avec activité SCF confirmée dans chaque secteur</li>
+</ul>
+<p>Résultat : <code>corporate_scraper/reports/crossref.json</code> + <code>crossref.md</code></p>
+
+<h2>7.4 Signal de demande corporate</h2>
+<p><code>demand_signal.js</code> score chaque corporate sur P(pousse sa banque à adopter SCF en 12 mois) :</p>
+<table>
+  <tr><th>Critère</th><th>Points</th></tr>
+  <tr><td>Produit SCF avec confidence HIGH</td><td>+3</td></tr>
+  <tr><td>Produit SCF avec confidence MEDIUM</td><td>+2</td></tr>
+  <tr><td>≥5 banques mentionnées dans contexte SCF</td><td>+3</td></tr>
+  <tr><td>ERP intégration confirmée (SAP/Oracle)</td><td>+2</td></tr>
+  <tr><td>SCF lié ESG</td><td>+2</td></tr>
+  <tr><td>Plateforme concurrente déjà présente</td><td>-2 (déjà servi)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="prediction">8. Mode Prédiction</h1>
+
+<div class="concept">
+  Le mode prédiction utilise le LLM 405B pour synthétiser tous les signaux disponibles et produire une estimation structurée de la probabilité d'achat — avec fenêtre optimale et angle d'approche recommandé.
+</div>
+
+<h2>8.1 Prédictions bancaires</h2>
+<p>Sidebar → <strong>BIS Scores</strong> → cocher <strong>"Mode prédiction"</strong> → cliquer <strong>"Générer prédictions (LLM)"</strong></p>
+<p>Pour chaque banque, le LLM reçoit : score BIS, détail des 8 signaux, tech stack, pitch argument — et génère :</p>
+<table>
+  <tr><th>Champ</th><th>Description</th></tr>
+  <tr><td><code>p_buy_6m</code></td><td>Probabilité d'achat à 6 mois (0–100%)</td></tr>
+  <tr><td><code>p_buy_12m</code></td><td>Probabilité d'achat à 12 mois (0–100%)</td></tr>
+  <tr><td><code>p_buy_18m</code></td><td>Probabilité d'achat à 18 mois (0–100%)</td></tr>
+  <tr><td><code>optimal_window</code></td><td>Fenêtre optimale d'approche (ex: Q2 2026)</td></tr>
+  <tr><td><code>top_trigger</code></td><td>Événement à surveiller (ex: "Renouvellement Roger Global → décision imminente")</td></tr>
+  <tr><td><code>pitch_angle</code></td><td>Angle d'approche recommandé pour le premier contact</td></tr>
+  <tr><td><code>prediction_confidence</code></td><td>HIGH / MEDIUM / LOW (fiabilité de la prédiction)</td></tr>
+</table>
+<div class="tip">
+  <strong>Sans clé API :</strong> mode algorithmique automatique (sigmoid sur BIS score). Moins riche mais instantané et gratuit.<br>
+  <strong>Avec clé API :</strong> LLM 405B — coût ~$0.10 pour les 94 banques.
+</div>
+
+<h2>8.2 Signal de demande corporate</h2>
+<p>Pipeline → cocher <strong>"Signal de demande corporate"</strong> → <strong>cs:demand</strong></p>
+<p>Score P(push SCF en 12 mois) par corporate. Résultat dans <code>reports/demand_signals.json</code>.</p>
+<table>
+  <tr><th>Niveau</th><th>P(12m)</th><th>Signification</th></tr>
+  <tr><td>VERY_HIGH</td><td>~80%</td><td>Programme SCF actif + multiples banques + ERP intégré</td></tr>
+  <tr><td>HIGH</td><td>~60%</td><td>Activité SCF confirmée, engagement bancaire multiple</td></tr>
+  <tr><td>MEDIUM</td><td>~35%</td><td>Signaux partiels — SCF mentionné sans confirmation forte</td></tr>
+  <tr><td>LOW / NONE</td><td>&lt;20%</td><td>Peu ou pas de signaux SCF dans le rapport annuel</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="dashboards">9. Dashboards interactifs</h1>
+
+<h2>9.1 Dashboard Corporate</h2>
+<p>Sidebar → <strong>Corporate Scraper → Dashboard</strong></p>
+<p>Généré après l'étape Aggregate. Inclut :</p>
+<ul>
+  <li>Classement des corporates par sweet-spot score</li>
+  <li>Carte des signaux SCF détectés (produits, plateformes, banques)</li>
+  <li>Méthodologie et couverture</li>
+</ul>
+<div class="warn">Si l'écran est vide, générer le dashboard : Pipeline → Aggregate → puis revenir sur Dashboard.</div>
+
+<h2>9.2 BIS Dashboard</h2>
+<p>Sidebar → <strong>Bank Intelligence → BIS Dashboard</strong></p>
+<p>Dashboard HTML interactif avec 5 onglets :</p>
 <ol>
-  <li><strong>Double-clic</strong> sur <code>Start CredAble.command</code> → ouvre http://localhost:3333</li>
-  <li><strong>Configuration</strong> → saisir la clé DeepInfra → vérifier le témoin vert</li>
-  <li><strong>Pipeline → Download PDFs</strong> → attendre la fin (logs "OK" ou "CACHED")</li>
-  <li><strong>Pipeline → Extract (LLM)</strong> → attendre (1–2h pour 159 corporates)</li>
-  <li><strong>Pipeline → Aggregate</strong> → génère le dashboard</li>
-  <li><strong>Corporate Scraper → Dashboard</strong> → consulter le classement sweet-spot</li>
-  <li><strong>Bank Intelligence → Recalculer BIS + rapport</strong> → scores mis à jour avec les nouveaux signaux</li>
-  <li><strong>Bank Intelligence → BIS Dashboard</strong> → rapport interactif pour la prospection</li>
+  <li><strong>Classement</strong> — toutes les banques triées par BIS</li>
+  <li><strong>Signaux</strong> — détail des 8 composantes par banque</li>
+  <li><strong>Pitch</strong> — argument de vente personnalisé par banque</li>
+  <li><strong>Carte</strong> — répartition géographique</li>
+  <li><strong>Méthodologie</strong> — explication du scoring</li>
+</ol>
+
+<h2>9.3 Ouvrir directement les dashboards</h2>
+<p>Si l'iframe ne se charge pas depuis l'UI, ouvrir directement dans le Finder :</p>
+<ul>
+  <li>Corporate : <code>~/Desktop/creadable/corporate_scraper/reports/dashboard.html</code></li>
+  <li>BIS : <code>~/Desktop/creadable/bank_intelligence/reports/bis_dashboard.html</code></li>
+</ul>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1 id="donnees">10. Données et configuration avancée</h1>
+
+<h2>10.1 Éditeur JSON intégré</h2>
+<p>Sidebar → <strong>Données → Fichiers JSON</strong></p>
+<table>
+  <tr><th>Fichier</th><th>Contenu</th></tr>
+  <tr><td>Tech Stack Banques</td><td>Core banking, plateforme SCF, friction CredAble pour 94 banques</td></tr>
+  <tr><td>Fintech Failures</td><td>Faillites fintech et banques orphelines — Signal 3 BIS</td></tr>
+  <tr><td>Concurrents</td><td>Intelligence concurrentielle vérifiée (Demica, Orbian, Taulia…)</td></tr>
+  <tr><td>Catalogue Corporates</td><td>224 corporates EU avec URLs des rapports annuels</td></tr>
+</table>
+<div class="warn">Cliquer <strong>Sauvegarder</strong> après chaque modification. Le JSON est validé avant sauvegarde.</div>
+
+<h2>10.2 Ajouter une banque manuellement</h2>
+<p>Dans l'éditeur <strong>Tech Stack Banques</strong>, ajouter un objet dans le tableau <code>banks</code> :</p>
+<pre>{
+  "bank_id": "ma-banque-fr",
+  "name": "Ma Banque SA",
+  "country": "FR",
+  "core_banking": "Temenos T24",
+  "tf_scf_platform": "Aucune plateforme dédiée",
+  "credable_friction": "LOW",
+  "rationale": "Description courte"
+}</pre>
+
+<h2>10.3 Ajouter un corporate manuellement</h2>
+<p>Dans l'éditeur <strong>Catalogue Corporates</strong>, ajouter un objet dans le tableau <code>corporates</code> :</p>
+<pre>{
+  "id": "mon-corporate-fr",
+  "name": "Mon Corporate SA",
+  "country": "FR",
+  "sector": "Industrial",
+  "revenue_eur_bn": 5,
+  "ir_url": "https://www.corporate.com/investors/annual-report"
+}</pre>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page-break"></div>
+<h1 id="depannage">11. Dépannage</h1>
+
+<table>
+  <tr><th>Problème</th><th>Solution</th></tr>
+  <tr><td>Safari force HTTPS</td><td>Safari → Réglages → Avancé → décocher "Utiliser automatiquement HTTPS". Ou Chrome avec <code>http://localhost:3333</code>.</td></tr>
+  <tr><td>Dashboard blanc (écran vide)</td><td>L'iframe se recharge à chaque visite. Si vide : (1) vérifier que les extractions existent, (2) relancer Aggregate, (3) ouvrir le fichier .html directement depuis le Finder.</td></tr>
+  <tr><td>Extraction FAIL — timeout</td><td>L'API DeepInfra a dépassé le délai. Relancer depuis la page Extractions → Re-extraire. Si systématique, vérifier la clé API.</td></tr>
+  <tr><td>SKIP — no txt available</td><td>Le PDF n'a pas été téléchargé. Lancer Download PDFs d'abord.</td></tr>
+  <tr><td>FAIL — download_failed (banques)</td><td>Normal — rapport derrière login. La banque sera scorée via les autres signaux.</td></tr>
+  <tr><td>Conflits git au pull</td><td><code>git stash && git pull --rebase</code>. Si conflit sur un fichier texte : <code>git checkout --ours [fichier] && git add [fichier] && git rebase --continue</code>. Si vim s'ouvre : <code>:wq</code> + Entrée.</td></tr>
+  <tr><td>DEEPINFRA_API_KEY non configurée</td><td>Sidebar → Configuration → coller la clé → Enregistrer.</td></tr>
+  <tr><td>Le Mac s'endort pendant un long run</td><td>Lancer avec <code>caffeinate -i node engine/extractor.js</code> (empêche le sleep).</td></tr>
+  <tr><td>111 extractions, plus rien</td><td>Normal — l'extracteur a traité tout ce qui a un fichier .txt. Lancer Download PDFs pour les nouveaux corporates.</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<h1 id="workflow">12. Flux de travail recommandé</h1>
+
+<h2>12.1 Premier lancement complet</h2>
+<ol>
+  <li>Double-clic <code>Start CredAble.command</code> → ouvre <code>http://localhost:3333</code></li>
+  <li>Sidebar → <strong>Configuration</strong> → saisir clé DeepInfra → Enregistrer (témoin vert)</li>
+  <li><strong>Pipeline → Download PDFs</strong> → attendre (1–3h, laisser le Mac ouvert)</li>
+  <li><strong>Pipeline → Extract</strong> → attendre (1–3h) — utilise 4 workers en parallèle</li>
+  <li><strong>Pipeline → Aggregate</strong> → génère le dashboard corporate</li>
+  <li><strong>BIS Scores → Télécharger PDFs banques</strong> → 30–60 min</li>
+  <li><strong>BIS Scores → Actualiser news banques</strong> → 30 min (optionnel mais recommandé)</li>
+  <li><strong>BIS Scores → Scanner offres d'emploi</strong> → 15 min (optionnel)</li>
+  <li><strong>BIS Scores → Extraire rapports banques</strong> → 1–2h</li>
+  <li><strong>BIS Scores → Recalculer BIS + rapport</strong> → 30 secondes</li>
+  <li>Consulter <strong>BIS Dashboard</strong> et <strong>Dashboard Corporate</strong></li>
+</ol>
+
+<h2>12.2 Mise à jour hebdomadaire</h2>
+<ol>
+  <li><code>git pull && npm run ui</code></li>
+  <li><strong>Actualiser news banques</strong> + <strong>Scanner offres d'emploi</strong></li>
+  <li><strong>Recalculer BIS + rapport</strong></li>
+  <li>Si nouveaux rapports annuels disponibles : <strong>Download PDFs → Extract → Aggregate</strong></li>
+</ol>
+
+<h2>12.3 Avant une présentation</h2>
+<ol>
+  <li>Recalculer BIS + rapport → BIS Dashboard</li>
+  <li>Activer Mode prédiction → Générer prédictions</li>
+  <li>Utiliser le curseur "Seuil min." pour filtrer les banques pertinentes</li>
+  <li>Ouvrir le BIS Dashboard directement depuis le Finder pour la présentation</li>
 </ol>
 
 <div class="ok">
-  <strong>Idempotence :</strong> Toutes les étapes peuvent être relancées sans risque — les fichiers déjà traités sont automatiquement sautés. Pour forcer le re-traitement d'un corporate, utiliser "Re-extraire" dans la page Extractions.
+  <strong>Idempotence :</strong> Toutes les étapes peuvent être relancées sans risque — les fichiers déjà traités sont sautés automatiquement (CACHED). Pour forcer le re-traitement : utiliser "Re-extraire" dans la page Extractions, ou <code>--force</code> en ligne de commande.
 </div>
 
 <br><br>
 <hr>
-<p style="text-align:center;color:#888;font-size:9pt">CredAble Intelligence Control Panel — Mode d'emploi v1.0 — Mai 2026</p>
+<p style="text-align:center;color:#888;font-size:9pt">CredAble Intelligence Control Panel — Mode d'emploi v2.0 — Mai 2026<br>
+224 corporates EU · 94 banques · LLM 405B · 8 signaux BIS</p>
 
 </body>
 </html>

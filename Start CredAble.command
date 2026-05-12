@@ -1,27 +1,52 @@
 #!/bin/bash
 # Double-cliquez sur ce fichier dans le Finder pour lancer le Control Panel.
-# Met à jour le repo, installe les dépendances, ouvre le navigateur automatiquement.
+# Gère automatiquement les conflits git et les rebases en cours.
 
-cd "$(dirname "$0")"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 echo "────────────────────────────────────────"
 echo "  CredAble Intelligence — Control Panel"
 echo "────────────────────────────────────────"
 echo ""
 
-# Mise à jour automatique depuis Git
-echo "[git] Mise à jour du repo..."
+# ── Nettoyer tout état git bloquant ─────────────────────────────
+echo "[git] Nettoyage de l'état git..."
+
+# Annuler un rebase en cours si présent
+if [ -d ".git/rebase-merge" ] || [ -d ".git/rebase-apply" ]; then
+  echo "[git] Rebase en cours détecté — annulation..."
+  git rebase --abort 2>/dev/null
+fi
+
+# Mettre de côté les modifications locales
+if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
+  echo "[git] Modifications locales détectées — sauvegarde automatique..."
+  git stash push -m "auto-stash $(date '+%Y-%m-%d %H:%M')" 2>/dev/null
+fi
+
+# Configurer rebase par défaut
+git config pull.rebase true 2>/dev/null
+
+# Récupérer les dernières modifications
+echo "[git] Mise à jour..."
 git pull origin claude/european-banks-business-case-ayKhq --quiet 2>/dev/null \
   && echo "[git] À jour." \
-  || echo "[git] Pas de connexion git — utilisation de la version locale."
+  || echo "[git] Pas de connexion — utilisation de la version locale."
+
 echo ""
 
-# Installer les dépendances si absent ou mis à jour
+# ── Tuer l'ancienne instance si elle tourne ─────────────────────
+echo "[start] Arrêt de l'ancienne instance si présente..."
+pkill -f "node ui/server.js" 2>/dev/null
+sleep 1
+
+# ── Dépendances npm ─────────────────────────────────────────────
 echo "[npm] Vérification des dépendances..."
 npm install --quiet 2>/dev/null
 echo ""
 
-# Ouvrir le navigateur après 2 secondes
+# ── Démarrage ───────────────────────────────────────────────────
 (sleep 2 && open http://localhost:3333) &
 
 echo "[start] Démarrage sur http://localhost:3333"

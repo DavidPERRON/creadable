@@ -85,6 +85,9 @@ const DATA_FILES = {
   fintech_failures:        'bank_intelligence/data/fintech_failures.json',
   competitor_intelligence: 'bank_intelligence/data/competitor_intelligence.json',
   bis_scores:              'bank_intelligence/reports/bis_scores.json',
+  mps_scores:              'bank_intelligence/reports/mps_scores.json',
+  predictions:             'bank_intelligence/reports/predictions.json',
+  demand_signals:          'corporate_scraper/reports/demand_signals.json',
   catalog:                 'corporate_scraper/catalog.json',
 };
 
@@ -153,12 +156,16 @@ const COMMANDS = {
   // Corporate scraper
   'cs:discover':      { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/discover.js'] },
   'cs:download':      { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/downloader.js'] },
-  'cs:extract':       { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js'] },
-  'cs:extract-dry':   { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js', '--dry-run'] },
-  'cs:aggregate':     { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/aggregator.js'] },
-  'cs:summary':       { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/summary.js'] },
-  'cs:dashboard':     { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/dashboard.js'] },
-  'cs:full':          { cwd: 'corporate_scraper', cmd: 'make', args: ['full'] },
+  'cs:extract':            { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js'] },
+  'cs:extract-with-news':  { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js', '--with-news'] },
+  'cs:extract-dry':        { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/extractor.js', '--dry-run'] },
+  'cs:news':               { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/corp_news.js'] },
+  'cs:crossref':           { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/crossref.js'] },
+  'cs:demand':             { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/demand_signal.js'] },
+  'cs:aggregate':          { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/aggregator.js'] },
+  'cs:summary':            { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/summary.js'] },
+  'cs:dashboard':          { cwd: 'corporate_scraper', cmd: 'node', args: ['engine/dashboard.js'] },
+  'cs:full':               { cwd: 'corporate_scraper', cmd: 'make', args: ['full'] },
   // Bank intelligence
   'bi:download':      { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_downloader.js'] },
   'bi:news':          { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/bank_news.js'] },
@@ -168,6 +175,8 @@ const COMMANDS = {
   'bi:report':        { cwd: 'bank_intelligence', cmd: 'make', args: ['report'] },
   'bi:all':           { cwd: 'bank_intelligence', cmd: 'make', args: ['all'] },
   'bi:full':          { cwd: 'bank_intelligence', cmd: 'make', args: ['full'] },
+  'bi:predict':       { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/predictor.js'] },
+  'bi:mps':           { cwd: 'bank_intelligence', cmd: 'node', args: ['engine/mps_calculator.js'] },
 };
 
 app.post('/api/run/:cmd', (req, res) => {
@@ -259,7 +268,75 @@ app.get('/api/logs/:jobId', (req, res) => {
 app.use('/reports/bis', express.static(path.join(ROOT, 'bank_intelligence/reports')));
 app.use('/reports/corporate', express.static(path.join(ROOT, 'corporate_scraper/reports')));
 
+// ─── Model 2 (MPS) — served at /model2 to avoid Safari port issues ──
+app.use('/model2', express.static(path.join(ROOT, 'model2/public')));
+
+app.get('/model2/api/mps', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'bank_intelligence/reports/mps_scores.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'mps_scores.json not found — run MPS first' }); }
+});
+
+app.get('/model2/api/bis', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'bank_intelligence/reports/bis_scores.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'bis_scores.json not found' }); }
+});
+
+app.get('/model2/api/catalog', (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(path.join(ROOT, 'corporate_scraper/catalog.json'), 'utf8')));
+  } catch { res.status(404).json({ error: 'catalog.json not found' }); }
+});
+
+app.get('/model2/api/extraction/:id', (req, res) => {
+  try {
+    const fp = path.join(ROOT, 'corporate_scraper/extractions', req.params.id + '.json');
+    res.json(JSON.parse(fs.readFileSync(fp, 'utf8')));
+  } catch { res.status(404).json({ error: 'not found' }); }
+});
+
+app.get('/model2/api/stats', (req, res) => {
+  const readJson = (p) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8')); } catch { return null; } };
+  const countFiles = (dir, ext) => { try { return fs.readdirSync(path.join(ROOT, dir)).filter(f => f.endsWith(ext)).length; } catch { return 0; } };
+  const mps = readJson('bank_intelligence/reports/mps_scores.json');
+  const bis = readJson('bank_intelligence/reports/bis_scores.json');
+  const cat = readJson('corporate_scraper/catalog.json');
+  res.json({
+    mps_scored:     mps?.banks_scored ?? 0,
+    bis_scored:     bis?.banks?.length ?? 0,
+    corporates:     cat?.corporates?.length ?? 0,
+    extractions:    countFiles('corporate_scraper/extractions', '.json'),
+    mps_generated:  mps?.generated_at ?? null,
+    bucket_dist:    mps?.bucket_distribution ?? {},
+    bis_max:        bis?.banks ? Math.max(...bis.banks.map(b => b.bis?.bis_total || 0)) : 0,
+  });
+});
+
+app.post('/model2/api/run/mps', (req, res) => {
+  const jobId = ++jobCounter;
+  const proc  = spawn('node', ['engine/mps_calculator.js'], {
+    cwd: path.join(ROOT, 'bank_intelligence'),
+    env: process.env,
+    shell: true,
+  });
+  activeJobs[jobId] = { proc, clients: [], log: [], done: false, exitCode: null };
+  const broadcast = (event, data) => {
+    activeJobs[jobId].log.push({ event, data });
+    activeJobs[jobId].clients.forEach(c => sseWrite(c, event, data));
+  };
+  proc.stdout.on('data', d => broadcast('stdout', d.toString()));
+  proc.stderr.on('data', d => broadcast('stderr', d.toString()));
+  proc.on('close', code => {
+    activeJobs[jobId].done = true; activeJobs[jobId].exitCode = code;
+    broadcast('done', { code });
+    setTimeout(() => delete activeJobs[jobId], 300000);
+  });
+  res.json({ jobId });
+});
+
 app.listen(PORT, () => {
   console.log(`\n  CredAble Intelligence Control Panel`);
-  console.log(`  → http://localhost:${PORT}\n`);
+  console.log(`  → http://localhost:${PORT}`);
+  console.log(`  → http://localhost:${PORT}/model2  (Model 2 — MPS)\n`);
 });

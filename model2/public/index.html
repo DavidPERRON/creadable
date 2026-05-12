@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CredAble — Model 2 · Market Pressure Score</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2128;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --red: #f85149;
+    --purple: #bc8cff;
+    --orange: #ffa657;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }
+
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 12px 24px; display: flex; align-items: center; gap: 16px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  header h1 { font-size: 15px; font-weight: 600; color: var(--text); }
+  header .badge { background: var(--purple); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px; letter-spacing: .5px; }
+  header .model1-link { margin-left: auto; color: var(--accent); text-decoration: none; font-size: 12px; }
+  header .model1-link:hover { text-decoration: underline; }
+
+  .layout { display: flex; height: calc(100vh - 45px); }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px; background: var(--surface); border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; flex-shrink: 0;
+  }
+  .sidebar-section { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .sidebar-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; padding: 0 14px 6px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 8px; padding: 7px 14px;
+    cursor: pointer; color: var(--muted); font-size: 12px; transition: all .15s;
+  }
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active { background: #388bfd22; color: var(--accent); border-right: 2px solid var(--accent); }
+  .nav-icon { font-size: 14px; width: 18px; text-align: center; }
+
+  /* Stats cards */
+  .stats-bar { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--border); }
+  .stat-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; }
+  .stat-card .label { font-size: 10px; color: var(--muted); margin-bottom: 2px; }
+  .stat-card .value { font-size: 18px; font-weight: 700; color: var(--text); }
+  .stat-card .sub { font-size: 10px; color: var(--muted); margin-top: 1px; }
+
+  .run-btn {
+    margin: 10px 14px; padding: 8px; background: var(--purple); color: #fff;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;
+    transition: opacity .2s;
+  }
+  .run-btn:hover { opacity: .85; }
+  .run-btn:disabled { opacity: .5; cursor: default; }
+
+  /* Main content */
+  .main { flex: 1; overflow-y: auto; padding: 20px 24px; }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  h2 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .page-desc { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  thead th {
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+    padding: 8px 10px; text-align: left; font-size: 10px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: .5px;
+    white-space: nowrap; cursor: pointer; user-select: none;
+  }
+  thead th:hover { color: var(--text); }
+  thead th.sorted { color: var(--accent); }
+  tbody tr { border-bottom: 1px solid #21262d; transition: background .1s; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody td { padding: 7px 10px; vertical-align: middle; }
+
+  /* Badges */
+  .badge-bucket {
+    display: inline-block; padding: 2px 7px; border-radius: 10px;
+    font-size: 10px; font-weight: 700; letter-spacing: .3px;
+  }
+  .badge-HIGH        { background: #3fb95022; color: var(--green); border: 1px solid #3fb95044; }
+  .badge-MEDIUM-HIGH { background: #ffa65722; color: var(--orange); border: 1px solid #ffa65744; }
+  .badge-MEDIUM      { background: #d2992222; color: var(--yellow); border: 1px solid #d2992244; }
+  .badge-LOW         { background: #8b949e22; color: var(--muted); border: 1px solid #8b949e44; }
+
+  /* Score bars */
+  .score-bar { display: flex; align-items: center; gap: 6px; }
+  .bar-track { flex: 1; height: 4px; background: var(--border); border-radius: 2px; min-width: 60px; }
+  .bar-fill  { height: 100%; border-radius: 2px; }
+  .bar-bis   { background: var(--accent); }
+  .bar-mps   { background: var(--purple); }
+  .bar-comb  { background: var(--green); }
+
+  /* Matrix / quadrant */
+  .matrix-wrap { position: relative; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; }
+  .quadrant-canvas { width: 100%; height: 480px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+  .filters select, .filters input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 5px 10px; border-radius: 6px; font-size: 12px; outline: none; }
+  .filters select:focus, .filters input:focus { border-color: var(--accent); }
+  .filter-label { font-size: 11px; color: var(--muted); }
+
+  /* Pitch panel */
+  .pitch-panel {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; margin-bottom: 14px;
+  }
+  .pitch-panel h3 { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--purple); }
+  .pitch-panel p { color: var(--muted); line-height: 1.6; font-size: 12px; }
+
+  /* Log stream */
+  .log-box {
+    background: #010409; border: 1px solid var(--border); border-radius: 6px;
+    padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px;
+    color: #7ee787; height: 200px; overflow-y: auto; white-space: pre-wrap;
+    margin-top: 10px;
+  }
+
+  /* Two-col layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+  .card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .card h3 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+
+  .sector-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .sector-name { width: 120px; font-size: 11px; color: var(--text); }
+  .sector-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; }
+  .sector-bar { height: 100%; border-radius: 3px; background: var(--purple); }
+  .sector-val { width: 40px; text-align: right; font-size: 11px; color: var(--muted); }
+
+  .country-row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid var(--border); }
+  .country-row:last-child { border-bottom: none; }
+  .country-flag { font-size: 16px; width: 24px; }
+  .country-info { flex: 1; margin: 0 8px; }
+  .country-info .name { font-size: 12px; }
+  .country-info .sub { font-size: 10px; color: var(--muted); }
+  .country-rev { font-size: 11px; color: var(--orange); font-weight: 600; }
+
+  .tooltip {
+    position: fixed; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 12px; font-size: 11px; pointer-events: none;
+    z-index: 999; max-width: 280px; line-height: 1.6; display: none;
+  }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-state h3 { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+
+  .tag { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-size: 10px; color: var(--muted); margin: 1px; }
+
+  .combined-score { font-size: 16px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CredAble Intelligence</h1>
+  <span class="badge">MODEL 2 · MPS</span>
+  <a class="model1-link" href="http://localhost:3333" target="_blank">↗ Model 1 (BIS)</a>
+</header>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-card">
+        <div class="label">Banques scorées</div>
+        <div class="value" id="statBanks">—</div>
+        <div class="sub" id="statGenerated">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Corporates utilisés</div>
+        <div class="value" id="statCorps">—</div>
+        <div class="sub" id="statExtracts">— extractions</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Vues</div>
+      <div class="nav-item active" onclick="showPage('ranking')" id="nav-ranking">
+        <span class="nav-icon">🏆</span> Classement MPS
+      </div>
+      <div class="nav-item" onclick="showPage('matrix')" id="nav-matrix">
+        <span class="nav-icon">🎯</span> Matrice BIS × MPS
+      </div>
+      <div class="nav-item" onclick="showPage('markets')" id="nav-markets">
+        <span class="nav-icon">🌍</span> Marchés
+      </div>
+      <div class="nav-item" onclick="showPage('sectors')" id="nav-sectors">
+        <span class="nav-icon">🏭</span> Secteurs
+      </div>
+      <div class="nav-item" onclick="showPage('pitch')" id="nav-pitch">
+        <span class="nav-icon">💬</span> Pitch Builder
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Actions</div>
+      <div style="padding: 8px 14px;">
+        <button class="run-btn" id="runMpsBtn" onclick="runMPS()" style="width:100%">
+          ▶ Recalculer MPS
+        </button>
+        <div id="runStatus" style="font-size:10px; color:var(--muted); margin-top:6px; text-align:center;"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- PAGE: Ranking -->
+    <div class="page active" id="page-ranking">
+      <h2>Classement Market Pressure Score</h2>
+      <p class="page-desc">Score combiné √(BIS × MPS) — pression marché × maturité banque. Plus le score est élevé, plus la priorité commerciale est forte.</p>
+
+      <div class="filters">
+        <span class="filter-label">Filtrer :</span>
+        <select id="filterCountry" onchange="renderRanking()">
+          <option value="">Tous pays</option>
+        </select>
+        <select id="filterBucket" onchange="renderRanking()">
+          <option value="">Tous niveaux MPS</option>
+          <option value="HIGH">HIGH</option>
+          <option value="MEDIUM-HIGH">MEDIUM-HIGH</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="LOW">LOW</option>
+        </select>
+        <select id="filterScfLevel" onchange="renderRanking()">
+          <option value="">Tous niveaux SCF</option>
+          <option value="ABSENT">Absent</option>
+          <option value="BASIQUE">Basique</option>
+          <option value="INTERMEDIAIRE">Intermédiaire</option>
+          <option value="AVANCE">Avancé</option>
+        </select>
+        <input type="range" id="minCombined" min="0" max="60" value="0" oninput="document.getElementById('minCombinedVal').textContent=this.value; renderRanking()">
+        <span id="minCombinedVal" style="font-size:11px; color:var(--muted)">Combined ≥ 0</span>
+      </div>
+
+      <div class="table-wrap" id="rankingTable"></div>
+    </div>
+
+    <!-- PAGE: Matrix -->
+    <div class="page" id="page-matrix">
+      <h2>Matrice BIS × MPS</h2>
+      <p class="page-desc">Axe X = BIS (maturité achat banque) · Axe Y = MPS (pression marché corporates). Zone idéale = haut-droite.</p>
+      <div class="matrix-wrap">
+        <canvas class="quadrant-canvas" id="matrixCanvas"></canvas>
+      </div>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <!-- PAGE: Markets -->
+    <div class="page" id="page-markets">
+      <h2>Analyse par marché</h2>
+      <p class="page-desc">Densité corporates et CA adressable par pays — base du calcul géographique du MPS.</p>
+      <div class="two-col" id="marketsContent"></div>
+    </div>
+
+    <!-- PAGE: Sectors -->
+    <div class="page" id="page-sectors">
+      <h2>Analyse sectorielle</h2>
+      <p class="page-desc">Intensité SCF par secteur et distribution dans le catalogue corporate.</p>
+      <div class="two-col" id="sectorsContent"></div>
+    </div>
+
+    <!-- PAGE: Pitch Builder -->
+    <div class="page" id="page-pitch">
+      <h2>Pitch Builder</h2>
+      <p class="page-desc">Sélectionnez une banque pour générer le contexte commercial combiné BIS + MPS.</p>
+
+      <div class="filters">
+        <select id="pitchBankSelect" onchange="renderPitch()" style="min-width:280px;">
+          <option value="">— Choisir une banque —</option>
+        </select>
+      </div>
+
+      <div id="pitchContent"></div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────
+let _mps = null;
+let _bis = null;
+let _catalog = null;
+let _sortCol = 'combined_score';
+let _sortAsc  = false;
+
+// ── Init ──────────────────────────────────────────────────────────
+async function init() {
+  await Promise.all([loadStats(), loadMPS(), loadCatalog()]);
+}
+
+async function loadStats() {
+  try {
+    const r = await fetch('/model2/api/stats').then(r => r.json());
+    document.getElementById('statBanks').textContent     = r.mps_scored || '—';
+    document.getElementById('statCorps').textContent     = r.corporates || '—';
+    document.getElementById('statGenerated').textContent = r.mps_generated ? 'Généré ' + r.mps_generated : 'Non généré';
+    document.getElementById('statExtracts').textContent  = (r.extractions || 0) + ' extractions';
+  } catch {}
+}
+
+async function loadMPS() {
+  try {
+    const r = await fetch('/model2/api/mps');
+    if (!r.ok) { showEmpty(); return; }
+    _mps = await r.json();
+    populateCountryFilter();
+    populatePitchSelect();
+    renderRanking();
+  } catch { showEmpty(); }
+}
+
+async function loadCatalog() {
+  try {
+    const r = await fetch('/model2/api/catalog').then(r => r.json());
+    _catalog = (r.corporates || r || []);
+  } catch {}
+}
+
+function showEmpty() {
+  document.getElementById('rankingTable').innerHTML = `
+    <div class="empty-state">
+      <div class="icon">⚡</div>
+      <h3>MPS non calculé</h3>
+      <p style="margin-top:8px;">Cliquez sur "Recalculer MPS" dans la sidebar pour générer les scores.<br>Aucun LLM ni téléchargement requis — calcul instantané.</p>
+    </div>`;
+}
+
+// ── Navigation ────────────────────────────────────────────────────
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+
+  if (name === 'matrix' && _mps) renderMatrix();
+  if (name === 'markets' && _mps && _catalog) renderMarkets();
+  if (name === 'sectors' && _catalog) renderSectors();
+}
+
+// ── Ranking ───────────────────────────────────────────────────────
+function populateCountryFilter() {
+  if (!_mps) return;
+  const countries = [...new Set(_mps.results.map(r => r.country))].sort();
+  const sel = document.getElementById('filterCountry');
+  countries.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; sel.appendChild(o); });
+}
+
+function renderRanking() {
+  if (!_mps) return;
+  const country   = document.getElementById('filterCountry').value;
+  const bucket    = document.getElementById('filterBucket').value;
+  const scfLevel  = document.getElementById('filterScfLevel').value;
+  const minComb   = parseInt(document.getElementById('minCombined').value);
+
+  let rows = _mps.results.filter(r =>
+    (!country  || r.country === country) &&
+    (!bucket   || r.mps_bucket === bucket) &&
+    (!scfLevel || r.scf_level === scfLevel) &&
+    r.combined_score >= minComb
+  );
+
+  // Sort
+  rows = rows.sort((a, b) => {
+    const av = a[_sortCol] ?? 0;
+    const bv = b[_sortCol] ?? 0;
+    return _sortAsc ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1);
+  });
+
+  const maxBIS  = Math.max(..._mps.results.map(r => r.bis_score));
+  const maxMPS  = Math.max(..._mps.results.map(r => r.mps_total));
+  const maxComb = Math.max(..._mps.results.map(r => r.combined_score));
+
+  const sortIcon = col => col === _sortCol ? (_sortAsc ? ' ↑' : ' ↓') : '';
+  const thClick  = col => `onclick="sortBy('${col}')"`;
+
+  const html = `<table>
+    <thead><tr>
+      <th>#</th>
+      <th ${thClick('bank_name')} class="${_sortCol==='bank_name'?'sorted':''}">Banque${sortIcon('bank_name')}</th>
+      <th ${thClick('country')}>Pays${sortIcon('country')}</th>
+      <th ${thClick('combined_score')} class="${_sortCol==='combined_score'?'sorted':''}">Score Combiné${sortIcon('combined_score')}</th>
+      <th ${thClick('mps_total')} class="${_sortCol==='mps_total'?'sorted':''}">MPS${sortIcon('mps_total')}</th>
+      <th ${thClick('bis_score')} class="${_sortCol==='bis_score'?'sorted':''}">BIS${sortIcon('bis_score')}</th>
+      <th>Niveau MPS</th>
+      <th ${thClick('market.corporate_count_direct')}>Corporates</th>
+      <th>CA Adressable</th>
+      <th>Secteurs dominants</th>
+    </tr></thead>
+    <tbody>
+    ${rows.map((r, i) => `<tr>
+      <td style="color:var(--muted)">${i + 1}</td>
+      <td><strong>${escHtml(r.bank_name)}</strong></td>
+      <td><span style="color:var(--muted)">${r.country}</span></td>
+      <td>
+        <div class="score-bar">
+          <span class="combined-score" style="color:var(--green)">${r.combined_score}</span>
+          <div class="bar-track"><div class="bar-fill bar-comb" style="width:${Math.round(r.combined_score/maxComb*100)}%"></div></div>
+        </div>
+      </td>
+      <td>
+        <div class="score-bar">
+          <span style="min-width:24px;color:var(--purple)">${r.mps_total}</span>
+          <div class="bar-track"><div class="bar-fill bar-mps" style="width:${Math.round(r.mps_total/maxMPS*100)}%"></div></div>
+        </div>
+      </td>
+      <td>
+        <div class="score-bar">
+          <span style="min-width:24px;color:var(--accent)">${r.bis_score}</span>
+          <div class="bar-track"><div class="bar-fill bar-bis" style="width:${Math.round(r.bis_score/maxBIS*100)}%"></div></div>
+        </div>
+      </td>
+      <td><span class="badge-bucket badge-${r.mps_bucket}">${r.mps_bucket}</span></td>
+      <td style="text-align:center">${r.market.corporate_count_direct}</td>
+      <td style="color:var(--orange)">${r.market.addressable_revenue_eur_bn}Bn</td>
+      <td>${(r.market.top_sectors || []).map(s => `<span class="tag">${s}</span>`).join('')}</td>
+    </tr>`).join('')}
+    </tbody></table>
+    <div style="margin-top:8px; font-size:11px; color:var(--muted)">${rows.length} banques affichées</div>`;
+
+  document.getElementById('rankingTable').innerHTML = html;
+}
+
+function sortBy(col) {
+  if (_sortCol === col) _sortAsc = !_sortAsc;
+  else { _sortCol = col; _sortAsc = false; }
+  renderRanking();
+}
+
+// ── Matrix ────────────────────────────────────────────────────────
+function renderMatrix() {
+  if (!_mps) return;
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx    = canvas.getContext('2d');
+  const W = canvas.offsetWidth;
+  const H = canvas.offsetHeight;
+  canvas.width  = W;
+  canvas.height = H;
+
+  const PAD = { top: 30, right: 30, bottom: 50, left: 60 };
+  const plotW = W - PAD.left - PAD.right;
+  const plotH = H - PAD.top  - PAD.bottom;
+
+  const maxBIS = 60;
+  const maxMPS = 100;
+
+  // Background quadrants
+  const midX = PAD.left + (plotW / 2);
+  const midY = PAD.top  + (plotH / 2);
+
+  ctx.fillStyle = '#3fb95008';
+  ctx.fillRect(midX, PAD.top, plotW / 2, plotH / 2); // top-right: HIGH priority
+  ctx.fillStyle = '#58a6ff08';
+  ctx.fillRect(PAD.left, PAD.top, plotW / 2, plotH / 2); // top-left: market yes, bank not ready
+  ctx.fillStyle = '#ffa65708';
+  ctx.fillRect(midX, midY, plotW / 2, plotH / 2); // bottom-right: bank ready, market low
+  ctx.fillStyle = '#8b949e08';
+  ctx.fillRect(PAD.left, midY, plotW / 2, plotH / 2); // bottom-left: LOW
+
+  // Quadrant labels
+  ctx.font = '10px -apple-system, sans-serif';
+  ctx.fillStyle = '#3fb95066';
+  ctx.fillText('PRIORITÉ HAUTE', midX + 8, PAD.top + 14);
+  ctx.fillStyle = '#58a6ff66';
+  ctx.fillText('MARCHÉ FORT', PAD.left + 6, PAD.top + 14);
+  ctx.fillStyle = '#ffa65766';
+  ctx.fillText('BANQUE PRÊTE', midX + 8, H - PAD.bottom - 8);
+  ctx.fillStyle = '#8b949e44';
+  ctx.fillText('FAIBLE', PAD.left + 6, H - PAD.bottom - 8);
+
+  // Axes
+  ctx.strokeStyle = '#30363d';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(PAD.left, PAD.top); ctx.lineTo(PAD.left, H - PAD.bottom);
+  ctx.moveTo(PAD.left, H - PAD.bottom); ctx.lineTo(W - PAD.right, H - PAD.bottom);
+  ctx.stroke();
+
+  // Axis labels
+  ctx.fillStyle = '#8b949e';
+  ctx.font = '11px -apple-system, sans-serif';
+  ctx.fillText('BIS (maturité banque) →', PAD.left + plotW / 2 - 60, H - 8);
+  ctx.save();
+  ctx.translate(14, PAD.top + plotH / 2 + 50);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText('MPS (pression marché) →', 0, 0);
+  ctx.restore();
+
+  // Midlines
+  ctx.strokeStyle = '#30363d88';
+  ctx.setLineDash([4, 4]);
+  ctx.beginPath();
+  ctx.moveTo(midX, PAD.top); ctx.lineTo(midX, H - PAD.bottom);
+  ctx.moveTo(PAD.left, midY); ctx.lineTo(W - PAD.right, midY);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Dots
+  const bucketColors = { HIGH: '#3fb950', 'MEDIUM-HIGH': '#ffa657', MEDIUM: '#d29922', LOW: '#8b949e' };
+
+  _mps.results.forEach(r => {
+    const x = PAD.left + (r.bis_score / maxBIS) * plotW;
+    const y = PAD.top  + plotH - (r.mps_total / maxMPS) * plotH;
+
+    const color = bucketColors[r.mps_bucket] || '#8b949e';
+    const radius = 4 + Math.min(6, r.market.corporate_count_direct / 8);
+
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = color + '99';
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  // Tooltip
+  const tooltip = document.getElementById('tooltip');
+  canvas.onmousemove = (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+
+    let hit = null;
+    for (const r of _mps.results) {
+      const x = PAD.left + (r.bis_score / maxBIS) * plotW;
+      const y = PAD.top  + plotH - (r.mps_total / maxMPS) * plotH;
+      const dist = Math.hypot(mx - x, my - y);
+      if (dist < 10) { hit = r; break; }
+    }
+    if (hit) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (e.clientX + 12) + 'px';
+      tooltip.style.top  = (e.clientY - 10) + 'px';
+      tooltip.innerHTML = `<strong>${escHtml(hit.bank_name)}</strong> (${hit.country})<br>
+        BIS: ${hit.bis_score} · MPS: ${hit.mps_total} · Combined: <strong>${hit.combined_score}</strong><br>
+        ${hit.market.corporate_count_direct} corporates · ${hit.market.addressable_revenue_eur_bn}Bn EUR<br>
+        <em style="color:var(--muted)">${(hit.market.top_sectors || []).join(', ')}</em>`;
+    } else {
+      tooltip.style.display = 'none';
+    }
+  };
+  canvas.onmouseleave = () => { tooltip.style.display = 'none'; };
+}
+
+// ── Markets ───────────────────────────────────────────────────────
+function renderMarkets() {
+  if (!_mps || !_catalog) return;
+
+  // Build country stats from catalog
+  const byCountry = {};
+  _catalog.forEach(c => {
+    if (!byCountry[c.country]) byCountry[c.country] = { corps: [], revenue: 0, sectors: {} };
+    byCountry[c.country].corps.push(c);
+    byCountry[c.country].revenue += c.revenue_eur_bn || 0;
+    byCountry[c.country].sectors[c.sector] = (byCountry[c.country].sectors[c.sector] || 0) + 1;
+  });
+
+  const sorted = Object.entries(byCountry)
+    .sort((a, b) => b[1].corps.length - a[1].corps.length);
+
+  const FLAG = { DE:'🇩🇪',FR:'🇫🇷',UK:'🇬🇧',IT:'🇮🇹',CH:'🇨🇭',ES:'🇪🇸',NL:'🇳🇱',SE:'🇸🇪',FI:'🇫🇮',AT:'🇦🇹',NO:'🇳🇴',DK:'🇩🇰',BE:'🇧🇪',PL:'🇵🇱',CZ:'🇨🇿',HU:'🇭🇺',RO:'🇷🇴',LU:'🇱🇺',PT:'🇵🇹',IE:'🇮🇪' };
+
+  // Banks per country from MPS
+  const banksByCountry = {};
+  _mps.results.forEach(r => { banksByCountry[r.country] = (banksByCountry[r.country] || 0) + 1; });
+
+  const maxRevenue = Math.max(...sorted.map(([, v]) => v.revenue));
+
+  const listHtml = sorted.map(([country, data]) => {
+    const topSector = Object.entries(data.sectors).sort((a,b)=>b[1]-a[1])[0];
+    return `<div class="country-row">
+      <span class="country-flag">${FLAG[country] || '🌐'}</span>
+      <div class="country-info">
+        <div class="name"><strong>${country}</strong> — ${data.corps.length} corporates · ${banksByCountry[country] || 0} banques suivies</div>
+        <div class="sub">Top secteur: ${topSector?.[0] || '—'} (${topSector?.[1] || 0})</div>
+      </div>
+      <span class="country-rev">${Math.round(data.revenue)}Bn</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('marketsContent').innerHTML = `
+    <div class="card">
+      <h3>Couverture par pays (corporates)</h3>
+      ${listHtml}
+    </div>
+    <div class="card">
+      <h3>CA adressable par pays</h3>
+      ${sorted.map(([country, data]) => `
+        <div class="sector-row">
+          <div class="sector-name">${FLAG[country] || '🌐'} ${country}</div>
+          <div class="sector-bar-wrap"><div class="sector-bar" style="width:${Math.round(data.revenue/maxRevenue*100)}%;background:var(--orange)"></div></div>
+          <div class="sector-val">${Math.round(data.revenue)}Bn</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+// ── Sectors ───────────────────────────────────────────────────────
+const SECTOR_WEIGHTS = {
+  'Automotive':1.0,'Industrial':0.95,'FMCG':0.90,'Chemicals':0.90,'Retail':0.85,
+  'Construction':0.85,'Pharma':0.80,'Agribusiness':0.80,'Energy':0.75,'Mining':0.70,
+  'Logistics':0.70,'Aerospace':0.65,'Telecom':0.55,'Tech':0.55,'Utilities':0.50,'Luxury':0.40
+};
+
+function renderSectors() {
+  if (!_catalog) return;
+
+  const bySector = {};
+  _catalog.forEach(c => {
+    if (!bySector[c.sector]) bySector[c.sector] = { count: 0, revenue: 0 };
+    bySector[c.sector].count++;
+    bySector[c.sector].revenue += c.revenue_eur_bn || 0;
+  });
+
+  const sorted = Object.entries(bySector).sort((a,b) => b[1].count - a[1].count);
+  const maxCount = Math.max(...sorted.map(([,v]) => v.count));
+
+  const intensitySorted = Object.entries(SECTOR_WEIGHTS).sort((a,b) => b[1]-a[1]);
+  const colorForWeight = w => w >= 0.85 ? 'var(--green)' : w >= 0.65 ? 'var(--orange)' : w >= 0.45 ? 'var(--yellow)' : 'var(--muted)';
+
+  document.getElementById('sectorsContent').innerHTML = `
+    <div class="card">
+      <h3>Distribution corporates par secteur</h3>
+      ${sorted.map(([sector, data]) => `
+        <div class="sector-row">
+          <div class="sector-name">${sector}</div>
+          <div class="sector-bar-wrap"><div class="sector-bar" style="width:${Math.round(data.count/maxCount*100)}%;background:var(--purple)"></div></div>
+          <div class="sector-val">${data.count}</div>
+        </div>`).join('')}
+    </div>
+    <div class="card">
+      <h3>Intensité SCF par secteur</h3>
+      <p style="font-size:11px; color:var(--muted); margin-bottom:12px;">Coefficient utilisé dans le calcul MPS — représente la probabilité qu'un corporate de ce secteur pousse sa banque à adopter une solution SCF/TF.</p>
+      ${intensitySorted.map(([sector, w]) => `
+        <div class="sector-row">
+          <div class="sector-name">${sector}</div>
+          <div class="sector-bar-wrap"><div class="sector-bar" style="width:${Math.round(w*100)}%;background:${colorForWeight(w)}"></div></div>
+          <div class="sector-val" style="color:${colorForWeight(w)}">${Math.round(w*100)}%</div>
+        </div>`).join('')}
+    </div>`;
+}
+
+// ── Pitch Builder ─────────────────────────────────────────────────
+function populatePitchSelect() {
+  if (!_mps) return;
+  const sel = document.getElementById('pitchBankSelect');
+  _mps.results
+    .sort((a, b) => b.combined_score - a.combined_score)
+    .forEach(r => {
+      const o = document.createElement('option');
+      o.value = r.bank_id;
+      o.textContent = `${r.bank_name} (${r.country}) — Combined ${r.combined_score}`;
+      sel.appendChild(o);
+    });
+}
+
+function renderPitch() {
+  const bankId = document.getElementById('pitchBankSelect').value;
+  if (!bankId || !_mps) {
+    document.getElementById('pitchContent').innerHTML = '';
+    return;
+  }
+
+  const r = _mps.results.find(b => b.bank_id === bankId);
+  if (!r) return;
+
+  const bisGauge = r.bis_score <= 20 ? '🔴' : r.bis_score <= 40 ? '🟡' : '🟢';
+  const mpsGauge = r.mps_total <= 25 ? '🔴' : r.mps_total <= 45 ? '🟡' : '🟢';
+
+  document.getElementById('pitchContent').innerHTML = `
+    <div class="pitch-panel">
+      <h3>📊 Scoring combiné</h3>
+      <div style="display:flex; gap:24px; margin-bottom:12px;">
+        <div><div style="font-size:11px;color:var(--muted)">Score Combiné</div><div style="font-size:28px;font-weight:700;color:var(--green)">${r.combined_score}</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">${bisGauge} BIS (Model 1)</div><div style="font-size:20px;font-weight:600;color:var(--accent)">${r.bis_score}/100</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">${mpsGauge} MPS (Model 2)</div><div style="font-size:20px;font-weight:600;color:var(--purple)">${r.mps_total}/100</div></div>
+        <div><div style="font-size:11px;color:var(--muted)">Niveau MPS</div><span class="badge-bucket badge-${r.mps_bucket}">${r.mps_bucket}</span></div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:8px; margin-bottom:12px;">
+        ${[
+          ['Géo', r.components?.geo_score, 40],
+          ['Secteur', r.components?.sector_score, 25],
+          ['Gap SCF', r.components?.gap_score, 25],
+          ['Signal BIS', r.components?.signal_boost, 10]
+        ].map(([label, val, max]) => `
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px;">
+            <div style="font-size:10px;color:var(--muted)">${label} (/${max})</div>
+            <div style="font-size:16px;font-weight:700">${val ?? '—'}</div>
+            <div class="bar-track" style="margin-top:4px"><div class="bar-fill bar-mps" style="width:${val && max ? Math.round(val/max*100) : 0}%"></div></div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="pitch-panel">
+      <h3>🌍 Contexte marché</h3>
+      <p>${escHtml(r.pitch_context || '—')}</p>
+      <div style="margin-top:10px;">
+        <strong style="font-size:11px;color:var(--muted)">Corporates directs:</strong>
+        ${(r.market.top_sectors || []).map(s => `<span class="tag">${s}</span>`).join(' ')}
+      </div>
+      <div style="margin-top:6px;font-size:11px;color:var(--muted)">
+        CA direct: <strong style="color:var(--orange)">${r.market.addressable_revenue_eur_bn}Bn EUR</strong> ·
+        CA régional: <strong style="color:var(--orange)">${r.market.regional_revenue_eur_bn || 0}Bn EUR</strong> ·
+        Région: <strong>${r.market.region || '—'}</strong>
+      </div>
+    </div>
+
+    ${r.extraction_signals && r.extraction_signals.length > 0 ? `
+    <div class="pitch-panel">
+      <h3>🔗 Signaux d'extraction corporate</h3>
+      ${r.extraction_signals.map(s => `
+        <div style="margin-bottom:8px;">
+          <strong>${escHtml(s.corp)}</strong> mentionne dans le contexte capital circulant:
+          <div>${(s.banks_mentioned || []).map(b => `<span class="tag">${escHtml(b)}</span>`).join(' ')}</div>
+        </div>`).join('')}
+    </div>` : ''}
+
+    <div class="pitch-panel">
+      <h3>💬 Angle d'approche recommandé</h3>
+      <p style="margin-bottom:10px;"><strong>Niveau SCF banque:</strong> ${r.scf_level || '?'} · <strong>Priorité CredAble:</strong> ${r.v4_priority || '?'}</p>
+      ${generatePitchAngle(r)}
+    </div>`;
+}
+
+function generatePitchAngle(r) {
+  const angles = [];
+  if (r.market.corporate_count_direct >= 10) {
+    angles.push(`<p>📍 <strong>Ancrage géographique:</strong> ${r.market.corporate_count_direct} corporates dans votre marché direct représentent ${r.market.addressable_revenue_eur_bn}Bn EUR de CA adressable. Nous pouvons vous apporter leurs besoins en financement de chaîne d'approvisionnement sous forme de mandats qualifiés.</p>`);
+  }
+  if ((r.market.top_sectors || []).some(s => s.includes('Automotive') || s.includes('Industrial') || s.includes('FMCG'))) {
+    angles.push(`<p>🏭 <strong>Secteur prioritaire:</strong> Les secteurs ${(r.market.top_sectors || []).slice(0,2).map(s=>s.split('(')[0]).join(', ')} ont les plus hauts besoins SCF en Europe (chaînes T1/T2, cycles de paiement longs). CredAble est spécialement optimisé pour ces flux.</p>`);
+  }
+  if (r.scf_level === 'ABSENT' || r.scf_level === 'BASIQUE') {
+    angles.push(`<p>🚀 <strong>Gap SCF:</strong> Votre plateforme actuelle (${r.scf_level}) laisse un gap que vos corporates locaux expriment. Première installation rapide — time-to-value 90 jours.</p>`);
+  }
+  if (r.bis_score > 0 && r.components?.signal_boost > 0) {
+    angles.push(`<p>⚡ <strong>Signal concurrentiel:</strong> Des événements de marché identifiés (platform failures, pression pairs) créent une fenêtre d'opportunité. Notre équipe a les détails.</p>`);
+  }
+  return angles.length > 0 ? angles.join('') : '<p style="color:var(--muted)">Approche standard — présentation capacités CredAble + benchmark marché.</p>';
+}
+
+// ── MPS runner ────────────────────────────────────────────────────
+async function runMPS() {
+  const btn = document.getElementById('runMpsBtn');
+  const status = document.getElementById('runStatus');
+  btn.disabled = true;
+  btn.textContent = '⏳ Calcul…';
+  status.textContent = '';
+
+  try {
+    const r = await fetch('/model2/api/run/mps', { method: 'POST' }).then(r => r.json());
+    if (r.error) { status.textContent = '❌ ' + r.error; btn.disabled = false; btn.textContent = '▶ Recalculer MPS'; return; }
+
+    const es = new EventSource('/api/logs/' + r.jobId);
+    es.addEventListener('stdout', e => { status.textContent = '→ ' + JSON.parse(e.data).slice(0, 60); });
+    es.addEventListener('done', async () => {
+      es.close();
+      btn.disabled = false;
+      btn.textContent = '▶ Recalculer MPS';
+      status.textContent = '✅ Terminé';
+      await loadStats();
+      await loadMPS();
+    });
+    es.onerror = () => { es.close(); btn.disabled = false; btn.textContent = '▶ Recalculer MPS'; status.textContent = '❌ Erreur'; };
+  } catch (e) {
+    btn.disabled = false; btn.textContent = '▶ Recalculer MPS'; status.textContent = '❌ ' + e.message;
+  }
+}
+
+// ── Utils ─────────────────────────────────────────────────────────
+function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ── Start ─────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>

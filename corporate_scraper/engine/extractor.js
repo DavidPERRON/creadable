@@ -19,7 +19,7 @@
  * Cost estimate:
  *   ~25k tokens per corporate (filtered chunks ~15k tokens + ~10k output)
  *   Llama-3.3-70B via DeepInfra: ~$0.0001/1k tokens input, ~$0.0002/1k output
- *   159 corporates × $0.005 ≈ $0.80 for the full run
+ *   224 corporates × $0.005 ≈ $1.12 for the full run
  */
 
 const fs = require('fs');
@@ -29,8 +29,9 @@ const { SYSTEM_PROMPT, USER_PROMPT_TEMPLATE, EMPTY_EXTRACTION } = require('./ext
 
 const ROOT = path.join(__dirname, '..');
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog.json'), 'utf8')).corporates;
-const TXT_DIR = path.join(ROOT, 'text');
-const OUT_DIR = path.join(ROOT, 'extractions');
+const TXT_DIR  = path.join(ROOT, 'text');
+const OUT_DIR  = path.join(ROOT, 'extractions');
+const NEWS_DIR = path.join(ROOT, 'news');
 
 const API_URL = 'https://api.deepinfra.com/v1/openai/chat/completions';
 const MODEL = process.env.DEEPINFRA_MODEL || 'meta-llama/Meta-Llama-3.1-405B-Instruct';
@@ -204,13 +205,33 @@ function parseExtraction(content, corp) {
   }
 }
 
+function loadNewsSnippets(corpId) {
+  const newsPath = path.join(NEWS_DIR, `${corpId}.json`);
+  if (!fs.existsSync(newsPath)) return '';
+  try {
+    const data = JSON.parse(fs.readFileSync(newsPath, 'utf8'));
+    const articles = (data.articles || []).filter(a => a.full_text);
+    if (!articles.length) return '';
+    let block = '\n\n--- RECENT NEWS (web) ---\n';
+    let total = 0;
+    for (const a of articles.slice(0, 5)) {
+      const snippet = (a.full_text || '').slice(0, 1500);
+      block += `\n[${a.title}]\n${snippet}\n`;
+      total += snippet.length;
+      if (total > 6000) break;
+    }
+    return block;
+  } catch (e) { return ''; }
+}
+
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { id: null, limit: null, dryRun: false };
+  const opts = { id: null, limit: null, dryRun: false, withNews: false };
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
-    if (a === '--limit')   opts.limit = parseInt(args[++i], 10);
-    else if (a === '--dry-run') opts.dryRun = true;
+    if (a === '--limit')     opts.limit = parseInt(args[++i], 10);
+    else if (a === '--dry-run')   opts.dryRun = true;
+    else if (a === '--with-news') opts.withNews = true;
     else if (!a.startsWith('--')) opts.id = a;
   }
   return opts;
@@ -240,7 +261,8 @@ async function processOne(corp, opts, counters) {
   if (opts.dryRun) { counters.skipped++; return; }
 
   try {
-    const userPrompt = USER_PROMPT_TEMPLATE(corp.name, corp.country, corp.sector, chunk);
+    const newsBlock = opts.withNews ? loadNewsSnippets(corp.id) : '';
+    const userPrompt = USER_PROMPT_TEMPLATE(corp.name, corp.country, corp.sector, chunk + newsBlock);
     const t0 = Date.now();
     const ticker = setInterval(() => console.log(`  ${label} [${Math.round((Date.now()-t0)/1000)}s]…`), 15000);
     const { content, usage } = await callDeepInfra(SYSTEM_PROMPT, userPrompt).finally(() => clearInterval(ticker));

@@ -1,0 +1,3937 @@
+{
+  "generated_at": "2026-05-12",
+  "model": "mps_v1",
+  "description": "Market Pressure Score — demand-side: corporate footprint × bank SCF gap × sector intensity",
+  "banks_scored": 99,
+  "corporates_used": 224,
+  "extractions_used": 4,
+  "bucket_distribution": {
+    "MEDIUM": 33,
+    "HIGH": 8,
+    "MEDIUM-HIGH": 8,
+    "LOW": 50
+  },
+  "results": [
+    {
+      "bank_id": "komercni-banka-cz",
+      "bank_name": "Komerční banka",
+      "country": "CZ",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 57,
+      "bis_bucket": "MEDIUM-HIGH",
+      "mps_total": 34,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 44,
+      "components": {
+        "geo_score": 2.3,
+        "sector_score": 19.1,
+        "gap_score": 2.2,
+        "signal_boost": 10
+      },
+      "market": {
+        "country": "CZ",
+        "region": "CEE",
+        "corporate_count_direct": 3,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 49,
+        "regional_revenue_eur_bn": 117,
+        "top_sectors": [
+          "Utilities(1)",
+          "Automotive(1)",
+          "Agribusiness(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "3 corporate(s) en CZ — CA cumulé 49Bn EUR — secteurs: Utilities(1), Automotive(1), Agribusiness(1)"
+    },
+    {
+      "bank_id": "commerzbank-de",
+      "bank_name": "Commerzbank",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 26,
+      "bis_bucket": "LOW",
+      "mps_total": 68,
+      "mps_bucket": "HIGH",
+      "combined_score": 42,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "helaba-de",
+      "bank_name": "Helaba",
+      "country": "DE",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 72,
+      "mps_bucket": "HIGH",
+      "combined_score": 42,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 18.8,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "nordlb-de",
+      "bank_name": "Nord/LB (Norddeutsche Landesbank)",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 41,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "bayernlb-de",
+      "bank_name": "BayernLB",
+      "country": "DE",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 63,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 40,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 10,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "hcob-de",
+      "bank_name": "Hamburg Commercial Bank",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 23,
+      "bis_bucket": "LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 39,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "saar-lb-de",
+      "bank_name": "SaarLB",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 22,
+      "bis_bucket": "LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 38,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "procredit-de",
+      "bank_name": "ProCredit Holding",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 21,
+      "bis_bucket": "LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 38,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "addiko-bank-at",
+      "bank_name": "Addiko Bank",
+      "country": "AT",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 53,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 36,
+      "components": {
+        "geo_score": 12.1,
+        "sector_score": 21.9,
+        "gap_score": 14.7,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "AT",
+        "region": "DACH",
+        "corporate_count_direct": 8,
+        "corporate_count_regional": 55,
+        "addressable_revenue_eur_bn": 99,
+        "regional_revenue_eur_bn": 2340,
+        "top_sectors": [
+          "Industrial(4)",
+          "Construction(2)",
+          "Energy(1)",
+          "Utilities(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "8 corporate(s) en AT — CA cumulé 99Bn EUR — secteurs: Industrial(4), Construction(2), Energy(1), Utilities(1)"
+    },
+    {
+      "bank_id": "sparkasse-de",
+      "bank_name": "Sparkasse / DSGV",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 36,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "bcge-ch",
+      "bank_name": "BCGE",
+      "country": "CH",
+      "v4_priority": "P1",
+      "scf_level": "ABSENT",
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 62,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 34,
+      "components": {
+        "geo_score": 16.5,
+        "sector_score": 20.3,
+        "gap_score": 25,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "CH",
+        "region": "DACH",
+        "corporate_count_direct": 16,
+        "corporate_count_regional": 47,
+        "addressable_revenue_eur_bn": 592,
+        "regional_revenue_eur_bn": 1847,
+        "top_sectors": [
+          "Pharma(3)",
+          "Industrial(3)",
+          "Construction(2)",
+          "Luxury(2)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "16 corporate(s) en CH — CA cumulé 592Bn EUR — secteurs: Pharma(3), Industrial(3), Construction(2), Luxury(2)"
+    },
+    {
+      "bank_id": "unicaja-es",
+      "bank_name": "Unicaja Banco",
+      "country": "ES",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 28,
+      "bis_bucket": "LOW",
+      "mps_total": 38,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 33,
+      "components": {
+        "geo_score": 7.5,
+        "sector_score": 17.4,
+        "gap_score": 8.9,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "ES",
+        "region": "IBERIA",
+        "corporate_count_direct": 14,
+        "corporate_count_regional": 3,
+        "addressable_revenue_eur_bn": 313,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Utilities(3)",
+          "Construction(2)",
+          "FMCG(2)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "14 corporate(s) en ES — CA cumulé 313Bn EUR — secteurs: Utilities(3), Construction(2), FMCG(2), Retail(1)"
+    },
+    {
+      "bank_id": "bper-banca-it",
+      "bank_name": "BPER Banca",
+      "country": "IT",
+      "v4_priority": "P1",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 27,
+      "bis_bucket": "LOW",
+      "mps_total": 41,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 33,
+      "components": {
+        "geo_score": 9.7,
+        "sector_score": 19,
+        "gap_score": 8,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "IT",
+        "region": "OTHER",
+        "corporate_count_direct": 20,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 372,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "Automotive(3)",
+          "Utilities(3)",
+          "Industrial(3)",
+          "Construction(3)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "20 corporate(s) en IT — CA cumulé 372Bn EUR — secteurs: Automotive(3), Utilities(3), Industrial(3), Construction(3)"
+    },
+    {
+      "bank_id": "rabobank-nl",
+      "bank_name": "Rabobank",
+      "country": "NL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 40,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 32,
+      "components": {
+        "geo_score": 8,
+        "sector_score": 19,
+        "gap_score": 8.6,
+        "signal_boost": 4.6
+      },
+      "market": {
+        "country": "NL",
+        "region": "BENELUX",
+        "corporate_count_direct": 12,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 435,
+        "regional_revenue_eur_bn": 108,
+        "top_sectors": [
+          "Chemicals(3)",
+          "Retail(2)",
+          "Automotive(1)",
+          "FMCG(1)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Stellantis",
+          "banks_mentioned": [
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "BNP Paribas serves as lead bank for our European supply chain finance program"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Banca Transilvania",
+              "country_if_specified": "RO",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers"
+            },
+            {
+              "bank_name": "Bank Millennium",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "BPER Banca acts as factor for selected Italian receivables under our without-recourse factoring program"
+            },
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "issuing_bank",
+              "product_category": "documentary",
+              "context": "Letters of credit issued by BNP Paribas for our raw material imports"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "12 corporate(s) en NL — CA cumulé 435Bn EUR — secteurs: Chemicals(3), Retail(2), Automotive(1), FMCG(1)"
+    },
+    {
+      "bank_id": "bcv-ch",
+      "bank_name": "BCV",
+      "country": "CH",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 62,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 31,
+      "components": {
+        "geo_score": 16.5,
+        "sector_score": 20.3,
+        "gap_score": 25,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "CH",
+        "region": "DACH",
+        "corporate_count_direct": 16,
+        "corporate_count_regional": 47,
+        "addressable_revenue_eur_bn": 592,
+        "regional_revenue_eur_bn": 1847,
+        "top_sectors": [
+          "Pharma(3)",
+          "Industrial(3)",
+          "Construction(2)",
+          "Luxury(2)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "16 corporate(s) en CH — CA cumulé 592Bn EUR — secteurs: Pharma(3), Industrial(3), Construction(2), Luxury(2)"
+    },
+    {
+      "bank_id": "nordea-fi",
+      "bank_name": "Nordea",
+      "country": "FI",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 36,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 30,
+      "components": {
+        "geo_score": 6.5,
+        "sector_score": 20.1,
+        "gap_score": 9.2,
+        "signal_boost": 0.6
+      },
+      "market": {
+        "country": "FI",
+        "region": "NORDICS",
+        "corporate_count_direct": 9,
+        "corporate_count_regional": 21,
+        "addressable_revenue_eur_bn": 96,
+        "regional_revenue_eur_bn": 479,
+        "top_sectors": [
+          "Industrial(5)",
+          "Pulp/Paper(2)",
+          "Energy(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "9 corporate(s) en FI — CA cumulé 96Bn EUR — secteurs: Industrial(5), Pulp/Paper(2), Energy(1), Tech(1)"
+    },
+    {
+      "bank_id": "abnamro-nl",
+      "bank_name": "ABN AMRO",
+      "country": "NL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 23,
+      "bis_bucket": "LOW",
+      "mps_total": 40,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 30,
+      "components": {
+        "geo_score": 8,
+        "sector_score": 19,
+        "gap_score": 8.6,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "NL",
+        "region": "BENELUX",
+        "corporate_count_direct": 12,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 435,
+        "regional_revenue_eur_bn": 108,
+        "top_sectors": [
+          "Chemicals(3)",
+          "Retail(2)",
+          "Automotive(1)",
+          "FMCG(1)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Stellantis",
+          "banks_mentioned": [
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "BNP Paribas serves as lead bank for our European supply chain finance program"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Banca Transilvania",
+              "country_if_specified": "RO",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers"
+            },
+            {
+              "bank_name": "Bank Millennium",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "BPER Banca acts as factor for selected Italian receivables under our without-recourse factoring program"
+            },
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "issuing_bank",
+              "product_category": "documentary",
+              "context": "Letters of credit issued by BNP Paribas for our raw material imports"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "12 corporate(s) en NL — CA cumulé 435Bn EUR — secteurs: Chemicals(3), Retail(2), Automotive(1), FMCG(1)"
+    },
+    {
+      "bank_id": "banco-bpm-it",
+      "bank_name": "Banco BPM",
+      "country": "IT",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 22,
+      "bis_bucket": "LOW",
+      "mps_total": 41,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 30,
+      "components": {
+        "geo_score": 9.7,
+        "sector_score": 19,
+        "gap_score": 8,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "IT",
+        "region": "OTHER",
+        "corporate_count_direct": 20,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 372,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "Automotive(3)",
+          "Utilities(3)",
+          "Industrial(3)",
+          "Construction(3)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "20 corporate(s) en IT — CA cumulé 372Bn EUR — secteurs: Automotive(3), Utilities(3), Industrial(3), Construction(3)"
+    },
+    {
+      "bank_id": "dzbank-de",
+      "bank_name": "DZ Bank",
+      "country": "DE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 67,
+      "mps_bucket": "HIGH",
+      "combined_score": 30,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 15,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "kbc-be",
+      "bank_name": "KBC Bank",
+      "country": "BE",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 27,
+      "bis_bucket": "LOW",
+      "mps_total": 29,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 28,
+      "components": {
+        "geo_score": 5.1,
+        "sector_score": 18.5,
+        "gap_score": 4.4,
+        "signal_boost": 1.6
+      },
+      "market": {
+        "country": "BE",
+        "region": "BENELUX",
+        "corporate_count_direct": 7,
+        "corporate_count_regional": 13,
+        "addressable_revenue_eur_bn": 103,
+        "regional_revenue_eur_bn": 440,
+        "top_sectors": [
+          "Chemicals(3)",
+          "FMCG(1)",
+          "Banking(1)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "7 corporate(s) en BE — CA cumulé 103Bn EUR — secteurs: Chemicals(3), FMCG(1), Banking(1), Retail(1)"
+    },
+    {
+      "bank_id": "erste-group-at",
+      "bank_name": "Erste Group",
+      "country": "AT",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 40,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 28,
+      "components": {
+        "geo_score": 12.1,
+        "sector_score": 21.9,
+        "gap_score": 2.5,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "AT",
+        "region": "DACH",
+        "corporate_count_direct": 8,
+        "corporate_count_regional": 55,
+        "addressable_revenue_eur_bn": 99,
+        "regional_revenue_eur_bn": 2340,
+        "top_sectors": [
+          "Industrial(4)",
+          "Construction(2)",
+          "Energy(1)",
+          "Utilities(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "8 corporate(s) en AT — CA cumulé 99Bn EUR — secteurs: Industrial(4), Construction(2), Energy(1), Utilities(1)"
+    },
+    {
+      "bank_id": "bff-bank-it",
+      "bank_name": "BFF Bank",
+      "country": "IT",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 17,
+      "bis_bucket": "LOW",
+      "mps_total": 44,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 27,
+      "components": {
+        "geo_score": 9.7,
+        "sector_score": 19,
+        "gap_score": 12,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "IT",
+        "region": "OTHER",
+        "corporate_count_direct": 20,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 372,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "Automotive(3)",
+          "Utilities(3)",
+          "Industrial(3)",
+          "Construction(3)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "20 corporate(s) en IT — CA cumulé 372Bn EUR — secteurs: Automotive(3), Utilities(3), Industrial(3), Construction(3)"
+    },
+    {
+      "bank_id": "mbh-bank-hu",
+      "bank_name": "MBH Bank (ex-MKB)",
+      "country": "HU",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 26,
+      "components": {
+        "geo_score": 1.9,
+        "sector_score": 19.1,
+        "gap_score": 2.8,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "HU",
+        "region": "CEE",
+        "corporate_count_direct": 2,
+        "corporate_count_regional": 9,
+        "addressable_revenue_eur_bn": 24,
+        "regional_revenue_eur_bn": 142,
+        "top_sectors": [
+          "Energy(1)",
+          "Pharma(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "2 corporate(s) en HU — CA cumulé 24Bn EUR — secteurs: Energy(1), Pharma(1)"
+    },
+    {
+      "bank_id": "handelsbanken-se",
+      "bank_name": "Handelsbanken",
+      "country": "SE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 37,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 26,
+      "components": {
+        "geo_score": 7.2,
+        "sector_score": 20.4,
+        "gap_score": 9.6,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "SE",
+        "region": "NORDICS",
+        "corporate_count_direct": 10,
+        "corporate_count_regional": 20,
+        "addressable_revenue_eur_bn": 201,
+        "regional_revenue_eur_bn": 374,
+        "top_sectors": [
+          "Industrial(5)",
+          "Automotive(1)",
+          "Tech(1)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "10 corporate(s) en SE — CA cumulé 201Bn EUR — secteurs: Industrial(5), Automotive(1), Tech(1), Retail(1)"
+    },
+    {
+      "bank_id": "lbbw-de",
+      "bank_name": "LBBW",
+      "country": "DE",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 52,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 26,
+      "components": {
+        "geo_score": 28.3,
+        "sector_score": 20.8,
+        "gap_score": 2.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "DE",
+        "region": "DACH",
+        "corporate_count_direct": 39,
+        "corporate_count_regional": 24,
+        "addressable_revenue_eur_bn": 1748,
+        "regional_revenue_eur_bn": 691,
+        "top_sectors": [
+          "Automotive(11)",
+          "Industrial(10)",
+          "Chemicals(5)",
+          "Pharma(3)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Siemens AG",
+          "banks_mentioned": [
+            {
+              "bank_name": "Deutsche Bank",
+              "country_if_specified": "DE",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "Deutsche Bank serves as lead bank for our German supplier finance program"
+            },
+            {
+              "bank_name": "Commerzbank",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Commerzbank participates in our German and CEE supplier finance program"
+            },
+            {
+              "bank_name": "BayernLB",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "BayernLB participates in our supplier finance program for Bavaria-based suppliers"
+            },
+            {
+              "bank_name": "Helaba",
+              "country_if_specified": "DE",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Helaba supports our supplier finance arrangements for Hessen-based suppliers"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Komerční banka serves as local partner for our Czech tier-1 suppliers under the multi-bank SCF program"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Citi Handlowy serves as local partner for our Polish suppliers"
+            },
+            {
+              "bank_name": "OTP Bank",
+              "country_if_specified": "HU",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "OTP Bank participates in our Hungarian supplier finance arrangement"
+            },
+            {
+              "bank_name": "Erste Group",
+              "country_if_specified": "AT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Erste Group covers our Austrian and CEE supplier finance footprint"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "39 corporate(s) en DE — CA cumulé 1748Bn EUR — secteurs: Automotive(11), Industrial(10), Chemicals(5), Pharma(3)"
+    },
+    {
+      "bank_id": "cib-bank-hu",
+      "bank_name": "CIB Bank",
+      "country": "HU",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 22,
+      "bis_bucket": "LOW",
+      "mps_total": 28,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 25,
+      "components": {
+        "geo_score": 1.9,
+        "sector_score": 19.1,
+        "gap_score": 3.5,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "HU",
+        "region": "CEE",
+        "corporate_count_direct": 2,
+        "corporate_count_regional": 9,
+        "addressable_revenue_eur_bn": 24,
+        "regional_revenue_eur_bn": 142,
+        "top_sectors": [
+          "Energy(1)",
+          "Pharma(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "2 corporate(s) en HU — CA cumulé 24Bn EUR — secteurs: Energy(1), Pharma(1)"
+    },
+    {
+      "bank_id": "raiffeisen-rbi-at",
+      "bank_name": "Raiffeisen Bank International",
+      "country": "AT",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 40,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 25,
+      "components": {
+        "geo_score": 12.1,
+        "sector_score": 21.9,
+        "gap_score": 2.5,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "AT",
+        "region": "DACH",
+        "corporate_count_direct": 8,
+        "corporate_count_regional": 55,
+        "addressable_revenue_eur_bn": 99,
+        "regional_revenue_eur_bn": 2340,
+        "top_sectors": [
+          "Industrial(4)",
+          "Construction(2)",
+          "Energy(1)",
+          "Utilities(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "8 corporate(s) en AT — CA cumulé 99Bn EUR — secteurs: Industrial(4), Construction(2), Energy(1), Utilities(1)"
+    },
+    {
+      "bank_id": "la-banque-postale-fr",
+      "bank_name": "La Banque Postale",
+      "country": "FR",
+      "v4_priority": "P1",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 12,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 51,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 25,
+      "components": {
+        "geo_score": 22.2,
+        "sector_score": 19,
+        "gap_score": 10,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "FR",
+        "region": "OTHER",
+        "corporate_count_direct": 37,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 1393,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "FMCG(5)",
+          "Industrial(5)",
+          "Construction(5)",
+          "Automotive(4)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "37 corporate(s) en FR — CA cumulé 1393Bn EUR — secteurs: FMCG(5), Industrial(5), Construction(5), Automotive(4)"
+    },
+    {
+      "bank_id": "bank-millennium-pl",
+      "bank_name": "Bank Millennium",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 22,
+      "bis_bucket": "LOW",
+      "mps_total": 26,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 24,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "banca-ifis-it",
+      "bank_name": "Banca Ifis",
+      "country": "IT",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 31,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 24,
+      "components": {
+        "geo_score": 9.7,
+        "sector_score": 19,
+        "gap_score": 2,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "IT",
+        "region": "OTHER",
+        "corporate_count_direct": 20,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 372,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "Automotive(3)",
+          "Utilities(3)",
+          "Industrial(3)",
+          "Construction(3)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "20 corporate(s) en IT — CA cumulé 372Bn EUR — secteurs: Automotive(3), Utilities(3), Industrial(3), Construction(3)"
+    },
+    {
+      "bank_id": "dnb-no",
+      "bank_name": "DNB",
+      "country": "NO",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 32,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 24,
+      "components": {
+        "geo_score": 5.2,
+        "sector_score": 19.8,
+        "gap_score": 7.1,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "NO",
+        "region": "NORDICS",
+        "corporate_count_direct": 4,
+        "corporate_count_regional": 26,
+        "addressable_revenue_eur_bn": 137,
+        "regional_revenue_eur_bn": 438,
+        "top_sectors": [
+          "Energy(1)",
+          "Chemicals(1)",
+          "Telecom(1)",
+          "Mining(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "4 corporate(s) en NO — CA cumulé 137Bn EUR — secteurs: Energy(1), Chemicals(1), Telecom(1), Mining(1)"
+    },
+    {
+      "bank_id": "bankinter-es",
+      "bank_name": "Bankinter",
+      "country": "ES",
+      "v4_priority": "P1",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 35,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 24,
+      "components": {
+        "geo_score": 7.5,
+        "sector_score": 17.4,
+        "gap_score": 6,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "ES",
+        "region": "IBERIA",
+        "corporate_count_direct": 14,
+        "corporate_count_regional": 3,
+        "addressable_revenue_eur_bn": 313,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Utilities(3)",
+          "Construction(2)",
+          "FMCG(2)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "14 corporate(s) en ES — CA cumulé 313Bn EUR — secteurs: Utilities(3), Construction(2), FMCG(2), Retail(1)"
+    },
+    {
+      "bank_id": "csob-cz",
+      "bank_name": "ČSOB CZ",
+      "country": "CZ",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 29,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 22,
+      "components": {
+        "geo_score": 2.3,
+        "sector_score": 19.1,
+        "gap_score": 4.1,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "CZ",
+        "region": "CEE",
+        "corporate_count_direct": 3,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 49,
+        "regional_revenue_eur_bn": 117,
+        "top_sectors": [
+          "Utilities(1)",
+          "Automotive(1)",
+          "Agribusiness(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "3 corporate(s) en CZ — CA cumulé 49Bn EUR — secteurs: Utilities(1), Automotive(1), Agribusiness(1)"
+    },
+    {
+      "bank_id": "alior-bank-pl",
+      "bank_name": "Alior Bank",
+      "country": "PL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 17,
+      "bis_bucket": "LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 21,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 4.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "k-h-bank-hu",
+      "bank_name": "K&H Bank",
+      "country": "HU",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 21,
+      "components": {
+        "geo_score": 1.9,
+        "sector_score": 19.1,
+        "gap_score": 1.9,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "HU",
+        "region": "CEE",
+        "corporate_count_direct": 2,
+        "corporate_count_regional": 9,
+        "addressable_revenue_eur_bn": 24,
+        "regional_revenue_eur_bn": 142,
+        "top_sectors": [
+          "Energy(1)",
+          "Pharma(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "2 corporate(s) en HU — CA cumulé 24Bn EUR — secteurs: Energy(1), Pharma(1)"
+    },
+    {
+      "bank_id": "aik-bank-rs",
+      "bank_name": "AIK Bank",
+      "country": "RS",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 28,
+      "bis_bucket": "LOW",
+      "mps_total": 14,
+      "mps_bucket": "LOW",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "RS",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RS limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "nlb-komercijalna-rs",
+      "bank_name": "NLB Komercijalna",
+      "country": "RS",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 28,
+      "bis_bucket": "LOW",
+      "mps_total": 14,
+      "mps_bucket": "LOW",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "RS",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RS limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "hpb-hr",
+      "bank_name": "HPB (Hrvatska poštanska banka)",
+      "country": "HR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 2,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "HR",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché HR limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "citi-handlowy-pl",
+      "bank_name": "Citi Handlowy",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 15,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 26,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "credit-mutuel-fr",
+      "bank_name": "Crédit Mutuel",
+      "country": "FR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 57,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 22.2,
+        "sector_score": 19,
+        "gap_score": 15,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "FR",
+        "region": "OTHER",
+        "corporate_count_direct": 37,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 1393,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "FMCG(5)",
+          "Industrial(5)",
+          "Construction(5)",
+          "Automotive(4)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "37 corporate(s) en FR — CA cumulé 1393Bn EUR — secteurs: FMCG(5), Industrial(5), Construction(5), Automotive(4)"
+    },
+    {
+      "bank_id": "bpce-fr",
+      "bank_name": "BPCE / Natixis",
+      "country": "FR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 57,
+      "mps_bucket": "MEDIUM-HIGH",
+      "combined_score": 20,
+      "components": {
+        "geo_score": 22.2,
+        "sector_score": 19,
+        "gap_score": 15,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "FR",
+        "region": "OTHER",
+        "corporate_count_direct": 37,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 1393,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": [
+          "FMCG(5)",
+          "Industrial(5)",
+          "Construction(5)",
+          "Automotive(4)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "37 corporate(s) en FR — CA cumulé 1393Bn EUR — secteurs: FMCG(5), Industrial(5), Construction(5), Automotive(4)"
+    },
+    {
+      "bank_id": "banca-transilvania-ro",
+      "bank_name": "Banca Transilvania",
+      "country": "RO",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 28,
+      "bis_bucket": "LOW",
+      "mps_total": 13,
+      "mps_bucket": "LOW",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "liberty-bank-ge",
+      "bank_name": "Liberty Bank",
+      "country": "GE",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 25,
+      "bis_bucket": "LOW",
+      "mps_total": 14,
+      "mps_bucket": "LOW",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "GE",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GE limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "otp-bank-hu",
+      "bank_name": "OTP Bank",
+      "country": "HU",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 17,
+      "bis_bucket": "LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 1.9,
+        "sector_score": 19.1,
+        "gap_score": 0.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "HU",
+        "region": "CEE",
+        "corporate_count_direct": 2,
+        "corporate_count_regional": 9,
+        "addressable_revenue_eur_bn": 24,
+        "regional_revenue_eur_bn": 142,
+        "top_sectors": [
+          "Energy(1)",
+          "Pharma(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "2 corporate(s) en HU — CA cumulé 24Bn EUR — secteurs: Energy(1), Pharma(1)"
+    },
+    {
+      "bank_id": "belfius-be",
+      "bank_name": "Belfius Bank",
+      "country": "BE",
+      "v4_priority": "P1",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 28,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 5.1,
+        "sector_score": 18.5,
+        "gap_score": 4.4,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BE",
+        "region": "BENELUX",
+        "corporate_count_direct": 7,
+        "corporate_count_regional": 13,
+        "addressable_revenue_eur_bn": 103,
+        "regional_revenue_eur_bn": 440,
+        "top_sectors": [
+          "Chemicals(3)",
+          "FMCG(1)",
+          "Banking(1)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "7 corporate(s) en BE — CA cumulé 103Bn EUR — secteurs: Chemicals(3), FMCG(1), Banking(1), Retail(1)"
+    },
+    {
+      "bank_id": "bank-pekao-pl",
+      "bank_name": "Bank Pekao",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 28,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 5.6,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "mbank-pl",
+      "bank_name": "mBank",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 28,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 5.6,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "banco-sabadell-es",
+      "bank_name": "Banco Sabadell",
+      "country": "ES",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 19,
+      "components": {
+        "geo_score": 7.5,
+        "sector_score": 17.4,
+        "gap_score": 1.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "ES",
+        "region": "IBERIA",
+        "corporate_count_direct": 14,
+        "corporate_count_regional": 3,
+        "addressable_revenue_eur_bn": 313,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Utilities(3)",
+          "Construction(2)",
+          "FMCG(2)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "14 corporate(s) en ES — CA cumulé 313Bn EUR — secteurs: Utilities(3), Construction(2), FMCG(2), Retail(1)"
+    },
+    {
+      "bank_id": "erste-bank-rs",
+      "bank_name": "Erste Bank Serbia",
+      "country": "RS",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 26,
+      "bis_bucket": "LOW",
+      "mps_total": 13,
+      "mps_bucket": "LOW",
+      "combined_score": 18,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "RS",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RS limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "bog-ge",
+      "bank_name": "Bank of Georgia (Lion Finance Group)",
+      "country": "GE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 24,
+      "bis_bucket": "LOW",
+      "mps_total": 14,
+      "mps_bucket": "LOW",
+      "combined_score": 18,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "GE",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GE limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "procredit-georgia",
+      "bank_name": "ProCredit Bank Georgia",
+      "country": "GE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 24,
+      "bis_bucket": "LOW",
+      "mps_total": 14,
+      "mps_bucket": "LOW",
+      "combined_score": 18,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 4
+      },
+      "market": {
+        "country": "GE",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GE limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "pko-bp-pl",
+      "bank_name": "PKO BP",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 26,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 18,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "bgk-pl",
+      "bank_name": "BGK",
+      "country": "PL",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 26,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 18,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "cec-bank-ro",
+      "bank_name": "CEC Bank",
+      "country": "RO",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 24,
+      "bis_bucket": "LOW",
+      "mps_total": 12,
+      "mps_bucket": "LOW",
+      "combined_score": 17,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "nlb-si",
+      "bank_name": "NLB d.d.",
+      "country": "SI",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 17,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 1.3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "SI",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché SI limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "seb-se",
+      "bank_name": "SEB",
+      "country": "SE",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 6,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 37,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 15,
+      "components": {
+        "geo_score": 7.2,
+        "sector_score": 20.4,
+        "gap_score": 9.6,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "SE",
+        "region": "NORDICS",
+        "corporate_count_direct": 10,
+        "corporate_count_regional": 20,
+        "addressable_revenue_eur_bn": 201,
+        "regional_revenue_eur_bn": 374,
+        "top_sectors": [
+          "Industrial(5)",
+          "Automotive(1)",
+          "Tech(1)",
+          "Retail(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "10 corporate(s) en SE — CA cumulé 201Bn EUR — secteurs: Industrial(5), Automotive(1), Tech(1), Retail(1)"
+    },
+    {
+      "bank_id": "luminor-baltic",
+      "bank_name": "Luminor",
+      "country": "EE",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 19,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 14,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "EE",
+        "region": "BALTICS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché EE limité — opportunité via corporates régionaux (BALTICS)"
+    },
+    {
+      "bank_id": "bnp-paribas-pl",
+      "bank_name": "BNP Paribas Bank Polska",
+      "country": "PL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 14,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 4.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "ing-pl",
+      "bank_name": "ING Bank Śląski",
+      "country": "PL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 14,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 4.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "santander-pl",
+      "bank_name": "Santander Bank Polska",
+      "country": "PL",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 27,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 14,
+      "components": {
+        "geo_score": 3.3,
+        "sector_score": 19.1,
+        "gap_score": 4.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "PL",
+        "region": "CEE",
+        "corporate_count_direct": 6,
+        "corporate_count_regional": 5,
+        "addressable_revenue_eur_bn": 93,
+        "regional_revenue_eur_bn": 73,
+        "top_sectors": [
+          "Retail(3)",
+          "Energy(1)",
+          "Mining(1)",
+          "Tech(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "6 corporate(s) en PL — CA cumulé 93Bn EUR — secteurs: Retail(3), Energy(1), Mining(1), Tech(1)"
+    },
+    {
+      "bank_id": "citadele-lv",
+      "bank_name": "Citadele",
+      "country": "LV",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "LV",
+        "region": "BALTICS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché LV limité — opportunité via corporates régionaux (BALTICS)"
+    },
+    {
+      "bank_id": "siauliu-bankas-lt",
+      "bank_name": "Šiaulių Bankas",
+      "country": "LT",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "LT",
+        "region": "BALTICS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché LT limité — opportunité via corporates régionaux (BALTICS)"
+    },
+    {
+      "bank_id": "halyk-bank-kz",
+      "bank_name": "Halyk Bank",
+      "country": "KZ",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "KZ",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché KZ limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "piraeus-gr",
+      "bank_name": "Piraeus Bank",
+      "country": "GR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "GR",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GR limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "alpha-gr",
+      "bank_name": "Alpha Bank",
+      "country": "GR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 18,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "GR",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GR limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "lhv-pank-ee",
+      "bank_name": "LHV Pank",
+      "country": "EE",
+      "v4_priority": "P3",
+      "scf_level": "BASIQUE",
+      "bis_score": 17,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "EE",
+        "region": "BALTICS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché EE limité — opportunité via corporates régionaux (BALTICS)"
+    },
+    {
+      "bank_id": "ameriabank-am",
+      "bank_name": "Ameriabank",
+      "country": "AM",
+      "v4_priority": "P3",
+      "scf_level": "BASIQUE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "AM",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AM limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "ardshinbank-am",
+      "bank_name": "Ardshinbank",
+      "country": "AM",
+      "v4_priority": "P3",
+      "scf_level": "BASIQUE",
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "AM",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AM limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "kapital-bank-az",
+      "bank_name": "Kapital Bank",
+      "country": "AZ",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "AZ",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AZ limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "postbank-bg",
+      "bank_name": "Postbank Bulgaria (Eurobank)",
+      "country": "BG",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BG",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché BG limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "stopanska-mk",
+      "bank_name": "Stopanska Banka",
+      "country": "MK",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 16,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "MK",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché MK limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "brd-socgen-ro",
+      "bank_name": "BRD-SocGen",
+      "country": "RO",
+      "v4_priority": "P2",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 13,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "ing-bank-ro",
+      "bank_name": "ING Bank Romania",
+      "country": "RO",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 13,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 13,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2.8
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "vub-banka-sk",
+      "bank_name": "VÚB Banka",
+      "country": "SK",
+      "v4_priority": "P2",
+      "scf_level": "BASIQUE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 23,
+      "mps_bucket": "LOW",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 2.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "SK",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché SK limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "abn-amro-nl",
+      "bank_name": "ABN AMRO",
+      "country": "NL",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 6,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 28,
+      "mps_bucket": "MEDIUM",
+      "combined_score": 13,
+      "components": {
+        "geo_score": 8,
+        "sector_score": 19,
+        "gap_score": 1.4,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "NL",
+        "region": "BENELUX",
+        "corporate_count_direct": 12,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 435,
+        "regional_revenue_eur_bn": 108,
+        "top_sectors": [
+          "Chemicals(3)",
+          "Retail(2)",
+          "Automotive(1)",
+          "FMCG(1)"
+        ]
+      },
+      "extraction_signals": [
+        {
+          "corp": "Stellantis",
+          "banks_mentioned": [
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "lead",
+              "product_category": "payables",
+              "context": "BNP Paribas serves as lead bank for our European supply chain finance program"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Banca Transilvania",
+              "country_if_specified": "RO",
+              "role": "local_partner",
+              "product_category": "payables",
+              "context": "Local partnerships with BPER Banca and Banca Transilvania for supplier financing in Italy and Romania respectively"
+            },
+            {
+              "bank_name": "Komerční banka",
+              "country_if_specified": "CZ",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "Komerční banka provides factoring services for our Czech tier-1 suppliers"
+            },
+            {
+              "bank_name": "Bank Millennium",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "Citi Handlowy",
+              "country_if_specified": "PL",
+              "role": "participant",
+              "product_category": "payables",
+              "context": "Polish suppliers are served by Bank Millennium and Citi Handlowy under our cross-border SCF arrangement"
+            },
+            {
+              "bank_name": "BPER Banca",
+              "country_if_specified": "IT",
+              "role": "factor",
+              "product_category": "receivables",
+              "context": "BPER Banca acts as factor for selected Italian receivables under our without-recourse factoring program"
+            },
+            {
+              "bank_name": "BNP Paribas",
+              "country_if_specified": "FR",
+              "role": "issuing_bank",
+              "product_category": "documentary",
+              "context": "Letters of credit issued by BNP Paribas for our raw material imports"
+            }
+          ]
+        }
+      ],
+      "pitch_context": "12 corporate(s) en NL — CA cumulé 435Bn EUR — secteurs: Chemicals(3), Retail(2), Automotive(1), FMCG(1)"
+    },
+    {
+      "bank_id": "komercijalna-mk",
+      "bank_name": "Komercijalna Banka",
+      "country": "MK",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 15,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "MK",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché MK limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "bkt-al",
+      "bank_name": "BKT",
+      "country": "AL",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 15,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "AL",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AL limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "pasha-bank-az",
+      "bank_name": "PASHA Bank",
+      "country": "AZ",
+      "v4_priority": "P3",
+      "scf_level": "BASIQUE",
+      "bis_score": 15,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "AZ",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AZ limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "inecobank-am",
+      "bank_name": "Inecobank",
+      "country": "AM",
+      "v4_priority": "P3",
+      "scf_level": "BASIQUE",
+      "bis_score": 15,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "AM",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AM limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "tbc-bank-ge",
+      "bank_name": "TBC Bank",
+      "country": "GE",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 15,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "GE",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GE limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "evocabank-am",
+      "bank_name": "Evocabank",
+      "country": "AM",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 15,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "AM",
+        "region": "CAUCASUS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché AM limité — opportunité via corporates régionaux (CAUCASUS)"
+    },
+    {
+      "bank_id": "eurobank-gr",
+      "bank_name": "Eurobank",
+      "country": "GR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 15,
+      "bis_bucket": "LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "GR",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché GR limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "bcr-ro",
+      "bank_name": "BCR",
+      "country": "RO",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 14,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "tbc-bank-uz",
+      "bank_name": "TBC Bank Uzbekistan",
+      "country": "UZ",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 14,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "UZ",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché UZ limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "tatra-banka-sk",
+      "bank_name": "Tatra banka",
+      "country": "SK",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 1.3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "SK",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché SK limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "otp-banka-slovenija-si",
+      "bank_name": "OTP banka Slovenija",
+      "country": "SI",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 1.3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "SI",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché SI limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "zagrebacka-banka-hr",
+      "bank_name": "Zagrebačka banka",
+      "country": "HR",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 1.3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "HR",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché HR limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "pbz-hr",
+      "bank_name": "PBZ",
+      "country": "HR",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 1.2,
+        "sector_score": 18.9,
+        "gap_score": 1.3,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "HR",
+        "region": "CEE",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 11,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 166,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché HR limité — opportunité via corporates régionaux (CEE)"
+    },
+    {
+      "bank_id": "ceska-sporitelna-cz",
+      "bank_name": "Česká spořitelna",
+      "country": "CZ",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 22,
+      "mps_bucket": "LOW",
+      "combined_score": 12,
+      "components": {
+        "geo_score": 2.3,
+        "sector_score": 19.1,
+        "gap_score": 0.5,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "CZ",
+        "region": "CEE",
+        "corporate_count_direct": 3,
+        "corporate_count_regional": 8,
+        "addressable_revenue_eur_bn": 49,
+        "regional_revenue_eur_bn": 117,
+        "top_sectors": [
+          "Utilities(1)",
+          "Automotive(1)",
+          "Agribusiness(1)"
+        ]
+      },
+      "extraction_signals": [],
+      "pitch_context": "3 corporate(s) en CZ — CA cumulé 49Bn EUR — secteurs: Utilities(1), Automotive(1), Agribusiness(1)"
+    },
+    {
+      "bank_id": "raiffeisen-ukraine-ua",
+      "bank_name": "Raiffeisen Bank Ukraine",
+      "country": "UA",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 12,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 11,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "UA",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché UA limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "garanti-bbva-tr",
+      "bank_name": "Garanti BBVA",
+      "country": "TR",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 12,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 11,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "TR",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché TR limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "raiffeisen-romania-ro",
+      "bank_name": "Raiffeisen Bank Romania",
+      "country": "RO",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 11,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 12,
+      "mps_bucket": "LOW",
+      "combined_score": 11,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "ing-ro",
+      "bank_name": "ING Bank Romania",
+      "country": "RO",
+      "v4_priority": "NEW",
+      "scf_level": null,
+      "bis_score": 11,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 12,
+      "mps_bucket": "LOW",
+      "combined_score": 11,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 2
+      },
+      "market": {
+        "country": "RO",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RO limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "unicredit-bih-ba",
+      "bank_name": "UniCredit Bank BiH",
+      "country": "BA",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 10,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 10,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BA",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché BA limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "maib-md",
+      "bank_name": "MAIB",
+      "country": "MD",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 9,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 9,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0
+      },
+      "market": {
+        "country": "MD",
+        "region": "OTHER",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché MD limité — opportunité via corporates régionaux (EU)"
+    },
+    {
+      "bank_id": "dsk-bank-bg",
+      "bank_name": "DSK Bank",
+      "country": "BG",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 8,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BG",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché BG limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "unicredit-bulbank-bg",
+      "bank_name": "UniCredit Bulbank",
+      "country": "BG",
+      "v4_priority": "P3",
+      "scf_level": "INTERMEDIAIRE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 8,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BG",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché BG limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "intesa-beograd-rs",
+      "bank_name": "Banca Intesa Beograd",
+      "country": "RS",
+      "v4_priority": "EXCLU",
+      "scf_level": "AVANCE",
+      "bis_score": 7,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 8,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "RS",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché RS limité — opportunité via corporates régionaux (BALKANS)"
+    },
+    {
+      "bank_id": "raiffeisen-bih-ba",
+      "bank_name": "Raiffeisen Bank BiH",
+      "country": "BA",
+      "v4_priority": "P2",
+      "scf_level": "ABSENT",
+      "bis_score": 4,
+      "bis_bucket": "VERY LOW",
+      "mps_total": 10,
+      "mps_bucket": "LOW",
+      "combined_score": 6,
+      "components": {
+        "geo_score": 0,
+        "sector_score": 10,
+        "gap_score": 0,
+        "signal_boost": 0.4
+      },
+      "market": {
+        "country": "BA",
+        "region": "BALKANS",
+        "corporate_count_direct": 0,
+        "corporate_count_regional": 0,
+        "addressable_revenue_eur_bn": 0,
+        "regional_revenue_eur_bn": 0,
+        "top_sectors": []
+      },
+      "extraction_signals": [],
+      "pitch_context": "Marché BA limité — opportunité via corporates régionaux (BALKANS)"
+    }
+  ]
+}

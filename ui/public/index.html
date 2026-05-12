@@ -85,6 +85,20 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
 .pipeline-step { display: flex; flex-direction: column; gap: 4px; }
 .pipeline-step .step-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
 
+/* Step progress indicator */
+.step-progress { display: flex; align-items: center; gap: 0; margin-bottom: 20px; }
+.step-item { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; position: relative; }
+.step-item:not(:last-child)::after { content: ''; position: absolute; top: 14px; left: 60%; width: 80%; height: 2px; background: var(--border); z-index: 0; }
+.step-item:not(:last-child).done::after { background: var(--green); }
+.step-circle { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; background: var(--surface); z-index: 1; color: var(--muted); }
+.step-item.done .step-circle { border-color: var(--green); background: rgba(34,197,94,0.15); color: var(--green); }
+.step-item.active .step-circle { border-color: var(--accent); background: rgba(79,110,247,0.15); color: var(--accent); animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(79,110,247,0.4); } 50% { box-shadow: 0 0 0 6px rgba(79,110,247,0); } }
+.step-name { font-size: 10px; color: var(--muted); text-align: center; }
+.step-item.done .step-name { color: var(--green); }
+.step-item.active .step-name { color: var(--accent); font-weight: 600; }
+.step-count { font-size: 10px; color: var(--muted); }
+
 /* Badge */
 .badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
 .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
@@ -288,6 +302,34 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   </div>
 
   <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Progression</span></div>
+    <div class="section-body">
+      <div class="step-progress" id="corp-step-progress">
+        <div class="step-item" id="cs-step1">
+          <div class="step-circle">1</div>
+          <div class="step-name">Download PDFs</div>
+          <div class="step-count" id="cs-step1-count">—</div>
+        </div>
+        <div class="step-item" id="cs-step2">
+          <div class="step-circle">2</div>
+          <div class="step-name">Textes extraits</div>
+          <div class="step-count" id="cs-step2-count">—</div>
+        </div>
+        <div class="step-item" id="cs-step3">
+          <div class="step-circle">3</div>
+          <div class="step-name">Extract LLM</div>
+          <div class="step-count" id="cs-step3-count">—</div>
+        </div>
+        <div class="step-item" id="cs-step4">
+          <div class="step-circle">4</div>
+          <div class="step-name">Dashboard</div>
+          <div class="step-count" id="cs-step4-count">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
     <div class="section-header"><span class="section-title">Pipeline complet</span></div>
     <div class="section-body">
       <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Enchaîne les 4 étapes : Discover → Download → Extract → Aggregate</p>
@@ -297,6 +339,38 @@ tr:hover td { background: rgba(255,255,255,0.02); }
           Lancer pipeline complet
         </button>
         <button class="btn btn-secondary" onclick="runCmd('cs:extract-dry')">Dry-run (sans LLM)</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
+    <div class="section-header"><span class="section-title">Enrichissements</span></div>
+    <div class="section-body">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-news" style="width:16px;height:16px;accent-color:var(--accent)">
+          <span>
+            <strong>Actualités web</strong> — fetche les news DuckDuckGo avant l'extraction (supply chain, trade finance, partenariats)
+            <span class="badge badge-blue" style="margin-left:6px">+précision</span>
+          </span>
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-crossref" style="width:16px;height:16px;accent-color:var(--accent)">
+          <span>
+            <strong>Cross-référence</strong> — après extraction, agrège les banques citées par plusieurs corporates (signal de demande)
+            <span class="badge badge-blue" style="margin-left:6px">+contexte</span>
+          </span>
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px">
+          <input type="checkbox" id="enrich-demand" style="width:16px;height:16px;accent-color:var(--accent)" onchange="toggleDemandBtn()">
+          <span>
+            <strong>Signal de demande corporate</strong> — score P(push SCF) par corporate, basé sur les extractions
+            <span class="badge badge-blue" style="margin-left:6px">+prédiction</span>
+          </span>
+        </label>
+        <div class="alert alert-info" style="margin-top:4px;padding:8px 12px;font-size:12px">
+          ℹ️ <strong>Périmètre de l'extraction</strong> : rapports annuels officiels uniquement. Pas de cross-référence entre corporates (chaque appel LLM est isolé). Les enrichissements ci-dessus lèvent ces limites progressivement.
+        </div>
       </div>
     </div>
   </div>
@@ -316,12 +390,22 @@ tr:hover td { background: rgba(255,255,255,0.02); }
         </div>
         <div style="padding-top:22px;color:var(--muted)">→</div>
         <div class="pipeline-step">
-          <div class="step-label">3 — Extract (LLM)</div>
-          <button class="btn btn-primary" onclick="runCmd('cs:extract')">Extract</button>
+          <div class="step-label">2b — News (opt.)</div>
+          <button class="btn btn-secondary" onclick="runCsNewsIfEnabled()">Fetch News</button>
         </div>
         <div style="padding-top:22px;color:var(--muted)">→</div>
         <div class="pipeline-step">
-          <div class="step-label">4 — Aggregate</div>
+          <div class="step-label">3 — Extract (LLM)</div>
+          <button class="btn btn-primary" onclick="runCsExtractWithOptions()">Extract</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">4 — Cross-ref (opt.)</div>
+          <button class="btn btn-secondary" onclick="runCsPostExtract()">Cross-ref</button>
+        </div>
+        <div style="padding-top:22px;color:var(--muted)">→</div>
+        <div class="pipeline-step">
+          <div class="step-label">5 — Aggregate</div>
           <button class="btn btn-secondary" onclick="runCmd('cs:aggregate')">Aggregate</button>
         </div>
       </div>
@@ -404,6 +488,54 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   </div>
 
   <div class="section" style="margin-bottom:20px">
+    <div class="section-header">
+      <span class="section-title">Progression</span>
+      <button class="btn btn-secondary btn-sm" onclick="loadPipelineProgress()">↻ Rafraîchir</button>
+    </div>
+    <div class="section-body">
+      <div class="step-progress" id="bi-step-progress">
+        <div class="step-item" id="bi-step1">
+          <div class="step-circle">1</div>
+          <div class="step-name">Download PDFs</div>
+          <div class="step-count" id="bi-step1-count">—</div>
+        </div>
+        <div class="step-item" id="bi-step2">
+          <div class="step-circle">2</div>
+          <div class="step-name">News + Jobs</div>
+          <div class="step-count" id="bi-step2-count">—</div>
+        </div>
+        <div class="step-item" id="bi-step3">
+          <div class="step-circle">3</div>
+          <div class="step-name">Extract LLM</div>
+          <div class="step-count" id="bi-step3-count">—</div>
+        </div>
+        <div class="step-item" id="bi-step4">
+          <div class="step-circle">4</div>
+          <div class="step-name">BIS + Rapport</div>
+          <div class="step-count" id="bi-step4-count">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:16px">
+    <div class="section-header"><span class="section-title">Mode prédiction</span></div>
+    <div class="section-body">
+      <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;margin-bottom:10px">
+        <input type="checkbox" id="predict-banks" style="width:16px;height:16px;accent-color:var(--accent)" onchange="togglePredictMode()">
+        <span>
+          <strong>Activer prédictions bancaires</strong> — P(achat) à 6/12/18 mois, fenêtre optimale, trigger à surveiller
+          <span class="badge badge-blue" style="margin-left:6px">LLM</span>
+        </span>
+      </label>
+      <div id="predict-actions" style="display:none;margin-top:8px">
+        <button class="btn btn-primary" onclick="runBiCmd('bi:predict')">Générer prédictions (LLM)</button>
+        <span style="font-size:12px;color:var(--muted);margin-left:10px">~$0.10 pour 94 banques</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom:20px">
     <div class="section-header"><span class="section-title">Calculer / Mettre à jour les BIS</span></div>
     <div class="section-body">
       <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -434,15 +566,23 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   <div class="section">
     <div class="section-header">
       <span class="section-title">Classement BIS</span>
-      <button class="btn btn-secondary btn-sm" onclick="loadBisScores()">Actualiser</button>
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+        <label style="font-size:12px;color:var(--muted);white-space:nowrap">Seuil min. <strong id="bis-threshold-val" style="color:var(--accent)">0</strong></label>
+        <input type="range" id="bis-threshold" min="0" max="100" value="0" style="width:120px;accent-color:var(--accent)" oninput="applyBisThreshold(this.value)">
+        <button class="btn btn-secondary btn-sm" onclick="loadBisScores()">Actualiser</button>
+      </div>
     </div>
     <div class="section-body" style="padding:0">
+      <div style="font-size:12px;color:var(--muted);padding:10px 12px 0" id="bis-count-line"></div>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
               <th>#</th><th>Banque</th><th>Pays</th>
               <th>Score</th><th>Bucket</th><th>Fenêtre</th><th>Friction</th>
+              <th class="predict-col" style="display:none">P(6m)</th>
+              <th class="predict-col" style="display:none">P(12m)</th>
+              <th class="predict-col" style="display:none">Trigger</th>
               <th>Signaux forts</th>
             </tr>
           </thead>
@@ -522,7 +662,7 @@ tr:hover td { background: rgba(255,255,255,0.02); }
     <div class="section-body">
       <table>
         <tr><td style="color:var(--muted)">Version</td><td>1.0</td></tr>
-        <tr><td style="color:var(--muted)">Corporate scraper</td><td>159 EU corporates >€5bn</td></tr>
+        <tr><td style="color:var(--muted)">Corporate scraper</td><td>224 EU corporates €1–25bn+ (industrie, pas de services)</td></tr>
         <tr><td style="color:var(--muted)">Bank intelligence</td><td>BIS 8-signaux, 51 banques</td></tr>
         <tr><td style="color:var(--muted)">LLM</td><td>meta-llama/Llama-4-Scout via DeepInfra</td></tr>
       </table>
@@ -557,7 +697,8 @@ function showPage(id) {
   if (id === 'extractions-corp') loadExtractions('corporate');
   if (id === 'config') loadConfig();
   if (id === 'data') showDataTab(currentDataTab);
-  if (id === 'pipeline') checkApiForPipeline();
+  if (id === 'pipeline') { checkApiForPipeline(); loadPipelineProgress(); }
+  if (id === 'bis') { loadBisScores(); loadPipelineProgress(); }
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -584,8 +725,22 @@ async function loadStats() {
     document.getElementById('d-bank-bis').textContent = d.banks.bis_scored;
     document.getElementById('d-bis-ready').innerHTML = d.reports.bis_dashboard ? '<span class="badge badge-green">✓ Prêt</span>' : '<span class="badge badge-yellow">Non généré</span>';
     document.getElementById('d-corp-ready').innerHTML = d.reports.corporate_dashboard ? '<span class="badge badge-green">✓ Prêt</span>' : '<span class="badge badge-yellow">Non généré</span>';
+    updateStepProgress(d);
   } catch(e) { console.error(e); }
 }
+
+async function loadPipelineProgress() {
+  try {
+    const r = await fetch('/api/stats');
+    const d = await r.json();
+    updateStepProgress(d);
+  } catch(e) {}
+}
+
+// Auto-refresh progress every 15s when on pipeline or bis page
+setInterval(() => {
+  if (currentPage === 'pipeline' || currentPage === 'bis') loadPipelineProgress();
+}, 15000);
 
 // ─────────────────────────────────────────────────────────────────
 // Config
@@ -726,29 +881,65 @@ const BUCKET_BADGE = {
 };
 const SCORE_CLASS = s => s >= 70 ? 'score-high' : s >= 50 ? 'score-mh' : s >= 30 ? 'score-m' : 'score-low';
 
+let _bisAllBanks = [];
+
 async function loadBisScores() {
   const tbody = document.getElementById('bis-table-body');
   try {
     const r = await fetch('/api/data/bis_scores');
     const d = await r.json();
     const data = JSON.parse(d.content);
-    const banks = data.banks || [];
-    if (!banks.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Aucun score BIS. Lancez "Recalculer BIS".</td></tr>'; return; }
-
-    tbody.innerHTML = banks.map((b, i) => `
-      <tr>
-        <td style="color:var(--muted)">${i+1}</td>
-        <td style="font-weight:500">${b.bank_name || b.name}</td>
-        <td>${b.country || ''}</td>
-        <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
-        <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
-        <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
-        <td>${frictionBadge(b.friction)}</td>
-        <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
-      </tr>`).join('');
+    _bisAllBanks = data.banks || [];
+    if (!_bisAllBanks.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Aucun score BIS. Lancez "Recalculer BIS".</td></tr>'; return; }
+    applyBisThreshold(document.getElementById('bis-threshold')?.value || 0);
   } catch(e) {
     tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Fichier BIS non trouvé. Lancez "Recalculer BIS".</td></tr>';
   }
+}
+
+function applyBisThreshold(val) {
+  val = parseInt(val, 10);
+  document.getElementById('bis-threshold-val').textContent = val;
+  if (document.getElementById('bis-threshold')) document.getElementById('bis-threshold').value = val;
+
+  // Normalize fields — bis_scores.json stores score inside b.bis.bis_total
+  const normalize = b => ({
+    bank_id:      b.bank_id,
+    bank_name:    b.bank_name || b.name,
+    country:      b.country || '',
+    bis_score:    b.bis_score ?? b.bis?.bis_total ?? 0,
+    bucket:       b.bucket   ?? b.bis?.bis_bucket ?? '',
+    window_months: b.window_months ?? b.bis?.estimated_window_months ?? null,
+    friction:     b.friction ?? b.tech_stack?.credable_friction ?? '',
+    top_signals:  b.top_signals ?? (b.bis?.pitch_argument ? [b.bis.pitch_argument.slice(0, 80)] : []),
+  });
+
+  const normalized = _bisAllBanks.map(normalize);
+  const banks = normalized.filter(b => b.bis_score >= val);
+  const countLine = document.getElementById('bis-count-line');
+  if (countLine) countLine.textContent = `${banks.length} banque${banks.length > 1 ? 's' : ''} avec BIS ≥ ${val} (sur ${_bisAllBanks.length} total)`;
+  const tbody = document.getElementById('bis-table-body');
+  if (!banks.length) { tbody.innerHTML = `<tr><td colspan="11" class="empty-state">Aucune banque avec BIS ≥ ${val}. Baissez le seuil.</td></tr>`; return; }
+  const showPredict = isPredictEnabled();
+  tbody.innerHTML = banks.map((b, i) => {
+    const pred = _predictionsMap[b.bank_id] || {};
+    const p6  = pred.p_buy_6m  != null ? `<span style="color:var(--accent);font-weight:600">${pred.p_buy_6m}%</span>`  : '—';
+    const p12 = pred.p_buy_12m != null ? `<span style="color:var(--green);font-weight:600">${pred.p_buy_12m}%</span>` : '—';
+    const trig = pred.top_trigger ? `<span style="font-size:11px;color:var(--muted)">${pred.top_trigger}</span>` : '—';
+    return `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500">${b.bank_name}</td>
+      <td>${b.country}</td>
+      <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
+      <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
+      <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
+      <td>${frictionBadge(b.friction)}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'}">${p6}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'}">${p12}</td>
+      <td class="predict-col" style="display:${showPredict?'':'none'};max-width:180px">${trig}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${b.top_signals.slice(0,3).join(', ')}</td>
+    </tr>`;
+  }).join('');
 }
 
 function frictionBadge(f) {
@@ -767,7 +958,7 @@ async function loadBisDashboard() {
     document.getElementById('bis-dashboard-missing').style.display = 'none';
     const frame = document.getElementById('bis-dashboard-frame');
     frame.style.display = 'block';
-    if (!frame.src) frame.src = '/reports/bis/bis_dashboard.html';
+    frame.src = '/reports/bis/bis_dashboard.html?t=' + Date.now();
   } else {
     document.getElementById('bis-dashboard-missing').style.display = 'block';
     document.getElementById('bis-dashboard-frame').style.display = 'none';
@@ -781,11 +972,48 @@ async function loadCorpDashboard() {
     document.getElementById('corp-dashboard-missing').style.display = 'none';
     const frame = document.getElementById('corp-dashboard-frame');
     frame.style.display = 'block';
-    if (!frame.src) frame.src = '/reports/corporate/dashboard.html';
+    frame.src = '/reports/corporate/dashboard.html?t=' + Date.now();
   } else {
     document.getElementById('corp-dashboard-missing').style.display = 'block';
     document.getElementById('corp-dashboard-frame').style.display = 'none';
   }
+}
+
+function updateStepProgress(d) {
+  const total = d.corporates.total || 224;
+  const biTotal = d.banks ? (d.banks.total || 94) : 94;
+
+  // Corporate steps
+  function setStep(id, countId, done, active, label) {
+    const el = document.getElementById(id);
+    const cel = document.getElementById(countId);
+    if (!el) return;
+    el.classList.remove('done', 'active');
+    if (done) el.classList.add('done');
+    else if (active) el.classList.add('active');
+    if (cel) cel.textContent = label;
+  }
+
+  const pdfs = d.corporates.pdfs || 0;
+  const texts = d.corporates.texts || 0;
+  const exts = d.corporates.extractions || 0;
+  const corpDash = d.reports.corporate_dashboard;
+
+  setStep('cs-step1', 'cs-step1-count', pdfs > 0, false, pdfs + ' PDFs');
+  setStep('cs-step2', 'cs-step2-count', texts > 0, pdfs > 0 && texts === 0, texts + ' textes');
+  setStep('cs-step3', 'cs-step3-count', exts > 0, texts > 0 && exts === 0, exts + '/' + total);
+  setStep('cs-step4', 'cs-step4-count', !!corpDash, exts > 0 && !corpDash, corpDash ? '✓ Prêt' : 'En attente');
+
+  // Bank steps
+  const biPdfs = d.banks ? (d.banks.pdfs || 0) : 0;
+  const biExts = d.banks ? (d.banks.bis_extractions || 0) : 0;
+  const biScored = d.banks ? (d.banks.bis_scored || 0) : 0;
+  const biDash = d.reports.bis_dashboard;
+
+  setStep('bi-step1', 'bi-step1-count', biPdfs > 0, false, biPdfs + ' PDFs');
+  setStep('bi-step2', 'bi-step2-count', false, biPdfs > 0, '→ optionnel');
+  setStep('bi-step3', 'bi-step3-count', biExts > 0, biPdfs > 0 && biExts === 0, biExts + '/' + biTotal);
+  setStep('bi-step4', 'bi-step4-count', !!biDash, biScored > 0 && !biDash, biScored > 0 ? biScored + ' scorées' : 'En attente');
 }
 
 // ─────────────────────────────────────────────────────────────────
@@ -822,13 +1050,59 @@ async function viewExtraction(type, id) {
 }
 
 // ─────────────────────────────────────────────────────────────────
+// Enrichment helpers
+// ─────────────────────────────────────────────────────────────────
+function isNewsEnabled()     { return document.getElementById('enrich-news')?.checked; }
+function isCrossrefEnabled() { return document.getElementById('enrich-crossref')?.checked; }
+function isPredictEnabled()  { return document.getElementById('predict-banks')?.checked; }
+
+function runCsNewsIfEnabled() {
+  if (isNewsEnabled()) runCmd('cs:news');
+  else alert('Cochez "Actualités web" pour activer le fetch de news.');
+}
+
+function runCsExtractWithOptions() {
+  const cmd = isNewsEnabled() ? 'cs:extract-with-news' : 'cs:extract';
+  runCmd(cmd);
+}
+
+function runCsPostExtract() {
+  if (isCrossrefEnabled()) runCmd('cs:crossref');
+  else alert('Cochez "Cross-référence" pour activer ce module.');
+}
+
+function toggleDemandBtn() {
+  // future: show demand signal table
+}
+
+function togglePredictMode() {
+  const on = isPredictEnabled();
+  document.getElementById('predict-actions').style.display = on ? 'block' : 'none';
+  document.querySelectorAll('.predict-col').forEach(el => el.style.display = on ? '' : 'none');
+  if (on && _bisAllBanks.length) applyBisThreshold(document.getElementById('bis-threshold')?.value || 0);
+}
+
+let _predictionsMap = {};
+
+async function loadPredictions() {
+  try {
+    const r = await fetch('/api/data/predictions');
+    if (!r.ok) return;
+    const d = await r.json();
+    const data = JSON.parse(d.content);
+    _predictionsMap = {};
+    (data.predictions || []).forEach(p => { _predictionsMap[p.bank_id] = p; });
+  } catch(e) {}
+}
+
+// ─────────────────────────────────────────────────────────────────
 // Data editor
 // ─────────────────────────────────────────────────────────────────
 const DATA_DESCRIPTIONS = {
   bank_techstack:          'Tech stack curé de 51 banques (core banking, plateforme SCF, friction CredAble)',
   fintech_failures:        'Faillites fintech et banques orphelines — Signal 3 du BIS',
   competitor_intelligence: 'Intelligence concurrentielle vérifiée (sites web, mai 2026)',
-  catalog:                 'Catalogue de 159 corporates EU >€5bn CA',
+  catalog:                 'Catalogue de 224 corporates EU €1–25bn+ (industrie, pas de services)',
 };
 
 async function showDataTab(name) {
