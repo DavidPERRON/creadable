@@ -175,7 +175,7 @@ async function findPdfLink(page, url, depth = 0) {
 
 async function downloadPdf(url, dest, referer = '') {
   const curlArgs = [
-    '-L', '-s', '-o', dest,
+    '-L', '-s', '-w', '%{http_code}', '-o', dest,
     '-A', CHROME_UA,
     '-H', 'Accept: application/pdf,application/octet-stream,*/*;q=0.8',
     '-H', 'Accept-Language: en-US,en;q=0.9',
@@ -190,7 +190,8 @@ async function downloadPdf(url, dest, referer = '') {
   curlArgs.push(url);
 
   try {
-    execFileSync('curl', curlArgs, { stdio: ['ignore', 'ignore', 'ignore'] });
+    const httpCode = execFileSync('curl', curlArgs, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+    process.stdout.write(`[http:${httpCode}] `);
     if (!fs.existsSync(dest)) return false;
     const stat = fs.statSync(dest);
     if (stat.size < 10000) { fs.unlinkSync(dest); return false; }
@@ -318,7 +319,7 @@ async function processBank(bank, browser, attempt = 1) {
     if (!pdfUrl) {
       result.reason = 'no_pdf_found';
     } else {
-      process.stdout.write(`[url: ${pdfUrl.slice(0, 80)}] `);
+      process.stdout.write(`\n    [url: ${pdfUrl}]\n    `);
       let ok = await downloadPdf(pdfUrl, pdfPath, referer);
       // Fallback: download via Puppeteer session (preserves cookies/auth)
       if (!ok) ok = await downloadPdfViaPuppeteer(page, pdfUrl, pdfPath);
