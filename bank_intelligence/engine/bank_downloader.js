@@ -76,22 +76,47 @@ async function waitForPdfLinks(page, maxWait = 6000) {
   }
 }
 
+async function safeEvaluate(page, fn, ...args) {
+  try {
+    return await page.evaluate(fn, ...args);
+  } catch (e) {
+    if (/context was destroyed|context|Target closed/i.test(e.message)) return null;
+    throw e;
+  }
+}
+
 async function findPdfLink(page, url, depth = 0) {
   if (depth > 2) return null;
+
+  // Navigate — tolerate redirects and JS navigations
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 35000 });
   } catch (e) {
+    // networkidle2 timed out or context destroyed mid-navigation — try lighter wait
     try {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-      await sleep(3000);
-    } catch (e2) { return null; }
+      await sleep(4000);
+    } catch (e2) {
+      // Last resort: page may have navigated on its own — check current URL
+      try {
+        const cur = page.url();
+        if (/\.pdf(\?|#|$)/i.test(cur)) return cur;
+      } catch (e3) {}
+      return null;
+    }
   }
+
+  // If the navigation landed directly on a PDF, return it
+  try {
+    const cur = page.url();
+    if (/\.pdf(\?|#|$)/i.test(cur)) return cur;
+  } catch (e) {}
 
   await dismissConsent(page);
   await waitForPdfLinks(page, 5000);
 
   // Tier 1: PDF links with annual report hints
-  const directPdfs = await page.evaluate((hintReSrc) => {
+  const directPdfs = await safeEvaluate(page, (hintReSrc) => {
     const re = new RegExp(hintReSrc, 'i');
     const out = [];
     document.querySelectorAll('a[href]').forEach(a => {
@@ -107,10 +132,10 @@ async function findPdfLink(page, url, depth = 0) {
     });
     return out.sort((a, b) => b.score - a.score).slice(0, 5);
   }, PDF_LINK_HINTS.source);
-  if (directPdfs[0]) return directPdfs[0].href;
+  if (directPdfs && directPdfs[0]) return directPdfs[0].href;
 
   // Tier 2: Any PDF link (skip quarterly/interim)
-  const anyPdf = await page.evaluate(() => {
+  const anyPdf = await safeEvaluate(page, () => {
     const out = [];
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.href;
@@ -121,11 +146,11 @@ async function findPdfLink(page, url, depth = 0) {
     });
     return out.slice(0, 10);
   });
-  if (anyPdf[0]) return anyPdf[0].href;
+  if (anyPdf && anyPdf[0]) return anyPdf[0].href;
 
   // Tier 3: Follow sub-pages with annual report hints
   if (depth < 2) {
-    const subPages = await page.evaluate((hintReSrc) => {
+    const subPages = await safeEvaluate(page, (hintReSrc) => {
       const re = new RegExp(hintReSrc, 'i');
       const currentHost = location.hostname;
       const out = [];
@@ -138,9 +163,11 @@ async function findPdfLink(page, url, depth = 0) {
       });
       return out.slice(0, 4);
     }, PDF_LINK_HINTS.source);
-    for (const sub of subPages) {
-      const found = await findPdfLink(page, sub.href, depth + 1);
-      if (found) return found;
+    if (subPages) {
+      for (const sub of subPages) {
+        const found = await findPdfLink(page, sub.href, depth + 1);
+        if (found) return found;
+      }
     }
   }
   return null;
