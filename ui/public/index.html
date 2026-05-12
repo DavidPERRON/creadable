@@ -504,9 +504,14 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   <div class="section">
     <div class="section-header">
       <span class="section-title">Classement BIS</span>
-      <button class="btn btn-secondary btn-sm" onclick="loadBisScores()">Actualiser</button>
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+        <label style="font-size:12px;color:var(--muted);white-space:nowrap">Seuil min. <strong id="bis-threshold-val" style="color:var(--accent)">0</strong></label>
+        <input type="range" id="bis-threshold" min="0" max="100" value="0" style="width:120px;accent-color:var(--accent)" oninput="applyBisThreshold(this.value)">
+        <button class="btn btn-secondary btn-sm" onclick="loadBisScores()">Actualiser</button>
+      </div>
     </div>
     <div class="section-body" style="padding:0">
+      <div style="font-size:12px;color:var(--muted);padding:10px 12px 0" id="bis-count-line"></div>
       <div class="table-wrap">
         <table>
           <thead>
@@ -806,29 +811,42 @@ const BUCKET_BADGE = {
 };
 const SCORE_CLASS = s => s >= 70 ? 'score-high' : s >= 50 ? 'score-mh' : s >= 30 ? 'score-m' : 'score-low';
 
+let _bisAllBanks = [];
+
 async function loadBisScores() {
   const tbody = document.getElementById('bis-table-body');
   try {
     const r = await fetch('/api/data/bis_scores');
     const d = await r.json();
     const data = JSON.parse(d.content);
-    const banks = data.banks || [];
-    if (!banks.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Aucun score BIS. Lancez "Recalculer BIS".</td></tr>'; return; }
-
-    tbody.innerHTML = banks.map((b, i) => `
-      <tr>
-        <td style="color:var(--muted)">${i+1}</td>
-        <td style="font-weight:500">${b.bank_name || b.name}</td>
-        <td>${b.country || ''}</td>
-        <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
-        <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
-        <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
-        <td>${frictionBadge(b.friction)}</td>
-        <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
-      </tr>`).join('');
+    _bisAllBanks = data.banks || [];
+    if (!_bisAllBanks.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Aucun score BIS. Lancez "Recalculer BIS".</td></tr>'; return; }
+    applyBisThreshold(document.getElementById('bis-threshold')?.value || 0);
   } catch(e) {
     tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Fichier BIS non trouvé. Lancez "Recalculer BIS".</td></tr>';
   }
+}
+
+function applyBisThreshold(val) {
+  val = parseInt(val, 10);
+  document.getElementById('bis-threshold-val').textContent = val;
+  if (document.getElementById('bis-threshold')) document.getElementById('bis-threshold').value = val;
+  const banks = _bisAllBanks.filter(b => (b.bis_score || 0) >= val);
+  const countLine = document.getElementById('bis-count-line');
+  if (countLine) countLine.textContent = `${banks.length} banque${banks.length > 1 ? 's' : ''} avec BIS ≥ ${val} (sur ${_bisAllBanks.length} total)`;
+  const tbody = document.getElementById('bis-table-body');
+  if (!banks.length) { tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Aucune banque avec BIS ≥ ${val}. Baissez le seuil.</td></tr>`; return; }
+  tbody.innerHTML = banks.map((b, i) => `
+    <tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:500">${b.bank_name || b.name}</td>
+      <td>${b.country || ''}</td>
+      <td><span class="${SCORE_CLASS(b.bis_score)}" style="font-size:16px;font-weight:700">${b.bis_score}</span></td>
+      <td><span class="badge ${BUCKET_BADGE[b.bucket] || ''}">${b.bucket}</span></td>
+      <td style="color:var(--muted)">${b.window_months ? b.window_months + ' mois' : '—'}</td>
+      <td>${frictionBadge(b.friction)}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(b.top_signals || []).slice(0,3).join(', ')}</td>
+    </tr>`).join('');
 }
 
 function frictionBadge(f) {
