@@ -900,6 +900,42 @@ function renderSectors() {
     </div>`;
 }
 
+// ── Extraction signals renderer (no nested template literals) ─────
+function renderExtractionSignals(signals, bankName) {
+  if (!signals || !signals.length) return '';
+  const bankFirst = (bankName || '').toLowerCase().split(' ')[0];
+  let html = '<div class="pitch-panel"><div class="pitch-panel-header"><h3>🔗 Signaux d\'extraction corporate</h3></div>';
+  for (const s of signals) {
+    html += '<div style="margin-bottom:10px;padding:10px;background:var(--surface);border-radius:6px;border:1px solid var(--border);">';
+    html += '<div style="font-size:12px;margin-bottom:6px;"><strong>' + escHtml(s.corp) + '</strong> <span style="color:var(--muted)">— cite cette banque dans son programme SCF :</span></div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:5px;">';
+    const all = s.banks_mentioned || [];
+    const isMatch = b => { const n = (typeof b === 'string' ? b : b.bank_name || '').toLowerCase(); return n.includes(bankFirst) || bankFirst.includes(n.split(' ')[0]); };
+    const sorted = [...all.filter(isMatch), ...all.filter(b => !isMatch(b))].slice(0, 8);
+    const ROLE_COLOR = { lead: 'var(--green)', participant: 'var(--accent)', local_partner: 'var(--orange)' };
+    for (const b of sorted) {
+      if (typeof b === 'string') { html += '<span class="tag">' + escHtml(b) + '</span>'; continue; }
+      const target = isMatch(b);
+      const rc = ROLE_COLOR[b.role] || 'var(--muted)';
+      html += '<span title="' + escHtml(b.context || '') + '" style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;font-size:11px;'
+           + 'border:1px solid ' + (target ? 'var(--purple)' : 'var(--border)') + ';'
+           + 'background:' + (target ? '#bc8cff15' : 'var(--surface2)') + ';">';
+      html += '<span style="font-weight:' + (target ? '700' : '400') + ';color:' + (target ? 'var(--purple)' : 'var(--text)') + ';">' + escHtml(b.bank_name) + '</span>';
+      if (b.role) html += '<span style="font-size:9px;color:' + rc + ';">' + escHtml(b.role) + '</span>';
+      if (b.product_category) html += '<span style="font-size:9px;color:var(--muted);">' + escHtml(b.product_category) + '</span>';
+      html += '</span>';
+    }
+    html += '</div>';
+    const match = all.find(isMatch);
+    if (match && typeof match !== 'string' && match.context) {
+      html += '<div style="margin-top:6px;font-size:11px;color:var(--muted);font-style:italic;">"' + escHtml(match.context) + '"</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 // ── Pitch Builder ─────────────────────────────────────────────────
 function populatePitchSelect() {
   if (!_mps) return;
@@ -976,40 +1012,7 @@ function renderPitch() {
       </div>
     </div>
 
-    ${r.extraction_signals && r.extraction_signals.length > 0 ? `
-    <div class="pitch-panel">
-      <div class="pitch-panel-header"><h3>🔗 Signaux d'extraction corporate</h3></div>
-      ${r.extraction_signals.map(s => `
-        <div style="margin-bottom:10px; padding:10px; background:var(--surface); border-radius:6px; border:1px solid var(--border);">
-          <div style="font-size:12px;margin-bottom:6px;"><strong>${escHtml(s.corp)}</strong> <span style="color:var(--muted)">— cite cette banque dans son programme SCF :</span></div>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;">
-          ${(s.banks_mentioned || []).filter(b => {
-            const name = typeof b === 'string' ? b : b.bank_name || '';
-            return name.toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase()) ||
-                   (r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
-          }).concat(
-            (s.banks_mentioned || []).filter(b => {
-              const name = typeof b === 'string' ? b : b.bank_name || '';
-              return !name.toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase()) &&
-                     !(r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
-            })
-          ).slice(0, 8).map(b => {
-            if (typeof b === 'string') return \`<span class="tag">\${escHtml(b)}</span>\`;
-            const isTarget = (b.bank_name||'').toLowerCase().includes((r.bank_name||'').toLowerCase().split(' ')[0].toLowerCase());
-            const roleColor = { lead: 'var(--green)', participant: 'var(--accent)', local_partner: 'var(--orange)' }[b.role] || 'var(--muted)';
-            return \`<span title="\${escHtml(b.context||'')}" style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;font-size:11px;border:1px solid \${isTarget ? 'var(--purple)' : 'var(--border)'};background:\${isTarget ? '#bc8cff15' : 'var(--surface2)'}">
-              <span style="font-weight:\${isTarget ? '700' : '400'};color:\${isTarget ? 'var(--purple)' : 'var(--text)'}">\${escHtml(b.bank_name)}</span>
-              <span style="font-size:9px;color:\${roleColor}">\${b.role || ''}</span>
-              \${b.product_category ? \`<span style="font-size:9px;color:var(--muted)">\${b.product_category}</span>\` : ''}
-            </span>\`;
-          }).join('')}
-          </div>
-          ${(s.banks_mentioned || []).find(b => {
-            const name = typeof b === 'string' ? b : b.bank_name || '';
-            return (r.bank_name||'').toLowerCase().includes(name.toLowerCase().split(' ')[0].toLowerCase());
-          }) ? `<div style="margin-top:6px;font-size:11px;color:var(--muted);font-style:italic">"${escHtml(((s.banks_mentioned||[]).find(b => (r.bank_name||'').toLowerCase().includes((typeof b==='string'?b:b.bank_name||'').toLowerCase().split(' ')[0].toLowerCase())) || {}).context || '')}"</div>` : ''}
-        </div>`).join('')}
-    </div>` : ''}
+    ${renderExtractionSignals(r.extraction_signals, r.bank_name)}
 
     <div class="pitch-panel">
       <div class="pitch-panel-header"><h3>💬 Angle d'approche recommandé</h3></div>
