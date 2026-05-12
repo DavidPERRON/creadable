@@ -1,0 +1,2 @@
+# Auto-merge .gitignore using union strategy — prevents rebase conflicts
+.gitignore merge=union
