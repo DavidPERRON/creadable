@@ -488,7 +488,10 @@ tr:hover td { background: rgba(255,255,255,0.02); }
   </div>
 
   <div class="section" style="margin-bottom:20px">
-    <div class="section-header"><span class="section-title">Progression</span></div>
+    <div class="section-header">
+      <span class="section-title">Progression</span>
+      <button class="btn btn-secondary btn-sm" onclick="loadPipelineProgress()">↻ Rafraîchir</button>
+    </div>
     <div class="section-body">
       <div class="step-progress" id="bi-step-progress">
         <div class="step-item" id="bi-step1">
@@ -733,6 +736,11 @@ async function loadPipelineProgress() {
     updateStepProgress(d);
   } catch(e) {}
 }
+
+// Auto-refresh progress every 15s when on pipeline or bis page
+setInterval(() => {
+  if (currentPage === 'pipeline' || currentPage === 'bis') loadPipelineProgress();
+}, 15000);
 
 // ─────────────────────────────────────────────────────────────────
 // Config
