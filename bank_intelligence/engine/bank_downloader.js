@@ -173,7 +173,7 @@ async function findPdfLink(page, url, depth = 0) {
   return null;
 }
 
-async function downloadPdf(url, dest, referer = '') {
+async function downloadPdf(url, dest, referer = '', cookieStr = '') {
   const curlArgs = [
     '-L', '-s', '-w', '%{http_code}', '-o', dest,
     '-A', CHROME_UA,
@@ -187,6 +187,7 @@ async function downloadPdf(url, dest, referer = '') {
     '--retry-delay', '3',
   ];
   if (referer) curlArgs.push('-H', `Referer: ${referer}`);
+  if (cookieStr) curlArgs.push('-b', cookieStr);
   curlArgs.push(url);
 
   try {
@@ -320,15 +321,13 @@ async function processBank(bank, browser, attempt = 1) {
       result.reason = 'no_pdf_found';
     } else {
       process.stdout.write(`\n    [url: ${pdfUrl}]\n    `);
-      let ok = await downloadPdf(pdfUrl, pdfPath, referer);
+      // Extract session cookies from Puppeteer to pass to curl
+      const cookies = await page.cookies().catch(() => []);
+      const cookieStr = cookies.map(c => `${c.name}=${c.value}`).join('; ');
+      let ok = await downloadPdf(pdfUrl, pdfPath, referer, cookieStr);
       // Fallback: download via Puppeteer session (preserves cookies/auth)
       if (!ok) ok = await downloadPdfViaPuppeteer(page, pdfUrl, pdfPath);
       if (!ok) {
-        if (attempt < 3) {
-          await page.close();
-          await sleep(attempt * 2000);
-          return processBank(bank, browser, attempt + 1);
-        }
         result.reason = 'download_failed';
       } else {
         const txtOk = await extractText(pdfPath, txtPath);
@@ -347,11 +346,6 @@ async function processBank(bank, browser, attempt = 1) {
     }
   } catch (e) {
     result.reason = `exception: ${e.message.slice(0, 120)}`;
-    if (attempt < 3) {
-      await page.close().catch(() => {});
-      await sleep(attempt * 3000);
-      return processBank(bank, browser, attempt + 1);
-    }
   } finally {
     await page.close().catch(() => {});
   }
