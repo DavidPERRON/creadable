@@ -97,7 +97,7 @@ app.get('/api/stats', (req, res) => {
     banks: {
       techstack: techstack?.banks?.length ?? 0,
       bis_scored: bisScores?.banks?.length ?? 0,
-      bis_high: bisScores?.banks?.filter(b => b.bucket === 'HIGH')?.length ?? 0,
+      bis_high: bisScores?.banks?.filter(b => b.bis?.bis_bucket === 'HIGH')?.length ?? 0,
       bis_extractions: countFiles(path.join(ROOT, 'bank_intelligence/extractions'), '.json'),
     },
     reports: {

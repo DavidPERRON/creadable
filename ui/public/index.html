@@ -767,8 +767,9 @@ async function loadPipelineProgress() {
   } catch(e) {}
 }
 
-// Auto-refresh progress every 15s when on pipeline or bis page
+// Auto-refresh progress every 15s when on pipeline or bis page (skip when tab hidden)
 setInterval(() => {
+  if (document.hidden) return;
   if (currentPage === 'pipeline' || currentPage === 'bis') loadPipelineProgress();
 }, 15000);
 
@@ -823,7 +824,7 @@ function appendLog(el, event, text) {
   el.scrollTop = el.scrollHeight;
 }
 
-async function runCmd(cmd) {
+async function runCmd(cmd, onDone) {
   showPage('pipeline');
   clearLog();
   const logEl = document.getElementById('log-output');
@@ -836,7 +837,7 @@ async function runCmd(cmd) {
     return;
   }
   const { jobId } = await r.json();
-  streamJob(jobId, logEl);
+  streamJob(jobId, logEl, onDone ?? (() => loadStats()));
 }
 
 async function runBiCmd(cmd) {
@@ -853,7 +854,7 @@ async function runBiCmd(cmd) {
     return;
   }
   const { jobId } = await r.json();
-  streamJob(jobId, logEl, () => loadBisScores());
+  streamJob(jobId, logEl, () => { loadBisScores(); loadStats(); });
 }
 
 function clearBiLog() {
@@ -929,6 +930,7 @@ async function loadBisScores() {
 
 function applyBisThreshold(val) {
   val = parseInt(val, 10);
+  localStorage.setItem('bis-threshold', val);
   document.getElementById('bis-threshold-val').textContent = val;
   if (document.getElementById('bis-threshold')) document.getElementById('bis-threshold').value = val;
 
@@ -1102,7 +1104,7 @@ function runCsPostExtract() {
 }
 
 function toggleDemandBtn() {
-  // future: show demand signal table
+  if (document.getElementById('enrich-demand')?.checked) runCmd('cs:demand');
 }
 
 function togglePredictMode() {
@@ -1198,6 +1200,13 @@ function formatData() {
 // ─────────────────────────────────────────────────────────────────
 // Init
 // ─────────────────────────────────────────────────────────────────
+const _savedThreshold = localStorage.getItem('bis-threshold');
+if (_savedThreshold !== null) {
+  const el = document.getElementById('bis-threshold');
+  if (el) el.value = _savedThreshold;
+  const valEl = document.getElementById('bis-threshold-val');
+  if (valEl) valEl.textContent = _savedThreshold;
+}
 loadStats();
 loadConfig();
 </script>
