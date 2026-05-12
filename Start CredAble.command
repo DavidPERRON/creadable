@@ -2,7 +2,8 @@
 # Double-cliquez sur ce fichier dans le Finder pour lancer le Control Panel.
 # Gère automatiquement les conflits git et les rebases en cours.
 
-cd "$(dirname "$0")"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 echo "────────────────────────────────────────"
 echo "  CredAble Intelligence — Control Panel"
