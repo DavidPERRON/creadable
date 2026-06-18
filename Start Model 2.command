@@ -61,17 +61,13 @@ echo ""
 
 # ── Ouvrir dans le bon navigateur ────────────────────────────────
 open_browser() {
-  if [ -d "/Applications/Google Chrome.app" ]; then
-    open -a "Google Chrome" "$1"
-  elif [ -d "/Applications/Brave Browser.app" ]; then
-    open -a "Brave Browser" "$1"
-  elif [ -d "/Applications/Firefox.app" ]; then
-    open -a "Firefox" "$1"
-  elif [ -d "/Applications/Microsoft Edge.app" ]; then
-    open -a "Microsoft Edge" "$1"
-  else
-    open "$1"
-  fi
+  for loc in "/Applications" "$HOME/Applications"; do
+    [ -d "$loc/Google Chrome.app" ] && { open -a "Google Chrome" "$1"; return; }
+    [ -d "$loc/Brave Browser.app" ] && { open -a "Brave Browser" "$1"; return; }
+    [ -d "$loc/Firefox.app" ]       && { open -a "Firefox" "$1"; return; }
+    [ -d "$loc/Microsoft Edge.app" ]&& { open -a "Microsoft Edge" "$1"; return; }
+  done
+  open "$1"
 }
 (sleep 2 && open_browser "http://localhost:3333/model2") &
 
